@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
 
     <!-- SITE TITTLE -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>BIGBAG Store - Ecommerce Bootstrap Template</title>
+    <title>Pimdaki</title>
 
     <!-- PLUGINS CSS STYLE -->
     <link href="plugins/jquery-ui/jquery-ui.css" rel="stylesheet">
@@ -19,9 +19,12 @@
     <!-- GOOGLE FONT -->
     <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
 
+    <!-- linearicons -->
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+
     <!-- CUSTOM CSS -->
     <link href="css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/default.css" id="option_color">
+    <link rel="stylesheet" href="css/color-option2.css" id="option_color">
 
     <!-- Icons -->
     <link rel="shortcut icon" href="img/favicon.png">
@@ -40,7 +43,7 @@
     <div class="main-wrapper">
 
       <!-- HEADER -->
-      <div class="header clearfix">
+      <div class="header clearfix headerV3">
 
         <!-- TOPBAR -->
         <div class="topBar">
@@ -58,59 +61,118 @@
               <div class="col-md-6 col-sm-7 col-xs-12">
                 <ul class="list-inline pull-right top-right">
                   <li class="account-login"><span><a data-toggle="modal" href='.login-modal'>Log in</a><small>or</small><a data-toggle="modal" href='#signup'>Create an account</a></span></li>
-                  <li class="searchBox">
-                    <a href="#"><i class="fa fa-search"></i></a>
-                    <ul class="dropdown-menu dropdown-menu-right">
-                      <li>
-                        <span class="input-group">
-                          <input type="text" class="form-control" placeholder="Search…" aria-describedby="basic-addon2">
-                          <button type="submit" class="input-group-addon">Submit</button>
-                        </span>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="dropdown cart-dropdown">
-                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-shopping-cart"></i>$0</a>
-                    <ul class="dropdown-menu dropdown-menu-right">
-                      <li>Item(s) in your cart</li>
-                      <li>
-                        <a href="single-product.html">
-                          <div class="media">
-                            <img class="media-left media-object" src="img/home/cart-items/cart-item-01.jpg" alt="cart-Image">
-                            <div class="media-body">
-                              <h5 class="media-heading">INCIDIDUNT UT <br><span>2 X $199</span></h5>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="single-product.html">
-                          <div class="media">
-                            <img class="media-left media-object" src="img/home/cart-items/cart-item-01.jpg" alt="cart-Image">
-                            <div class="media-body">
-                              <h5 class="media-heading">INCIDIDUNT UT <br><span>2 X $199</span></h5>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <div class="btn-group" role="group" aria-label="...">
-                          <button type="button" class="btn btn-default" onclick="location.href='cart-page.html';">Shopping Cart</button>
-                          <button type="button" class="btn btn-default" onclick="location.href='checkout-step-1.html';">Checkout</button>
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- NAVBAR -->
-        <nav class="navbar navbar-main navbar-default" role="navigation">
+        <!-- NAV TOP -->
+        <div class="navTop text-center">
           <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <a class="navbar-brand" href="javascript:void(0)"><img src="img/logo.png" alt="logo+"></a>
+            </div>
+            <div class="navTop-middle">
+              <div class="filterArea hidden-xs hidden-sm">
+                <select name="guiest_id1" id="guiest_id1" class="select-drop">
+                  <option value="0">All Categories</option>
+                  <option value="1">Fashion</option>
+                  <option value="2">Accessories</option>
+                  <option value="3">Electronics</option>
+                  <option value="4">Cosmetic</option>
+                  <option value="5">Mobile</option>
+                  <option value="6">Computer</option>
+                </select>
+              </div>
+              <div class="searchBox">
+                <span class="input-group">
+                  <input type="text" class="form-control" placeholder="Search Items…" aria-describedby="basic-addon2">
+                  <button type="submit" class="input-group-addon"><i class="fa fa-search"></i></button>
+                </span>
+              </div>
+            </div>
+            <div class="dropdown cart-dropdown">
+              <a href="cart-page.html" class="dropdown-toggle shop-cart" data-toggle="dropdown">
+                <i class="fa fa-shopping-cart"></i>
+                <span class="hidden-xs">
+                  <span class="cart-total">Your Cart (3)</span><br>
+                  <span class="cart-price">$80.00</span>
+                </span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-right">
+                <li>Item(s) in your cart</li>
+                <li>
+                  <a href="single-product.html">
+                    <div class="media">
+                      <img class="media-left media-object" src="img/home/cart-items/cart-item-01.jpg" alt="cart-Image">
+                      <div class="media-body">
+                        <h5 class="media-heading">INCIDIDUNT UT <br><span>2 X $199</span></h5>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="single-product.html">
+                    <div class="media">
+                      <img class="media-left media-object" src="img/home/cart-items/cart-item-01.jpg" alt="cart-Image">
+                      <div class="media-body">
+                        <h5 class="media-heading">INCIDIDUNT UT <br><span>2 X $199</span></h5>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn btn-default" onclick="location.href='cart-page.html';">Shopping Cart</button>
+                    <button type="button" class="btn btn-default" onclick="location.href='checkout-step-1.html';">Checkout</button>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-main navbar-default nav-V3" role="navigation">
+          <div class="container">
+
+            <div class="nav-category dropdown">
+              <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              Catagory
+                <button type="button">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-left">
+                <li class="dropdown dropdown-submenu">
+                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  <i class="lnr lnr-shirt" aria-hidden="true"></i>Fashion</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="product-grid-left-sidebar.html">Accessories</a></li>
+                    <li><a href="product-grid-left-sidebar.html">Cosmetic</a></li>
+                  </ul>
+                </li>
+                <li><a href="product-grid-left-sidebar.html"><i class="lnr lnr-camera" aria-hidden="true"></i>Accessories</a></li>
+                <li><a href="product-grid-left-sidebar.html"><i class="lnr lnr-diamond" aria-hidden="true"></i>Cosmetic</a></li>
+                <li class="dropdown dropdown-submenu">
+                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  <i class="lnr lnr-laptop-phone" aria-hidden="true"></i>Electronics</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="product-grid-left-sidebar.html">Telivision</a></li>
+                    <li><a href="product-grid-left-sidebar.html">Air Conditioner</a></li>
+                    <li><a href="product-grid-left-sidebar.html">Fan</a></li>
+                    <li><a href="product-grid-left-sidebar.html">Room Heater</a></li>
+                  </ul>
+                </li>
+                <li><a href="product-grid-left-sidebar.html"><i class="lnr lnr-tablet" aria-hidden="true"></i>Mobile</a></li>
+                <li><a href="product-grid-left-sidebar.html"><i class="lnr lnr-laptop" aria-hidden="true"></i>Computer</a></li>
+                <li><a href="product-grid-left-sidebar.html"><img src="img/home/category/category-img1.jpg" alt="Image"></a></li>
+              </ul>
+            </div>
+
             <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -118,19 +180,18 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
-              <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
+              <ul class="nav navbar-nav">
+                <li class="dropdown active">
                   <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
                   <ul class="dropdown-menu dropdown-menu-left">
                     <li><a href="index.html">Home Default</a></li>
                     <li><a href="index-v2.html">Home Classic</a></li>
                     <li><a href="index-v3.html">Home Deals</a></li>
-                    <li><a href="index-v4.html">Home Mega</a></li>
+                    <li class="active"><a href="index-v4.html">Home Mega</a></li>
                   </ul>
                 </li>
                 <li class="dropdown megaDropMenu">
@@ -197,10 +258,10 @@
                     <li><a href="blog-single-left-sidebar.html">Single Left Sidebar</a></li>
                   </ul>
                 </li>
-                <li class="dropdown active">
+                <li class="dropdown">
                   <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account</a>
                   <ul class="dropdown-menu dropdown-menu-right">
-                    <li class="active"><a href="account-dashboard.html">Dashboard</a></li>
+                    <li><a href="account-dashboard.html">Dashboard</a></li>
                     <li><a href="account-profile.html">Profile</a></li>
                     <li><a href="account-all-orders.html">All Orders</a></li>
                     <li><a href="account-single-order.html">Single Order</a></li>
@@ -208,7 +269,7 @@
                     <li><a href="account-address.html">Address</a></li>
                   </ul>
                 </li>
-              <li class="dropdown">
+                <li class="dropdown">
                   <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Components</a>
                   <ul class="dropdown-menu dropdown-menu-right">
                     <li><a href="accrodion-toggle.html">Accrodion-Toggle</a></li>
@@ -225,469 +286,525 @@
                 </li>
               </ul>
             </div><!-- /.navbar-collapse -->
+
+
           </div>
         </nav>
+
       </div>
 
       <!-- BANNER -->
-      <div class="bannercontainer bannerV1">
-        <div class="fullscreenbanner-container">
-          <div class="fullscreenbanner">
-            <ul>
-              <li data-transition="slidehorizontal" data-slotamount="5" data-masterspeed="700" data-title="Slide 1">
-                <img src="img/home/banner-slider/slider-bg.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
-                <div class="slider-caption slider-captionV1 container">
+      <div class="container">
+        <div class="bannercontainer bannerV4">
+          <div class="fullscreenbanner-container">
+            <div class="fullscreenbanner">
+              <ul>
+                <li data-transition="slidehorizontal" data-slotamount="5" data-masterspeed="700"  data-title="Slide 3">
+                  <img src="img/home/banner-slider/slider-img1.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+                  <div class="slider-caption slider-captionV4">
+                    <div class="tp-caption rs-caption-2 sft"
+                      data-hoffset="0"
+                      data-x="85"
+                      data-y="115"
+                      data-speed="800"
+                      data-start="2000"
+                      data-easing="Back.easeInOut"
+                      data-endspeed="300">
+                      <small>Winter Offer</small><br>
+                      Up To 50% off
+                    </div>
 
-                  <div class="tp-caption rs-caption-1 sft start"
-                    data-hoffset="0"
-                    data-x="370"
-                    data-y="54"
-                    data-speed="800"
-                    data-start="1500"
-                    data-easing="Back.easeInOut"
-                    data-endspeed="300" >
-                    <img src="img/home/banner-slider/shoe1.png" alt="slider-image" style="width: 781px; height: 416px;">
+                    <div class="tp-caption rs-caption-3 sft"
+                      data-hoffset="0"
+                      data-x="85"
+                      data-y="240"
+                      data-speed="1000"
+                      data-start="3000"
+                      data-easing="Power4.easeOut"
+                      data-endspeed="300"
+                      data-endeasing="Power1.easeIn"
+                      data-captionhidden="off">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing
+                    </div>
+                    <div class="tp-caption rs-caption-4 sft"
+                      data-hoffset="0"
+                      data-x="85"
+                      data-y="300"
+                      data-speed="800"
+                      data-start="3500"
+                      data-easing="Power4.easeOut"
+                      data-endspeed="300"
+                      data-endeasing="Power1.easeIn"
+                      data-captionhidden="off">
+                      <span class="page-scroll"><a href="#" class="btn primary-btn">Buy Now<i class="glyphicon glyphicon-chevron-right"></i></a></span>
+                    </div>
                   </div>
+                </li>
+                <li data-transition="slidehorizontal" data-slotamount="5" data-masterspeed="700" data-title="Slide 1">
+                  <img src="img/home/banner-slider/slider-img3.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+                  <div class="slider-caption slider-captionV4">
+                    <div class="tp-caption rs-caption-2 sft"
+                      data-hoffset="0"
+                      data-x="85"
+                      data-y="115"
+                      data-speed="800"
+                      data-start="2000"
+                      data-easing="Back.easeInOut"
+                      data-endspeed="300">
+                      <small>Winter Offer</small><br>
+                      Up To 50% off
+                    </div>
 
-                  <div class="tp-caption rs-caption-2 sft"
-                    data-hoffset="0"
-                    data-y="119"
-                    data-speed="800"
-                    data-start="2000"
-                    data-easing="Back.easeInOut"
-                    data-endspeed="300">
-                    Canvas Sneaker
+                    <div class="tp-caption rs-caption-3 sft"
+                      data-hoffset="0"
+                      data-x="85"
+                      data-y="240"
+                      data-speed="1000"
+                      data-start="3000"
+                      data-easing="Power4.easeOut"
+                      data-endspeed="300"
+                      data-endeasing="Power1.easeIn"
+                      data-captionhidden="off">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing
+                    </div>
+                    <div class="tp-caption rs-caption-4 sft"
+                      data-hoffset="0"
+                      data-x="85"
+                      data-y="300"
+                      data-speed="800"
+                      data-start="3500"
+                      data-easing="Power4.easeOut"
+                      data-endspeed="300"
+                      data-endeasing="Power1.easeIn"
+                      data-captionhidden="off">
+                      <span class="page-scroll"><a href="#" class="btn primary-btn">Buy Now<i class="glyphicon glyphicon-chevron-right"></i></a></span>
+                    </div>
                   </div>
+                </li>
+                <li data-transition="slidehorizontal" data-slotamount="5" data-masterspeed="1000" data-title="Slide 2">
+                  <img src="img/home/banner-slider/slider-img2.jpg" alt="slidebg" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+                  <div class="slider-caption slider-captionV4 text-center">
+                    <div class="tp-caption rs-caption-2 sft text-center"
+                      data-x="center"
+                      data-y="200"
+                      data-speed="800"
+                      data-start="2000"
+                      data-easing="Back.easeInOut"
+                      data-endspeed="300">
+                      <small>Winter Offer</small><br>
+                      Up To 50% off
+                    </div>
 
-                  <div class="tp-caption rs-caption-3 sft"
-                    data-hoffset="0"
-                    data-y="185"
-                    data-speed="1000"
-                    data-start="3000"
-                    data-easing="Power4.easeOut"
-                    data-endspeed="300"
-                    data-endeasing="Power1.easeIn"
-                    data-captionhidden="off">
-                    Exclusive to <br>
-                    BigBag <br>
-                    <small>Spring / Summer 2016</small>
-                  </div>
-                  <div class="tp-caption rs-caption-4 sft"
-                    data-hoffset="0"
-                    data-y="320"
-                    data-speed="800"
-                    data-start="3500"
-                    data-easing="Power4.easeOut"
-                    data-endspeed="300"
-                    data-endeasing="Power1.easeIn"
-                    data-captionhidden="off">
-                    <span class="page-scroll"><a href="#" class="btn primary-btn">Buy Now<i class="glyphicon glyphicon-chevron-right"></i></a></span>
-                  </div>
-                </div>
-              </li>
-              <li data-transition="slidehorizontal" data-slotamount="5" data-masterspeed="1000" data-title="Slide 2">
-                <img src="img/home/banner-slider/slider-bg.jpg" alt="slidebg" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
-                <div class="slider-caption slider-captionV1 container captionCenter">
-                  <div class="tp-caption rs-caption-1 sft start text-center"
-                    data-x="center"
-                    data-y="228"
-                    data-speed="800"
-                    data-start="1500"
-                    data-easing="Back.easeInOut"
-                    data-endspeed="300">
-                    <img src="img/home/banner-slider/shoe2.png" alt="slider-image">
-                  </div>
+                    <div class="tp-caption rs-caption-3 sft text-center"
+                      data-x="center"
+                      data-y="325"
+                      data-speed="1000"
+                      data-start="3000"
+                      data-easing="Power4.easeOut"
+                      data-endspeed="300"
+                      data-endeasing="Power1.easeIn"
+                      data-captionhidden="off">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing
+                    </div>
 
-                  <div class="tp-caption rs-caption-2 sft text-center"
-                    data-x="center"
-                    data-y="50"
-                    data-speed="800"
-                    data-start="2000"
-                    data-easing="Back.easeInOut"
-                    data-endspeed="300">
-                    Exclusive to BigBag
+                    <div class="tp-caption rs-caption-4 sft text-center"
+                      data-x="center"
+                      data-y="385"
+                      data-speed="800"
+                      data-start="3500"
+                      data-easing="Power4.easeOut"
+                      data-endspeed="300"
+                      data-endeasing="Power1.easeIn"
+                      data-captionhidden="off">
+                      <span class="page-scroll"><a href="#" class="btn primary-btn">Buy Now<i class="glyphicon glyphicon-chevron-right"></i></a></span>
+                    </div>
                   </div>
-
-                  <div class="tp-caption rs-caption-3 sft text-center"
-                    data-x="center"
-                    data-y="98"
-                    data-speed="1000"
-                    data-start="3000"
-                    data-easing="Power4.easeOut"
-                    data-endspeed="300"
-                    data-endeasing="Power1.easeIn"
-                    data-captionhidden="off">
-                    Canvas Sneaker
-                  </div>
-
-                  <div class="tp-caption rs-caption-4 sft text-center"
-                    data-x="center"
-                    data-y="156"
-                    data-speed="800"
-                    data-start="3500"
-                    data-easing="Power4.easeOut"
-                    data-endspeed="300"
-                    data-endeasing="Power1.easeIn"
-                    data-captionhidden="off">
-                    <span class="page-scroll"><a href="#" class="btn primary-btn">Buy Now<i class="glyphicon glyphicon-chevron-right"></i></a></span>
-                  </div>
-                </div>
-              </li>
-              <li data-transition="slidehorizontal" data-slotamount="5" data-masterspeed="700"  data-title="Slide 3">
-                <img src="img/home/banner-slider/slider-bg.jpg" alt="slidebg" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
-                <div class="slider-caption slider-captionV1 container">
-                  <div class="tp-caption rs-caption-1 sft start"
-                    data-hoffset="0"
-                    data-y="85"
-                    data-speed="800"
-                    data-start="1500"
-                    data-easing="Back.easeInOut"
-                    data-endspeed="300">
-                    <img src="img/home/banner-slider/shoe3.png" alt="slider-image">
-                  </div>
-
-                  <div class="tp-caption rs-caption-2 sft "
-                    data-hoffset="0"
-                    data-y="119"
-                    data-x="800"
-                    data-speed="800"
-                    data-start="2000"
-                    data-easing="Back.easeInOut"
-                    data-endspeed="300">
-                    Canvas Sneaker
-                  </div>
-
-                  <div class="tp-caption rs-caption-3 sft"
-                    data-hoffset="0"
-                    data-y="185"
-                    data-x="800"
-                    data-speed="1000"
-                    data-start="3000"
-                    data-easing="Power4.easeOut"
-                    data-endspeed="300"
-                    data-endeasing="Power1.easeIn"
-                    data-captionhidden="off">
-                    Exclusive to <br>
-                    BigBag <br>
-                    <small>Spring / Summer 2016</small>
-                  </div>
-
-                  <div class="tp-caption rs-caption-4 sft"
-                    data-hoffset="0"
-                    data-y="320"
-                    data-x="800"
-                    data-speed="800"
-                    data-start="3500"
-                    data-easing="Power4.easeOut"
-                    data-endspeed="300"
-                    data-endeasing="Power1.easeIn"
-                    data-captionhidden="off">
-                    <span class="page-scroll"><a href="#" class="btn primary-btn">Buy Now<i class="glyphicon glyphicon-chevron-right"></i></a></span>
-                  </div>
-                </div>
-              </li>
-            </ul>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- MAIN CONTENT SECTION -->
-      <section class="mainContent clearfix">
+      <!-- CONTENT SECTION -->
+      <section class="content clearfix">
         <div class="container">
-          <div class="row featuredCollection margin-bottom">
-            <div class="col-xs-12">
-              <div class="page-header">
-                <h4>Featured Collection</h4>
-              </div>
-            </div>
-            <div class="col-sm-4 col-xs-12">
-              <div class="thumbnail" onclick="location.href='single-product.html';">
-                <div class="imageWrapper">
-                  <img src="img/home/featured-collection/featured-collection-01.jpg" alt="feature-collection-image">
-                  <div class="masking"><a href="product-grid-left-sidebar.html" class="btn viewBtn">View Prodocts</a></div>
-                </div>
-                <div class="caption">
-                  <h4>Shoes</h4>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4 col-xs-12">
-              <div class="thumbnail" onclick="location.href='single-product.html';">
-                <div class="imageWrapper">
-                  <img src="img/home/featured-collection/featured-collection-02.jpg" alt="feature-collection-image">
-                  <div class="masking"><a href="product-grid-left-sidebar.html" class="btn viewBtn">View Prodocts</a></div>
-                </div>
-                <div class="caption">
-                  <h4>Bags</h4>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4 col-xs-12">
-              <div class="thumbnail" onclick="location.href='single-product.html';">
-                <div class="imageWrapper">
-                  <img src="img/home/featured-collection/featured-collection-03.jpg" alt="feature-collection-image">
-                  <div class="masking"><a href="product-grid-left-sidebar.html" class="btn viewBtn">View Prodocts</a></div>
-                </div>
-                <div class="caption">
-                  <h4>Glasses</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row featuredProducts margin-bottom">
-            <div class="col-xs-12">
-              <div class="page-header">
-                <h4>Featured Products</h4>
-              </div>
-            </div>
-            <div class="col-xs-12">
-              <div class="owl-carousel featuredProductsSlider">
-                <div class="slide">
-                  <div class="productImage clearfix">
-                    <img src="img/home/featured-product/product-01.jpg" alt="featured-product-img">
-                    <div class="productMasking">
-                      <ul class="list-inline btn-group" role="group">
-                        <li><a data-toggle="modal" href=".login-modal" class="btn btn-default"><i class="fa fa-heart"></i></a></li>
-                        <li><a href="cart-page.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i></a></li>
-                        <li><a data-toggle="modal" href=".quick-view" class="btn btn-default"><i class="fa fa-eye"></i></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="productCaption clearfix">
-                    <a href="single-product.html">
-                      <h5>Mauris efficitur</h5>
-                    </a>
-                    <h3>$199</h3>
-                  </div>
-                </div>
-                <div class="slide">
-                  <div class="productImage">
-                    <img src="img/home/featured-product/product-02.jpg" alt="featured-product-img">
-                    <div class="productMasking">
-                      <ul class="list-inline btn-group" role="group">
-                        <li><a data-toggle="modal" href=".login-modal" class="btn btn-default"><i class="fa fa-heart"></i></a></li>
-                        <li><a href="cart-page.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i></a></li>
-                        <li><a data-toggle="modal" href=".quick-view" class="btn btn-default"><i class="fa fa-eye"></i></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="productCaption">
-                    <a href="single-product.html">
-                      <h5>Nulla facilisi</h5>
-                    </a>
-                    <h3>$149</h3>
-                  </div>
-                </div>
-                <div class="slide">
-                  <div class="productImage">
-                    <img src="img/home/featured-product/product-03.jpg" alt="featured-product-img">
-                    <div class="productMasking">
-                      <ul class="list-inline btn-group" role="group">
-                        <li><a data-toggle="modal" href=".login-modal" class="btn btn-default"><i class="fa fa-heart"></i></a></li>
-                        <li><a href="cart-page.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i></a></li>
-                        <li><a data-toggle="modal" href=".quick-view" class="btn btn-default"><i class="fa fa-eye"></i></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="productCaption">
-                    <a href="single-product.html">
-                      <h5>Praesent dui felis</h5>
-                    </a>
-                    <h3>$79</h3>
-                  </div>
-                </div>
-                <div class="slide">
-                  <div class="productImage">
-                    <img src="img/home/featured-product/product-04.jpg" alt="featured-product-img">
-                    <div class="productMasking">
-                      <ul class="list-inline btn-group" role="group">
-                        <li><a data-toggle="modal" href=".login-modal" class="btn btn-default"><i class="fa fa-heart"></i></a></li>
-                        <li><a href="cart-page.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i></a></li>
-                        <li><a data-toggle="modal" href=".quick-view" class="btn btn-default"><i class="fa fa-eye"></i></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="productCaption">
-                    <a href="single-product.html">
-                      <h5>Cras eu faucibus</h5>
-                    </a>
-                    <h3>$109</h3>
-                  </div>
-                </div>
-                <div class="slide">
-                  <div class="productImage">
-                    <img src="img/home/featured-product/product-05.jpg" alt="featured-product-img">
-                    <div class="productMasking">
-                      <ul class="list-inline btn-group" role="group">
-                        <li><a data-toggle="modal" href=".login-modal" class="btn btn-default"><i class="fa fa-heart"></i></a></li>
-                        <li><a href="cart-page.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i></a></li>
-                        <li><a data-toggle="modal" href=".quick-view" class="btn btn-default"><i class="fa fa-eye"></i></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="productCaption">
-                    <a href="single-product.html">
-                      <h5>Mauris lobortis augue</h5>
-                    </a>
-                    <h3>$199</h3>
-                  </div>
-                </div>
-                <div class="slide">
-                  <div class="productImage">
-                    <img src="img/home/featured-product/product-06.jpg" alt="featured-product-img">
-                    <div class="productMasking">
-                      <ul class="list-inline btn-group" role="group">
-                        <li><a data-toggle="modal" href=".login-modal" class="btn btn-default"><i class="fa fa-heart"></i></a></li>
-                        <li><a href="cart-page.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i></a></li>
-                        <li><a data-toggle="modal" href=".quick-view" class="btn btn-default"><i class="fa fa-eye"></i></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="productCaption">
-                    <a href="single-product.html">
-                      <h5>Suspendisse suscipit</h5>
-                    </a>
-                   <h3>$149</h3>
-                  </div>
-                </div>
-                <div class="slide">
-                  <div class="productImage">
-                    <img src="img/home/featured-product/product-07.jpg" alt="featured-product-img">
-                    <div class="productMasking">
-                      <ul class="list-inline btn-group" role="group">
-                        <li><a data-toggle="modal" href=".login-modal" class="btn btn-default"><i class="fa fa-heart"></i></a></li>
-                        <li><a href="cart-page.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i></a></li>
-                        <li><a data-toggle="modal" href=".quick-view" class="btn btn-default"><i class="fa fa-eye"></i></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="productCaption">
-                    <a href="single-product.html">
-                      <h5>Praesent a augue</h5>
-                    </a>
-                    <h3>$79</h3>
-                  </div>
-                </div>
-                <div class="slide">
-                  <div class="productImage">
-                    <img src="img/home/featured-product/product-09.jpg" alt="featured-product-img">
-                    <div class="productMasking">
-                      <ul class="list-inline btn-group" role="group">
-                        <li><a data-toggle="modal" href=".login-modal" class="btn btn-default"><i class="fa fa-heart"></i></a></li>
-                        <li><a href="cart-page.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i></a></li>
-                        <li><a data-toggle="modal" href=".quick-view" class="btn btn-default"><i class="fa fa-eye"></i></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="productCaption">
-                    <a href="single-product.html">
-                      <h5>Cras vel augue</h5>
-                    </a>
-                    <h3>$109</h3>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row latestArticles">
-            <div class="col-xs-12">
-              <div class="page-header">
-                <h4>Latest Articles</h4>
-              </div>
-            </div>
-            <div class="col-sm-3 col-xs-12">
-              <div class="thumbnail">
-                <h5><a href="blog-single-right-sidebar.html">Donec egestas tortor quis mattis</a></h5>
-                <span class="meta">July 16, 2016 by <a href="#">Abdus</a></span>
-                <a href="blog-single-right-sidebar.html"><img src="img/home/articles/articles-01.jpg" alt="article-image"></a>
-                <div class="caption">
-                  <p>Nulla facilisi. Mauris efficitur, massa et iaculis accumsan, mauris velit ultrices purus, quis condimentum nibh dolor ut tortor.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-3 col-xs-12">
-              <div class="thumbnail">
-                <h5><a href="blog-single-right-sidebar.html">Pellentesque risus quis tellus</a></h5>
-                <span class="meta">July 16, 2016 by <a href="#">Abdus</a></span>
-                <a href="blog-single-right-sidebar.html"><img src="img/home/articles/articles-02.jpg" alt="article-image"></a>
-                <div class="caption">
-                  <p>Praesent dui felis, gravida a auctor at, facilisis commodo ipsum. Cras eu faucibus justo. Nullam varius cursus nisi.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-3 col-xs-12">
-              <div class="thumbnail">
-                <h5><a href="blog-single-right-sidebar.html">Mauris lobortis augue ex</a></h5>
-                <span class="meta">July 16, 2016 by <a href="#">Abdus</a></span>
-                <a href="blog-single-right-sidebar.html"><img src="img/home/articles/articles-03.jpg" alt="article-image"></a>
-                <div class="caption">
-                  <p>Etiam aliquam turpis quis blandit finibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-3 col-xs-12">
-              <div class="thumbnail">
-                <h5><a href="blog-single-right-sidebar.html">Suspendisse vestibulum dignissim</a></h5>
-                <span class="meta">July 16, 2016 by <a href="#">Abdus</a></span>
-                <a href="blog-single-right-sidebar.html"><img src="img/home/articles/articles-04.jpg" alt="article-image"></a>
-                <div class="caption">
-                  <p>Suspendisse tristique interdum est, at hendrerit nunc laoreet et. Nulla vel arcu ac turpis pulvinar tincidunt eu eu nisi.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <!-- LIGHT SECTION -->
-      <section class="lightSection clearfix">
-        <div class="container">
-          <div class="row">
-            <div class="col-xs-12">
-              <div class="owl-carousel partnersLogoSlider">
-                <div class="slide">
-                  <div class="partnersLogo clearfix">
-                    <img src="img/home/partners/partner-01.png" alt="partner-img">
+          <!-- FEATURE COLLECTION SECTION -->
+          <div class="row featuredCollection version2 version3">
+            <div class="col-sm-6 col-xs-12">
+              <div class="slide">
+                <div class="productImage productImage1">
+                </div>
+                <div class="productCaption clearfix text-right">
+                  <h3><a href="single-product.html">women’s Shoes</a></h3>
+                  <p>Lorem ipsum dolor sit ameit</p>
+                  <a href="single-product.html" class="btn btn-border">Shop Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-xs-12">
+              <div class="slide">
+                <div class="productImage productImage2">
+                </div>
+                <div class="productCaption clearfix text-right">
+                  <h3><a href="single-product.html">Headphone wifi</a></h3>
+                  <p>Lorem ipsum dolor sit ameit</p>
+                  <a href="single-product.html" class="btn btn-border">Shop Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CATEGORY SECTION -->
+          <div class="categorySection">
+            <div class="row">
+              <div class="col-md-6 col-xs-12">
+                <div class="category-content">
+                  <div class="category-top">
+                    <div class="category-menu text-center">
+                      <h2 class="category-title">Men’s Clothing</h2>
+                      <ul>
+                        <li><a href="product-grid-left-sidebar.html">Down Jackets</a></li>
+                        <li><a href="product-grid-left-sidebar.html">T Shirts</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Jeans</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Casual Pants</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Sunglasses</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Hoodies</a></li>
+                      </ul>
+                    </div>
+                    <div class="category-Slider">
+                      <div class="owl-carousel categorySlider">
+                        <div class="item">
+                          <img src="img/home/category/category-img3.jpg" alt="Image">
+                        </div>
+                        <div class="item">
+                          <img src="img/home/category/category-img3.jpg" alt="Image">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="category-bottom">
+                    <div class="imageBox">
+                      <div class="productImage clearfix">
+                        <a href="single-product.html">
+                          <img src="img/home/category/category-img6.jpg" alt="Image">
+                        </a>
+                        <div class="productMasking">
+                          <ul class="list-inline btn-group" role="group">
+                            <li><a data-toggle="modal" href=".login-modal" class="btn btn-default"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="cart-page.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i></a></li>
+                            <li><a data-toggle="modal" href=".quick-view" class="btn btn-default"><i class="fa fa-search"></i></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="productCaption clearfix">
+                        <h5><a href="single-product.html">Nike Sportswear</a></h5>
+                        <h3>$199</h3>
+                      </div>
+                    </div>
+                    <div class="imageBox">
+                      <div class="productImage clearfix">
+                        <a href="single-product.html">
+                          <img src="img/home/category/category-img7.jpg" alt="Image">
+                        </a>
+                        <span class="sticker">50% off</span>
+                        <div class="productMasking">
+                          <ul class="list-inline btn-group" role="group">
+                            <li><a data-toggle="modal" href=".login-modal" class="btn btn-default"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="cart-page.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i></a></li>
+                            <li><a data-toggle="modal" href=".quick-view" class="btn btn-default"><i class="fa fa-search"></i></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="productCaption clearfix">
+                        <h5><a href="single-product.html">Nike Sportswear</a></h5>
+                        <h3>$199</h3>
+                      </div>
+                    </div>
+                    <div class="imageBox">
+                      <div class="productImage clearfix">
+                        <a href="single-product.html">
+                          <img src="img/home/category/category-img8.jpg" alt="Image">
+                        </a>
+                        <div class="productMasking">
+                          <ul class="list-inline btn-group" role="group">
+                            <li><a data-toggle="modal" href=".login-modal" class="btn btn-default"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="cart-page.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i></a></li>
+                            <li><a data-toggle="modal" href=".quick-view" class="btn btn-default"><i class="fa fa-search"></i></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="productCaption clearfix">
+                        <h5><a href="single-product.html">Nike Sportswear</a></h5>
+                        <h3>$199</h3>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="slide">
-                  <div class="partnersLogo clearfix">
-                    <img src="img/home/partners/partner-02.png" alt="partner-img">
+              </div>
+
+              <div class="col-md-6 col-xs-12">
+                <div class="category-content">
+                  <div class="category-top">
+                    <div class="category-menu text-center">
+                      <h2 class="category-title">woMen’s Clothing</h2>
+                      <ul>
+                        <li><a href="product-grid-left-sidebar.html">Casual Dresses</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Sweaters</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Coats & Jackets</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Cosmetic</a></li>
+                        <li><a href="product-grid-left-sidebar.html">T Shirts</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Shoes</a></li>
+                      </ul>
+                    </div>
+                    <div class="category-Slider">
+                      <div class="owl-carousel categorySlider">
+                        <div class="item">
+                          <img src="img/home/category/category-img2.jpg" alt="Image">
+                        </div>
+                        <div class="item">
+                          <img src="img/home/category/category-img2.jpg" alt="Image">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="category-bottom">
+                    <div class="imageBox">
+                      <div class="productImage clearfix">
+                        <a href="single-product.html">
+                          <img src="img/home/category/category-img9.jpg" alt="Image">
+                        </a>
+                        <span class="sticker">50% off</span>
+                        <div class="productMasking">
+                          <ul class="list-inline btn-group" role="group">
+                            <li><a data-toggle="modal" href=".login-modal" class="btn btn-default"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="cart-page.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i></a></li>
+                            <li><a data-toggle="modal" href=".quick-view" class="btn btn-default"><i class="fa fa-search"></i></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="productCaption clearfix">
+                        <h5><a href="single-product.html">Nike Sportswear</a></h5>
+                        <h3>$199</h3>
+                      </div>
+                    </div>
+                    <div class="imageBox">
+                      <div class="productImage clearfix">
+                        <a href="single-product.html">
+                          <img src="img/home/category/category-img10.jpg" alt="Image">
+                        </a>
+                        <div class="productMasking">
+                          <ul class="list-inline btn-group" role="group">
+                            <li><a data-toggle="modal" href=".login-modal" class="btn btn-default"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="cart-page.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i></a></li>
+                            <li><a data-toggle="modal" href=".quick-view" class="btn btn-default"><i class="fa fa-search"></i></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="productCaption clearfix">
+                        <h5><a href="single-product.html">Nike Sportswear</a></h5>
+                        <h3>$199</h3>
+                      </div>
+                    </div>
+                    <div class="imageBox">
+                      <div class="productImage clearfix">
+                        <a href="single-product.html">
+                          <img src="img/home/category/category-img11.jpg" alt="Image">
+                        </a>
+                        <div class="productMasking">
+                          <ul class="list-inline btn-group" role="group">
+                            <li><a data-toggle="modal" href=".login-modal" class="btn btn-default"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="cart-page.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i></a></li>
+                            <li><a data-toggle="modal" href=".quick-view" class="btn btn-default"><i class="fa fa-search"></i></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="productCaption clearfix">
+                        <h5><a href="single-product.html">Nike Sportswear</a></h5>
+                        <h3>$199</h3>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="slide">
-                  <div class="partnersLogo clearfix">
-                    <img src="img/home/partners/partner-03.png" alt="partner-img">
+              </div>
+
+              <div class="col-md-6 col-xs-12">
+                <div class="category-content">
+                  <div class="category-top">
+                    <div class="category-menu text-center">
+                      <h2 class="category-title">Jewelry Collections</h2>
+                      <ul>
+                        <li><a href="product-grid-left-sidebar.html">Jewlery Sets</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Earring Sets</a></li>
+                        <li><a href="product-grid-left-sidebar.html">DIY Jewelry</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Pendant Nacklaces</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Popupar Bracelets</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Pendant</a></li>
+                      </ul>
+                    </div>
+                    <div class="category-Slider">
+                      <div class="owl-carousel categorySlider">
+                        <div class="item">
+                          <img src="img/home/category/category-img4.jpg" alt="Image">
+                        </div>
+                        <div class="item">
+                          <img src="img/home/category/category-img4.jpg" alt="Image">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="category-bottom">
+                    <div class="imageBox">
+                      <div class="productImage clearfix">
+                        <a href="single-product.html">
+                          <img src="img/home/category/category-img13.jpg" alt="Image">
+                        </a>
+                        <span class="sticker">50% off</span>
+                        <div class="productMasking">
+                          <ul class="list-inline btn-group" role="group">
+                            <li><a data-toggle="modal" href=".login-modal" class="btn btn-default"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="cart-page.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i></a></li>
+                            <li><a data-toggle="modal" href=".quick-view" class="btn btn-default"><i class="fa fa-search"></i></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="productCaption clearfix">
+                        <h5><a href="single-product.html">Nike Sportswear</a></h5>
+                        <h3>$199</h3>
+                      </div>
+                    </div>
+                    <div class="imageBox">
+                      <div class="productImage clearfix">
+                        <a href="single-product.html">
+                          <img src="img/home/category/category-img14.jpg" alt="Image">
+                        </a>
+                        <div class="productMasking">
+                          <ul class="list-inline btn-group" role="group">
+                            <li><a data-toggle="modal" href=".login-modal" class="btn btn-default"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="cart-page.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i></a></li>
+                            <li><a data-toggle="modal" href=".quick-view" class="btn btn-default"><i class="fa fa-search"></i></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="productCaption clearfix">
+                        <h5><a href="single-product.html">Nike Sportswear</a></h5>
+                        <h3>$199</h3>
+                      </div>
+                    </div>
+                    <div class="imageBox">
+                      <div class="productImage clearfix">
+                        <a href="single-product.html">
+                          <img src="img/home/category/category-img12.jpg" alt="Image">
+                        </a>
+                        <div class="productMasking">
+                          <ul class="list-inline btn-group" role="group">
+                            <li><a data-toggle="modal" href=".login-modal" class="btn btn-default"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="cart-page.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i></a></li>
+                            <li><a data-toggle="modal" href=".quick-view" class="btn btn-default"><i class="fa fa-search"></i></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="productCaption clearfix">
+                        <h5><a href="single-product.html">Nike Sportswear</a></h5>
+                        <h3>$199</h3>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="slide">
-                  <div class="partnersLogo clearfix">
-                    <img src="img/home/partners/partner-04.png" alt="partner-img">
+              </div>
+
+              <div class="col-md-6 col-xs-12">
+                <div class="category-content">
+                  <div class="category-top">
+                    <div class="category-menu text-center">
+                      <h2 class="category-title">Bags & Shoes</h2>
+                      <ul>
+                        <li><a href="product-grid-left-sidebar.html">Women’s Boots</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Women’s Casual Shoes</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Women’s Bags</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Men’s Boots</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Men’s Casual Shoes</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Men’s Bags</a></li>
+                      </ul>
+                    </div>
+                    <div class="category-Slider">
+                      <div class="owl-carousel categorySlider">
+                        <div class="item">
+                          <img src="img/home/category/category-img5.jpg" alt="Image">
+                        </div>
+                        <div class="item">
+                          <img src="img/home/category/category-img5.jpg" alt="Image">
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div class="slide">
-                  <div class="partnersLogo clearfix">
-                    <img src="img/home/partners/partner-05.png" alt="partner-img">
-                  </div>
-                </div>
-                <div class="slide">
-                  <div class="partnersLogo clearfix">
-                    <img src="img/home/partners/partner-01.png" alt="partner-img">
-                  </div>
-                </div>
-                <div class="slide">
-                  <div class="partnersLogo clearfix">
-                    <img src="img/home/partners/partner-02.png" alt="partner-img">
-                  </div>
-                </div>
-                <div class="slide">
-                  <div class="partnersLogo clearfix">
-                    <img src="img/home/partners/partner-03.png" alt="partner-img">
+
+                  <div class="category-bottom">
+                    <div class="imageBox">
+                      <div class="productImage clearfix">
+                        <a href="single-product.html">
+                          <img src="img/home/category/category-img16.jpg" alt="Image">
+                        </a>
+                        <span class="sticker">50% off</span>
+                        <div class="productMasking">
+                          <ul class="list-inline btn-group" role="group">
+                            <li><a data-toggle="modal" href=".login-modal" class="btn btn-default"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="cart-page.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i></a></li>
+                            <li><a data-toggle="modal" href=".quick-view" class="btn btn-default"><i class="fa fa-search"></i></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="productCaption clearfix">
+                        <h5><a href="single-product.html">Nike Sportswear</a></h5>
+                        <h3>$199</h3>
+                      </div>
+                    </div>
+                    <div class="imageBox">
+                      <div class="productImage clearfix">
+                        <a href="single-product.html">
+                          <img src="img/home/category/category-img17.jpg" alt="Image">
+                        </a>
+                        <div class="productMasking">
+                          <ul class="list-inline btn-group" role="group">
+                            <li><a data-toggle="modal" href=".login-modal" class="btn btn-default"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="cart-page.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i></a></li>
+                            <li><a data-toggle="modal" href=".quick-view" class="btn btn-default"><i class="fa fa-search"></i></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="productCaption clearfix">
+                        <h5><a href="single-product.html">Nike Sportswear</a></h5>
+                        <h3>$199</h3>
+                      </div>
+                    </div>
+                    <div class="imageBox">
+                      <div class="productImage clearfix">
+                        <a href="single-product.html">
+                          <img src="img/home/category/category-img15.jpg" alt="Image">
+                        </a>
+                        <div class="productMasking">
+                          <ul class="list-inline btn-group" role="group">
+                            <li><a data-toggle="modal" href=".login-modal" class="btn btn-default"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="cart-page.html" class="btn btn-default"><i class="fa fa-shopping-cart"></i></a></li>
+                            <li><a data-toggle="modal" href=".quick-view" class="btn btn-default"><i class="fa fa-search"></i></a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="productCaption clearfix">
+                        <h5><a href="single-product.html">Nike Sportswear</a></h5>
+                        <h3>$199</h3>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
       </section>
 
