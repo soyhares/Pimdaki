@@ -60,7 +60,7 @@
               </div>
               <div class="col-md-6 col-sm-7 col-xs-12">
                 <ul class="list-inline pull-right top-right">
-                  <li class="account-login"><span><a data-toggle="modal" href='.login-modal'>Log in</a><small>or</small><a data-toggle="modal" href='#signup'>Create an account</a></span></li>
+                  <li class="account-login"><span><a data-toggle="modal" href='.login-modal'>Ingresar</a><small>ó</small><a data-toggle="modal" href='#signup'>Registrarte</a></span></li>
                 </ul>
               </div>
             </div>
@@ -76,18 +76,19 @@
             <div class="navTop-middle">
               <div class="filterArea hidden-xs hidden-sm">
                 <select name="guiest_id1" id="guiest_id1" class="select-drop">
-                  <option value="0">All Categories</option>
-                  <option value="1">Fashion</option>
-                  <option value="2">Accessories</option>
-                  <option value="3">Electronics</option>
-                  <option value="4">Cosmetic</option>
-                  <option value="5">Mobile</option>
-                  <option value="6">Computer</option>
+                  <option value="0">Todas las Categorías</option>
+                  <option value="1">Promociones</option>
+                  <option value="2">Electro y Tecnología</option>
+                  <option value="3">Entretenimiento</option>
+                  <option value="4">Hogar y Cocina</option>
+                  <option value="5">BBQ</option>
+                  <option value="6">Deportes</option>
+                  <option value="7">Salud y Belleza</option>
                 </select>
               </div>
               <div class="searchBox">
                 <span class="input-group">
-                  <input type="text" class="form-control" placeholder="Search Items…" aria-describedby="basic-addon2">
+                  <input type="text" class="form-control" placeholder="¿Qué estás buscando?" aria-describedby="basic-addon2">
                   <button type="submit" class="input-group-addon"><i class="fa fa-search"></i></button>
                 </span>
               </div>
@@ -96,12 +97,12 @@
               <a href="cart-page.html" class="dropdown-toggle shop-cart" data-toggle="dropdown">
                 <i class="fa fa-shopping-cart"></i>
                 <span class="hidden-xs">
-                  <span class="cart-total">Your Cart (3)</span><br>
-                  <span class="cart-price">$80.00</span>
+                  <span class="cart-total">Carrito (3)</span><br>
+                  <span class="cart-price">₡80.000</span>
                 </span>
               </a>
               <ul class="dropdown-menu dropdown-menu-right">
-                <li>Item(s) in your cart</li>
+                <li>Artículo(s) en tu carrito</li>
                 <li>
                   <a href="single-product.html">
                     <div class="media">
@@ -139,7 +140,7 @@
 
             <div class="nav-category dropdown">
               <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-              Catagory
+              Categorías
                 <button type="button">
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
@@ -147,29 +148,70 @@
                 </button>
               </a>
               <ul class="dropdown-menu dropdown-menu-left">
+                <li><a href="product-grid-left-sidebar.html"><i class="lnr lnr-gift" aria-hidden="true"></i>Promociones</a></li>
+
                 <li class="dropdown dropdown-submenu">
                   <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                  <i class="lnr lnr-shirt" aria-hidden="true"></i>Fashion</a>
+                  <i class="lnr lnr-laptop-phone" aria-hidden="true"></i>Electro y Tecnología</a>
                   <ul class="dropdown-menu">
-                    <li><a href="product-grid-left-sidebar.html">Accessories</a></li>
-                    <li><a href="product-grid-left-sidebar.html">Cosmetic</a></li>
+                    <li><a href="product-grid-left-sidebar.html">Accesorios</a></li>
+                    <li><a href="product-grid-left-sidebar.html">Audio y Video</a></li>
                   </ul>
                 </li>
-                <li><a href="product-grid-left-sidebar.html"><i class="lnr lnr-camera" aria-hidden="true"></i>Accessories</a></li>
-                <li><a href="product-grid-left-sidebar.html"><i class="lnr lnr-diamond" aria-hidden="true"></i>Cosmetic</a></li>
+
                 <li class="dropdown dropdown-submenu">
                   <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                  <i class="lnr lnr-laptop-phone" aria-hidden="true"></i>Electronics</a>
+                  <i class="lnr lnr-rocket" aria-hidden="true"></i>Entretenimiento</a>
                   <ul class="dropdown-menu">
-                    <li><a href="product-grid-left-sidebar.html">Telivision</a></li>
-                    <li><a href="product-grid-left-sidebar.html">Air Conditioner</a></li>
-                    <li><a href="product-grid-left-sidebar.html">Fan</a></li>
-                    <li><a href="product-grid-left-sidebar.html">Room Heater</a></li>
+                    <li><a href="product-grid-left-sidebar.html">Regalos</a></li>
+                    <li><a href="product-grid-left-sidebar.html">Juegos de Mesa</a></li>
+                    <li><a href="product-grid-left-sidebar.html">Hobby</a></li>
                   </ul>
                 </li>
-                <li><a href="product-grid-left-sidebar.html"><i class="lnr lnr-tablet" aria-hidden="true"></i>Mobile</a></li>
-                <li><a href="product-grid-left-sidebar.html"><i class="lnr lnr-laptop" aria-hidden="true"></i>Computer</a></li>
+
+                <li class="dropdown dropdown-submenu">
+                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  <i class="lnr lnr-home" aria-hidden="true"></i>Hogar y Cocina</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="product-grid-left-sidebar.html">Accesorios Hogar</a></li>
+                    <li><a href="product-grid-left-sidebar.html">Accesorios Cocina</a></li>
+                    <li><a href="product-grid-left-sidebar.html">Baterías, Ollas y Sartenes</a></li>
+                    <li><a href="product-grid-left-sidebar.html">Electrodomésticos</a></li>
+                  </ul>
+                </li>
+
+                <li class="dropdown dropdown-submenu">
+                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  <i class="lnr lnr-dinner" aria-hidden="true"></i>BBQ & Jardines</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="product-grid-left-sidebar.html">Accesorios Parrilleros</a></li>
+                    <li><a href="product-grid-left-sidebar.html">Utencilios</a></li>
+                    <li><a href="product-grid-left-sidebar.html">Luces para Exteriores</a></li>
+                    <li><a href="product-grid-left-sidebar.html">Lámparas Solares</a></li>
+                  </ul>
+                </li>
+
+                <li class="dropdown dropdown-submenu">
+                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  <i class="lnr lnr-bicycle" aria-hidden="true"></i>Deportes y Ocio</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="product-grid-left-sidebar.html">Accesorios Ciclismo</a></li>
+                    <li><a href="product-grid-left-sidebar.html">Juegos Indoor</a></li>
+                  </ul>
+                </li>
+
+                <li class="dropdown dropdown-submenu">
+                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  <i class="lnr lnr-heart-pulse" aria-hidden="true"></i>Salud y Belleza</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="product-grid-left-sidebar.html">Cuidado Personal</a></li>
+                    <li><a href="product-grid-left-sidebar.html">Masajeadores</a></li>
+                    <li><a href="product-grid-left-sidebar.html">Terapia</a></li>
+                  </ul>
+                </li>
+
                 <li><a href="product-grid-left-sidebar.html"><img src="img/home/category/category-img1.jpg" alt="Image"></a></li>
+
               </ul>
             </div>
 
@@ -186,54 +228,13 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
               <ul class="nav navbar-nav">
                 <li class="dropdown active">
-                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
-                  <ul class="dropdown-menu dropdown-menu-left">
-                    <li><a href="index.html">Home Default</a></li>
-                    <li><a href="index-v2.html">Home Classic</a></li>
-                    <li><a href="index-v3.html">Home Deals</a></li>
-                    <li class="active"><a href="index-v4.html">Home Mega</a></li>
-                  </ul>
+                  <a href="index.html">Inicio</a>
                 </li>
                 <li class="dropdown megaDropMenu">
-                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="300" data-close-others="true" aria-expanded="false">Shop</b></a>
-                  <ul class="dropdown-menu row">
-                    <li class="col-sm-3 col-xs-12">
-                      <ul class="list-unstyled">
-                        <li>Products Grid View</li>
-                        <li><a href="product-grid-left-sidebar.html">Products Sidebar Left</a></li>
-                        <li><a href="product-grid-right-sidebar.html">Products Sidebar Right</a></li>
-                        <li><a href="product-grid-3-col-filter.html">Products 3 Columns V1</a></li>
-                        <li><a href="product-grid-3-col.html">Products 3 Columns V2</a></li>
-                        <li><a href="product-grid-4-col.html">Products 4 Columns</a></li>
-                      </ul>
-                    </li>
-                    <li class="col-sm-3 col-xs-12">
-                      <ul class="list-unstyled">
-                        <li>Products List View</li>
-                        <li><a href="product-list-left-sidebar.html">Products Sidebar Left</a></li>
-                        <li><a href="product-list-right-sidebar.html">Products Sidebar Right</a></li>
-                        <li class="listHeading">Others</li>
-                        <li><a href="single-product.html">Single Product</a></li>
-                        <li><a href="cart-page.html">Cart Page</a></li>
-                      </ul>
-                    </li>
-                    <li class="col-sm-3 col-xs-12">
-                      <ul class="list-unstyled">
-                        <li>Checkout</li>
-                        <li><a href="checkout-step-1.html">Step 1 - Address</a></li>
-                        <li><a href="checkout-step-2.html">Step 2 - Shipping</a></li>
-                        <li><a href="checkout-step-3.html">Step 3 - Payment</a></li>
-                        <li><a href="checkout-step-4.html">Step 4 - Payment</a></li>
-                        <li><a href="checkout-complete.html">Order Complete</a></li>
-                      </ul>
-                    </li>
-                    <li class="col-sm-3 col-xs-12">
-                      <a href="#" class="menu-photo"><img src="img/menu-photo.jpg" alt="menu-img"></a>
-                    </li>
-                  </ul>
+                  <a href="product-grid-left-sidebar.html">Catálogo</b></a>
                 </li>
                 <li class="dropdown">
-                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">pages</a>
+                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ofertas</a>
                   <ul class="dropdown-menu dropdown-menu-left">
                     <li><a href="about-us.html">About Us</a></li>
                     <li><a href="signup.html">Register</a></li>
@@ -248,7 +249,7 @@
                   </ul>
                 </li>
                 <li class="dropdown">
-                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">blog</a>
+                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Membresía</a>
                   <ul class="dropdown-menu dropdown-menu-right">
                     <li><a href="blog-right-sidebar.html">Right Sidebar</a></li>
                     <li><a href="blog-left-sidebar.html">Left Sidebar</a></li>
@@ -259,7 +260,7 @@
                   </ul>
                 </li>
                 <li class="dropdown">
-                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account</a>
+                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mi perfil</a>
                   <ul class="dropdown-menu dropdown-menu-right">
                     <li><a href="account-dashboard.html">Dashboard</a></li>
                     <li><a href="account-profile.html">Profile</a></li>
@@ -270,7 +271,7 @@
                   </ul>
                 </li>
                 <li class="dropdown">
-                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Components</a>
+                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cupones</a>
                   <ul class="dropdown-menu dropdown-menu-right">
                     <li><a href="accrodion-toggle.html">Accrodion-Toggle</a></li>
                     <li><a href="tab-dropdown.html">Tab-Dropdown</a></li>
@@ -310,8 +311,8 @@
                       data-start="2000"
                       data-easing="Back.easeInOut"
                       data-endspeed="300">
-                      <small>Winter Offer</small><br>
-                      Up To 50% off
+                      <small>Socio PimDaKi VIP</small><br>
+                      ¡Únete a nuestro club!
                     </div>
 
                     <div class="tp-caption rs-caption-3 sft"
@@ -324,7 +325,7 @@
                       data-endspeed="300"
                       data-endeasing="Power1.easeIn"
                       data-captionhidden="off">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing
+                      Adquiere descuentos increíbles en todas tus compras.
                     </div>
                     <div class="tp-caption rs-caption-4 sft"
                       data-hoffset="0"
@@ -336,7 +337,7 @@
                       data-endspeed="300"
                       data-endeasing="Power1.easeIn"
                       data-captionhidden="off">
-                      <span class="page-scroll"><a href="#" class="btn primary-btn">Buy Now<i class="glyphicon glyphicon-chevron-right"></i></a></span>
+                      <span class="page-scroll"><a href="#" class="btn primary-btn">Adquirir<i class="glyphicon glyphicon-chevron-right"></i></a></span>
                     </div>
                   </div>
                 </li>
@@ -351,8 +352,8 @@
                       data-start="2000"
                       data-easing="Back.easeInOut"
                       data-endspeed="300">
-                      <small>Winter Offer</small><br>
-                      Up To 50% off
+                      <small>Oferta del día</small><br>
+                      Ahorra un 50% 
                     </div>
 
                     <div class="tp-caption rs-caption-3 sft"
@@ -365,7 +366,7 @@
                       data-endspeed="300"
                       data-endeasing="Power1.easeIn"
                       data-captionhidden="off">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing
+                      Batería de ollas especiales Proctor Silex
                     </div>
                     <div class="tp-caption rs-caption-4 sft"
                       data-hoffset="0"
@@ -377,7 +378,7 @@
                       data-endspeed="300"
                       data-endeasing="Power1.easeIn"
                       data-captionhidden="off">
-                      <span class="page-scroll"><a href="#" class="btn primary-btn">Buy Now<i class="glyphicon glyphicon-chevron-right"></i></a></span>
+                      <span class="page-scroll"><a href="#" class="btn primary-btn">Comprar<i class="glyphicon glyphicon-chevron-right"></i></a></span>
                     </div>
                   </div>
                 </li>
@@ -391,8 +392,8 @@
                       data-start="2000"
                       data-easing="Back.easeInOut"
                       data-endspeed="300">
-                      <small>Winter Offer</small><br>
-                      Up To 50% off
+                      <small>Oferta única</small><br>
+                      30% descuento 
                     </div>
 
                     <div class="tp-caption rs-caption-3 sft text-center"
@@ -404,7 +405,7 @@
                       data-endspeed="300"
                       data-endeasing="Power1.easeIn"
                       data-captionhidden="off">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing
+                      Aprovecha esta oferta única, set 14 cuchillos a precio único.
                     </div>
 
                     <div class="tp-caption rs-caption-4 sft text-center"
@@ -416,7 +417,7 @@
                       data-endspeed="300"
                       data-endeasing="Power1.easeIn"
                       data-captionhidden="off">
-                      <span class="page-scroll"><a href="#" class="btn primary-btn">Buy Now<i class="glyphicon glyphicon-chevron-right"></i></a></span>
+                      <span class="page-scroll"><a href="#" class="btn primary-btn">Comprar<i class="glyphicon glyphicon-chevron-right"></i></a></span>
                     </div>
                   </div>
                 </li>
@@ -437,9 +438,9 @@
                 <div class="productImage productImage1">
                 </div>
                 <div class="productCaption clearfix text-right">
-                  <h3><a href="single-product.html">women’s Shoes</a></h3>
-                  <p>Lorem ipsum dolor sit ameit</p>
-                  <a href="single-product.html" class="btn btn-border">Shop Now</a>
+                  <h3><a href="single-product.html">Juego de Cuchillos</a></h3>
+                  <p>14 piezas, diferentes cortes.</p>
+                  <a href="single-product.html" class="btn btn-border">Comprar</a>
                 </div>
               </div>
             </div>
@@ -448,9 +449,9 @@
                 <div class="productImage productImage2">
                 </div>
                 <div class="productCaption clearfix text-right">
-                  <h3><a href="single-product.html">Headphone wifi</a></h3>
-                  <p>Lorem ipsum dolor sit ameit</p>
-                  <a href="single-product.html" class="btn btn-border">Shop Now</a>
+                  <h3><a href="single-product.html">Set de Ollas</a></h3>
+                  <p>Set de ollas inoxidables, Proctor Silex</p>
+                  <a href="single-product.html" class="btn btn-border">Comprar</a>
                 </div>
               </div>
             </div>
@@ -463,14 +464,14 @@
                 <div class="category-content">
                   <div class="category-top">
                     <div class="category-menu text-center">
-                      <h2 class="category-title">Men’s Clothing</h2>
+                      <h2 class="category-title">Promociones</h2>
                       <ul>
-                        <li><a href="product-grid-left-sidebar.html">Down Jackets</a></li>
-                        <li><a href="product-grid-left-sidebar.html">T Shirts</a></li>
-                        <li><a href="product-grid-left-sidebar.html">Jeans</a></li>
-                        <li><a href="product-grid-left-sidebar.html">Casual Pants</a></li>
-                        <li><a href="product-grid-left-sidebar.html">Sunglasses</a></li>
-                        <li><a href="product-grid-left-sidebar.html">Hoodies</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Accesorios Cocina</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Accesorios Hogar</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Accesorios Tecnología</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Accesorios Deportivos</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Accesorios Electronicos</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Accesorios Parrilleros</a></li>
                       </ul>
                     </div>
                     <div class="category-Slider">
@@ -549,14 +550,14 @@
                 <div class="category-content">
                   <div class="category-top">
                     <div class="category-menu text-center">
-                      <h2 class="category-title">woMen’s Clothing</h2>
+                      <h2 class="category-title">Electrónica</h2>
                       <ul>
-                        <li><a href="product-grid-left-sidebar.html">Casual Dresses</a></li>
-                        <li><a href="product-grid-left-sidebar.html">Sweaters</a></li>
-                        <li><a href="product-grid-left-sidebar.html">Coats & Jackets</a></li>
-                        <li><a href="product-grid-left-sidebar.html">Cosmetic</a></li>
-                        <li><a href="product-grid-left-sidebar.html">T Shirts</a></li>
-                        <li><a href="product-grid-left-sidebar.html">Shoes</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Accesorios Móviles</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Accesorios Tablet</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Accesorios Laptop</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Audio</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Video</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Drones</a></li>
                       </ul>
                     </div>
                     <div class="category-Slider">
@@ -635,14 +636,15 @@
                 <div class="category-content">
                   <div class="category-top">
                     <div class="category-menu text-center">
-                      <h2 class="category-title">Jewelry Collections</h2>
+                      <h2 class="category-title">Entreteni-
+                      miento</h2>
                       <ul>
-                        <li><a href="product-grid-left-sidebar.html">Jewlery Sets</a></li>
-                        <li><a href="product-grid-left-sidebar.html">Earring Sets</a></li>
-                        <li><a href="product-grid-left-sidebar.html">DIY Jewelry</a></li>
-                        <li><a href="product-grid-left-sidebar.html">Pendant Nacklaces</a></li>
-                        <li><a href="product-grid-left-sidebar.html">Popupar Bracelets</a></li>
-                        <li><a href="product-grid-left-sidebar.html">Pendant</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Juegos de Mesa</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Juegos Outdoor</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Juegos Indoor</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Ciclismo</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Regalos</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Hobby</a></li>
                       </ul>
                     </div>
                     <div class="category-Slider">
@@ -721,14 +723,14 @@
                 <div class="category-content">
                   <div class="category-top">
                     <div class="category-menu text-center">
-                      <h2 class="category-title">Bags & Shoes</h2>
+                      <h2 class="category-title">Cocina & BBQ</h2>
                       <ul>
-                        <li><a href="product-grid-left-sidebar.html">Women’s Boots</a></li>
-                        <li><a href="product-grid-left-sidebar.html">Women’s Casual Shoes</a></li>
-                        <li><a href="product-grid-left-sidebar.html">Women’s Bags</a></li>
-                        <li><a href="product-grid-left-sidebar.html">Men’s Boots</a></li>
-                        <li><a href="product-grid-left-sidebar.html">Men’s Casual Shoes</a></li>
-                        <li><a href="product-grid-left-sidebar.html">Men’s Bags</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Electrodomésticos</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Accesorios Parrilleros</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Ollas y Sartenes</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Espatulas</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Cucharones</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Cuchillos</a></li>
                       </ul>
                     </div>
                     <div class="category-Slider">
@@ -999,6 +1001,7 @@
       </div>
     </div>
 
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="plugins/jquery-ui/jquery-ui.js"></script>
     <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
