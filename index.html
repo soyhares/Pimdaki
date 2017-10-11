@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
   <head>
 
@@ -24,6 +24,7 @@
 
     <!-- CUSTOM CSS -->
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/color-option2.css" id="option_color">
 
     <!-- Icons -->
@@ -97,8 +98,8 @@
               <a href="cart-page.html" class="dropdown-toggle shop-cart" data-toggle="dropdown">
                 <i class="fa fa-shopping-cart"></i>
                 <span class="hidden-xs">
-                  <span class="cart-total">Carrito (3)</span><br>
-                  <span class="cart-price">₡80.000</span>
+                  <span class="cart-total">Carrito (0)</span><br>
+                  <span class="cart-price">₡00.00</span>
                 </span>
               </a>
               <ul class="dropdown-menu dropdown-menu-right">
@@ -147,15 +148,15 @@
                   <span class="icon-bar"></span>
                 </button>
               </a>
-              <ul class="dropdown-menu dropdown-menu-left">
-                <li><a href="product-grid-left-sidebar.html"><i class="lnr lnr-gift" aria-hidden="true"></i>Promociones</a></li>
+              <ul id="home_category" class="dropdown-menu dropdown-menu-left">
+                <li><a id="Promociones" href="#"><i class="lnr lnr-gift" aria-hidden="true"></i>Promociones</a></li>
 
                 <li class="dropdown dropdown-submenu">
                   <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                   <i class="lnr lnr-laptop-phone" aria-hidden="true"></i>Electro y Tecnología</a>
                   <ul class="dropdown-menu">
-                    <li><a href="product-grid-left-sidebar.html">Accesorios</a></li>
-                    <li><a href="product-grid-left-sidebar.html">Audio y Video</a></li>
+                    <li><a id="Electro y Tecnología/Accesorios" href="#">Accesorios</a></li>
+                    <li><a id="Electro y Tecnología/Audio y Video" href="#">Audio y Video</a></li>
                   </ul>
                 </li>
 
@@ -163,9 +164,9 @@
                   <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                   <i class="lnr lnr-rocket" aria-hidden="true"></i>Entretenimiento</a>
                   <ul class="dropdown-menu">
-                    <li><a href="product-grid-left-sidebar.html">Regalos</a></li>
-                    <li><a href="product-grid-left-sidebar.html">Juegos de Mesa</a></li>
-                    <li><a href="product-grid-left-sidebar.html">Hobby</a></li>
+                    <li><a id="Entretenimiento/Regalos" href="#">Regalos</a></li>
+                    <li><a id="Entretenimiento/Juegos de Mesa" href="#">Juegos de Mesa</a></li>
+                    <li><a id="Entretenimiento/Hobby" href="#">Hobby</a></li>
                   </ul>
                 </li>
 
@@ -173,10 +174,10 @@
                   <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                   <i class="lnr lnr-home" aria-hidden="true"></i>Hogar y Cocina</a>
                   <ul class="dropdown-menu">
-                    <li><a href="product-grid-left-sidebar.html">Accesorios Hogar</a></li>
-                    <li><a href="product-grid-left-sidebar.html">Accesorios Cocina</a></li>
-                    <li><a href="product-grid-left-sidebar.html">Baterías, Ollas y Sartenes</a></li>
-                    <li><a href="product-grid-left-sidebar.html">Electrodomésticos</a></li>
+                    <li><a id="Hogar y Cocina/Accesorios Hogar" href="#">Accesorios Hogar</a></li>
+                    <li><a id="Hogar y Cocina/Accesorios Cocina" href="#">Accesorios Cocina</a></li>
+                    <li><a id="Hogar y Cocina/Baterías, Ollas y Sartenes" href="#">Baterías, Ollas y Sartenes</a></li>
+                    <li><a id="Hogar y Cocina/Electrodomésticos" href="#">Electrodomésticos</a></li>
                   </ul>
                 </li>
 
@@ -184,10 +185,10 @@
                   <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                   <i class="lnr lnr-dinner" aria-hidden="true"></i>BBQ & Jardines</a>
                   <ul class="dropdown-menu">
-                    <li><a href="product-grid-left-sidebar.html">Accesorios Parrilleros</a></li>
-                    <li><a href="product-grid-left-sidebar.html">Utencilios</a></li>
-                    <li><a href="product-grid-left-sidebar.html">Luces para Exteriores</a></li>
-                    <li><a href="product-grid-left-sidebar.html">Lámparas Solares</a></li>
+                    <li><a id="BBQ & Jardines/Accesorios Parrilleros" href="#">Accesorios Parrilleros</a></li>
+                    <li><a id="BBQ & Jardines/Utencilios" href="#">Utencilios</a></li>
+                    <li><a id="BBQ & Jardines/Luces para Exteriores" href="#">Luces para Exteriores</a></li>
+                    <li><a id="BBQ & Jardines/Lámparas Solares" href="#">Lámparas Solares</a></li>
                   </ul>
                 </li>
 
@@ -195,8 +196,8 @@
                   <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                   <i class="lnr lnr-bicycle" aria-hidden="true"></i>Deportes y Ocio</a>
                   <ul class="dropdown-menu">
-                    <li><a href="product-grid-left-sidebar.html">Accesorios Ciclismo</a></li>
-                    <li><a href="product-grid-left-sidebar.html">Juegos Indoor</a></li>
+                    <li><a id="Deportes y Ocio/Accesorios Ciclismo" href="#">Accesorios Ciclismo</a></li>
+                    <li><a id="Deportes y Ocio/Juegos Indoor" href="#">Juegos Indoor</a></li>
                   </ul>
                 </li>
 
@@ -204,13 +205,12 @@
                   <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                   <i class="lnr lnr-heart-pulse" aria-hidden="true"></i>Salud y Belleza</a>
                   <ul class="dropdown-menu">
-                    <li><a href="product-grid-left-sidebar.html">Cuidado Personal</a></li>
-                    <li><a href="product-grid-left-sidebar.html">Masajeadores</a></li>
-                    <li><a href="product-grid-left-sidebar.html">Terapia</a></li>
+                    <li><a id="Salud y Belleza/Cuidado Personal" href="#">Cuidado Personal</a></li>
+                    <li><a id="Salud y Belleza/Masajeadores" href="#">Masajeadores</a></li>
+                    <li><a id="Salud y Belleza/Terapia" href="#">Terapia</a></li>
                   </ul>
                 </li>
-
-                <li><a href="product-grid-left-sidebar.html"><img src="img/home/category/category-img1.jpg" alt="Image"></a></li>
+                <li><a id="membresía" href="product-grid-left-sidebar.html"><img src="img/home/category/category-img1.jpg" alt="Image"></a></li>
 
               </ul>
             </div>
@@ -230,60 +230,17 @@
                 <li class="dropdown active">
                   <a href="index.html">Inicio</a>
                 </li>
-                <li class="dropdown megaDropMenu">
+                <li class="dropdown">
                   <a href="product-grid-left-sidebar.html">Catálogo</b></a>
                 </li>
                 <li class="dropdown">
-                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ofertas</a>
-                  <ul class="dropdown-menu dropdown-menu-left">
-                    <li><a href="about-us.html">About Us</a></li>
-                    <li><a href="signup.html">Register</a></li>
-                    <li><a href="signup-login.html">Register or Login</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="lost-password.html">Password Recovery</a></li>
-                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                    <li><a href="terms-and-conditions.html">Terms &amp; Conditions</a></li>
-                    <li><a href="404.html">404 Not Found</a></li>
-
-                    <li><a href="coming-soon.html">Coming Soon</a></li>
-                  </ul>
+                  <a href="product-grid-left-sidebar.html">Ofertas</a>
                 </li>
                 <li class="dropdown">
-                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Membresía</a>
-                  <ul class="dropdown-menu dropdown-menu-right">
-                    <li><a href="blog-right-sidebar.html">Right Sidebar</a></li>
-                    <li><a href="blog-left-sidebar.html">Left Sidebar</a></li>
-                    <li><a href="blog-fullwidth.html">Full Width</a></li>
-                    <li><a href="blog-single-fullwidth.html">Single Post</a></li>
-                    <li><a href="blog-single-right-sidebar.html">Single Right Sidebar</a></li>
-                    <li><a href="blog-single-left-sidebar.html">Single Left Sidebar</a></li>
-                  </ul>
+                  <a href="account-profile.html">Membresía</a>
                 </li>
                 <li class="dropdown">
-                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mi perfil</a>
-                  <ul class="dropdown-menu dropdown-menu-right">
-                    <li><a href="account-dashboard.html">Dashboard</a></li>
-                    <li><a href="account-profile.html">Profile</a></li>
-                    <li><a href="account-all-orders.html">All Orders</a></li>
-                    <li><a href="account-single-order.html">Single Order</a></li>
-                    <li><a href="account-wishlist.html">Wishlist</a></li>
-                    <li><a href="account-address.html">Address</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown">
-                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cupones</a>
-                  <ul class="dropdown-menu dropdown-menu-right">
-                    <li><a href="accrodion-toggle.html">Accrodion-Toggle</a></li>
-                    <li><a href="tab-dropdown.html">Tab-Dropdown</a></li>
-                    <li><a href="alert-label-badges.html">Alert-Label-Badges</a></li>
-                    <li><a href="progress-bar.html">Progress Bar</a></li>
-                    <li><a href="buttons.html">Buttons</a></li>
-                    <li><a href="forms.html">Forms</a></li>
-                    <li><a href="list-panel.html">Listgroups Panel</a></li>
-                    <li><a href="tooltip-pagination.html">Tooltip Pagination</a></li>
-                    <li><a href="typography.html">Typography</a></li>
-                    <li><a href="responsive-embed.html">Responsive Embed</a></li>
-                  </ul>
+                  <a href="account-profile.html">Mi perfil</a>
                 </li>
               </ul>
             </div><!-- /.navbar-collapse -->
@@ -470,7 +427,7 @@
                         <li><a href="product-grid-left-sidebar.html">Accesorios Hogar</a></li>
                         <li><a href="product-grid-left-sidebar.html">Accesorios Tecnología</a></li>
                         <li><a href="product-grid-left-sidebar.html">Accesorios Deportivos</a></li>
-                        <li><a href="product-grid-left-sidebar.html">Accesorios Electronicos</a></li>
+                        <li><a href="product-grid-left-sidebar.html">Accesorios Electrónicos</a></li>
                         <li><a href="product-grid-left-sidebar.html">Accesorios Parrilleros</a></li>
                       </ul>
                     </div>
@@ -816,47 +773,44 @@
           <div class="row">
             <div class="col-sm-2 col-xs-12">
               <div class="footerLink">
-                <h5>Accessories</h5>
+                <h5>Accesorios</h5>
                 <ul class="list-unstyled">
-                  <li><a href="#">Body care </a></li>
-                  <li><a href="#">Chambray </a></li>
-                  <li><a href="#">Floral </a></li>
-                  <li><a href="#">Rejuvination </a></li>
-                  <li><a href="#">Shaving </a></li>
-                  <li><a href="#">Toilette </a></li>
+                  <li><a href="#">Cocina </a></li>
+                  <li><a href="#">Electrónica </a></li>
+                  <li><a href="#">Jardín y Exteriores </a></li>
+                  <li><a href="#">Tecnología </a></li>
+                  <li><a href="#">Salud y Belleza </a></li>
+                  <li><a href="#">Audio y Video </a></li>
                 </ul>
               </div>
             </div>
             <div class="col-sm-2 col-xs-12">
               <div class="footerLink">
-                <h5>BRANDS</h5>
+                <h5>Entretenimiento</h5>
                 <ul class="list-unstyled">
-                  <li><a href="#">Barbour </a></li>
-                  <li><a href="#">Brioni </a></li>
-                  <li><a href="#">Oliver Spencer</a></li>
-                  <li><a href="#">Belstaff</a></li>
+                  <li><a href="#">Juegos Indoor </a></li>
+                  <li><a href="#">Juegos de Mesa </a></li>
+                  <li><a href="#">Regalos</a></li>
+                  <li><a href="#">Hobby</a></li>
                 </ul>
               </div>
             </div>
             <div class="col-sm-2 col-xs-12">
               <div class="footerLink">
-                <h5>Accessories</h5>
+                <h5>Tecnología</h5>
                 <ul class="list-unstyled">
-                  <li><a href="#">Body care </a></li>
-                  <li><a href="#">Chambray </a></li>
-                  <li><a href="#">Floral </a></li>
-                  <li><a href="#">Rejuvination </a></li>
-                  <li><a href="#">Shaving </a></li>
-                  <li><a href="#">Toilette </a></li>
+                  <li><a href="#">Móviles </a></li>
+                  <li><a href="#">Computadoras </a></li>
+                  <li><a href="#">Tablets </a></li>
                 </ul>
               </div>
             </div>
             <div class="col-sm-2 col-xs-12">
               <div class="footerLink">
-                <h5>Get in Touch</h5>
+                <h5>Contacto</h5>
                 <ul class="list-unstyled">
-                  <li>Call us at (555)-555-5555</li>
-                  <li><a href="mailto:support@iamabdus.com">support@iamabdus.com</a></li>
+                  <li>Teléfono (506)2262-5777</li>
+                  <li><a href="mailto:soporte@pimdaki.com">soporte@pimdaki.com</a></li>
                 </ul>
                 <ul class="list-inline">
                   <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -869,12 +823,11 @@
             </div>
             <div class="col-sm-4 col-xs-12">
               <div class="newsletter clearfix">
-                <h4>Newsletter</h4>
-                <h3>Sign up now</h3>
-                <p>Enter your email address and get notified about new products. We hate spam!</p>
+                <h3>Suscribirse</h3>
+                <p>Ingresa tu correo para recibir promociones especiales. ¡Se parte del club!</p>
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="your email address" aria-describedby="basic-addon2">
-                  <a href="#" class="input-group-addon" id="basic-addon2">go <i class="glyphicon glyphicon-chevron-right"></i></a>
+                  <input type="text" class="form-control" placeholder="Correo Electrónico..." aria-describedby="basic-addon2">
+                  <a href="#" class="input-group-addon" id="basic-addon2">Ir <i class="glyphicon glyphicon-chevron-right"></i></a>
                 </div>
               </div>
             </div>
@@ -886,7 +839,7 @@
         <div class="container">
           <div class="row">
             <div class="col-sm-7 col-xs-12">
-              <p>&copy; 2016 Copyright Bigbag Store Bootstrap Template by <a target="_blank" href="http://www.iamabdus.com/">Abdus</a>.</p>
+              <p>&copy; 2017 Copyright Portafolio AM Siete S.A  <a target="_blank" href="https://www.portafolioam7.com/">Visitar</a>.</p>
             </div>
             <div class="col-sm-5 col-xs-12">
               <ul class="list-inline">
@@ -907,25 +860,25 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3 class="modal-title">log in</h3>
+            <h3 class="modal-title">Ingresar</h3>
           </div>
           <div class="modal-body">
             <form action="" method="POST" role="form">
               <div class="form-group">
-                <label for="">Enter Email</label>
+                <label for="">Correo Electrónico</label>
                 <input type="email" class="form-control" id="">
               </div>
               <div class="form-group">
-                <label for="">Password</label>
+                <label for="">Contraseña</label>
                 <input type="password" class="form-control" id="">
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox"> Remember Me
+                  <input type="checkbox"> Recordarme
                 </label>
               </div>
-              <button type="submit" class="btn btn-primary btn-block">log in</button>
-              <button type="button" class="btn btn-link btn-block">Forgot Password?</button>
+              <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+              <button type="button" class="btn btn-link btn-block">¿Ovidaste la contraseña?</button>
             </form>
           </div>
         </div>
@@ -938,23 +891,23 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3 class="modal-title">Create an account</h3>
+            <h3 class="modal-title">Crear cuenta</h3>
           </div>
           <div class="modal-body">
             <form action="" method="POST" role="form">
               <div class="form-group">
-                <label for="">Enter Email</label>
+                <label for="">Correo Electrónico</label>
                 <input type="email" class="form-control" id="">
               </div>
               <div class="form-group">
-                <label for="">Password</label>
+                <label for="">Contraseña</label>
                 <input type="password" class="form-control" id="">
               </div>
               <div class="form-group">
-                <label for="">Confirm Password</label>
+                <label for="">Repetir Contraseña</label>
                 <input type="password" class="form-control" id="">
               </div>
-              <button type="submit" class="btn btn-primary btn-block">Sign up</button>
+              <button type="submit" class="btn btn-primary btn-block">Registro</button>
             </form>
           </div>
         </div>
@@ -977,22 +930,22 @@
                 <p>Classic sneaker from Vans. Cotton canvas and suede upper. Textile lining with heel stabilizer and ankle support. Contrasting laces. Sits on a classic waffle rubber sole.</p>
                 <span class="quick-drop">
                   <select name="guiest_id3" id="guiest_id3" class="select-drop">
-                    <option value="0">Size</option>
-                    <option value="1">Size 1</option>
-                    <option value="2">Size 2</option>
-                    <option value="3">Size 3</option>
+                    <option value="0">Tallas</option>
+                    <option value="1">s</option>
+                    <option value="2">m</option>
+                    <option value="3">l</option>
                   </select>
                 </span>
                 <span class="quick-drop resizeWidth">
                   <select name="guiest_id4" id="guiest_id4" class="select-drop">
-                    <option value="0">Qty</option>
-                    <option value="1">Qty 1</option>
-                    <option value="2">Qty 2</option>
-                    <option value="3">Qty 3</option>
+                    <option value="0">Unidades</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
                   </select>
                 </span>
                 <div class="btn-area">
-                  <a href="#" class="btn btn-primary btn-block">Add to cart <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                  <a href="#" class="btn btn-primary btn-block">Agregar al carrito <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                 </div>
               </div>
             </div>
@@ -1010,6 +963,7 @@
     <script src="plugins/owl-carousel/owl.carousel.js"></script>
     <script src="plugins/selectbox/jquery.selectbox-0.1.3.min.js"></script>
     <script src="plugins/countdown/jquery.syotimer.js"></script>
+    <script src="js/index.js"></script>
     <script src="js/custom.js"></script>
 
   </body>

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
   <head>
 
     <!-- SITE TITTLE -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Product List Sidebar Left - BIGBAG Store</title>
+    <title>PimDaKi | Catálogo</title>
 
     <!-- PLUGINS CSS STYLE -->
     <link href="plugins/jquery-ui/jquery-ui.css" rel="stylesheet">
@@ -21,7 +21,9 @@
 
     <!-- CUSTOM CSS -->
     <link href="css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/colors/default.css" id="option_color">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/color-option2.css" id="option_color">
+
 
     <!-- Icons -->
     <link rel="shortcut icon" href="img/favicon.png">
@@ -57,22 +59,22 @@
               </div>
               <div class="col-md-6 col-sm-7 col-xs-12">
                 <ul class="list-inline pull-right top-right">
-                  <li class="account-login"><span><a data-toggle="modal" href='.login-modal'>Log in</a><small>or</small><a data-toggle="modal" href='#signup'>Create an account</a></span></li>
+                  <li class="account-login"><span><a data-toggle="modal" href='.login-modal'>Ingresar</a><small>ó</small><a data-toggle="modal" href='#signup'>Registrarse</a></span></li>
                   <li class="searchBox">
                     <a href="#"><i class="fa fa-search"></i></a>
                     <ul class="dropdown-menu dropdown-menu-right">
                       <li>
                         <span class="input-group">
                           <input type="text" class="form-control" placeholder="Search…" aria-describedby="basic-addon2">
-                          <button type="submit" class="input-group-addon">Submit</button>
+                          <button type="submit" class="input-group-addon">Enviar</button>
                         </span>
                       </li>
                     </ul>
                   </li>
                   <li class="dropdown cart-dropdown">
-                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-shopping-cart"></i>$0</a>
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-shopping-cart"></i>₡00</a>
                     <ul class="dropdown-menu dropdown-menu-right">
-                      <li>Item(s) in your cart</li>
+                      <li>Carrito</li>
                       <li>
                         <a href="single-product.html">
                           <div class="media">
@@ -95,8 +97,8 @@
                       </li>
                       <li>
                         <div class="btn-group" role="group" aria-label="...">
-                          <button type="button" class="btn btn-default" onclick="location.href='cart-page.html';">Shopping Cart</button>
-                          <button type="button" class="btn btn-default" onclick="location.href='checkout-step-1.html';">Checkout</button>
+                          <button type="button" class="btn btn-default" onclick="location.href='cart-page.html';">Mi Carrito</button>
+                          <button type="button" class="btn btn-default" onclick="location.href='checkout-step-1.html';">Revisar</button>
                         </div>
                       </li>
                     </ul>
@@ -123,105 +125,21 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
-              <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
-                  <ul class="dropdown-menu dropdown-menu-left">
-                    <li><a href="index.html">Home Default</a></li>
-                    <li><a href="index-v2.html">Home Classic</a></li>
-                    <li><a href="index-v3.html">Home Deals</a></li>
-                    <li><a href="index-v4.html">Home Mega</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown megaDropMenu active">
-                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="300" data-close-others="true" aria-expanded="false">Shop</b></a>
-                  <ul class="dropdown-menu row">
-                    <li class="col-sm-3 col-xs-12">
-                      <ul class="list-unstyled">
-                        <li>Products Grid View</li>
-                        <li><a href="product-grid-left-sidebar.html">Products Sidebar Left</a></li>
-                        <li><a href="product-grid-right-sidebar.html">Products Sidebar Right</a></li>
-                        <li><a href="product-grid-3-col-filter.html">Products 3 Columns V1</a></li>
-                        <li><a href="product-grid-3-col.html">Products 3 Columns V2</a></li>
-                        <li><a href="product-grid-4-col.html">Products 4 Columns</a></li>
-                      </ul>
-                    </li>
-                    <li class="col-sm-3 col-xs-12">
-                      <ul class="list-unstyled">
-                        <li>Products List View</li>
-                        <li class="active"><a href="product-list-left-sidebar.html">Products Sidebar Left</a></li>
-                        <li><a href="product-list-right-sidebar.html">Products Sidebar Right</a></li>
-                        <li class="listHeading">Others</li>
-                        <li><a href="single-product.html">Single Product</a></li>
-                        <li><a href="cart-page.html">Cart Page</a></li>
-                      </ul>
-                    </li>
-                    <li class="col-sm-3 col-xs-12">
-                      <ul class="list-unstyled">
-                        <li>Checkout</li>
-                        <li><a href="checkout-step-1.html">Step 1 - Address</a></li>
-                        <li><a href="checkout-step-2.html">Step 2 - Shipping</a></li>
-                        <li><a href="checkout-step-3.html">Step 3 - Payment</a></li>
-                        <li><a href="checkout-step-4.html">Step 4 - Payment</a></li>
-                        <li><a href="checkout-complete.html">Order Complete</a></li>
-                      </ul>
-                    </li>
-                    <li class="col-sm-3 col-xs-12">
-                      <a href="#" class="menu-photo"><img src="img/menu-photo.jpg" alt="menu-img"></a>
-                    </li>
-                  </ul>
+              <ul class="nav navbar-nav">
+                <li class="dropdown active">
+                  <a href="index.html">Inicio</a>
                 </li>
                 <li class="dropdown">
-                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">pages</a>
-                  <ul class="dropdown-menu dropdown-menu-left">
-                    <li><a href="about-us.html">About Us</a></li>
-                    <li><a href="signup.html">Register</a></li>
-                    <li><a href="signup-login.html">Register or Login</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="lost-password.html">Password Recovery</a></li>
-                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                    <li><a href="terms-and-conditions.html">Terms &amp; Conditions</a></li>
-                    <li><a href="404.html">404 Not Found</a></li>
-
-                    <li><a href="coming-soon.html">Coming Soon</a></li>
-                  </ul>
+                  <a href="product-grid-left-sidebar.html">Catálogo</b></a>
                 </li>
                 <li class="dropdown">
-                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">blog</a>
-                  <ul class="dropdown-menu dropdown-menu-right">
-                    <li><a href="blog-right-sidebar.html">Right Sidebar</a></li>
-                    <li><a href="blog-left-sidebar.html">Left Sidebar</a></li>
-                    <li><a href="blog-fullwidth.html">Full Width</a></li>
-                    <li><a href="blog-single-fullwidth.html">Single Post</a></li>
-                    <li><a href="blog-single-right-sidebar.html">Single Right Sidebar</a></li>
-                    <li><a href="blog-single-left-sidebar.html">Single Left Sidebar</a></li>
-                  </ul>
+                  <a href="product-grid-left-sidebar.html">Ofertas</a>
                 </li>
                 <li class="dropdown">
-                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account</a>
-                  <ul class="dropdown-menu dropdown-menu-right">
-                    <li><a href="account-dashboard.html">Dashboard</a></li>
-                    <li><a href="account-profile.html">Profile</a></li>
-                    <li><a href="account-all-orders.html">All Orders</a></li>
-                    <li><a href="account-single-order.html">Single Order</a></li>
-                    <li><a href="account-wishlist.html">Wishlist</a></li>
-                    <li><a href="account-address.html">Address</a></li>
-                  </ul>
+                  <a href="account-profile.html">Membresía</a>
                 </li>
-              <li class="dropdown">
-                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Components</a>
-                  <ul class="dropdown-menu dropdown-menu-right">
-                    <li><a href="accrodion-toggle.html">Accrodion-Toggle</a></li>
-                    <li><a href="tab-dropdown.html">Tab-Dropdown</a></li>
-                    <li><a href="alert-label-badges.html">Alert-Label-Badges</a></li>
-                    <li><a href="progress-bar.html">Progress Bar</a></li>
-                    <li><a href="buttons.html">Buttons</a></li>
-                    <li><a href="forms.html">Forms</a></li>
-                    <li><a href="list-panel.html">Listgroups Panel</a></li>
-                    <li><a href="tooltip-pagination.html">Tooltip Pagination</a></li>
-                    <li><a href="typography.html">Typography</a></li>
-                    <li><a href="responsive-embed.html">Responsive Embed</a></li>
-                  </ul>
+                <li class="dropdown">
+                  <a href="account-profile.html">Mi perfil</a>
                 </li>
               </ul>
             </div><!-- /.navbar-collapse -->
@@ -236,18 +154,18 @@
           <div class="row">
             <div class="col-xs-6">
               <div class="page-title">
-                <h2>Product List View</h2>
+                <h2>Catálogo</h2>
               </div>
             </div>
             <div class="col-xs-6">
               <ol class="breadcrumb pull-right">
                 <li>
-                  <a href="index.html">Home</a>
+                  <a href="index.html">Inicio</a>
                 </li>
                 <li>
-                  <a href="#">shop</a>
+                  <a href="#">Catálogo</a>
                 </li>
-                <li class="active">Product List Left Sidebar</li>
+                <li class="active">Productos</li>
               </ol>
             </div>
           </div>
@@ -260,52 +178,59 @@
           <div class="row">
             <div class="col-md-3 col-sm-4 col-xs-12 sideBar">
               <div class="panel panel-default">
-                <div class="panel-heading">Product categories</div>
+                <div class="panel-heading">Categorías</div>
                 <div class="panel-body">
                   <div class="collapse navbar-collapse navbar-ex1-collapse navbar-side-collapse">
-                    <ul class="nav navbar-nav side-nav">
+                    <ul id="list_left_category" class="nav navbar-nav side-nav">
                       <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#women">Women <i class="fa fa-plus"></i></a>
-                        <ul id="women" class="collapse collapseItem">
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Accessories <span>(6)</span></a></li>
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Bag <span>(6)</span></a></li>
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Cloths <span>(25)</span></a></li>
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Bed &amp; Bath <span>(2)</span></a></li>
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Swimming costume <span>(5)</span></a></li>
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Sport Tops &amp; Shoes <span>(3)</span></a></li>
+                        <a id="Promociones" href="#">Promociones<i class="fa fa-arrow-right"></i></a>
+                      </li>
+                      <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#Electro">Electro y Tecnología <i class="fa fa-plus"></i></a>
+                        <ul id="Electro" class="collapse collapseItem">
+                          <li><a id="Electro y Tecnología/Accesorios" href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Accesorios</a></li>
+                          <li><a id="Electro y Tecnología/Audio y Video" href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Audio y Video</a></li>
                         </ul>
                       </li>
                       <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#men">Men <i class="fa fa-plus"></i></a>
-                        <ul id="men" class="collapse collapseItem">
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Accessories <span>(6)</span></a></li>
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Bag <span>(6)</span></a></li>
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Cloths <span>(25)</span></a></li>
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Bed &amp; Bath <span>(2)</span></a></li>
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Swimming costume <span>(5)</span></a></li>
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Sport Tops &amp; Shoes <span>(3)</span></a></li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#Entretenimiento">Entretenimiento<i class="fa fa-plus"></i></a>
+                        <ul id="Entretenimiento" class="collapse collapseItem">
+                          <li><a id="Entretenimiento/Regalos" href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Regalos</a></li>
+                          <li><a id="Entretenimiento/Juegos de Mesa" href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Juegos de Mesa</a></li>
+                          <li><a id="Entretenimiento/Hobby" href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Hobby</a></li>
                         </ul>
                       </li>
                       <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#kids">Kids <i class="fa fa-plus"></i></a>
-                        <ul id="kids" class="collapse collapseItem">
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Accessories <span>(6)</span></a></li>
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Bag <span>(6)</span></a></li>
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Cloths <span>(25)</span></a></li>
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Bed &amp; Bath <span>(2)</span></a></li>
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Swimming costume <span>(5)</span></a></li>
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Sport Tops &amp; Shoes <span>(3)</span></a></li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#Hogar">Hogar y Cocina <i class="fa fa-plus"></i></a>
+                        <ul id="Hogar" class="collapse collapseItem">
+                          <li><a id="Hogar y Cocina/Accesorios Hogar" href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Accesorios Hogar</a></li>
+                          <li><a id="Hogar y Cocina/Accesorios Cocina" href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Accesorios Cocina</a></li>
+                          <li><a id="Hogar y Cocina/Baterías, Ollas y Sartenes" href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Baterías, Ollas y Sartenes</a></li>
+                          <li><a id="Hogar y Cocina/Electrodomésticos" href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Electrodomésticos</a></li>
                         </ul>
                       </li>
                       <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#accessories">Accessories <i class="fa fa-plus"></i></a>
-                        <ul id="accessories" class="collapse collapseItem">
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Accessories <span>(6)</span></a></li>
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Bag <span>(6)</span></a></li>
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Cloths <span>(25)</span></a></li>
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Bed &amp; Bath <span>(2)</span></a></li>
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Swimming costume <span>(5)</span></a></li>
-                          <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Sport Tops &amp; Shoes <span>(3)</span></a></li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#BBQ">BBQ y Jardines<i class="fa fa-plus"></i></a>
+                        <ul id="BBQ" class="collapse collapseItem">
+                          <li><a id="BBQ & Jardines/Accesorios Parrilleros" href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Accesorios Parrilleros</a></li>
+                          <li><a id="BBQ & Jardines/Utencilios" href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Utencilios</a></li>
+                          <li><a id="BBQ & Jardines/Luces para Exteriores" href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Luces para Exteriores</a></li>
+                          <li><a id="BBQ & Jardines/Lámparas Solares" href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Lámparas Solares</a></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#Deportes">Deportes y Ocio<i class="fa fa-plus"></i></a>
+                        <ul id="Deportes" class="collapse collapseItem">
+                          <li><a id="Deportes y Ocio/Accesorios Ciclismo" href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Accesorios Ciclismo</a></li>
+                          <li><a id="Deportes y Ocio/Juegos Indoor" href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Juegos Indoor</a></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#Salud">Salud y Belleza <i class="fa fa-plus"></i></a>
+                        <ul id="Salud" class="collapse collapseItem">
+                          <li><a id="Salud y Belleza/Cuidado Personal" href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Cuidado Personal</a></li>
+                          <li><a id="Salud y Belleza/Masajeadores" href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Masajeadores</a></li>
+                          <li><a id="Salud y Belleza/Terapia" href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Terapia</a></li>
                         </ul>
                       </li>
                     </ul>
@@ -313,199 +238,71 @@
                 </div>
               </div>
               <div class="panel panel-default priceRange">
-                <div class="panel-heading">Filter by Price</div>
+                <div class="panel-heading">Filtrar por Precio</div>
                 <div class="panel-body clearfix">
                   <div class="price-slider-inner">
                     <span class="amount-wrapper">
-                      Price:
+                      Precio:
                       <input type="text" id="price-amount-1" readonly>
                       <strong>-</strong>
                       <input type="text" id="price-amount-2" readonly>
                     </span>
                     <div id="price-range"></div>
                   </div>
-                  <input class="btn btn-default" type="submit" value="Filter">
+                  <input class="btn btn-default" type="submit" value="Filtrar">
                   <!-- <span class="priceLabel">Price: <strong>$12 - $30</strong></span> -->
                 </div>
               </div>
-              <div class="panel panel-default filterNormal">
-                <div class="panel-heading">filter by Color</div>
+
+              <!-- <div class="panel panel-default filterNormal">
+                <div class="panel-heading">Filtrar por Color</div>
                 <div class="panel-body">
                   <ul class="list-unstyled">
-                    <li><a href="#">Black<span>(15)</span></a></li>
-                    <li><a href="#">White<span>(10)</span></a></li>
-                    <li><a href="#">Red<span>(7)</span></a></li>
-                    <li><a href="#">Blue<span>(12)</span></a></li>
-                    <li><a href="#">Orange<span>(12)</span></a></li>
+                    <li><a href="#">Negro<span>(15)</span></a></li>
+                    <li><a href="#">Blanco<span>(10)</span></a></li>
+                    <li><a href="#">Rojo<span>(7)</span></a></li>
+                    <li><a href="#">Azul<span>(12)</span></a></li>
+                    <li><a href="#">Naranja<span>(12)</span></a></li>
                   </ul>
                 </div>
               </div>
               <div class="panel panel-default filterNormal">
-                <div class="panel-heading">filter by Size</div>
+                <div class="panel-heading">Filtrar por Talla</div>
                 <div class="panel-body">
                   <ul class="list-unstyled clearfix">
-                    <li><a href="#">Small<span>(15)</span></a></li>
-                    <li><a href="#">Medium<span>(10)</span></a></li>
-                    <li><a href="#">Large<span>(7)</span></a></li>
-                    <li><a href="#">Extra Large<span>(12)</span></a></li>
+                    <li><a href="#">Pequeño<span>(15)</span></a></li>
+                    <li><a href="#">Mediano<span>(10)</span></a></li>
+                    <li><a href="#">Largo<span>(7)</span></a></li>
+                    <li><a href="#">Extra Largo<span>(12)</span></a></li>
                   </ul>
                 </div>
-              </div>
+              </div> -->
+              
             </div>
             <div class="col-md-9 col-sm-8 col-xs-12">
               <div class="row filterArea">
                 <div class="col-xs-6">
                   <select name="guiest_id1" id="guiest_id1" class="select-drop">
-                    <option value="0">Default sorting</option>
-                    <option value="1">Sort by popularity</option>
-                    <option value="2">Sort by rating</option>
-                    <option value="3">Sort by newness</option>
-                    <option value="3">Sort by price</option>
+                    <option value="0">Filtar por defecto</option>
+                    <option value="1">Filtrar por popularidad</option>
+                    <option value="2">Filtrar por valoración</option>
+                    <option value="3">Filtrar por novedades</option>
+                    <option value="3">Filtrar por precio</option>
                   </select>
                 </div>
                 <div class="col-xs-6">
                   <div class="btn-group pull-right" role="group">
-                    <button type="button" class="btn btn-default" onclick="window.location.href='product-grid-left-sidebar.html'"><i class="fa fa-th" aria-hidden="true"></i><span>Grid</span></button>
-                    <button type="button" class="btn btn-default active" onclick="window.location.href='product-list-left-sidebar.html'"><i class="fa fa-th-list" aria-hidden="true"></i><span>List</span></button>
+                    <button type="button" class="btn btn-default" onclick="window.location.href='product-grid-left-sidebar.html'"><i class="fa fa-th" aria-hidden="true"></i><span>Tabla</span></button>
+                    <button type="button" class="btn btn-default active" onclick="window.location.href='product-list-left-sidebar.html'"><i class="fa fa-th-list" aria-hidden="true"></i><span>Lista</span></button>
                   </div>
                 </div>
               </div>
-              <div class="row productListSingle">
-                <div class="col-xs-12">
-                  <div class="media">
-                    <div class="media-left">
-                      <img class="media-object" src="img/products/products-01.jpg" alt="Image">
-                      <span class="maskingImage"><a data-toggle="modal" href=".quick-view" class="btn viewBtn">Quick View</a></span>
-                    </div>
-                    <div class="media-body">
-                      <h4 class="media-heading"><a href="single-product.html">Dip Dyed Sweater</a></h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                      <h3>$249</h3>
-                      <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-default" data-toggle="modal" data-target=".login-modal"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                        <button type="button" class="btn btn-default" onclick="location.href='cart-page.html';"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xs-12">
-                  <div class="media">
-                    <div class="media-left">
-                      <img class="media-object" src="img/products/products-02.jpg" alt="Image">
-                      <span class="maskingImage"><a data-toggle="modal" href=".quick-view" class="btn viewBtn">Quick View</a></span>
-                    </div>
-                    <div class="media-body">
-                      <h4 class="media-heading"><a href="single-product.html">Dip Dyed Sweater</a></h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                      <h3>$249</h3>
-                      <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-default" data-toggle="modal" data-target=".login-modal"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                        <button type="button" class="btn btn-default" onclick="location.href='cart-page.html';"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xs-12">
-                  <div class="media">
-                    <div class="media-left">
-                      <img class="media-object" src="img/products/products-03.jpg" alt="Image">
-                      <span class="maskingImage"><a data-toggle="modal" href=".quick-view" class="btn viewBtn">Quick View</a></span>
-                    </div>
-                    <div class="media-body">
-                      <h4 class="media-heading"><a href="single-product.html">Dip Dyed Sweater</a></h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                      <h3>$249</h3>
-                      <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-default" data-toggle="modal" data-target=".login-modal"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                        <button type="button" class="btn btn-default" onclick="location.href='cart-page.html';"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xs-12">
-                  <div class="media">
-                    <div class="media-left">
-                      <img class="media-object" src="img/products/products-04.jpg" alt="Image">
-                      <span class="maskingImage"><a data-toggle="modal" href=".quick-view" class="btn viewBtn">Quick View</a></span>
-                    </div>
-                    <div class="media-body">
-                      <h4 class="media-heading"><a href="single-product.html">Dip Dyed Sweater</a></h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                      <h3>$249</h3>
-                      <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-default" data-toggle="modal" data-target=".login-modal"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                        <button type="button" class="btn btn-default" onclick="location.href='cart-page.html';"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xs-12">
-                  <div class="media">
-                    <div class="media-left">
-                      <img class="media-object" src="img/products/products-05.jpg" alt="Image">
-                      <span class="maskingImage"><a data-toggle="modal" href=".quick-view" class="btn viewBtn">Quick View</a></span>
-                    </div>
-                    <div class="media-body">
-                      <h4 class="media-heading"><a href="single-product.html">Dip Dyed Sweater</a></h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                      <h3>$249</h3>
-                      <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-default" data-toggle="modal" data-target=".login-modal"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                        <button type="button" class="btn btn-default" onclick="location.href='cart-page.html';"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xs-12">
-                  <div class="media">
-                    <div class="media-left">
-                      <img class="media-object" src="img/products/products-06.jpg" alt="Image">
-                      <span class="maskingImage"><a data-toggle="modal" href=".quick-view" class="btn viewBtn">Quick View</a></span>
-                    </div>
-                    <div class="media-body">
-                      <h4 class="media-heading"><a href="single-product.html">Dip Dyed Sweater</a></h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                      <h3>$249</h3>
-                      <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-default" data-toggle="modal" data-target=".login-modal"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                        <button type="button" class="btn btn-default" onclick="location.href='cart-page.html';"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xs-12">
-                  <div class="media">
-                    <div class="media-left">
-                      <img class="media-object" src="img/products/products-07.jpg" alt="Image">
-                      <span class="maskingImage"><a data-toggle="modal" href=".quick-view" class="btn viewBtn">Quick View</a></span>
-                    </div>
-                    <div class="media-body">
-                      <h4 class="media-heading"><a href="single-product.html">Dip Dyed Sweater</a></h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                      <h3>$249</h3>
-                      <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-default" data-toggle="modal" data-target=".login-modal"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                        <button type="button" class="btn btn-default" onclick="location.href='cart-page.html';"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xs-12">
-                  <div class="media">
-                    <div class="media-left">
-                      <img class="media-object" src="img/products/products-08.jpg" alt="Image">
-                      <span class="maskingImage"><a data-toggle="modal" href=".quick-view" class="btn viewBtn">Quick View</a></span>
-                    </div>
-                    <div class="media-body">
-                      <h4 class="media-heading"><a href="single-product.html">Dip Dyed Sweater</a></h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                      <h3>$249</h3>
-                      <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-default" data-toggle="modal" data-target=".login-modal"><i class="fa fa-heart" aria-hidden="true"></i></button>
-                        <button type="button" class="btn btn-default" onclick="location.href='cart-page.html';"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
-                      </div>
-                    </div>
-                  </div>
+
+              <div id="catalog_parend_list" class="row productListSingle">
+                <!-- LOAD PRODUCTS DINAMICALLY -->
+                <div id="spinner" class="sk-chasing-dots">
+                  <div class="sk-child sk-dot1"></div>
+                  <div class="sk-child sk-dot2"></div>
                 </div>
               </div>
             </div>
@@ -571,79 +368,80 @@
           <div class="row">
             <div class="col-sm-2 col-xs-12">
               <div class="footerLink">
-                <h5>Accessories</h5>
+                <h5>Accesorios</h5>
                 <ul class="list-unstyled">
-                  <li><a href="#">Body care </a></li>
-                  <li><a href="#">Chambray </a></li>
-                  <li><a href="#">Floral </a></li>
-                  <li><a href="#">Rejuvination </a></li>
-                  <li><a href="#">Shaving </a></li>
-                  <li><a href="#">Toilette </a></li>
+                  <li><a href="#">Cocina </a></li>
+                  <li><a href="#">Electrónica </a></li>
+                  <li><a href="#">Jardín y Exteriores </a></li>
+                  <li><a href="#">Tecnología </a></li>
+                  <li><a href="#">Salud y Belleza </a></li>
+                  <li><a href="#">Audio y Video </a></li>
                 </ul>
               </div>
             </div>
             <div class="col-sm-2 col-xs-12">
               <div class="footerLink">
-                <h5>BRANDS</h5>
+                <h5>Entretenimiento</h5>
                 <ul class="list-unstyled">
-                  <li><a href="#">Barbour </a></li>
-                  <li><a href="#">Brioni </a></li>
-                  <li><a href="#">Oliver Spencer</a></li>
-                  <li><a href="#">Belstaff</a></li>
+                  <li><a href="#">Juegos Indoor </a></li>
+                  <li><a href="#">Juegos de Mesa </a></li>
+                  <li><a href="#">Regalos</a></li>
+                  <li><a href="#">Hobby</a></li>
                 </ul>
               </div>
             </div>
             <div class="col-sm-2 col-xs-12">
               <div class="footerLink">
-                <h5>Accessories</h5>
+                <h5>Tecnología</h5>
                 <ul class="list-unstyled">
-                  <li><a href="#">Body care </a></li>
-                  <li><a href="#">Chambray </a></li>
-                  <li><a href="#">Floral </a></li>
-                  <li><a href="#">Rejuvination </a></li>
-                  <li><a href="#">Shaving </a></li>
-                  <li><a href="#">Toilette </a></li>
+                  <li><a href="#">Móviles </a></li>
+                  <li><a href="#">Computadoras </a></li>
+                  <li><a href="#">Tablets </a></li>
                 </ul>
               </div>
             </div>
             <div class="col-sm-2 col-xs-12">
               <div class="footerLink">
-                <h5>Get in Touch</h5>
+                <h5>Contacto</h5>
                 <ul class="list-unstyled">
-                  <li>Call us at (555)-555-5555</li>
-                  <li><a href="mailto:support@iamabdus.com">support@iamabdus.com</a></li>
+                  <li>Teléfono (506)2262-5777</li>
+                  <li><a href="mailto:soporte@pimdaki.com">soporte@pimdaki.com</a></li>
+                </ul>
+                <ul class="list-inline">
+                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                  <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
+                  <li><a href="#"><i class="fa fa-tumblr"></i></a></li>
                 </ul>
               </div>
             </div>
             <div class="col-sm-4 col-xs-12">
               <div class="newsletter clearfix">
-                <h4>Newsletter</h4>
-                <h3>Sign up now</h3>
-                <p>Enter your email address and get notified about new products. We hate spam!</p>
+                <h3>Suscribirse</h3>
+                <p>Ingresa tu correo para recibir promociones especiales. ¡Se parte del club!</p>
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="your email address" aria-describedby="basic-addon2">
-                  <a href="#" class="input-group-addon" id="basic-addon2">go <i class="glyphicon glyphicon-chevron-right"></i></a>
+                  <input type="text" class="form-control" placeholder="Correo Electrónico..." aria-describedby="basic-addon2">
+                  <a href="#" class="input-group-addon" id="basic-addon2">Ir <i class="glyphicon glyphicon-chevron-right"></i></a>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
       <!-- COPY RIGHT -->
       <div class="copyRight clearfix">
         <div class="container">
           <div class="row">
             <div class="col-sm-7 col-xs-12">
-              <p>&copy; 2016 Copyright Bigbag Store Bootstrap Template by <a target="_blank" href="http://www.iamabdus.com/">Abdus</a>.</p>
+              <p>&copy; 2017 Copyright Portafolio AM Siete S.A  <a target="_blank" href="https://www.portafolioam7.com/">Visitar</a>.</p>
             </div>
             <div class="col-sm-5 col-xs-12">
               <ul class="list-inline">
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
-                <li><a href="#"><i class="fa fa-tumblr"></i></a></li>
+                <li><img src="img/home/footer/card1.png"></li>
+                <li><img src="img/home/footer/card2.png"></li>
+                <li><img src="img/home/footer/card3.png"></li>
+                <li><img src="img/home/footer/card4.png"></li>
               </ul>
             </div>
           </div>
@@ -657,25 +455,25 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3 class="modal-title">log in</h3>
+            <h3 class="modal-title">Ingresar</h3>
           </div>
           <div class="modal-body">
             <form action="" method="POST" role="form">
               <div class="form-group">
-                <label for="">Enter Email</label>
-                <input type="text" class="form-control" id="">
+                <label for="">Correo Electrónico</label>
+                <input type="email" class="form-control" id="">
               </div>
               <div class="form-group">
-                <label for="">Password</label>
+                <label for="">Contraseña</label>
                 <input type="password" class="form-control" id="">
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox"> Remember Me
+                  <input type="checkbox"> Recordarme
                 </label>
               </div>
-              <button type="submit" class="btn btn-primary btn-block">log in</button>
-              <button type="button" class="btn btn-link btn-block">Forgot Password?</button>
+              <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+              <button type="button" class="btn btn-link btn-block">¿Ovidaste la contraseña?</button>
             </form>
           </div>
         </div>
@@ -688,23 +486,23 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3 class="modal-title">Create an account</h3>
+            <h3 class="modal-title">Crear cuenta</h3>
           </div>
           <div class="modal-body">
             <form action="" method="POST" role="form">
               <div class="form-group">
-                <label for="">Enter Email</label>
+                <label for="">Correo Electrónico</label>
                 <input type="email" class="form-control" id="">
               </div>
               <div class="form-group">
-                <label for="">Password</label>
+                <label for="">Contraseña</label>
                 <input type="password" class="form-control" id="">
               </div>
               <div class="form-group">
-                <label for="">Confirm Password</label>
+                <label for="">Repetir Contraseña</label>
                 <input type="password" class="form-control" id="">
               </div>
-              <button type="submit" class="btn btn-primary btn-block">Sign up</button>
+              <button type="submit" class="btn btn-primary btn-block">Registro</button>
             </form>
           </div>
         </div>
@@ -712,38 +510,17 @@
     </div>
 
     <!-- PORDUCT QUICK VIEW MODAL -->
-    <div class="modal fade quick-view" tabindex="-1" role="dialog">
+    <div id="quick-modal" class="modal fade quick-view" tabindex="-1" role="dialog">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-body">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             <div class="media">
-              <div class="media-left">
-                <img class="media-object" src="img/products/quick-view/quick-view-01.jpg" alt="Image">
+              <div id="img-modal" class="media-left">
+                <!-- DINAMICALLY LOAD DATA -->
               </div>
-              <div class="media-body">
-                <h2>Old Skool Navy</h2>
-                <h3>$149</h3>
-                <p>Classic sneaker from Vans. Cotton canvas and suede upper. Textile lining with heel stabilizer and ankle support. Contrasting laces. Sits on a classic waffle rubber sole.</p>
-                <span class="quick-drop">
-                  <select name="guiest_id3" id="guiest_id3" class="select-drop">
-                    <option value="0">Size</option>
-                    <option value="1">Size 1</option>
-                    <option value="2">Size 2</option>
-                    <option value="3">Size 3</option>
-                  </select>
-                </span>
-                <span class="quick-drop resizeWidth">
-                  <select name="guiest_id4" id="guiest_id4" class="select-drop">
-                    <option value="0">Qty</option>
-                    <option value="1">Qty 1</option>
-                    <option value="2">Qty 2</option>
-                    <option value="3">Qty 3</option>
-                  </select>
-                </span>
-                <div class="btn-area">
-                  <a href="#" class="btn btn-primary btn-block">Add to cart <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                </div>
+              <div id="modal-data" class="media-body">
+                <!-- DINAMICALLY LOAD DATA -->
               </div>
             </div>
           </div>
@@ -751,6 +528,7 @@
       </div>
     </div>
 
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="plugins/jquery-ui/jquery-ui.js"></script>
     <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
@@ -759,6 +537,7 @@
     <script src="plugins/owl-carousel/owl.carousel.js"></script>
     <script src="plugins/selectbox/jquery.selectbox-0.1.3.min.js"></script>
     <script src="plugins/countdown/jquery.syotimer.js"></script>
+    <script src="js/catalogo2.js"></script>
     <script src="js/custom.js"></script>
 
   </body>

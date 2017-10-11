@@ -2698,7 +2698,7 @@ body.bodyColor.container {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(71, 186, 193, 0.9);
+  background-color: rgba(255, 181, 72, 0.9);
   opacity: 0;
   transition: all 0.3s ease-in-out;
 }
@@ -2850,7 +2850,7 @@ body.bodyColor.container {
 
 .masking-btn:hover, .whiteSection .featuredCollection .thumbnail .imageWrapper .masking .viewBtn:hover, .mainContent .featuredCollection .thumbnail .imageWrapper .masking .viewBtn:hover, .productListSingle .media .media-left .maskingImage .viewBtn:hover {
   background-color: #ffffff;
-  color: #47bac1;
+  color: rgb(255, 181, 72);
 }
 
 .whiteSection, .mainContent {
@@ -4398,6 +4398,7 @@ body.bodyColor.container {
 .quick-view .modal-dialog .modal-content .modal-body .media .media-body .btn-area, .singleProduct .media .media-body .btn-area {
   display: block;
   width: 100%;
+  margin-bottom: 40px;
 }
 
 .quick-view .modal-dialog .modal-content .modal-body .media .media-body .btn-area .btn-primary, .singleProduct .media .media-body .btn-area .btn-primary {
@@ -4535,6 +4536,7 @@ body.bodyColor.container {
 
 .quick-view .modal-dialog .modal-content .modal-body .media .media-left img {
   width: 100%;
+  max-width: 580px;
 }
 
 .quick-view .modal-dialog .modal-content .modal-body .media .media-body .btn-area .btn-primary,

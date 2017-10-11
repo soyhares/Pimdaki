@@ -1,15 +1,3 @@
-//===============================Init Firebase======================
-// Initialize Firebase
-var config = {
-apiKey: "AIzaSyDzrlNuSRMeGYAqWvFS_3h53WeFsmMNxNg",
-authDomain: "pimdaki-e16a0.firebaseapp.com",
-databaseURL: "https://pimdaki-e16a0.firebaseio.com",
-projectId: "pimdaki-e16a0",
-storageBucket: "",
-messagingSenderId: "172646261705"
-};
-firebase.initializeApp(config);
-
 //============================== header =========================
 jQuery(document).ready(function(){
 	"use strict";
@@ -44,12 +32,10 @@ jQuery(document).ready(function(){
 		
 		$(window).trigger('resize');
 		$(window).trigger('scroll');
-
+		// writeUserData();
 	});
 
 });
-
-
 //============================== ALL DROPDOWN ON HOVER =========================
 	if($('.navbar').width() > 1007)
 	  {
@@ -282,14 +268,12 @@ jQuery(document).ready(function() {
 jQuery(document).ready(function() {
 	$('.select-drop').selectbox();
 });
-
 //============================== SIDE NAV MENU TOGGLE =========================
 jQuery(document).ready(function() {
 	$('.side-nav li a').click(function() {
 		$(this).find('i').toggleClass('fa fa-minus fa fa-plus');
 	});
 });
-
 //============================== PRICE SLIDER RANGER =========================
 jQuery(document).ready(function() {
 	var minimum = 20;
@@ -333,13 +317,11 @@ jQuery(document).ready(function() {
 	  });
 	})(jQuery);
 });
-
 jQuery(document).ready(function() {
 	$(".quick-view .btn-block").click(function(){
         $(".quick-view").modal("hide");
     });
 });
-
 //============================== Count down triger =========================
 jQuery(document).ready(function() {
 	"use strict";
@@ -358,41 +340,43 @@ jQuery(document).ready(function() {
         minute: 30,
     });
 });
-
 //============================== ACCORDION OR COLLAPSE ICON CHANGE =========================
-  
-    var allIcons = $("#faqAccordion .panel-heading i.fa");
-    $('#faqAccordion .panel-heading').click(function(){
-      allIcons.removeClass('fa-chevron-down').addClass('fa-chevron-up');
-      $(this).find('i.fa').removeClass('fa-chevron-up').addClass('fa-chevron-down');
-    });
+var allIcons = $("#faqAccordion .panel-heading i.fa");
+$('#faqAccordion .panel-heading').click(function(){
+  allIcons.removeClass('fa-chevron-down').addClass('fa-chevron-up');
+  $(this).find('i.fa').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+});
 
-    var allIconsOne = $("#accordionOne .panel-heading i.fa");
-    $('#accordionOne .panel-heading').click(function(){
-      allIconsOne.removeClass('fa-chevron-down').addClass('fa-chevron-up');
-      $(this).find('i.fa').removeClass('fa-chevron-up').addClass('fa-chevron-down');
-    });
+var allIconsOne = $("#accordionOne .panel-heading i.fa");
+$('#accordionOne .panel-heading').click(function(){
+  allIconsOne.removeClass('fa-chevron-down').addClass('fa-chevron-up');
+  $(this).find('i.fa').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+});
 
-    var allIconsTwo = $("#accordionTwo .panel-heading i.fa");
-    $('#accordionTwo .panel-heading').click(function(){
-      allIconsTwo.removeClass('fa-chevron-down').addClass('fa-chevron-up');
-      $(this).find('i.fa').removeClass('fa-chevron-up').addClass('fa-chevron-down');
-    });
+var allIconsTwo = $("#accordionTwo .panel-heading i.fa");
+$('#accordionTwo .panel-heading').click(function(){
+  allIconsTwo.removeClass('fa-chevron-down').addClass('fa-chevron-up');
+  $(this).find('i.fa').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+});
 
-    var allIconsThree = $("#togglesOne .panel-heading i.fa");
-    $('#togglesOne .panel-heading').click(function(){
-      allIconsThree.removeClass('fa-chevron-down').addClass('fa-chevron-up');
-      $(this).find('i.fa').removeClass('fa-chevron-up').addClass('fa-chevron-down');
-    });
+var allIconsThree = $("#togglesOne .panel-heading i.fa");
+$('#togglesOne .panel-heading').click(function(){
+  allIconsThree.removeClass('fa-chevron-down').addClass('fa-chevron-up');
+  $(this).find('i.fa').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+});
 
-    var allIconsFour = $("#togglesTwo .panel-heading i.fa");
-    $('#togglesTwo .panel-heading').click(function(){
-      allIconsFour.removeClass('fa-chevron-down').addClass('fa-chevron-up');
-      $(this).find('i.fa').removeClass('fa-chevron-up').addClass('fa-chevron-down');
-    });
+var allIconsFour = $("#togglesTwo .panel-heading i.fa");
+$('#togglesTwo .panel-heading').click(function(){
+  allIconsFour.removeClass('fa-chevron-down').addClass('fa-chevron-up');
+  $(this).find('i.fa').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+});
 
-    $(function () {
-	  $('[data-toggle="tooltip"]').tooltip()
-	})
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
+
+
+
 
  
