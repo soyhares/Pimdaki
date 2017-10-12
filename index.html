@@ -965,6 +965,22 @@
     <script src="plugins/countdown/jquery.syotimer.js"></script>
     <script src="js/index.js"></script>
     <script src="js/custom.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+    <script src="js/model/index.js"></script>
+    <script src="js/data/index.js"></script>
+   
+     <script type="text/javascript">
+      //console.log(navigator.onLine?"Conectado a internet":"Sin conexion";
+       agregar(ACCESORIOS_COCINA,{name:"cuchara",price:200},"COC2019");
+       agregar(ACCESORIOS_TECNOLOGIA,{name:"iphone",price:200},"TECH2019");
+       agregar(ACCESORIOS_HOGAR,{name:"florero",price:1500},"HO019");
+       agregar(ACCESORIOS_DEPORTIVO,{name:"tennis",price:5000},"DEP2019");
+       agregar(ACCESORIOS_PARRILLERO,{name:"cuchara",price:200},"COC2019");
+       mostrar(ACCESORIOS_HOGAR);
+       agregar(PEDIDO_ARTICULOS,{name:"cuchara",price:200},"PED2019");
+     </script>
+
+
 
   </body>
 </html>
