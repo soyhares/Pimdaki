@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Address - BIGBAG Store</title>
+    <title>PimDaKi | Direcciones</title>
 
     <!-- PLUGINS CSS STYLE -->
     <link href="plugins/jquery-ui/jquery-ui.css" rel="stylesheet">
@@ -21,7 +21,7 @@
 
     <!-- CUSTOM CSS -->
     <link href="css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/default.css" id="option_color">
+    <link rel="stylesheet" href="css/color-option2.css" id="option_color">
 
     <!-- Icons -->
     <link rel="shortcut icon" href="img/favicon.png">
@@ -57,26 +57,26 @@
               </div>
               <div class="col-md-6 col-sm-7 col-xs-12">
                 <ul class="list-inline pull-right top-right">
-                  <li class="account-login"><span><a data-toggle="modal" href='.login-modal'>Log in</a><small>or</small><a data-toggle="modal" href='#signup'>Create an account</a></span></li>
+                  <li class="account-login"><span><a data-toggle="modal" href='.login-modal'>Ingresar</a><small>ó</small><a data-toggle="modal" href='#signup'>Registrarse</a></span></li>
                   <li class="searchBox">
                     <a href="#"><i class="fa fa-search"></i></a>
                     <ul class="dropdown-menu dropdown-menu-right">
                       <li>
                         <span class="input-group">
-                          <input type="text" class="form-control" placeholder="Search…" aria-describedby="basic-addon2">
-                          <button type="submit" class="input-group-addon">Submit</button>
+                          <input type="text" class="form-control" placeholder="Buscar.." aria-describedby="basic-addon2">
+                          <button type="submit" class="input-group-addon">Buscar</button>
                         </span>
                       </li>
                     </ul>
                   </li>
                   <li class="dropdown cart-dropdown">
-                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-shopping-cart"></i>$0</a>
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-shopping-cart"></i>₡00</a>
                     <ul class="dropdown-menu dropdown-menu-right">
-                      <li>Item(s) in your cart</li>
+                      <li>Carrito</li>
                       <li>
                         <a href="single-product.html">
                           <div class="media">
-                            <img class="media-left media-object" src="img/home/cart-items/cart-item-01.jpg" alt="cart-Image">
+                            <img class="media-left" src="img/home/cart-items/cart-item-01.jpg" alt="cart-Image">
                             <div class="media-body">
                               <h5 class="media-heading">INCIDIDUNT UT <br><span>2 X $199</span></h5>
                             </div>
@@ -86,7 +86,7 @@
                       <li>
                         <a href="single-product.html">
                           <div class="media">
-                            <img class="media-left media-object" src="img/home/cart-items/cart-item-01.jpg" alt="cart-Image">
+                            <img class="media-left" src="img/home/cart-items/cart-item-01.jpg" alt="cart-Image">
                             <div class="media-body">
                               <h5 class="media-heading">INCIDIDUNT UT <br><span>2 X $199</span></h5>
                             </div>
@@ -95,8 +95,8 @@
                       </li>
                       <li>
                         <div class="btn-group" role="group" aria-label="...">
-                          <button type="button" class="btn btn-default" onclick="location.href='cart-page.html';">Shopping Cart</button>
-                          <button type="button" class="btn btn-default" onclick="location.href='checkout-step-1.html';">Checkout</button>
+                          <button type="button" class="btn btn-default" onclick="location.href='cart-page.html';">Mi Carrito</button>
+                          <button type="button" class="btn btn-default" onclick="location.href='checkout-step-1.html';">Revisión</button>
                         </div>
                       </li>
                     </ul>
@@ -123,105 +123,21 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
-              <ul class="nav navbar-nav navbar-right">
+              <ul class="nav navbar-nav">
                 <li class="dropdown">
-                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
-                  <ul class="dropdown-menu dropdown-menu-left">
-                    <li><a href="index.html">Home Default</a></li>
-                    <li><a href="index-v2.html">Home Classic</a></li>
-                    <li><a href="index-v3.html">Home Deals</a></li>
-                    <li><a href="index-v4.html">Home Mega</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown megaDropMenu">
-                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="300" data-close-others="true" aria-expanded="false">Shop</b></a>
-                  <ul class="dropdown-menu row">
-                    <li class="col-sm-3 col-xs-12">
-                      <ul class="list-unstyled">
-                        <li>Products Grid View</li>
-                        <li><a href="product-grid-left-sidebar.html">Products Sidebar Left</a></li>
-                        <li><a href="product-grid-right-sidebar.html">Products Sidebar Right</a></li>
-                        <li><a href="product-grid-3-col-filter.html">Products 3 Columns V1</a></li>
-                        <li><a href="product-grid-3-col.html">Products 3 Columns V2</a></li>
-                        <li><a href="product-grid-4-col.html">Products 4 Columns</a></li>
-                      </ul>
-                    </li>
-                    <li class="col-sm-3 col-xs-12">
-                      <ul class="list-unstyled">
-                        <li>Products List View</li>
-                        <li><a href="product-list-left-sidebar.html">Products Sidebar Left</a></li>
-                        <li><a href="product-list-right-sidebar.html">Products Sidebar Right</a></li>
-                        <li class="listHeading">Others</li>
-                        <li><a href="single-product.html">Single Product</a></li>
-                        <li><a href="cart-page.html">Cart Page</a></li>
-                      </ul>
-                    </li>
-                    <li class="col-sm-3 col-xs-12">
-                      <ul class="list-unstyled">
-                        <li>Checkout</li>
-                        <li><a href="checkout-step-1.html">Step 1 - Address</a></li>
-                        <li><a href="checkout-step-2.html">Step 2 - Shipping</a></li>
-                        <li><a href="checkout-step-3.html">Step 3 - Payment</a></li>
-                        <li><a href="checkout-step-4.html">Step 4 - Payment</a></li>
-                        <li><a href="checkout-complete.html">Order Complete</a></li>
-                      </ul>
-                    </li>
-                    <li class="col-sm-3 col-xs-12">
-                      <a href="#" class="menu-photo"><img src="img/menu-photo.jpg" alt="menu-img"></a>
-                    </li>
-                  </ul>
+                  <a href="index.html">Inicio</a>
                 </li>
                 <li class="dropdown">
-                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">pages</a>
-                  <ul class="dropdown-menu dropdown-menu-left">
-                    <li><a href="about-us.html">About Us</a></li>
-                    <li><a href="signup.html">Register</a></li>
-                    <li><a href="signup-login.html">Register or Login</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="lost-password.html">Password Recovery</a></li>
-                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                    <li><a href="terms-and-conditions.html">Terms &amp; Conditions</a></li>
-                    <li><a href="404.html">404 Not Found</a></li>
-
-                    <li><a href="coming-soon.html">Coming Soon</a></li>
-                  </ul>
+                  <a href="product-grid-left-sidebar.html">Catálogo</b></a>
                 </li>
                 <li class="dropdown">
-                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">blog</a>
-                  <ul class="dropdown-menu dropdown-menu-right">
-                    <li><a href="blog-right-sidebar.html">Right Sidebar</a></li>
-                    <li><a href="blog-left-sidebar.html">Left Sidebar</a></li>
-                    <li><a href="blog-fullwidth.html">Full Width</a></li>
-                    <li><a href="blog-single-fullwidth.html">Single Post</a></li>
-                    <li><a href="blog-single-right-sidebar.html">Single Right Sidebar</a></li>
-                    <li><a href="blog-single-left-sidebar.html">Single Left Sidebar</a></li>
-                  </ul>
+                  <a href="product-grid-left-sidebar.html">Ofertas</a>
+                </li>
+                <li class="dropdown">
+                  <a href="account-profile.html">Membresía</a>
                 </li>
                 <li class="dropdown active">
-                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account</a>
-                  <ul class="dropdown-menu dropdown-menu-right">
-                    <li class="active"><a href="account-dashboard.html">Dashboard</a></li>
-                    <li><a href="account-profile.html">Profile</a></li>
-                    <li><a href="account-all-orders.html">All Orders</a></li>
-                    <li><a href="account-single-order.html">Single Order</a></li>
-                    <li><a href="account-wishlist.html">Wishlist</a></li>
-                    <li><a href="account-address.html">Address</a></li>
-                  </ul>
-                </li>
-              <li class="dropdown">
-                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Components</a>
-                  <ul class="dropdown-menu dropdown-menu-right">
-                    <li><a href="accrodion-toggle.html">Accrodion-Toggle</a></li>
-                    <li><a href="tab-dropdown.html">Tab-Dropdown</a></li>
-                    <li><a href="alert-label-badges.html">Alert-Label-Badges</a></li>
-                    <li><a href="progress-bar.html">Progress Bar</a></li>
-                    <li><a href="buttons.html">Buttons</a></li>
-                    <li><a href="forms.html">Forms</a></li>
-                    <li><a href="list-panel.html">Listgroups Panel</a></li>
-                    <li><a href="tooltip-pagination.html">Tooltip Pagination</a></li>
-                    <li><a href="typography.html">Typography</a></li>
-                    <li><a href="responsive-embed.html">Responsive Embed</a></li>
-                  </ul>
+                  <a href="account-profile.html">Mi perfil</a>
                 </li>
               </ul>
             </div><!-- /.navbar-collapse -->
@@ -235,15 +151,15 @@
           <div class="row">
             <div class="col-xs-6">
               <div class="page-title">
-                <h2>MY ADDRESS</h2>
+                <h2>DIRECCIONES</h2>
               </div>
             </div>
             <div class="col-xs-6">
               <ol class="breadcrumb pull-right">
                 <li>
-                  <a href="index.html">Home</a>
+                  <a href="index.html">Inicio</a>
                 </li>
-                <li class="active">MY ADDRESS</li>
+                <li class="active">DIRECCIONES</li>
               </ol>
             </div>
           </div>
@@ -256,11 +172,11 @@
           <div class="row">
             <div class="col-xs-12">
               <div class="btn-group" role="group" aria-label="...">
-                <a href="account-dashboard.html" class="btn btn-default"><i class="fa fa-th" aria-hidden="true"></i>Account Dashboard</a>
-                <a href="account-profile.html" class="btn btn-default"><i class="fa fa-user" aria-hidden="true"></i>Profile</a>
-                <a href="account-address.html" class="btn btn-default active"><i class="fa fa-map-marker" aria-hidden="true"></i>My Address</a>
-                <a href="account-all-orders.html" class="btn btn-default"><i class="fa fa-list" aria-hidden="true"></i>All Orders</a>
-                <a href="account-wishlist.html" class="btn btn-default"><i class="fa fa-gift" aria-hidden="true"></i>Wishlist</a>
+                <a href="account-dashboard.html" class="btn btn-default"><i class="fa fa-th" aria-hidden="true"></i>Mi Cuenta</a>
+                <a href="account-profile.html" class="btn btn-default"><i class="fa fa-user" aria-hidden="true"></i>Editar Perfil</a>
+                <a href="account-address.html" class="btn btn-default active"><i class="fa fa-map-marker" aria-hidden="true"></i>Direcciones</a>
+                <a href="account-all-orders.html" class="btn btn-default"><i class="fa fa-list" aria-hidden="true"></i>Órdenes</a>
+                <a href="account-wishlist.html" class="btn btn-default"><i class="fa fa-gift" aria-hidden="true"></i>Lista de Deseos</a>
               </div>
             </div>
           </div>
@@ -268,26 +184,26 @@
             <div class="col-xs-12">
               <div class="innerWrapper">
                 <div class="orderBox myAddress">
-                  <h4>My Address</h4>
+                  <h4>Mis Direcciones</h4>
                   <div class="table-responsive">
                     <table class="table">
                       <thead>
                         <tr>
-                          <th>Company</th>
-                          <th>Name</th>
-                          <th>Address</th>
-                          <th>Country</th>
-                          <th class="col-md-2 col-sm-3">Phone</th>
+                          <th>País</th>
+                          <th>Provincia</th>
+                          <th>Dirección</th>
+                          <th>Código Postal</th>
+                          <th class="col-md-2 col-sm-3">Teléfono</th>
                           <th></th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <td>Nokia</td>
-                          <td>Adam Smith</td>
-                          <td>9/4 C Babor Road, Mohammad Pur, Dhaka</td>
-                          <td>Bangladesh</td>
-                          <td>+884 5452 6452</td>
+                          <td>Costa Rica</td>
+                          <td>Heredia</td>
+                          <td>San Rafael, Calle Puente Piedra</td>
+                          <td>40321</td>
+                          <td>+506 83235209</td>
                           <td>
                             <div class="btn-group" role="group">
                               <button type="button" class="btn btn-default"><i class="fa fa-pencil" aria-hidden="true"></i></button>
@@ -296,11 +212,11 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>Samsung</td>
-                          <td>Adam Smith</td>
-                          <td>9/4 C Babor Road, Mohammad Pur, Dhaka</td>
-                          <td>Bangladesh</td>
-                          <td>+884 5452 6452</td>
+                          <td>Costa Rica</td>
+                          <td>Heredia</td>
+                          <td>Los Lagos, 150 mts sur de Pequeño Mundo, 200 Oeste de Palí</td>
+                          <td>403236</td>
+                          <td>+506 24772777</td>
                           <td>
                             <div class="btn-group" role="group">
                               <button type="button" class="btn btn-default"><i class="fa fa-pencil" aria-hidden="true"></i></button>
@@ -309,11 +225,11 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>Motorola</td>
-                          <td>Adam Smith</td>
-                          <td>9/4 C Babor Road, Mohammad Pur, Dhaka</td>
-                          <td>Bangladesh</td>
-                          <td>+884 5452 6452</td>
+                          <td>Costa Rica</td>
+                          <td>Puntarenas</td>
+                          <td>Bambel #3 de Río Claro, 150 mts Oste de Bar el Ranchito</td>
+                          <td>402354</td>
+                          <td>+506 88339676</td>
                           <td>
                             <div class="btn-group" role="group">
                               <button type="button" class="btn btn-default"><i class="fa fa-pencil" aria-hidden="true"></i></button>
@@ -337,58 +253,61 @@
           <div class="row">
             <div class="col-sm-2 col-xs-12">
               <div class="footerLink">
-                <h5>Accessories</h5>
+                <h5>Accesorios</h5>
                 <ul class="list-unstyled">
-                  <li><a href="#">Body care </a></li>
-                  <li><a href="#">Chambray </a></li>
-                  <li><a href="#">Floral </a></li>
-                  <li><a href="#">Rejuvination </a></li>
-                  <li><a href="#">Shaving </a></li>
-                  <li><a href="#">Toilette </a></li>
+                  <li><a href="#">Cocina </a></li>
+                  <li><a href="#">Electrónica </a></li>
+                  <li><a href="#">Jardín y Exteriores </a></li>
+                  <li><a href="#">Tecnología </a></li>
+                  <li><a href="#">Salud y Belleza </a></li>
+                  <li><a href="#">Audio y Video </a></li>
                 </ul>
               </div>
             </div>
             <div class="col-sm-2 col-xs-12">
               <div class="footerLink">
-                <h5>BRANDS</h5>
+                <h5>Entretenimiento</h5>
                 <ul class="list-unstyled">
-                  <li><a href="#">Barbour </a></li>
-                  <li><a href="#">Brioni </a></li>
-                  <li><a href="#">Oliver Spencer</a></li>
-                  <li><a href="#">Belstaff</a></li>
+                  <li><a href="#">Juegos Indoor </a></li>
+                  <li><a href="#">Juegos de Mesa </a></li>
+                  <li><a href="#">Regalos</a></li>
+                  <li><a href="#">Hobby</a></li>
                 </ul>
               </div>
             </div>
             <div class="col-sm-2 col-xs-12">
               <div class="footerLink">
-                <h5>Accessories</h5>
+                <h5>Tecnología</h5>
                 <ul class="list-unstyled">
-                  <li><a href="#">Body care </a></li>
-                  <li><a href="#">Chambray </a></li>
-                  <li><a href="#">Floral </a></li>
-                  <li><a href="#">Rejuvination </a></li>
-                  <li><a href="#">Shaving </a></li>
-                  <li><a href="#">Toilette </a></li>
+                  <li><a href="#">Móviles </a></li>
+                  <li><a href="#">Computadoras </a></li>
+                  <li><a href="#">Tablets </a></li>
                 </ul>
               </div>
             </div>
             <div class="col-sm-2 col-xs-12">
               <div class="footerLink">
-                <h5>Get in Touch</h5>
+                <h5>Contacto</h5>
                 <ul class="list-unstyled">
-                  <li>Call us at (555)-555-5555</li>
-                  <li><a href="mailto:support@iamabdus.com">support@iamabdus.com</a></li>
+                  <li>Teléfono (506)2262-5777</li>
+                  <li><a href="mailto:soporte@pimdaki.com">soporte@pimdaki.com</a></li>
+                </ul>
+                <ul class="list-inline">
+                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                  <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
+                  <li><a href="#"><i class="fa fa-tumblr"></i></a></li>
                 </ul>
               </div>
             </div>
             <div class="col-sm-4 col-xs-12">
               <div class="newsletter clearfix">
-                <h4>Newsletter</h4>
-                <h3>Sign up now</h3>
-                <p>Enter your email address and get notified about new products. We hate spam!</p>
+                <h3>Suscribirse</h3>
+                <p>Ingresa tu correo para recibir promociones especiales. ¡Se parte del club!</p>
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="your email address" aria-describedby="basic-addon2">
-                  <a href="#" class="input-group-addon" id="basic-addon2">go <i class="glyphicon glyphicon-chevron-right"></i></a>
+                  <input type="text" class="form-control" placeholder="Correo Electrónico..." aria-describedby="basic-addon2">
+                  <a href="#" class="input-group-addon" id="basic-addon2">Ir <i class="glyphicon glyphicon-chevron-right"></i></a>
                 </div>
               </div>
             </div>
@@ -400,15 +319,14 @@
         <div class="container">
           <div class="row">
             <div class="col-sm-7 col-xs-12">
-              <p>&copy; 2016 Copyright Bigbag Store Bootstrap Template by <a target="_blank" href="http://www.iamabdus.com/">Abdus</a>.</p>
+              <p>&copy; 2017 Copyright Portafolio AM Siete S.A  <a target="_blank" href="https://www.portafolioam7.com/">Visitar</a>.</p>
             </div>
             <div class="col-sm-5 col-xs-12">
               <ul class="list-inline">
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
-                <li><a href="#"><i class="fa fa-tumblr"></i></a></li>
+                <li><img src="img/home/footer/card1.png"></li>
+                <li><img src="img/home/footer/card2.png"></li>
+                <li><img src="img/home/footer/card3.png"></li>
+                <li><img src="img/home/footer/card4.png"></li>
               </ul>
             </div>
           </div>
@@ -417,30 +335,30 @@
     </div>
 
     <!-- LOGIN MODAL -->
-    <div class="modal fade" id="login" tabindex="-1" role="dialog">
+    <div class="modal fade login-modal" id="login" tabindex="-1" role="dialog">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3 class="modal-title">log in</h3>
+            <h3 class="modal-title">Ingresar</h3>
           </div>
           <div class="modal-body">
             <form action="" method="POST" role="form">
               <div class="form-group">
-                <label for="">Enter Email</label>
-                <input type="text" class="form-control" id="">
+                <label for="">Correo Electrónico</label>
+                <input type="email" class="form-control" id="">
               </div>
               <div class="form-group">
-                <label for="">Password</label>
+                <label for="">Contraseña</label>
                 <input type="password" class="form-control" id="">
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox"> Remember Me
+                  <input type="checkbox"> Recordarme
                 </label>
               </div>
-              <button type="submit" class="btn btn-primary btn-block">log in</button>
-              <button type="button" class="btn btn-link btn-block">Forgot Password?</button>
+              <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+              <button type="button" class="btn btn-link btn-block">¿Ovidaste la contraseña?</button>
             </form>
           </div>
         </div>
@@ -453,29 +371,30 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3 class="modal-title">Create an account</h3>
+            <h3 class="modal-title">Crear cuenta</h3>
           </div>
           <div class="modal-body">
             <form action="" method="POST" role="form">
               <div class="form-group">
-                <label for="">Enter Email</label>
+                <label for="">Correo Electrónico</label>
                 <input type="email" class="form-control" id="">
               </div>
               <div class="form-group">
-                <label for="">Password</label>
+                <label for="">Contraseña</label>
                 <input type="password" class="form-control" id="">
               </div>
               <div class="form-group">
-                <label for="">Confirm Password</label>
+                <label for="">Repetir Contraseña</label>
                 <input type="password" class="form-control" id="">
               </div>
-              <button type="submit" class="btn btn-primary btn-block">Sign up</button>
+              <button type="submit" class="btn btn-primary btn-block">Registro</button>
             </form>
           </div>
         </div>
       </div>
     </div>
 
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="plugins/jquery-ui/jquery-ui.js"></script>
     <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
