@@ -95,39 +95,59 @@ const addNode = ( obj , route, id) =>{
           .ref(route)
           .set({..._cleanObj( obj )})
           .then(()=>{
-	                	if(route == ORDERS+"/purchase/"+id){
-	                		dispatcher( obj )
-	                	}else{
-	                		console.log("Realizado con exito!")
-	                	}
-                    }
-          	)
+          			if(route == ORDERS+"/purchase/"+id){
+            			dispatcher( obj.shippingList );	
+            			console.log("dispatcher!")			
+               		}
+                
+          })
           .catch(( error )=>console.log("Error: "+error));		
 };
 
-//despacha los productos
-const dispatcher = ( purchase ) =>{
-	let list =purchase.shippingList;
-	let lot="";
-	for (var i in list) {
-		 lot = "storage"+"/"+list[i].route+"/"+list[i].id+"/lot";
-		// firebase.database()
-  //         .ref(lot)
-  //         .update()
-  //         .then(()=>console.log("Realizado con exito!"))
-  //         .catch((error)=>console.log("Error: "+error));
-         
-		console.log(lot)
-	}
-  
 
+
+//obtinene el objeto
+const dispatcher = (list) =>{
+	for (var i = 0; i < list.length; i++) {
+		let route = "storage/products/categories/"+list[i].route+"/"+list[i].id;
+		let order = list[i];
+		let span =$("#txt_orderLot").val();
+		span="";
+		firebase.database()
+          .ref(route+"/lot")
+          .on('value', function(snapshot){
+          		
+          		if(span==""){
+          			span=snapshot.val()
+          		}
+            updateNode(route+"/lot", span-order.lot); //here!
+
+		});
+	
+	}
+	setTimeout(()=>{ location.reload();}, 1000);	
+	
+ 
+
+}
+
+//despacha los productos
+const updateNode = (route, lot ) =>{
+	console.log(route);
+	console.log(lot)
+	firebase.database()
+      .ref(route)
+      .set(lot)
+      .then(()=>console.log("Actualizado con exito!"))
+      .catch((error)=>console.log("Error: "+error));
 };
+
+
+
 
 //
 jQuery(document).ready(function(){
 	//Function Listener
-    console.log(order);
-    console.log(storedIDS);
-    console.log(_orderId());
+    
     $("#btn_order").click(()=>_orderManager());
 });
