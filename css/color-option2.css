@@ -459,3 +459,7 @@ a.list-group-item:hover,
   font-weight: 400;
   margin-bottom: 15px;
 }
+
+.logText{
+  color: white;
+}
