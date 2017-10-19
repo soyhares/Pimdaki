@@ -306,6 +306,7 @@ a.list-group-item:hover,
 .tab-content{
   padding: 25px 0;
   color: #797979;
+  font-size: 14px;
 }
 
 .loading {
@@ -361,3 +362,100 @@ a.list-group-item:hover,
   50% {
     -webkit-transform: scale(1);
             transform: scale(1); } }
+
+.cartImage{
+  max-width: 100px;
+}
+
+.imWidth{
+  width: 100%;
+}
+
+.modal-header-success {
+  color:#fff;
+  padding:9px 15px;
+  border-bottom:1px solid #eee;
+  background-color: #5cb85c;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.modal-header-warning {
+  color:#fff;
+  padding:9px 15px;
+  border-bottom:1px solid #eee;
+  background-color: #f0ad4e;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.quick-view .modal-dialog .modal-content .modal-body .media .media-body p, .singleProduct .media .media-body p{
+  font-size: 15px;
+}
+
+.header-text{
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+  text-transform: none;
+}
+
+.deleteText{
+  text-align: left;
+  text-transform: none;
+  color: #797979;
+}
+
+.pos-i{
+  float: left;
+  margin-top: 5px;
+}
+
+.pull-width{
+  max-width: 180px;
+}
+
+.media-object {
+  display: block;
+  width: 100%;
+}
+
+.cartListInner .totalAmountArea .list-unstyled li span {
+  width: 150px;
+  display: inline-block;
+  color: #888888;
+}
+
+.txtCartSize{
+  font-size: 16px;
+}
+
+.stepsPage form .checkboxArea input[type=checkbox]:not(old) {
+  width: 20px;
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  opacity: 0;
+  position: relative;
+  top: 6px;
+  left: 3px;
+  height: 19px;
+}
+
+.btn-is-disabled {
+  pointer-events: none; /* Disables the button completely. Better than just cursor: default; */
+  opacity: 0.4;
+}
+
+.ordertxt{
+  font-weight: 400;
+  margin-bottom: 15px;
+}

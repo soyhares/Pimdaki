@@ -1,6 +1,12 @@
 //Variables
 var category = localStorage.getItem('category');
 var productId = localStorage.getItem('productId');
+//...
+var storedIDS = JSON.parse(localStorage.getItem("cartIDS"));
+var storedCTS = JSON.parse(localStorage.getItem("cartCTS"));
+var cartIDS = [];
+var cartCTS = [];
+var oldID;
 
 var materials = {};
 var colors = {};
@@ -38,9 +44,7 @@ function loadSingleProduct(){
 	        var snap = data.val();
 	        id = data.key;
 	        validator = snap.barCode;
-	 
-
-
+	
 
         }); 
     } else{
@@ -122,11 +126,11 @@ function loadSingleProduct(){
 	        var $li1 = $("<li>", {id:"", class:""});
 	        var $a3 = $("<a>", {id:"", "href":"#", text:"Compartir "});
 	        var $i1 = $("<i>", {id:"", class:"fa fa-plus", "aria-hidden": "true"});
-	        var $h0 = $("<h2>", {id:"", class:"", text: snap.name});
+	        var $h0 = $("<h2>", {id:"", class:"", class:"text-warning", text: snap.name});
 	        var $h1 = $("<h3>", {id:"", class:"", text: "₡ " + snap.price});
 	        var $p0 = $("<p>", {id:"", class:"", text: snap.description});
 	        var $div17 = $("<div>", {id:"", class:"btn-area"});
-	        var $a4 = $("<a>", {id:"", class:"btn btn-primary btn-block", "href":"#", text:"Agregar al Carrito"});
+	        var $a4 = $("<a>", {id: id, class:"btn btn-primary btn-block", onclick:'addToShoppingCart(this.id)', text:"Agregar al Carrito"});
 	        var $i2 = $("<i>", {id:"", class:"fa fa-angle-right", "aria-hidden":"true"});
 
 	        var $div18 = $("<div>", {id:"", class:"tabArea"});
@@ -275,13 +279,13 @@ function loadSingleProduct(){
 				        var $div28 = $("<div>", {id:"", class:"productMasking"});
 				        var $ul5 = $("<ul>", {id:"", class:"list-inline btn-group", "role":"group"});
 				        var $li13 = $("<li>", {id:"", class:""});
-				        var $a8 = $("<a>", {id:"", "data-toggle":"modal", "href":".login-modal", class:"btn btn-default"});
+				        var $a8 = $("<a>", {id:"", "data-toggle":"tooltip", "data-placement":"top", "title":"Agregar a Favoritos","data-toggle":"modal", "href":".login-modal", class:"btn btn-default"});
 				        var $i3 = $("<i>", {id:"", class:"fa fa-heart"});
 				        var $li14 = $("<li>", {id:"", class:""});
-				        var $a9 = $("<a>", {id:"", "href":"cart-page.html", "class":"btn btn-default"});
+				        var $a9 = $("<a>", {id:id, "data-toggle":"tooltip", "data-placement":"top", "title":"Agregar al Carrito", onclick:'addToShoppingCart(this.id)', "class":"btn btn-default"});
 				        var $i4 = $("<i>", {id:"", class:"fa fa-shopping-cart"});
 				        var $li15 = $("<li>", {id:"", class:""});
-				        var $a10 = $("<a>", {id: arrayid[0], class:"btn btn-default", onclick:'quickViewModal(this.id)'});
+				        var $a10 = $("<a>", {id: arrayid[0], "data-toggle":"tooltip", "data-placement":"top", "title":"Vista Previa", class:"btn btn-default", onclick:'quickViewModal(this.id)'});
 				        var $i5 = $("<i>", {id:"", class:"fa fa-eye"});
 
 				        var $div29 = $("<div>", {id:"", class:"productCaption clearfix"});
@@ -296,13 +300,13 @@ function loadSingleProduct(){
 				        var $div33 = $("<div>", {id:"", class:"productMasking"});
 				        var $ul6 = $("<ul>", {id:"", class:"list-inline btn-group", "role":"group"});
 				        var $li16 = $("<li>", {id:"", class:""});
-				        var $a11 = $("<a>", {id:"", "data-toggle":"modal", "href":".login-modal", class:"btn btn-default"});
+				        var $a11 = $("<a>", {id:"", "data-toggle":"tooltip", "data-placement":"top", "title":"Agregar a Favoritos", "data-toggle":"modal", "href":".login-modal", class:"btn btn-default"});
 				        var $i6 = $("<i>", {id:"", class:"fa fa-heart"});
 				        var $li17 = $("<li>", {id:"", class:""});
-				        var $a12 = $("<a>", {id:"", "href":"cart-page.html", "class":"btn btn-default"});
+				        var $a12 = $("<a>", {id:id, "data-toggle":"tooltip", "data-placement":"top", "title":"Agregar al Carrito", onclick:'addToShoppingCart(this.id)', "class":"btn btn-default"});
 				        var $i7 = $("<i>", {id:"", class:"fa fa-shopping-cart"});
 				        var $li18 = $("<li>", {id:"", class:""});
-				        var $a13 = $("<a>", {id: arrayid[1], class:"btn btn-default", onclick:'quickViewModal(this.id)'});
+				        var $a13 = $("<a>", {id: arrayid[1], "data-toggle":"tooltip", "data-placement":"top", "title":"Vista Previa", class:"btn btn-default", onclick:'quickViewModal(this.id)'});
 				        var $i8 = $("<i>", {id:"", class:"fa fa-eye"});
 
 				        var $div34 = $("<div>", {id:"", class:"productCaption clearfix"});
@@ -317,13 +321,13 @@ function loadSingleProduct(){
 				        var $div38 = $("<div>", {id:"", class:"productMasking"});
 				        var $ul7 = $("<ul>", {id:"", class:"list-inline btn-group", "role":"group"});
 				        var $li19 = $("<li>", {id:"", class:""});
-				        var $a14 = $("<a>", {id:"", "data-toggle":"modal", "href":".login-modal", class:"btn btn-default"});
+				        var $a14 = $("<a>", {id:"", "data-toggle":"tooltip", "data-placement":"top", "title":"Agregar a Favoritos", "data-toggle":"modal", "href":".login-modal", class:"btn btn-default"});
 				        var $i9 = $("<i>", {id:"", class:"fa fa-heart"});
 				        var $li20 = $("<li>", {id:"", class:""});
-				        var $a15 = $("<a>", {id:"", "href":"cart-page.html", "class":"btn btn-default"});
+				        var $a15 = $("<a>", {id:id, "data-toggle":"tooltip", "data-placement":"top", "title":"Agregar al Carrito", onclick:'addToShoppingCart(this.id)', "class":"btn btn-default"});
 				        var $i10 = $("<i>", {id:"", class:"fa fa-shopping-cart"});
 				        var $li21 = $("<li>", {id:"", class:""});
-				        var $a16 = $("<a>", {id: arrayid[2], class:"btn btn-default", onclick:'quickViewModal(this.id)'});
+				        var $a16 = $("<a>", {id: arrayid[2], "data-toggle":"tooltip", "data-placement":"top", "title":"Vista Previa", class:"btn btn-default", onclick:'quickViewModal(this.id)'});
 				        var $i11 = $("<i>", {id:"", class:"fa fa-eye"});
 
 				        var $div39 = $("<div>", {id:"", class:"productCaption clearfix"});
@@ -338,13 +342,13 @@ function loadSingleProduct(){
 				        var $div43 = $("<div>", {id:"", class:"productMasking"});
 				        var $ul8 = $("<ul>", {id:"", class:"list-inline btn-group", "role":"group"});
 				        var $li22 = $("<li>", {id:"", class:""});
-				        var $a17 = $("<a>", {id:"", "data-toggle":"modal", "href":".login-modal", class:"btn btn-default"});
+				        var $a17 = $("<a>", {id:"", "data-toggle":"tooltip", "data-placement":"top", "title":"Agregar a Favoritos", "data-toggle":"modal", "href":".login-modal", class:"btn btn-default"});
 				        var $i12 = $("<i>", {id:"", class:"fa fa-heart"});
 				        var $li23 = $("<li>", {id:"", class:""});
-				        var $a18 = $("<a>", {id:"", "href":"cart-page.html", "class":"btn btn-default"});
+				        var $a18 = $("<a>", {id:id, "data-toggle":"tooltip", "data-placement":"top", "title":"Agregar al Carrito", onclick:'addToShoppingCart(this.id)', "class":"btn btn-default"});
 				        var $i13 = $("<i>", {id:"", class:"fa fa-shopping-cart"});
 				        var $li24 = $("<li>", {id:"", class:""});
-				        var $a19 = $("<a>", {id: arrayid[3], class:"btn btn-default", onclick:'quickViewModal(this.id)'});
+				        var $a19 = $("<a>", {id: arrayid[3], "data-toggle":"tooltip", "data-placement":"top", "title":"Vista Previa", class:"btn btn-default", onclick:'quickViewModal(this.id)'});
 				        var $i14 = $("<i>", {id:"", class:"fa fa-eye"});
 
 				        var $div44 = $("<div>", {id:"", class:"productCaption clearfix"});
@@ -458,12 +462,13 @@ function quickViewModal(id){
 
 		    //Create ele dinamically
 	        var $img0 = $("<img>", {id: "img0", "alt":"Image", "class": "media-object","src": snap.catalog[0]});
-	     	var $h0 = $("<h2>", {id: "", text: snap.name});
+	     	var $h0 = $("<h2>", {id: "", class:"text-warning", text: snap.tradeMark});
+	     	var $h00 = $("<h3>", {id: "", text: snap.name});
 	     	var $h1 = $("<h3>", {id: "", text: "₡ " + snap.price});
 	     	var $p0 = $("<p>", {id:"", text: snap.description});
 	     	var $div0 = $("<div>", {id:"btn-area", class:"btn-area"});
 	     	var $btn0 = $("<button>", {id:"", "type":"button", class:"btn btn-default"});
-	     	var $a0 = $("<a>", {id:"", href:"cart-page.html", class:"btn btn-primary btn-block", text: "Agregar al Carrito"});
+	     	var $a0 = $("<a>", {id: id, onclick:'addToShoppingCart(this.id)', class:"btn btn-primary btn-block", text: "Agregar al Carrito"});
 	     	var $i0 = $("<i>", {id:"", class:"fa fa-angle-right", "aria-hidden":"true"});
 
 	     	var $div1 = $("<div>", {id:"tab-area", class:"tab-area"});
@@ -477,21 +482,21 @@ function quickViewModal(id){
 
 			var $div2 = $("<div>", {id:"tab-container", class:"tab-content"});
 	     	var $div3 = $("<div>", {id:"details", class:"tab-pane fade in active"});
-	     	var $ul1 = $("<ul>", {id:"", class:"list-unstyled"});
-	     	var $li3 = $("<li>", {id:"", class:"", text: "✓ Código de Producto: " + id});
-	     	var $li4 = $("<li>", {id:"", class:"", text: "✓ GS1: " + snap.barCode});
-	     	var $li5 = $("<li>", {id:"", class:"", text: "✓ Marca: " + snap.tradeMark});
+	     	var $ul1 = $("<ul>", {id:"", class:"unorder-list lists space-bottom-25"});
+	     	var $li3 = $("<li>", {id:"", class:"", text: "Código de Producto: " + id});
+	     	var $li4 = $("<li>", {id:"", class:"", text: "GS1: " + snap.barCode});
+	     	var $li5 = $("<li>", {id:"", class:"", text: "Marca: " + snap.tradeMark});
 
 			var $div4 = $("<div>", {id:"about-art", class:"tab-pane fade"});
-	     	var $ul2 = $("<ul>", {id:"", class:"list-unstyled"});
-	     	var $li6 = $("<li>", {id:"", class:"", text: "✓ Dimensiones: " + snap.size});
-	     	var $li7 = $("<li>", {id:"", class:"", text: "✓ Materiales: " + snap.materials});
-	     	var $li8 = $("<li>", {id:"", class:"", text: "✓ Modelo: " + snap.model});
+	     	var $ul2 = $("<ul>", {id:"", class:"unorder-list lists space-bottom-25"});
+	     	var $li6 = $("<li>", {id:"", class:"", text: "Dimensiones: " + snap.size});
+	     	var $li7 = $("<li>", {id:"", class:"", text: "Materiales: " + snap.materials});
+	     	var $li8 = $("<li>", {id:"", class:"", text: "Modelo: " + snap.model});
 
 	     	var $div5 = $("<div>", {id:"sizing", class:"tab-pane fade"});
-	     	var $ul3 = $("<ul>", {id:"", class:"list-unstyled"});
-	     	var $li9 = $("<li>", {id:"", class:"", text: "✓ Correos de Costa Rica. " + " Tiempo Estimado: 48 horas."});
-	     	var $li10 = $("<li>", {id:"", class:"", text: "✓ GoPato. " + " Tiempo Estimado: 4 horas."});     	
+	     	var $ul3 = $("<ul>", {id:"", class:"unorder-list lists space-bottom-25"});
+	     	var $li9 = $("<li>", {id:"", class:"", text: "Correos de Costa Rica. " + " Tiempo Estimado: 48 horas."});
+	     	var $li10 = $("<li>", {id:"", class:"", text: "GoPato. " + " Tiempo Estimado: 4 horas."});     	
 
 	        $("#img-modal").append($img0);
 	        $("#modal-data").append($h0);
@@ -541,16 +546,15 @@ function quickViewModal(id){
             console.log(id);
 
             var snap = data.val();
-            console.log(snap);
 		    //Create ele dinamically
 	        var $img0 = $("<img>", {id: "img0", "alt":"Image", "class": "media-object","src": snap.catalog[0]});
-	     	var $h0 = $("<h2>", {id: "", text: snap.name});
-	     	var $h00 = $("<h3>", {id: "", text: snap.tradeMark});
+	     	var $h0 = $("<h2>", {id: "", class:"text-warning", text: snap.tradeMark});
+	     	var $h00 = $("<h3>", {id: "", text: snap.name});
 	     	var $h1 = $("<h3>", {id: "", text: "₡ " + snap.price});
 	     	var $p0 = $("<p>", {id:"", text: snap.description});
 	     	var $div0 = $("<div>", {id:"btn-area", class:"btn-area"});
 	     	var $btn0 = $("<button>", {id:"", "type":"button", class:"btn btn-default"});
-	     	var $a0 = $("<a>", {id:"", href:"cart-page.html", class:"btn btn-primary btn-block", text: "Agregar al Carrito"});
+	     	var $a0 = $("<a>", {id: id, onclick:'addToShoppingCart(this.id)', class:"btn btn-primary btn-block", text: "Agregar al Carrito"});
 	     	var $i0 = $("<i>", {id:"", class:"fa fa-angle-right", "aria-hidden":"true"});
 
 	     	var $div1 = $("<div>", {id:"tab-area", "class":"tabArea"});
@@ -564,21 +568,21 @@ function quickViewModal(id){
 
 	     	var $div2 = $("<div>", {id:"tab-container", class:"tab-content"});
 	     	var $div3 = $("<div>", {id:"details", class:"tab-pane fade in active"});
-	     	var $ul1 = $("<ul>", {id:"", class:"list-unstyled"});
-	     	var $li3 = $("<li>", {id:"", class:"", text: "✓ Código de Producto: " + id});
-	     	var $li4 = $("<li>", {id:"", class:"", text: "✓ GS1: " + snap.barCode});
-	     	var $li5 = $("<li>", {id:"", class:"", text: "✓ Marca: " + snap.tradeMark});
+	     	var $ul1 = $("<ul>", {id:"", class:"unorder-list lists space-bottom-25"});
+	     	var $li3 = $("<li>", {id:"", class:"", text: "Código de Producto: " + id});
+	     	var $li4 = $("<li>", {id:"", class:"", text: "GS1: " + snap.barCode});
+	     	var $li5 = $("<li>", {id:"", class:"", text: "Marca: " + snap.tradeMark});
 
 			var $div4 = $("<div>", {id:"about-art", class:"tab-pane fade"});
-	     	var $ul2 = $("<ul>", {id:"", class:"list-unstyled"});
-	     	var $li6 = $("<li>", {id:"", class:"", text: "✓ Dimensiones: " + snap.size});
-	     	var $li7 = $("<li>", {id:"", class:"", text: "✓ Materiales: " + snap.materials});
-	     	var $li8 = $("<li>", {id:"", class:"", text: "✓ Modelo: " + snap.model});
+	     	var $ul2 = $("<ul>", {id:"", class:"unorder-list lists space-bottom-25"});
+	     	var $li6 = $("<li>", {id:"", class:"", text: "Dimensiones: " + snap.size});
+	     	var $li7 = $("<li>", {id:"", class:"", text: "Materiales: " + snap.materials});
+	     	var $li8 = $("<li>", {id:"", class:"", text: "Modelo: " + snap.model});
 
 	     	var $div5 = $("<div>", {id:"sizing", class:"tab-pane fade"});
-	     	var $ul3 = $("<ul>", {id:"", class:"list-unstyled"});
-	     	var $li9 = $("<li>", {id:"", class:"", text: "✓ Correos de Costa Rica. " + " Tiempo Estimado: 48 horas."});
-	     	var $li10 = $("<li>", {id:"", class:"", text: "✓ GoPato. " + " Tiempo Estimado: 4 horas."});     	
+	     	var $ul3 = $("<ul>", {id:"", class:"unorder-list lists space-bottom-25"});
+	     	var $li9 = $("<li>", {id:"", class:"", text: "Correos de Costa Rica. " + " Tiempo Estimado: 48 horas."});
+	     	var $li10 = $("<li>", {id:"", class:"", text: "GoPato. " + " Tiempo Estimado: 4 horas."});     	
 
 	        $("#img-modal").append($img0);
 	        $("#modal-data").append($h0);
@@ -618,10 +622,44 @@ function quickViewModal(id){
 	      
 		});
 	}
-	
+}
+
+function addToShoppingCart(id){
+    if (storedIDS == null){
+            storedIDS = [];
+            storedIDS.push({
+                    id:id,
+                    lot:1,
+                    route:category,
+            });
+            console.log("nuevo");                                
+            localStorage.setItem("cartIDS", JSON.stringify(storedIDS));
+            window.location.href = 'cart-page.html';
+
+    }else{
+            var index = storedIDS.findIndex(x => x.id == id);
+            console.log(index);
+            if(index == -1){
+                     storedIDS.push({
+                            id:id,
+                            lot:1,
+                            route:category,   
+                    });
+                    console.log("nuevo");                                
+                    localStorage.setItem("cartIDS", JSON.stringify(storedIDS));
+                    window.location.href = 'cart-page.html';
+            }else{
+                    console.log("existe")
+                    var lot = storedIDS[index].lot;
+                    storedIDS[index].lot = lot+1; 
+                    localStorage.setItem("cartIDS", JSON.stringify(storedIDS));
+                    window.location.href = 'cart-page.html';
+            }
+    }
 }
 
 jQuery(document).ready(function(){
 	//Function Listener
 	loadSingleProduct();
+	console.log(storedIDS);
 });

@@ -1,4 +1,9 @@
 // Variables
+//...
+var storedIDS = JSON.parse(localStorage.getItem("cartIDS"));
+var cartIDS = [];
+var oldID;
+
 var bag = [];
 
 //===============================Init Firebase======================
@@ -21,4 +26,9 @@ $("#home_category li a").click(function(e) {
 	    //Nos redireccionamos a la pagina Details
 	    window.location.href = 'product-grid-left-sidebar.html';
 	}
+});
+
+jQuery(document).ready(function(){
+	//Function Listener
+	console.log(storedIDS);
 });
