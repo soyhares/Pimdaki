@@ -183,12 +183,20 @@
           <div class="row">
             <div class="col-xs-12">
               <div class="innerWrapper">
-                <!-- <div class="alert alert-warning alert-dismissible" role="alert">
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <strong>Warning!</strong> You have one unpaid order.
-                </div> -->
-                <h3>Bienvenido <span>Hanz Fernández</span></h3><br>
-                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> -->
+                <div style="display: flex;">
+                  <div  style="float: left;" class="col-md-2 col-sm-3 col-xs-12">
+                    <div class="thumbnail">
+                      <img id="imgProfile" src="" alt="">
+                      <div class="caption">
+                        <a class="btn btn-primary btn-block btn-file" role="button">Elegir Imagen<input id="file" name="file" type="file"></a>
+                        <a id="uploadbtn" onclick="uploadImageProfile()" class="btn btn-primary btn-block btnUploadimg" role="button">Subir Imagen</a>
+                      </div>
+                    </div>
+                  </div>
+                  <h3 id="userName">Bienvenido <!-- <span></span> --></h3><br>
+                </div>
+                
+                <div class="clearfix"></div>
                 <ul class="list-inline">
                   <li><a href="account-profile.html" class="btn btn-default btn-lg"><i class="fa fa-user" aria-hidden="true"></i>Editar</a></li>
                   <li><a href="account-address.html" class="btn btn-default btn-lg"><i class="fa fa-map-marker" aria-hidden="true"></i>Direcciones</a></li>
@@ -348,30 +356,47 @@
             <h3 class="modal-title">Ingresar</h3>
           </div>
           <div class="modal-body">
-            <form action="" method="POST" role="form">
+              <div class="col-sm-12">
+                <div class="page-header text-center">
+                  <h3>Redes Sociales</h3>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="form-group col-sm-12 col-xs-12">
+                <button type="submit" onclick="loginWithFacebook()" class="btn-block btn-social btn-facebook-filled"><i class="fa fa-facebook" aria-hidden="true"></i><span>Ingresar con Facebook</span></button>
+              </div>
+              <div class="form-group col-sm-12 col-xs-12">
+                <button type="submit" onclick="loginWithGoogle()" class="btn-block btn-social btn-google-filled"><i class="fa fa-google-plus" aria-hidden="true"></i><span>Ingresar con Google+</span></button>
+              </div>
+              <div class="clearfix"></div>
+              <div class="col-sm-12">
+                <div class="page-header text-center">
+                  <h3>Cuenta PDK</h3>
+                </div>
+              </div>
+              <div class="clearfix"></div>
               <div class="form-group">
                 <label for="">Correo Electrónico</label>
-                <input type="email" class="form-control" id="">
+                <input type="email" class="form-control" id="logmail">
               </div>
               <div class="form-group">
                 <label for="">Contraseña</label>
-                <input type="password" class="form-control" id="">
+                <input type="password" class="form-control" id="logpass">
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox"> Recordarme
+                  <input type="checkbox" checked="true"> Recordarme
                 </label>
               </div>
-              <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+              <button onclick="loginWithEmailAndPassword()" class="btn btn-primary btn-block">Ingresar</button>
               <button type="button" class="btn btn-link btn-block">¿Ovidaste la contraseña?</button>
-            </form>
           </div>
         </div>
       </div>
     </div>
 
     <!-- SIGN UP MODAL -->
-    <div class="modal fade" id="signup" tabindex="-1" role="dialog">
+    <div class="modal fade signup-modal" id="signup" tabindex="-1" role="dialog">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -379,6 +404,12 @@
             <h3 class="modal-title">Crear cuenta</h3>
           </div>
           <div class="modal-body">
+              <div class="col-sm-12">
+                <div class="page-header text-center">
+                  <h3>Registro PinDaKi</h3>
+                </div>
+              </div>
+              <div class="clearfix"></div>
               <div class="form-group">
                 <label for="">Nombre</label>
                 <input type="text" class="form-control" id="name">
@@ -399,7 +430,30 @@
                 <label for="">Repetir Contraseña</label>
                 <input type="password" class="form-control" id="repassword">
               </div>
-              <button type="submit" onclick="createUserWithEmailAndPassword();" class="btn btn-primary btn-block">Registro</button>
+              <button onclick="createUserWithEmailAndPassword();" class="btn btn-primary btn-block">Registro</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOGOUT MODAL -->
+    <div class="modal fade logout-modal" id="logout" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3 class="modal-title">¿Deseas Cerrar Sesión?</h3>
+          </div>
+          <div class="modal-body">
+              <div class="col-sm-12">
+                <div class="text-center">
+                  <h3>Cerrarás Sesión</h3>
+                  <span>Te recomedamos continuar con tu sesión activa. Esto te ayudará a mantenerte al día con las mejores promociones, productos de alta calidad, y las mejores marcas.</span>
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <button onclick="logOutUser()" class="btn btn-primary btn-block">Cerrar Sesión</button>
           </div>
         </div>
       </div>

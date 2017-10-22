@@ -51,9 +51,12 @@ function loadDataInCartShop(){
 		    //Cargamos el objeto y sus atributos 
 		    var snap = data.val();
 		    id = data.key;
-		    priceInt = parseFloat(snap.price);
+		    priceInt = parseInt(snap.price);
 		    storedPRICE += priceInt;
 		    storedTOTALPRICE = storedPRICE + storedDISCOUNT;
+		    console.log(storedPRICE)
+		    console.log(storedTOTALPRICE)
+		    console.log(storedDISCOUNT)
 		    // Create Cart Elemets
 		    var $tr = $("<tr>", {id:"", class:""});
 	     	var $td0 = $("<td>", {id:"", class:"col-xs-2"});

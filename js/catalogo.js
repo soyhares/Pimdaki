@@ -367,6 +367,33 @@ function addToShoppingCart(id){
                         window.location.href = 'cart-page.html';
                 }
         }
+
+}
+
+
+const drawShoppingCar = (product={}) =>{
+    // firebase.database()
+    //     .ref(product.route+"/"+product.id)
+    //     .on("child_added", function(snapshot){
+    //         var data = snapshot.val();
+    //         var li ="<li>";
+    //         var a="<a href='single-product.html'>"
+    //         var div='<div class="media">'
+    //         var img ='<img class="media-left media-object" src="img/home/cart-items/cart-item-01.jpg" alt="cart-Image">'
+    //         var div2='<div class="media-body">'
+    //         var h5='<h5 class="media-heading">INCIDIDUNT UT <br><span>'product.lot' X ₡ 'data.price'</span></h5>'
+            
+    //         div2.append(h5);
+    //         div.append(img);
+    //         div.append(div2);
+    //         a.append(div);
+    //         li.append(a);
+
+    //         $("#lu_shoppingList").append(li)  
+                 
+    //     });
+    
+    
 }
 
 jQuery(document).ready(function(){

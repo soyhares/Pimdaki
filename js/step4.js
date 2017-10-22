@@ -1,23 +1,4 @@
-//storage
 var order = JSON.parse(localStorage.getItem("order"));
-var storedIDS = JSON.parse(localStorage.getItem("cartIDS"));
-//===============================Init Firebase======================//
-// Initialize Firebase
-var config = {
-	apiKey: "AIzaSyDzrlNuSRMeGYAqWvFS_3h53WeFsmMNxNg",
-	authDomain: "pimdaki-e16a0.firebaseapp.com",
-	databaseURL: "https://pimdaki-e16a0.firebaseio.com",
-	projectId: "pimdaki-e16a0",
-	storageBucket: "",
-	messagingSenderId: "172646261705"
-};
-firebase.initializeApp(config);
-//============= 
-const ORDERS = "orders";
-// const ORDER_REQUEST =  ORDERS + "/status/request";
-// const ORDER_CHECKED =  ORDERS + "/status/checked";
-// const ORDER_DONE =  ORDERS + "/status/done";
-
 /**
  * Optimizador de informacion de objetos
  * -limpia los datos nulos o vacios
@@ -168,8 +149,8 @@ var formatNumber = {
 
 //Function Listener
 jQuery(document).ready(function(){
-	// let cantidad = 1350000;
-	// let total =formatNumber.format(cantidad, "₡")
-	// console.log(total);
+	let total =formatNumber.format(order.total, "₡")
+	console.log(total || "0");
     $("#btn_order").click(()=>_orderManager());
+
 });
