@@ -145,9 +145,31 @@ const updateNode = (route, lot ) =>{
 
 
 
-//
+//class to add point in amount
+var formatNumber = {
+	separador: ",", // separador para los miles
+	sepDecimal: ".", // separador para los decimales
+	formatear:function (num){
+		num +="";
+		var splitStr = num.split('.');
+		var splitLeft = splitStr[0];
+		var splitRight = splitStr.length > 1 ? this.sepDecimal + splitStr[1] : '';
+		var regx = /(\d+)(\d{3})/;
+		while (regx.test(splitLeft)) {
+		splitLeft = splitLeft.replace(regx, '$1' + this.separador + '$2');
+	}
+	return this.simbol + splitLeft +splitRight;
+	},
+	format:function(num, simbol){
+		this.simbol = simbol ||'';
+	return this.formatear(num);
+	}
+}
+
+//Function Listener
 jQuery(document).ready(function(){
-	//Function Listener
-    
+	// let cantidad = 1350000;
+	// let total =formatNumber.format(cantidad, "₡")
+	// console.log(total);
     $("#btn_order").click(()=>_orderManager());
 });
