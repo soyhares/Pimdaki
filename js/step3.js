@@ -182,6 +182,7 @@ jQuery(document).ready(function(){
 	
 	result = order.total.toFixed(2);
 	result *= $("#coinChange").value()
+	console.log(result);
  	localStorage.setItem('totalOrder', result);
     console.log(order);
     loadOrderInfo();
