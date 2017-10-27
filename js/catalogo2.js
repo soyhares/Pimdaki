@@ -8,7 +8,7 @@ var cartCTS = [];
 var oldID;
 
 var materials = {};
-var colors = {};
+var colors = {}; 
 var catalog = {};
 
 var category,subCategory,id,barCode,name,model,lot,price,oldPrice,tradeMark,size,description;
@@ -22,7 +22,7 @@ var config = {
 	authDomain: "pimdaki-e16a0.firebaseapp.com",
 	databaseURL: "https://pimdaki-e16a0.firebaseio.com",
 	projectId: "pimdaki-e16a0",
-	storageBucket: "",
+	storageBucket: "pimdaki-e16a0.appspot.com",
 	messagingSenderId: "172646261705"
 };
 firebase.initializeApp(config);
@@ -157,7 +157,7 @@ function quickViewModal(id){
 
 		    //Create ele dinamically
 	        var $img0 = $("<img>", {id: "img0", "alt":"Image", "class": "media-object","src": snap.catalog[0]});
-	     	var $h0 = $("<h2>", {id: "", class:"text-warning", text: snap.tradeMark});
+	     	var $h0 = $("<h2>", {id: "", class:"text-info", text: snap.tradeMark});
 	     	var $h00 = $("<h3>", {id: "", text: snap.name});
 	     	var $h1 = $("<h3>", {id: "", text: "₡ " + snap.price});
 	     	var $p0 = $("<p>", {id:"", text: snap.description});
@@ -166,7 +166,7 @@ function quickViewModal(id){
 	     	var $a0 = $("<a>", {id: id, onclick:'addToShoppingCart(this.id)', class:"btn btn-primary btn-block", text: "Agregar al Carrito"});
 	     	var $i0 = $("<i>", {id:"", class:"fa fa-angle-right", "aria-hidden":"true"});
 
-	     	var $div1 = $("<div>", {id:"tab-area", class:"tab-area"});
+	     	var $div1 = $("<div>", {id:"tab-area", class:"tabArea"});
 	     	var $ul0 = $("<ul>", {id:"", class:"nav nav-tabs"});
 	     	var $li0 = $("<li>", {id:"", class:"active"});
 	     	var $a1 = $("<a>", {id:"", "data-toggle":"tab", "href":"#details", text:"Detalles"});
@@ -241,10 +241,10 @@ function quickViewModal(id){
             console.log(id);
 
             var snap = data.val();
-            console.log(snap);
+          
 		    //Create ele dinamically
 	        var $img0 = $("<img>", {id: "img0", "alt":"Image", "class": "media-object","src": snap.catalog[0]});
-	     	var $h0 = $("<h2>", {id: "", class:"text-warning", text: snap.tradeMark});
+	     	var $h0 = $("<h2>", {id: "", class:"text-info", text: snap.tradeMark});
 	     	var $h00 = $("<h3>", {id: "", text: snap.name});
 	     	var $h1 = $("<h3>", {id: "", text: "₡ " + snap.price});
 	     	var $p0 = $("<p>", {id:"", text: snap.description});

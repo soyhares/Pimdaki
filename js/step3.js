@@ -9,7 +9,7 @@ var email;
 var lastName;
 var name;
 var phone;
-var subTotal;
+var subTotal; 
 var total;
 var zip;
 
@@ -17,6 +17,8 @@ var priceInt = 0;
 var storedPRICE = 0;
 var storedDISCOUNT = 0;
 var storedTOTALPRICE = 0;
+
+var result;
 
 
 //===============================Init Firebase======================//
@@ -177,6 +179,8 @@ function deleteProductInCart(){
 
 jQuery(document).ready(function(){
 	//Function Listener
+	result = order.total.toFixed(2);
+ 	localStorage.setItem('totalOrder', result);
     console.log(order);
     loadOrderInfo();
     loadDataInCartShop();

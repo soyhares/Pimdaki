@@ -8,7 +8,7 @@ function getDataOfBilling(){
 	var email = $('#email').val();
 	var phone = $('#phone').val();
 
-	billing = {
+	billing = { 
 		name: name,
 		lastName: lastName,
 		email: email,

@@ -24,7 +24,7 @@
     <!-- CUSTOM CSS -->
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/color-option2.css" id="option_color">
+    <link rel="stylesheet" href="css/default.css" id="option_color">
 
     <!-- Icons -->
     <link rel="shortcut icon" href="img/favicon.png">
@@ -53,14 +53,14 @@
                 <ul class="list-inline">
                   <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                   <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                  <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                  <!-- <li><a href="#"><i class="fa fa-dribbble"></i></a></li> -->
                   <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
                   <li><a href="#"><i class="fa fa-tumblr"></i></a></li>
                 </ul>
               </div>
               <div class="col-md-6 col-sm-7 col-xs-12">
                 <ul class="list-inline pull-right top-right">
-                  <li class="account-login"><span><a data-toggle="modal" href='.login-modal'>Ingresar</a><small>ó</small><a data-toggle="modal" href='#signup'>Registrarte</a></span></li>
+                  <li id="loggedInfo" class="account-login"><!-- <span><a data-toggle="modal" href='.login-modal'>Ingresar</a><small>ó</small><a data-toggle="modal" href='#signup'>Registrarte</a></span> --></li>
                 </ul>
               </div>
             </div>
@@ -71,12 +71,12 @@
         <div class="navTop text-center">
           <div class="container">
             <div class="navbar-header">
-              <a class="navbar-brand" href="javascript:void(0)"><img src="img/logo.png" alt="logo+"></a>
+              <a class="navbar-brand" href="#index.html"><img src="img/pindaki.jpg" alt="logo+"></a>
             </div>
             <div class="navTop-middle">
               <div class="filterArea hidden-xs hidden-sm">
                 <select name="guiest_id1" id="guiest_id1" class="select-drop">
-                  <option value="0">Todas las Categorías</option>
+                  <option value="0">Categorías</option>
                   <option value="1">Promociones</option>
                   <option value="2">Electro y Tecnología</option>
                   <option value="3">Entretenimiento</option>
@@ -88,7 +88,7 @@
               </div>
               <div class="searchBox">
                 <span class="input-group">
-                  <input type="text" class="form-control" placeholder="¿Qué estás buscando?" aria-describedby="basic-addon2">
+                  <input type="text" class="form-control" placeholder="¿Qué buscas?" aria-describedby="basic-addon2">
                   <button type="submit" class="input-group-addon"><i class="fa fa-search"></i></button>
                 </span>
               </div>
@@ -217,7 +217,7 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
-              <ul class="nav navbar-nav">
+              <ul id="ulIndex" class="nav navbar-nav">
                 <li class="dropdown active">
                   <a href="index.html">Inicio</a>
                 </li>
@@ -230,9 +230,9 @@
                 <li class="dropdown">
                   <a href="account-profile.html">PDK Members</a>
                 </li>
-                <li class="dropdown">
+                <!-- <li class="dropdown">
                   <a href="account-profile.html">Mi perfil</a>
-                </li>
+                </li> -->
               </ul>
             </div><!-- /.navbar-collapse -->
 
@@ -259,8 +259,8 @@
                       data-start="2000"
                       data-easing="Back.easeInOut"
                       data-endspeed="300">
-                      <small>PDK Members</small><br>
-                      ¡Únete a nuestro club!
+                      <small>¡Bienvenido!</small><br>
+                      Al mundo PinDaKi
                     </div>
 
                     <div class="tp-caption rs-caption-3 sft"
@@ -273,7 +273,48 @@
                       data-endspeed="300"
                       data-endeasing="Power1.easeIn"
                       data-captionhidden="off">
-                      Adquiere descuentos increíbles en todas tus compras.
+                      Productos que marcan la diferencia
+                    </div>
+                    <div class="tp-caption rs-caption-4 sft"
+                      data-hoffset="0"
+                      data-x="85"
+                      data-y="300"
+                      data-speed="800"
+                      data-start="3500"
+                      data-easing="Power4.easeOut"
+                      data-endspeed="300"
+                      data-endeasing="Power1.easeIn"
+                      data-captionhidden="off">
+                      <span class="page-scroll"><a href="#" class="btn primary-btn">Cátalogo<i class="glyphicon glyphicon-chevron-right"></i></a></span>
+                    </div>
+                  </div>
+                </li>
+                <li data-transition="slidehorizontal" data-slotamount="5" data-masterspeed="700" data-title="Slide 1">
+                  <img src="img/home/banner-slider/slider-img2.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+                  <div class="slider-caption slider-captionV4">
+                    <div class="tp-caption rs-caption-2 sft"
+                      data-hoffset="0"
+                      data-x="85"
+                      data-y="115"
+                      data-speed="800"
+                      data-start="2000"
+                      data-easing="Back.easeInOut"
+                      data-endspeed="300">
+                      <small>Únete al club</small><br>
+                      ¡PDK Members!
+                    </div>
+
+                    <div class="tp-caption rs-caption-3 sft"
+                      data-hoffset="0"
+                      data-x="85"
+                      data-y="240"
+                      data-speed="1000"
+                      data-start="3000"
+                      data-easing="Power4.easeOut"
+                      data-endspeed="300"
+                      data-endeasing="Power1.easeIn"
+                      data-captionhidden="off">
+                      Increíbles descuentos para socios
                     </div>
                     <div class="tp-caption rs-caption-4 sft"
                       data-hoffset="0"
@@ -289,8 +330,8 @@
                     </div>
                   </div>
                 </li>
-                <li data-transition="slidehorizontal" data-slotamount="5" data-masterspeed="700" data-title="Slide 1">
-                  <img src="img/home/banner-slider/slider-img3.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+                <li data-transition="slidehorizontal" data-slotamount="5" data-masterspeed="1000" data-title="Slide 2">
+                  <img src="img/home/banner-slider/slider-img3.jpg" alt="slidebg" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
                   <div class="slider-caption slider-captionV4">
                     <div class="tp-caption rs-caption-2 sft"
                       data-hoffset="0"
@@ -300,8 +341,8 @@
                       data-start="2000"
                       data-easing="Back.easeInOut"
                       data-endspeed="300">
-                      <small>Oferta del día</small><br>
-                      Ahorra un 50% 
+                      <small>Oferta única</small><br>
+                      15% descuento 
                     </div>
 
                     <div class="tp-caption rs-caption-3 sft"
@@ -314,51 +355,13 @@
                       data-endspeed="300"
                       data-endeasing="Power1.easeIn"
                       data-captionhidden="off">
-                      Batería de ollas especiales Proctor Silex
+                      Set de ollas Proctor Silex
                     </div>
+
                     <div class="tp-caption rs-caption-4 sft"
                       data-hoffset="0"
                       data-x="85"
                       data-y="300"
-                      data-speed="800"
-                      data-start="3500"
-                      data-easing="Power4.easeOut"
-                      data-endspeed="300"
-                      data-endeasing="Power1.easeIn"
-                      data-captionhidden="off">
-                      <span class="page-scroll"><a href="#" class="btn primary-btn">Comprar<i class="glyphicon glyphicon-chevron-right"></i></a></span>
-                    </div>
-                  </div>
-                </li>
-                <li data-transition="slidehorizontal" data-slotamount="5" data-masterspeed="1000" data-title="Slide 2">
-                  <img src="img/home/banner-slider/slider-img2.jpg" alt="slidebg" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
-                  <div class="slider-caption slider-captionV4 text-center">
-                    <div class="tp-caption rs-caption-2 sft text-center"
-                      data-x="center"
-                      data-y="200"
-                      data-speed="800"
-                      data-start="2000"
-                      data-easing="Back.easeInOut"
-                      data-endspeed="300">
-                      <small>Oferta única</small><br>
-                      30% descuento 
-                    </div>
-
-                    <div class="tp-caption rs-caption-3 sft text-center"
-                      data-x="center"
-                      data-y="325"
-                      data-speed="1000"
-                      data-start="3000"
-                      data-easing="Power4.easeOut"
-                      data-endspeed="300"
-                      data-endeasing="Power1.easeIn"
-                      data-captionhidden="off">
-                      Aprovecha esta oferta única, set 14 cuchillos a precio único.
-                    </div>
-
-                    <div class="tp-caption rs-caption-4 sft text-center"
-                      data-x="center"
-                      data-y="385"
                       data-speed="800"
                       data-start="3500"
                       data-easing="Power4.easeOut"
@@ -386,8 +389,8 @@
                 <div class="productImage productImage1">
                 </div>
                 <div class="productCaption clearfix text-right">
-                  <h3><a href="single-product.html">Juego de Cuchillos</a></h3>
-                  <p>14 piezas, diferentes cortes.</p>
+                  <h3><a href="single-product.html">Bacon Master</a></h3>
+                  <p>El Bacon más delicioso</p>
                   <a href="single-product.html" class="btn btn-border">Comprar</a>
                 </div>
               </div>
@@ -397,8 +400,8 @@
                 <div class="productImage productImage2">
                 </div>
                 <div class="productCaption clearfix text-right">
-                  <h3><a href="single-product.html">Set de Ollas</a></h3>
-                  <p>Set de ollas inoxidables, Proctor Silex</p>
+                  <h3><a href="single-product.html">ECO Luces</a></h3>
+                  <p>Lámparas solares</p>
                   <a href="single-product.html" class="btn btn-border">Comprar</a>
                 </div>
               </div>
@@ -428,7 +431,13 @@
                           <img src="img/home/category/category-img3.jpg" alt="Image">
                         </div>
                         <div class="item">
-                          <img src="img/home/category/category-img3.jpg" alt="Image">
+                          <img src="img/home/category/category-img3-1.jpg" alt="Image">
+                        </div>
+                        <div class="item">
+                          <img src="img/home/category/category-img3-2.jpg" alt="Image">
+                        </div>
+                        <div class="item">
+                          <img src="img/home/category/category-img3-3.jpg" alt="Image">
                         </div>
                       </div>
                     </div>
@@ -514,7 +523,13 @@
                           <img src="img/home/category/category-img2.jpg" alt="Image">
                         </div>
                         <div class="item">
-                          <img src="img/home/category/category-img2.jpg" alt="Image">
+                          <img src="img/home/category/category-img2-1.jpg" alt="Image">
+                        </div>
+                        <div class="item">
+                          <img src="img/home/category/category-img2-2.jpg" alt="Image">
+                        </div>
+                        <div class="item">
+                          <img src="img/home/category/category-img2-3.jpg" alt="Image">
                         </div>
                       </div>
                     </div>
@@ -584,8 +599,7 @@
                 <div class="category-content">
                   <div class="category-top">
                     <div class="category-menu text-center">
-                      <h2 class="category-title">Entreteni-
-                      miento</h2>
+                      <h2 class="category-title">Juegos</h2>
                       <ul>
                         <li><a href="product-grid-left-sidebar.html">Juegos de Mesa</a></li>
                         <li><a href="product-grid-left-sidebar.html">Juegos Outdoor</a></li>
@@ -601,7 +615,13 @@
                           <img src="img/home/category/category-img4.jpg" alt="Image">
                         </div>
                         <div class="item">
-                          <img src="img/home/category/category-img4.jpg" alt="Image">
+                          <img src="img/home/category/category-img4-1.jpg" alt="Image">
+                        </div>
+                        <div class="item">
+                          <img src="img/home/category/category-img4-2.jpg" alt="Image">
+                        </div>
+                        <div class="item">
+                          <img src="img/home/category/category-img4-3.jpg" alt="Image">
                         </div>
                       </div>
                     </div>
@@ -687,7 +707,13 @@
                           <img src="img/home/category/category-img5.jpg" alt="Image">
                         </div>
                         <div class="item">
-                          <img src="img/home/category/category-img5.jpg" alt="Image">
+                          <img src="img/home/category/category-img5-1.jpg" alt="Image">
+                        </div>
+                        <div class="item">
+                          <img src="img/home/category/category-img5-2.jpg" alt="Image">
+                        </div>
+                        <div class="item">
+                          <img src="img/home/category/category-img5-3.jpg" alt="Image">
                         </div>
                       </div>
                     </div>
@@ -854,30 +880,47 @@
             <h3 class="modal-title">Ingresar</h3>
           </div>
           <div class="modal-body">
-            <form action="" method="POST" role="form">
+              <div class="col-sm-12">
+                <div class="page-header text-center">
+                  <h3>Redes Sociales</h3>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="form-group col-sm-12 col-xs-12">
+                <button type="submit" onclick="loginWithFacebook()" class="btn-block btn-social btn-facebook-filled"><i class="fa fa-facebook" aria-hidden="true"></i><span>Ingresar con Facebook</span></button>
+              </div>
+              <div class="form-group col-sm-12 col-xs-12">
+                <button type="submit" onclick="loginWithGoogle()" class="btn-block btn-social btn-google-filled"><i class="fa fa-google-plus" aria-hidden="true"></i><span>Ingresar con Google+</span></button>
+              </div>
+              <div class="clearfix"></div>
+              <div class="col-sm-12">
+                <div class="page-header text-center">
+                  <h3>Cuenta PDK</h3>
+                </div>
+              </div>
+              <div class="clearfix"></div>
               <div class="form-group">
                 <label for="">Correo Electrónico</label>
-                <input type="email" class="form-control" id="">
+                <input type="email" class="form-control" id="logmail">
               </div>
               <div class="form-group">
                 <label for="">Contraseña</label>
-                <input type="password" class="form-control" id="">
+                <input type="password" class="form-control" id="logpass">
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox"> Recordarme
+                  <input type="checkbox" checked="true"> Recordarme
                 </label>
               </div>
-              <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+              <button onclick="loginWithEmailAndPassword()" class="btn btn-primary btn-block">Ingresar</button>
               <button type="button" class="btn btn-link btn-block">¿Ovidaste la contraseña?</button>
-            </form>
           </div>
         </div>
       </div>
     </div>
 
     <!-- SIGN UP MODAL -->
-    <div class="modal fade" id="signup" tabindex="-1" role="dialog">
+    <div class="modal fade signup-modal" id="signup" tabindex="-1" role="dialog">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -885,21 +928,56 @@
             <h3 class="modal-title">Crear cuenta</h3>
           </div>
           <div class="modal-body">
-            <form action="" method="POST" role="form">
+              <div class="col-sm-12">
+                <div class="page-header text-center">
+                  <h3>Registro PinDaKi</h3>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="form-group">
+                <label for="">Nombre</label>
+                <input type="text" class="form-control" id="name">
+              </div>
+              <div class="form-group">
+                <label for="">Apellidos</label>
+                <input type="text" class="form-control" id="lastName">
+              </div>
               <div class="form-group">
                 <label for="">Correo Electrónico</label>
-                <input type="email" class="form-control" id="">
+                <input type="email" class="form-control" id="email">
               </div>
               <div class="form-group">
                 <label for="">Contraseña</label>
-                <input type="password" class="form-control" id="">
+                <input type="password" class="form-control" id="password">
               </div>
               <div class="form-group">
                 <label for="">Repetir Contraseña</label>
-                <input type="password" class="form-control" id="">
+                <input type="password" class="form-control" id="repassword">
               </div>
-              <button type="submit" class="btn btn-primary btn-block">Registro</button>
-            </form>
+              <button onclick="createUserWithEmailAndPassword();" class="btn btn-primary btn-block">Registro</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOGOUT MODAL -->
+    <div class="modal fade logout-modal" id="logout" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3 class="modal-title">¿Deseas Cerrar Sesión?</h3>
+          </div>
+          <div class="modal-body">
+              <div class="col-sm-12">
+                <div class="text-center">
+                  <h3>Cerrarás Sesión</h3>
+                  <span>Te recomedamos continuar con tu sesión activa. Esto te ayudará a mantenerte al día con las mejores promociones, productos de alta calidad, y las mejores marcas.</span>
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <button onclick="logOutUser()" class="btn btn-primary btn-block">Cerrar Sesión</button>
           </div>
         </div>
       </div>

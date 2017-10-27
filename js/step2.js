@@ -13,7 +13,7 @@ function getDataOfShipping(){
 	country = $('#country').children('option:selected').val();
 	city = $('#city').children('option:selected').val();
 	address = $('#address').val();
-	zip = $('#zip').val();
+	zip = $('#zip').val(); 
 
 	shipping = {
 		country: country,

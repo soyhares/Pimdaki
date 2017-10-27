@@ -764,7 +764,7 @@ a:hover, a:focus {
 @media (min-width: 768px) {
   .navbar-default .navbar-header .navbar-brand {
     padding: 0 15px;
-    margin-top: 27px;
+    margin-top: 14px;
   }
 }
 
@@ -1220,7 +1220,7 @@ body.bodyColor.container {
 
 .navTop .navbar-brand {
   display: inline-block;
-  padding: 5px 0 0 15px;
+  padding: 0px 0 0 15px;
   width: 150px;
   height: auto;
   margin-right: 10px;
@@ -1232,9 +1232,16 @@ body.bodyColor.container {
   }
 }
 
+@media (max-width: 479px) {
+  .navbar-brand img {
+    max-width: 110px;
+  } 
+}
+
+
 @media (min-width: 992px) {
   .navTop .navbar-brand {
-    padding: 5px 0 0;
+    padding: 0px 0 0;
     width: auto;
     height: auto;
   }
