@@ -179,7 +179,9 @@ function deleteProductInCart(){
 
 jQuery(document).ready(function(){
 	//Function Listener
+	
 	result = order.total.toFixed(2);
+	result *= $("#coinChange").value()
  	localStorage.setItem('totalOrder', result);
     console.log(order);
     loadOrderInfo();
