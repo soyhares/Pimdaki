@@ -7,7 +7,7 @@ var storedCTS = JSON.parse(localStorage.getItem("cartCTS"));
 var order = {};
 var cartIDS = [];
 var cartCTS = [];
-var deleteID;
+var deleteID; 
 var priceInt = 0;
 var storedPRICE = 0;
 var storedDISCOUNT = 0;
@@ -37,7 +37,7 @@ var config = {
 	authDomain: "pimdaki-e16a0.firebaseapp.com",
 	databaseURL: "https://pimdaki-e16a0.firebaseio.com",
 	projectId: "pimdaki-e16a0",
-	storageBucket: "",
+	storageBucket: "pimdaki-e16a0.appspot.com",
 	messagingSenderId: "172646261705"
 };
 firebase.initializeApp(config);

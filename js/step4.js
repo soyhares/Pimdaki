@@ -4,6 +4,9 @@ var order = JSON.parse(localStorage.getItem("order"));
  * -limpia los datos nulos o vacios
  * - retorna el objeto con la informacion necesaria
  */
+ var result;
+ var globalResult;
+
 const _cleanObj = ( obj ) =>
   {
     for( let prop in obj ){
@@ -85,8 +88,6 @@ const addNode = ( obj , route, id) =>{
           .catch(( error )=>console.log("Error: "+error));		
 };
 
-
-
 //obtinene el objeto
 const dispatcher = (list) =>{
 	for (var i = 0; i < list.length; i++) {
@@ -104,12 +105,8 @@ const dispatcher = (list) =>{
             updateNode(route+"/lot", span-order.lot); //here!
 
 		});
-	
 	}
 	setTimeout(()=>{ location.reload();}, 1000);	
-	
- 
-
 }
 
 //despacha los productos
@@ -123,34 +120,73 @@ const updateNode = (route, lot ) =>{
       .catch((error)=>console.log("Error: "+error));
 };
 
-
-
-
-//class to add point in amount
-var formatNumber = {
-	separador: ",", // separador para los miles
-	sepDecimal: ".", // separador para los decimales
-	formatear:function (num){
-		num +="";
-		var splitStr = num.split('.');
-		var splitLeft = splitStr[0];
-		var splitRight = splitStr.length > 1 ? this.sepDecimal + splitStr[1] : '';
-		var regx = /(\d+)(\d{3})/;
-		while (regx.test(splitLeft)) {
-		splitLeft = splitLeft.replace(regx, '$1' + this.separador + '$2');
-	}
-	return this.simbol + splitLeft +splitRight;
-	},
-	format:function(num, simbol){
-		this.simbol = simbol ||'';
-	return this.formatear(num);
-	}
-}
+//class to add point in amount 
+// var formatNumber = {
+// 	separador: ",", // separador para los miles
+// 	sepDecimal: ".", // separador para los decimales
+// 	formatear:function (num){
+// 		num +="";
+// 		var splitStr = num.split('.');
+// 		var splitLeft = splitStr[0];
+// 		var splitRight = splitStr.length > 1 ? this.sepDecimal + splitStr[1] : '';
+// 		var regx = /(\d+)(\d{3})/;
+// 		while (regx.test(splitLeft)) {
+// 		splitLeft = splitLeft.replace(regx, '$1' + this.separador + '$2');
+// 	}
+// 	return this.simbol + splitLeft +splitRight;
+// 	},
+// 	format:function(num, simbol){
+// 		this.simbol = simbol ||'';
+// 	return this.formatear(num);
+// 	}
+// }
 
 //Function Listener
 jQuery(document).ready(function(){
-	let total =formatNumber.format(order.total, "₡")
-	console.log(total || "0");
-    $("#btn_order").click(()=>_orderManager());
+	// let total =formatNumber.format(order.total, "₡")
+	// console.log(total || "0");
+ //    $("#btn_order").click(()=>_orderManager());
+ 		
+	// paypal.Button.render({
+
+ //          env: 'sandbox', // Or 'sandbox'
+
+ //          style: {
+ //            label: 'buynow',
+ //            fundingicons: true, // optional
+ //            branding: true, // optional
+ //            size:  'responsive', // small | medium | large | responsive
+ //            shape: 'rect',   // pill | rect
+ //            color: 'gold'   // gold | blue | silve | black
+ //          },
+
+ //          client: {
+ //              production: 'AdJfiWHgKPzzmAN0ouOxpky0Xed3y0aWWYw8nirCONKnSHc1RejnPfuQqpus4UNUaQEDmvFD-lnMZRjE',
+ //              sandbox:    'AaUS4PKCVa3DO6OT6JZC30-jGwZg70qO8sU1PPQVCa1ELdSrEKfTJw7BfIk-H20vghbQhiB7uth5l1oo'
+ //          },
+
+ //          commit: true, // Show a 'Pay Now' button
+
+ //          payment: function(data, actions) {
+ //              return actions.payment.create({
+ //                  payment: {
+ //                      transactions: [
+ //                          {
+ //                              amount: { total: result, currency: 'USD' }
+ //                          }
+ //                      ]
+ //                  }
+ //              });
+ //          },
+
+ //          onAuthorize: function(data, actions) {
+ //              return actions.payment.execute().then(function(payment) {
+
+ //                  // The payment is complete!
+ //                  // You can now show a confirmation message to the customer
+ //                  window.location.href = 'checkout-complete.html';
+ //              });
+ //          }
+ //      }, '#paypal-button');
 
 });

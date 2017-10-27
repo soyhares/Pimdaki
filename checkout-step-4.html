@@ -78,13 +78,13 @@ echo $valor;
 ?>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head> 
 
     <!-- SITE TITTLE -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PimDaKi | Opciones de Pago</title>
+    <title>PinDaKi | Opciones de Pago</title>
 
     <script src="https://www.paypalobjects.com/api/checkout.js"></script>
     <!-- PLUGINS CSS STYLE -->
@@ -100,7 +100,7 @@ echo $valor;
 
     <!-- CUSTOM CSS -->
     <link href="css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/color-option2.css" id="option_color">
+    <link rel="stylesheet" href="css/default.css" id="option_color">
 
     <!-- Icons -->
     <link rel="shortcut icon" href="img/favicon.png">
@@ -197,7 +197,7 @@ echo $valor;
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"></a>
+              <a class="navbar-brand" href="index.html"><img src="img/pindaki.jpg" alt="logo"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -277,14 +277,12 @@ echo $valor;
                     <a href="checkout-step-4.html" class="progress-wizard-dot"></a>
                   </div>
                 </div>
-                <form action="" class="row" method="POST" role="form">
-                  <div class="col-xs-12">
-                    <div class="page-header">
-                      <h4>PayPal</h4>
-                    </div>
+                <div class="col-xs-12">
+                  <div class="page-header">
+                    <h4>PayPal</h4>
                   </div>
-                  <div id="paypal-button"></div>
-                </form>
+                </div>
+                <div id="paypal-button"></div>
                 <form action="" class="row" method="POST" role="form">
                   <div class="col-xs-12">
                     <div class="page-header">
@@ -532,47 +530,60 @@ echo $valor;
     <script src="js/custom.js"></script>
 
     <script>
+      var mount = localStorage.getItem('totalOrder');
+      var res = '2.00';
+      // console.log(typeof(mount))
+      // var totalMount = mount;
+     
+      console.log(mount);
+      console.log(res);
       paypal.Button.render({
+            env: 'sandbox', // sandbox | production
 
-          env: 'sandbox', // Or 'sandbox'
-
-          style: {
-            label: 'buynow',
-            fundingicons: true, // optional
-            branding: true, // optional
-            size:  'responsive', // small | medium | large | responsive
-            shape: 'rect',   // pill | rect
-            color: 'gold'   // gold | blue | silve | black
-          },
-
-          client: {
+            style: {
+              label: 'buynow',
+              fundingicons: true, // optional
+              branding: true, // optional
+              size:  'responsive', // small | medium | large | responsive
+              shape: 'rect',   // pill | rect
+              color: 'gold'   // gold | blue | silve | black
+            },
+            // PayPal Client IDs - replace with your own
+            // Create a PayPal app: https://developer.paypal.com/developer/applications/create
+            client: {
               production: 'AdJfiWHgKPzzmAN0ouOxpky0Xed3y0aWWYw8nirCONKnSHc1RejnPfuQqpus4UNUaQEDmvFD-lnMZRjE',
               sandbox:    'AaUS4PKCVa3DO6OT6JZC30-jGwZg70qO8sU1PPQVCa1ELdSrEKfTJw7BfIk-H20vghbQhiB7uth5l1oo'
-          },
+            },
 
-          commit: true, // Show a 'Pay Now' button
+            // Show the buyer a 'Pay Now' button in the checkout flow
+            commit: true,
 
-          payment: function(data, actions) {
-              return actions.payment.create({
-                  payment: {
-                      transactions: [
-                          {
-                              amount: { total: '1.00', currency: 'USD' }
-                          }
-                      ]
-                  }
-              });
-          },
+            // payment() is called when the button is clicked
+            payment: function(data, actions) {
 
-          onAuthorize: function(data, actions) {
-              return actions.payment.execute().then(function(payment) {
+                // Make a call to the REST api to create the payment
+                return actions.payment.create({
+                    payment: {
+                        transactions: [
+                            {
+                                amount: { total: mount, currency: 'USD' }
+                            }
+                        ]
+                    }
+                });
+            },
 
-                  // The payment is complete!
-                  // You can now show a confirmation message to the customer
-                  window.location.href = 'checkout-complete.html';
-              });
-          }
-      }, '#paypal-button');
+            // onAuthorize() is called when the buyer approves the payment
+            onAuthorize: function(data, actions) {
+
+                // Make a call to the REST api to execute the payment
+                return actions.payment.execute().then(function() {
+                    window.alert('Payment Complete!');
+                });
+            }
+
+        }, '#paypal-button');
+
     </script>
 
   </body>

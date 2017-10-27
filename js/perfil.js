@@ -214,6 +214,7 @@ function loginWithFacebook(){
 	  var token = result.credential.accessToken;
 	  var user = result.user;
 	  console.log(user);
+	  window.location.href = "account-dashboard.html";
 	  // document.getElementById("imgProfile").src = photoURL;
 	}).catch(function(error) {
 	  var errorCode = error.code;
@@ -229,6 +230,7 @@ function loginWithGoogle(){
 	 	var token = result.credential.accessToken;
 	  	var user = result.user;
 	  	console.log(user);
+	  	window.location.href = "account-dashboard.html";
 	}).catch(function(error) {
 	  	var errorCode = error.code;
 	  	var errorMessage = error.message;
@@ -249,6 +251,9 @@ $(document).ready(function() {
 	        profileEmail = profile.email;
 	        photoURL = profile.photoURL;
 	    });
+
+	    console.log(displayName);
+	    console.log(photoURL);
         // if (user != null) {
             
         // }
