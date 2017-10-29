@@ -44,7 +44,7 @@ function getDataOfProduct(){
                 var $divParent = $("<div>", {id: "", "class": "col-sm-4 col-xs-12"});
                 var $div0 = $("<div>", {id: "", "class": "productBox animated bounceIn"});
                 var $div1 = $("<div>", {id: "", "class": "productImage clearfix"});
-                var $img0 = $("<img>", {id: "img0", "src": snap.catalog[0]});
+                var $img0 = $("<img>", {id: "img0", class:"fullImage", "src": snap.catalog[0]});
                 var $div2 = $("<div>", {id: "", "class": "productMasking"});
                 var $ul = $("<ul>", {id: "", "class": "list-inline btn-group", "role": "group"});
                 var $li0 = $("<li>", {id: ""});
@@ -107,7 +107,7 @@ $("#grid_left_category li a").click(function(e) {
                         var $divParent = $("<div>", {id: "", "class": "col-sm-4 col-xs-12"});
                         var $div0 = $("<div>", {id: "", "class": "productBox animated bounceIn"});
                         var $div1 = $("<div>", {id: "", "class": "productImage clearfix"});
-                        var $img0 = $("<img>", {id: "img0", "src": snap.catalog[0]});
+                        var $img0 = $("<img>", {id: "img0", class:"fullImage", "src": snap.catalog[0]});
                         var $div2 = $("<div>", {id: "", "class": "productMasking"});
                         var $ul = $("<ul>", {id: "", "class": "list-inline btn-group", "role": "group"});
                         var $li0 = $("<li>", {id: ""});

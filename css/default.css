@@ -502,3 +502,13 @@
   line-height: 36px;
   text-indent: 18px;
 }
+
+.fullImage{
+  position: relative;
+  float: left;
+  width: 200px;
+  height: 200px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

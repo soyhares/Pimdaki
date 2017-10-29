@@ -291,8 +291,10 @@ function loadSingleProduct(){
 			});
 
 			setTimeout(function(){
+				console.log(array.length);
 				if (array != null) {
 					if (array.length >= 4){
+						console.log(array);
 						var obj0 = array[0];
 						var obj1 = array[1];
 						var obj2 = array[2];
@@ -483,7 +485,7 @@ function loadSingleProduct(){
 
 		        	}
 				}
-			}, 2000); 
+			}, 1000); 
 
 	        
 
