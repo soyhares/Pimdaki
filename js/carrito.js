@@ -12,6 +12,7 @@ var priceInt = 0;
 var storedPRICE = 0;
 var storedDISCOUNT = 0;
 var storedTOTALPRICE = 0;
+var quantity = "";
 
 var materials = {};
 var colors = {};
@@ -43,22 +44,33 @@ var config = {
 firebase.initializeApp(config);
 
 function loadDataInCartShop(){
+	console.log(storedIDS)
+	for (i in storedIDS) {
+		console.log(storedIDS[i].lot)
+		drawingCar(storedIDS[i].route,storedIDS[i].id, storedIDS[i].lot)
+	}	
+}
+
+function drawingCar(category,id, quantity){
 	//Creamos la consulta
-	for (i = 0; i < storedIDS.length; i++) {
+
 	    firebase.database()
-	    .ref('storage/products/categories/' + storedIDS[i].route + "/" + storedIDS[i].id)
+	    .ref('storage/products/categories/' + category + "/" + id)
 	    .on('value', function(data) {
 		    //Cargamos el objeto y sus atributos 
 		    var snap = data.val();
 		    id = data.key;
-		    priceInt = parseInt(snap.price);
+		  
+		    console.log(quantity);
+		  
+		    priceInt = parseInt(snap.price) * parseInt(quantity);
 		    storedPRICE += priceInt;
 		    storedTOTALPRICE = storedPRICE + storedDISCOUNT;
 		    console.log(storedPRICE)
 		    console.log(storedTOTALPRICE)
 		    console.log(storedDISCOUNT)
 		    // Create Cart Elemets
-		    var $tr = $("<tr>", {id:"", class:""});
+		   var $tr = $("<tr>", {id:"", class:""});
 	     	var $td0 = $("<td>", {id:"", class:"col-xs-2"});
 	     	var $btn0 = $("<button>", {id: id, "type":"button", class:"close", onclick:'advisorWarningDelete(this.id)', "aria-label":"Close"});     	
 	     	var $span0 = $("<span>", {id:"", "aria-hidden":"true", text: "x"});
@@ -68,7 +80,7 @@ function loadDataInCartShop(){
 	     	var $td1 = $("<td>", {id:"", class:"col-xs-4", text: snap.name});
 	     	var $td2 = $("<td>", {id:"", class:"col-xs-2", text: id});
 	     	var $td3 = $("<td>", {id:"", class:"col-xs-2"});
-	     	var $input0 = $("<input>", {id:"", class:"", "type":"text", "placeholder":"1"});
+	     	var $input0 = $("<input>", {id:"lot", class:"", "type":"text", "placeholder": quantity});
 	     	var $td4 = $("<td>", {id:"", class:"col-xs-2", text: "₡ " + snap.price});
 
 	        $("#tbody_cart").append($tr);
@@ -91,7 +103,7 @@ function loadDataInCartShop(){
 	        $("#Descuento").html($span3);
 	        $("#Total").html($span4);
 		});
-	}	
+		
 }
 
 function getPricingData(){
@@ -163,6 +175,7 @@ function deleteProductInCart(){
 $(document).ready(function() {
 	//Function Listener
 	loadDataInCartShop();
+	console.log(storedIDS);
 	//localStorage.removeItem('cartIDS');
 	//localStorage.removeItem('cartCTS');
 	// console.log(category);

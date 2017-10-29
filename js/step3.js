@@ -181,7 +181,8 @@ jQuery(document).ready(function(){
 	//Function Listener
 	
 	result = order.total.toFixed(2);
-	result *= $("#coinChange").value()
+	console.log($("#coinChange").val());
+	result *= $("#coinChange").val();
 	console.log(result);
  	localStorage.setItem('totalOrder', result);
     console.log(order);

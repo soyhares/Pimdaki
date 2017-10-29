@@ -33,6 +33,8 @@ function getDataOfProduct(){
         var snap = data.val();
         id = data.key;
         console.log(snap);
+
+        
 	}); 
 }
 
