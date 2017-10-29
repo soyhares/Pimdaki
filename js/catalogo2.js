@@ -7,9 +7,10 @@ var cartIDS = [];
 var cartCTS = [];
 var oldID;
 
-var materials = {};
+var materials = {}; 
 var colors = {}; 
 var catalog = {};
+var quantity = "1";
 
 var category,subCategory,id,barCode,name,model,lot,price,oldPrice,tradeMark,size,description;
 
@@ -76,7 +77,7 @@ function getDataOfProduct(){
         $("#catalog_parend_list").append($divParent); 
 
 	});
-	setTimeout(function(){ $('#spinner').hide(); }, 1500);
+	setTimeout(function(){ $('#spinner').hide(); }, 600);
 }
 
 // Custom Code
@@ -133,7 +134,7 @@ $("#list_left_category li a").click(function(e) {
 			        $("#catalog_parend_list").append($divParent); 
 
 				});
-				setTimeout(function(){ $('#spinner').hide(); }, 1500);		 
+				setTimeout(function(){ $('#spinner').hide(); }, 600);		 
         }
 });
 
@@ -148,6 +149,12 @@ function singleProduct(id){
 
 function quickViewModal(id){
 	$('#quick-modal').modal('show');
+	setTimeout(function(){
+        $('#guiest_id4').change(function(){
+            quantity = $('#guiest_id4 option:selected').val();
+            console.log(quantity);
+        }); 
+    }, 1000);
 	//Creamos la consulta
 	if (id == "") {
 		console.log(id);
@@ -161,6 +168,26 @@ function quickViewModal(id){
 	     	var $h00 = $("<h3>", {id: "", text: snap.name});
 	     	var $h1 = $("<h3>", {id: "", text: "₡ " + snap.price});
 	     	var $p0 = $("<p>", {id:"", text: snap.description});
+
+	     	var $spanQ = $("<span>", {id:"", class:"quick-drop resizeWidth"});
+            var $selectQ = $("<select>", {id:"guiest_id4", name:"guiest_id4", class:"selectOptions"});
+            var $optionQ = $("<option>", {value:"1", text:"Cantidad"});
+            var $option0 = $("<option>", {value:"1", text:"1"});
+            var $option1 = $("<option>", {value:"2", text:"2"});
+            var $option2 = $("<option>", {value:"3", text:"3"});
+            var $option3 = $("<option>", {value:"4", text:"4"});
+            var $option4 = $("<option>", {value:"5", text:"5"});
+            var $option5 = $("<option>", {value:"6", text:"6"});
+            var $option6 = $("<option>", {value:"7", text:"7"});
+            var $option7 = $("<option>", {value:"8", text:"8"});
+            var $option8 = $("<option>", {value:"9", text:"9"});
+            var $option9 = $("<option>", {value:"10", text:"10"});
+            var $option10 = $("<option>", {value:"11", text:"11"});
+            var $option11 = $("<option>", {value:"12", text:"12"});
+            var $option12 = $("<option>", {value:"13", text:"13"});
+            var $option13 = $("<option>", {value:"14", text:"14"});
+            var $option14 = $("<option>", {value:"15", text:"15"});
+
 	     	var $div0 = $("<div>", {id:"btn-area", class:"btn-area"});
 	     	var $btn0 = $("<button>", {id:"", "type":"button", class:"btn btn-default"});
 	     	var $a0 = $("<a>", {id: id, onclick:'addToShoppingCart(this.id)', class:"btn btn-primary btn-block", text: "Agregar al Carrito"});
@@ -198,6 +225,25 @@ function quickViewModal(id){
 	        $("#modal-data").append($h00);
 	        $("#modal-data").append($h1);
 	        $("#modal-data").append($p0);
+	        $("#modal-data").append($spanQ);
+            $($spanQ).append($selectQ);
+            $($selectQ).append($optionQ);
+            $($selectQ).append($option0);
+            $($selectQ).append($option1);
+            $($selectQ).append($option2);
+            $($selectQ).append($option3);
+            $($selectQ).append($option4);
+            $($selectQ).append($option5);
+            $($selectQ).append($option6);
+            $($selectQ).append($option7);
+            $($selectQ).append($option8);
+            $($selectQ).append($option9);
+            $($selectQ).append($option10);
+            $($selectQ).append($option11);
+            $($selectQ).append($option12);
+            $($selectQ).append($option13);
+            $($selectQ).append($option14);
+
 	        $("#modal-data").append($div0);
 	        $($div0).append($a0);
 	        $($a0).append($i0);
@@ -248,6 +294,27 @@ function quickViewModal(id){
 	     	var $h00 = $("<h3>", {id: "", text: snap.name});
 	     	var $h1 = $("<h3>", {id: "", text: "₡ " + snap.price});
 	     	var $p0 = $("<p>", {id:"", text: snap.description});
+
+
+	     	var $spanQ = $("<span>", {id:"", class:"quick-drop resizeWidth"});
+            var $selectQ = $("<select>", {id:"guiest_id4", name:"guiest_id4", class:"selectOptions"});
+            var $optionQ = $("<option>", {value:"1", text:"Cantidad"});
+            var $option0 = $("<option>", {value:"1", text:"1"});
+            var $option1 = $("<option>", {value:"2", text:"2"});
+            var $option2 = $("<option>", {value:"3", text:"3"});
+            var $option3 = $("<option>", {value:"4", text:"4"});
+            var $option4 = $("<option>", {value:"5", text:"5"});
+            var $option5 = $("<option>", {value:"6", text:"6"});
+            var $option6 = $("<option>", {value:"7", text:"7"});
+            var $option7 = $("<option>", {value:"8", text:"8"});
+            var $option8 = $("<option>", {value:"9", text:"9"});
+            var $option9 = $("<option>", {value:"10", text:"10"});
+            var $option10 = $("<option>", {value:"11", text:"11"});
+            var $option11 = $("<option>", {value:"12", text:"12"});
+            var $option12 = $("<option>", {value:"13", text:"13"});
+            var $option13 = $("<option>", {value:"14", text:"14"});
+            var $option14 = $("<option>", {value:"15", text:"15"});
+
 	     	var $div0 = $("<div>", {id:"btn-area", class:"btn-area"});
 	     	var $btn0 = $("<button>", {id:"", "type":"button", class:"btn btn-default"});
 	     	var $a0 = $("<a>", {id: id, onclick:'addToShoppingCart(this.id)', class:"btn btn-primary btn-block", text: "Agregar al Carrito"});
@@ -285,6 +352,25 @@ function quickViewModal(id){
 	        $("#modal-data").append($h00);
 	        $("#modal-data").append($h1);
 	        $("#modal-data").append($p0);
+	        $("#modal-data").append($spanQ);
+            $($spanQ).append($selectQ);
+            $($selectQ).append($optionQ);
+            $($selectQ).append($option0);
+            $($selectQ).append($option1);
+            $($selectQ).append($option2);
+            $($selectQ).append($option3);
+            $($selectQ).append($option4);
+            $($selectQ).append($option5);
+            $($selectQ).append($option6);
+            $($selectQ).append($option7);
+            $($selectQ).append($option8);
+            $($selectQ).append($option9);
+            $($selectQ).append($option10);
+            $($selectQ).append($option11);
+            $($selectQ).append($option12);
+            $($selectQ).append($option13);
+            $($selectQ).append($option14);
+
 	        $("#modal-data").append($div0);
 	        $($div0).append($a0);
 	        $($a0).append($i0);
@@ -326,7 +412,7 @@ function addToShoppingCart(id){
                 storedIDS = [];
                 storedIDS.push({
                         id:id,
-                        lot:1,
+                        lot:quantity,
                         route:category,
                 });
                 console.log("nuevo");                                
@@ -339,16 +425,16 @@ function addToShoppingCart(id){
                 if(index == -1){
                          storedIDS.push({
                                 id:id,
-                                lot:1,
+                                lot:quantity,
                                 route:category,   
                         });
                         console.log("nuevo");                                
                         localStorage.setItem("cartIDS", JSON.stringify(storedIDS));
                         window.location.href = 'cart-page.html';
                 }else{
-                        console.log("existe")
+                        console.log("existe");
                         var lot = storedIDS[index].lot;
-                        storedIDS[index].lot = lot+1; 
+                        storedIDS[index].lot = parseInt(lot) + parseInt($('#guiest_id4 option:selected').val()); 
                         localStorage.setItem("cartIDS", JSON.stringify(storedIDS));
                         window.location.href = 'cart-page.html';
                 }

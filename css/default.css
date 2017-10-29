@@ -282,28 +282,33 @@
 }
 
 .sk-chasing-dots {
-  margin: 40px auto;
+  margin: 20% auto;
   width: 40px;
   height: 40px;
   position: relative;
   text-align: center;
   -webkit-animation: sk-chasingDotsRotate 2s infinite linear;
-          animation: sk-chasingDotsRotate 2s infinite linear; }
-  .sk-chasing-dots .sk-child {
-    width: 60%;
-    height: 60%;
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    background-color: rgba(255, 181, 72, 0.9);
-    border-radius: 100%;
-    -webkit-animation: sk-chasingDotsBounce 2s infinite ease-in-out;
-            animation: sk-chasingDotsBounce 2s infinite ease-in-out; }
-  .sk-chasing-dots .sk-dot2 {
-    top: auto;
-    bottom: 0;
-    -webkit-animation-delay: -1s;
-            animation-delay: -1s; }
+  animation: sk-chasingDotsRotate 2s infinite linear; 
+}
+
+.sk-chasing-dots .sk-child {
+  width: 60%;
+  height: 60%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  background-color: rgb(71, 186, 193);
+  border-radius: 100%;
+  -webkit-animation: sk-chasingDotsBounce 2s infinite ease-in-out;
+  animation: sk-chasingDotsBounce 2s infinite ease-in-out; 
+}
+
+.sk-chasing-dots .sk-dot2 {
+  top: auto;
+  bottom: 0;
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s; 
+}
 
 @-webkit-keyframes sk-chasingDotsRotate {
   100% {
@@ -380,6 +385,8 @@
   text-align: left;
   text-transform: none;
   color: #797979;
+  font-weight: 300;
+  margin-top: 20px;
 }
 
 .pos-i{
@@ -479,4 +486,19 @@
     border-color: #47bac1;
     margin-bottom: 30px;
     color: #47bac1;
+}
+
+.selectOptions{
+  background-color: #ffffff;
+  width: 174px !important;
+  height: 39px !important;
+  border-color: #d0d0d0;
+  margin: 0;
+  width: 164px;
+  height: 36px;
+  color: #797979;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 15px;
+  line-height: 36px;
+  text-indent: 18px;
 }

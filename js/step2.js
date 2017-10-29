@@ -87,6 +87,8 @@ function getDataOfShipping(){
 	
 }
 
+
+
 $('#country').change(function(){
 	country = $('#country').children('option:selected').val();
 });
@@ -133,9 +135,6 @@ function loadForm(){
 jQuery(document).ready(function(){
 	//Function Listener
     console.log(order);
-    $("#target").keyup(function(){
-	  alert( "Handler for .keyup() called." );
-	});
     // country = $('#country').children('option:selected').val();
     // city = $('#city').children('option:selected').val();
     // company = $('#CorreosCR').children('option:selected').val();
