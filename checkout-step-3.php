@@ -115,8 +115,37 @@ $valor = tipo_cambio($fecha);
 
   <body class="body-wrapper">
    <!-- *********************** coninChange ****************************************-->
-  <input id="coinChange" type="phone" style="display: none"><? echo $valor;?></input>
+  <input id="coinChange" type="text" style="display:display" value=<?php echo $valor['compra']?> />
   <!-- ************************************************************************* -->
+    
+<!-- MODAL-->
+    <div class="modal animated bounceIn" id="warning" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header modal-header-warning">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 class="header-text"><i class="fa fa-exclamation-triangle pos-i"></i> ¿Deseas eliminar este artículo?</h3>
+
+                </div>
+                <div id="warningModal" class="modal-body">
+                  <div  class="media">
+                    <a id="delete-img" class="pull-left pull-width">
+                        <!-- <img src="http://placehold.it/180x200/456" class="media-object" alt="Sample Image"> -->
+                    </a>
+                    <div id="delete-body" class="media-body">
+                      <!-- <h1 class="media-heading">Bootstrap thumbnail example</h1>
+                        <h4>Using the .media and .media-body built-in classes</h4>
+                      <h4>Simple trick, just apply pull-left to the image</h4> -->
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning pull-left" data-dismiss="modal">Cancelar </button>
+                    <button type="button" class="btn btn-danger pull-right" onclick="deleteProductInCart();">Eliminar </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
     <div class="main-wrapper">
 
       <!-- HEADER -->
@@ -269,7 +298,7 @@ $valor = tipo_cambio($fecha);
                   <div class="col-xs-3 progress-wizard-step active">
                     <div class="text-center progress-wizard-stepnum">Revisión</div>
                     <div class="progress"><div class="progress-bar"></div></div>
-                    <a href="checkout-step-3.html" class="progress-wizard-dot"></a>
+                    <a href="checkout-step-3.php" class="progress-wizard-dot"></a>
                   </div>
 
                   <div class="col-xs-3 progress-wizard-step disabled">

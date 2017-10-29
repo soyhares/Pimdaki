@@ -72,21 +72,35 @@ function loadOrderInfo(){
     $($span1).append($br1);
     $("#compañía_envío").append($span2);
 }
-
 function loadDataInCartShop(){
+
+	console.log(storedIDS)
+	for (i in storedIDS) {
+		//console.log(storedIDS[i].lot)
+		drawingCar(storedIDS[i].route,storedIDS[i].id, storedIDS[i].lot)
+	}	
+}
+
+function drawingCar(category,id, quantity){
 	//Creamos la consulta
-	for (i = 0; i < storedIDS.length; i++) {
+
 	    firebase.database()
-	    .ref('storage/products/categories/' + storedIDS[i].route + "/" + storedIDS[i].id)
+	    .ref('storage/products/categories/' + category + "/" + id)
 	    .on('value', function(data) {
 		    //Cargamos el objeto y sus atributos 
 		    var snap = data.val();
 		    id = data.key;
-		    priceInt = parseFloat(snap.price);
+		  
+		    //console.log(quantity);
+		  
+		    priceInt = parseInt(snap.price) * parseInt(quantity);
 		    storedPRICE += priceInt;
 		    storedTOTALPRICE = storedPRICE + storedDISCOUNT;
+		    // console.log(storedPRICE)
+		    // console.log(storedTOTALPRICE)
+		    // console.log(storedDISCOUNT)
 		    // Create Cart Elemets
-		    var $tr = $("<tr>", {id:"", class:""});
+		   var $tr = $("<tr>", {id:"", class:""});
 	     	var $td0 = $("<td>", {id:"", class:"col-xs-2"});
 	     	var $btn0 = $("<button>", {id: id, "type":"button", class:"close", onclick:'advisorWarningDelete(this.id)', "aria-label":"Close"});     	
 	     	var $span0 = $("<span>", {id:"", "aria-hidden":"true", text: "x"});
@@ -96,7 +110,7 @@ function loadDataInCartShop(){
 	     	var $td1 = $("<td>", {id:"", class:"col-xs-4", text: snap.name});
 	     	var $td2 = $("<td>", {id:"", class:"col-xs-2", text: id});
 	     	var $td3 = $("<td>", {id:"", class:"col-xs-2"});
-	     	var $input0 = $("<input>", {id:"", class:"", "type":"text", "placeholder":"1"});
+	     	var $input0 = $("<td>", {id:"", class:"col-xs-2",  text: quantity});
 	     	var $td4 = $("<td>", {id:"", class:"col-xs-2", text: "₡ " + snap.price});
 
 	        $("#tbody_cart").append($tr);
@@ -111,18 +125,24 @@ function loadDataInCartShop(){
 	        $($td3).append($input0);
 	        $($tr).append($td4);
 
+	   
+			let buyValue =$("#coinChange").val();
+
+
 	        var $span2 = $("<span>", {id:"subTotal", class:"txtCartSize", text: "Subtotal:  " + " ₡ " + storedPRICE});
 	        var $span3 = $("<span>", {id:"discount", class:"txtCartSize", text: "Descuento:  " + storedDISCOUNT + "%" });
-	        var $span4 = $("<span>", {id:"total", class:"grandTotal txtCartSize", text: "Total:  " + " ₡ " + storedTOTALPRICE});
-
+	        var $span5 = $("<span>", {id:"total", class:"grandTotal txtCartSize", text: "Total:  " + " ₡ " + storedTOTALPRICE /*+ " Total: $ "+ (storedTOTALPRICE/buyValue).toFixed(2)*/});
+			//var $span4 = $("<span>", {id:"cambio", class:"grandTotal txtCartSize", text: "Total:  " + " $ " + });
+			
 	        $("#Subtotal").html($span2);
 	        $("#Descuento").html($span3);
-	        $("#Total").html($span4);
+	       // $("#Total").html($span4);
+	        $("#Total").html($span5);
+	        
+
 		});
-	}	
+		
 }
-
-
 function advisorWarningDelete(id){
 	deleteID = id;
 	var index = storedIDS.findIndex(x => x.id == id);
@@ -179,12 +199,17 @@ function deleteProductInCart(){
 
 jQuery(document).ready(function(){
 	//Function Listener
-	result = order.total.toFixed(2);
-	console.log($("#coinChange").val());
-	result *= $("#coinChange").val();
-	console.log(result);
- 	localStorage.setItem('totalOrder', result);
-    console.log(order);
+	
+	
+	let buyValue = $("#coinChange").val();
+	result = (order.total / buyValue).toFixed(2);
+	console.log("Buy dolar value >>> "+buyValue);
+	console.log("totalOrder >>> "+result);
+	let totalOrder ={totalOrder:result};
+	$.extend(totalOrder, order);
+ 	localStorage.setItem('order', JSON.stringify(totalOrder));
+    console.log(JSON.parse(localStorage.getItem("order")));
     loadOrderInfo();
     loadDataInCartShop();
 });
+

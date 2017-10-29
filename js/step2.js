@@ -24,21 +24,6 @@ function validateData(){
    var inputMessage = new Array("Pais", "Ciudad", "Direccion", "Código Postal");
 
    $('.error').hide();
-   if(inputVal[0] == ""){
-       $('#country').after('<span class="error" style="color:red;position:absolute">Por favor ingresa tu ' + inputMessage[0] + '</span>');
-       return false;
-   }else if(inputVal[0].length < 2){
-       $('#country').after('<span class="error" style="color:red">Debe contener almenos 2 letras</span>');
-       return false;
-   }
-
-   if(inputVal[1] == ""){
-       $('#city').after('<span class="error" style="color:red;position:absolute">Por favor ingresa tu ' + inputMessage[1] + '</span>');
-       return false;
-   }else if(inputVal[1].length < 2){
-       $('#city').after('<span class="error" style="color:red">Debe contener almenos 2 letras</span>');
-       return false;
-   }
 
    if(inputVal[2] == ""){
        $('#address').after('<span class="error" style="color:red;position:absolute">Por favor ingresa tu ' + inputMessage[2] + '</span>');
@@ -58,14 +43,14 @@ function validateData(){
        $('#zip').after('<span class="error" style="color:red">Ingresa un código con 5 digitos</span>');
        return false;
    }
-
+  getDataOfShipping();
    return true
 }
 
 function getDataOfShipping(){
 	//Get
-	country = $('#country').children('option:selected').val();
-	city = $('#city').children('option:selected').val();
+  city = $('#city').val();
+	country = $('#country').val();;
 	address = $('#address').val();
 	zip = $('#zip').val(); 
 
@@ -77,25 +62,21 @@ function getDataOfShipping(){
 		company: company,
 		value: value
 	}
+  
 
 	$.extend(shipping, order);
 	localStorage.setItem("order", JSON.stringify(shipping));
 	console.log(JSON.parse(localStorage.getItem("order")));
-    
-        window.location.href = 'checkout-step-3.html';
+   
+ 
+  
     
 	
 }
 
 
 
-$('#country').change(function(){
-	country = $('#country').children('option:selected').val();
-});
 
-$('#city').change(function(){
-	city = $('#city').children('option:selected').val();
-});
 
 $('#CorreosCR').on('change', function() {
     $('#GoPato').not(this).prop('checked', false);
@@ -153,6 +134,19 @@ jQuery(document).ready(function(){
     	$( "#continue" ).addClass( "btn-is-disabled" );
     }
 
-    $("#continue").click(()=>validateData()?getDataOfShipping():console.log("input invalid"))
-loadForm();
+    $("#continue").click(()=>validateData()?window.location.href = 'checkout-step-3.php':console.log("input invalid"))
+    loadForm();
+
+
+    $('#city').change(()=>{
+      order.city = $('#city').val();
+    });
+
+    $('#country').change(()=>{
+      order.country = $('#country').val();
+    });
+
+
+   
+                                     
 });

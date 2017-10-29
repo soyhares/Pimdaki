@@ -1,12 +1,24 @@
 var order = JSON.parse(localStorage.getItem("order"));
+var storedIDS = JSON.parse(localStorage.getItem("cartIDS"));
+
+//===============================Init Firebase======================//
+// Initialize Firebase
+var config = {
+	apiKey: "AIzaSyDzrlNuSRMeGYAqWvFS_3h53WeFsmMNxNg",
+	authDomain: "pimdaki-e16a0.firebaseapp.com",
+	databaseURL: "https://pimdaki-e16a0.firebaseio.com",
+	projectId: "pimdaki-e16a0",
+	storageBucket: "",
+	messagingSenderId: "172646261705"
+};
+firebase.initializeApp(config);
+
+
 /**
  * Optimizador de informacion de objetos
  * -limpia los datos nulos o vacios
  * - retorna el objeto con la informacion necesaria
  */
- var result;
- var globalResult;
-
 const _cleanObj = ( obj ) =>
   {
     for( let prop in obj ){
@@ -22,8 +34,8 @@ const _orderId = () =>new Date().getTime();
 const _orderManager = (id = _orderId()) => {
 	let userType = ["guess","customer","merber"];
 	let currentCustomer = {
-		id,
-		userType:userType[0],
+		id:order.userId == "" ? id : order.userId,
+		userType:order.userId == ""?userType[0]:userType[1],
 		name:order.name,
 		lastName:order.lastName,
 		email:order.email,
@@ -51,7 +63,7 @@ const _orderManager = (id = _orderId()) => {
 		wayToPay:order.wayToPay,
 		fullPay:order.subTotal,
 		discount:order.discount,
-		total:order.total,
+		total:order.totalOrder,
 		shipping:shipping.id
 	};
 	let Order = {
@@ -64,22 +76,36 @@ const _orderManager = (id = _orderId()) => {
 
 	}
 
-	addNode(currentCustomer,ORDERS+"/users/"+currentCustomer.email.replace('.',''),id);//clientes
-	addNode(purchase,ORDERS+"/purchase/",id);//lista de compras
-	addNode(destination,ORDERS+"/destination/", id);//direcciones
-	addNode(shipping,ORDERS+"/shipping/",id);//envios
-	addNode(cashOrder,ORDERS+"/cashOrder/",id);//factura
-	addNode(Order,ORDERS+"/"+Order.status+"/",id);//factura
+	addNode(currentCustomer,"orders/users/"+currentCustomer.userType+"/"+currentCustomer.id);//clientes
+	addNode(purchase,"orders/purchase/",id);//lista de compras
+	addNode(destination,"orders/destination/", id);//direcciones
+	addNode(shipping,"orders/shipping/",id);//envios
+	addNode(cashOrder,"orders/cashOrder/",id);//factura
+	addNode(Order,"orders/"+Order.status+"/",id);//factura
+	
+
+	let ordeId ={id:id};
+	$.extend(ordeId, order);
+ 	localStorage.setItem('order', JSON.stringify(ordeId));
+    console.log(JSON.parse(localStorage.getItem("order")));
+
+	console.log("exito!")
+
+	setTimeout(()=>{
+		window.location.href = 'checkout-complete.html'
+	},1000);
+	
 }
 
 //agrega un obj al grafo de ordenes
 const addNode = ( obj , route, id) =>{
 	route=route+id
+	console.log(route);
 	firebase.database()
           .ref(route)
           .set({..._cleanObj( obj )})
           .then(()=>{
-          			if(route == ORDERS+"/purchase/"+id){
+          			if(route == "orders/purchase/"+id){
             			dispatcher( obj.shippingList );	
             			console.log("dispatcher!")			
                		}
@@ -120,73 +146,4 @@ const updateNode = (route, lot ) =>{
       .catch((error)=>console.log("Error: "+error));
 };
 
-//class to add point in amount 
-// var formatNumber = {
-// 	separador: ",", // separador para los miles
-// 	sepDecimal: ".", // separador para los decimales
-// 	formatear:function (num){
-// 		num +="";
-// 		var splitStr = num.split('.');
-// 		var splitLeft = splitStr[0];
-// 		var splitRight = splitStr.length > 1 ? this.sepDecimal + splitStr[1] : '';
-// 		var regx = /(\d+)(\d{3})/;
-// 		while (regx.test(splitLeft)) {
-// 		splitLeft = splitLeft.replace(regx, '$1' + this.separador + '$2');
-// 	}
-// 	return this.simbol + splitLeft +splitRight;
-// 	},
-// 	format:function(num, simbol){
-// 		this.simbol = simbol ||'';
-// 	return this.formatear(num);
-// 	}
-// }
 
-//Function Listener
-jQuery(document).ready(function(){
-	// let total =formatNumber.format(order.total, "₡")
-	// console.log(total || "0");
- //    $("#btn_order").click(()=>_orderManager());
- 		
-	// paypal.Button.render({
-
- //          env: 'sandbox', // Or 'sandbox'
-
- //          style: {
- //            label: 'buynow',
- //            fundingicons: true, // optional
- //            branding: true, // optional
- //            size:  'responsive', // small | medium | large | responsive
- //            shape: 'rect',   // pill | rect
- //            color: 'gold'   // gold | blue | silve | black
- //          },
-
- //          client: {
- //              production: 'AdJfiWHgKPzzmAN0ouOxpky0Xed3y0aWWYw8nirCONKnSHc1RejnPfuQqpus4UNUaQEDmvFD-lnMZRjE',
- //              sandbox:    'AaUS4PKCVa3DO6OT6JZC30-jGwZg70qO8sU1PPQVCa1ELdSrEKfTJw7BfIk-H20vghbQhiB7uth5l1oo'
- //          },
-
- //          commit: true, // Show a 'Pay Now' button
-
- //          payment: function(data, actions) {
- //              return actions.payment.create({
- //                  payment: {
- //                      transactions: [
- //                          {
- //                              amount: { total: result, currency: 'USD' }
- //                          }
- //                      ]
- //                  }
- //              });
- //          },
-
- //          onAuthorize: function(data, actions) {
- //              return actions.payment.execute().then(function(payment) {
-
- //                  // The payment is complete!
- //                  // You can now show a confirmation message to the customer
- //                  window.location.href = 'checkout-complete.html';
- //              });
- //          }
- //      }, '#paypal-button');
-
-});

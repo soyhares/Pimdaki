@@ -1,12 +1,22 @@
 var order = JSON.parse(localStorage.getItem("order"));
 var billing = {};
+var config = {
+  apiKey: "AIzaSyDzrlNuSRMeGYAqWvFS_3h53WeFsmMNxNg",
+  authDomain: "pimdaki-e16a0.firebaseapp.com",
+  databaseURL: "https://pimdaki-e16a0.firebaseio.com",
+  projectId: "pimdaki-e16a0",
+  storageBucket: "",
+  messagingSenderId: "172646261705"
+};
+firebase.initializeApp(config);
+
 
 function validateData(){
 	var nameReg = /^[A-Za-z]+$/;
-   var numberReg =  /^[0-9]+$/;
-   var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+  var numberReg =  /^[0-9]+$/;
+  var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
    
-  	name = $("#name").val();
+  name = $("#name").val();
 	lastName = $("#lastName").val();
 	totalName = name + " " + lastName;
 	email = $("#email").val();
@@ -68,8 +78,9 @@ function getDataOfBilling(){
 	var lastName = $('#lastName').val();
 	var email = $('#email').val();
 	var phone = $('#phone').val();
-
+  var uid = $('#uid').val();
 	billing = { 
+    userId:uid,
 		name: name,
 		lastName: lastName,
 		email: email,
@@ -96,145 +107,121 @@ function loadForm(){
 	
 }
 
+function loginWithFacebook(){
+  var provider = new firebase.auth.FacebookAuthProvider();
+    provider.addScope('email');
+    provider.addScope('public_profile');
+    provider.addScope('user_friends');
+    firebase.auth().signInWithPopup(provider).then(function(result) {
+    var token = result.credential.accessToken;
+    
+  }).catch(function(error) {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    var email = error.email;
+    var credential = error.credential;
+    console.log(errorMessage)
+  });
+}
+
+function loginWithGoogle(){
+  var provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithPopup(provider).then(function(result) {
+    var token = result.credential.accessToken;
+      
+  }).catch(function(error) {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      var email = error.email;
+      var credential = error.credential;
+      console.log(errorMessage)
+  });
+}
+
+function logOutUser(){
+  firebase.auth().signOut().then(function() {
+    window.location.href = "index.html";
+      console.log('Signed Out');
+  }, function(error) {
+      console.error('Sign Out Error', error);
+  });
+}
+
+
+function getCurrentUser(){
+  //Function Listener
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      var user = firebase.auth().currentUser; 
+      user.providerData.forEach(function (profile) {
+          providerId = profile.providerId;
+          uid = profile.uid;
+          displayName = profile.displayName;
+          profileEmail = profile.email;
+          photoURL = profile.photoURL;
+      });
+
+      var user = firebase.auth().currentUser;
+      let fullName = user.displayName.split(" ");
+      $('#uid').val(user.uid);
+      $('#name').val(fullName[0]);
+      $('#lastName').val(fullName[1]);
+      $('#email').val(user.email);
+      //$('#phone').val(user.phoneNumber);
+     
+      console.log(displayName);
+      console.log(photoURL);
+  
+    $($span0).detach();
+      $($a0).detach();
+      $($small).detach();
+      $($a1).detach();
+
+    var $a = $("<a>", {id:"displayName", class:"logText", "data-toggle":"modal", href:"#logout", text: " " + user.displayName});
+    var $i0 = $("<i>", {id:"userLogo", class:"fa fa-user", "style":"color: white;"});
+      $("#loggedInfo").append($i0);
+      $("#loggedInfo").append($a);
+
+      var $span = $("<span>", {id:"", class:"", text: user.displayName});
+      $("#userName").append($span);
+
+      var $li0 = $("<li>", {id:"", class:"dropdown"});
+      var $a2 = $("<a>", {id:"", class:"", href:"account-profile.html", text:"Mi Perfil"});
+      $("#ulIndex").append($li0);
+      $($li0).append($a2);
+
+    }else {
+
+      $($li0).detach();
+      $($a2).detach();
+      $($i0).detach();
+      $($a).detach();   
+
+      var $span0 = $("<span>", {id:"loginSingUp"});
+      var $a0 = $("<a>", {id:"", "data-toggle":"modal", href:"#login", text:"Ingresar"});
+      var $small = $("<small>", {id:"", text:"ó"});
+      var $a1 = $("<a>", {id:"", "data-toggle":"modal", href:"#signup", text:"Registrarse"});
+
+      setTimeout(function(){
+        $("#loggedInfo").append($span0);
+        $($span0).append($a0);
+        $($span0).append($small);
+        $($span0).append($a1);
+      }, 500);
+     
+      console.log("Log out");
+    }
+  });
+}
 
 jQuery(document).ready(function(){
-	//Function Listener
-    console.log(order);   
-	//validateForm("pindaki_form");
-	$("#btn_next").click(()=>validateData()?getDataOfBilling():console.log("input invalid"))
-	loadForm();
-    
+  //Function Listener
+     
+  //validateForm("pindaki_form");
+  $("#btn_next").click(()=>validateData()?getDataOfBilling():console.log("input invalid"))
+  
+  getCurrentUser();
+  loadForm();
+  console.log(order);  
 });
 
-
-function validateForm(form, navigate){
-	 jQuery.validator.addMethod("phone", function (phone_number, element) {
-        phone_number = phone_number.replace(/\s+/g, "");
-        return this.optional(element) || phone_number.length > 7 && phone_number.match("[0-9]+");
-    }, "Please specify a valid phone number");
-	//mensajes de error
-	jQuery.extend(jQuery.validator.messages, {
-	  required: "Este campo es obligatorio.",
-	  remote: "Por favor, rellena este campo.",
-	  email: "Por favor, escribe una dirección de correo válida",
-	  url: "Por favor, escribe una URL válida.",
-	  date: "Por favor, escribe una fecha válida.",
-	  dateISO: "Por favor, escribe una fecha (ISO) válida.",
-	  number: "Por favor, escribe un número entero válido.",
-	  digits: "Por favor, escribe sólo dígitos.",
-	  creditcard: "Por favor, escribe un número de tarjeta válido.",
-	  equalTo: "Por favor, escribe el mismo valor de nuevo.",
-	  accept: "Por favor, escribe un valor con una extensión aceptada.",
-	  maxlength: jQuery.validator.format("Por favor, no escribas más de {0} caracteres."),
-	  minlength: jQuery.validator.format("Por favor, no escribas menos de {0} caracteres."),
-	  rangelength: jQuery.validator.format("Por favor, escribe un valor entre {0} y {1} caracteres."),
-	  range: jQuery.validator.format("Por favor, escribe un valor entre {0} y {1}."),
-	  max: jQuery.validator.format("Por favor, escribe un valor menor o igual a {0}."),
-	  min: jQuery.validator.format("Por favor, escribe un valor mayor o igual a {0}."),
-	  phone:jQuery.validator.format("Por favor, escribe un numero telefonico valido."),
-	});
-
-	/* $('#'+form+ ' input[type="text"]').tooltipster({ //find more options on the tooltipster page
-        trigger: 'custom', // default is 'hover' which is no good here
-        onlyOne: false,    // allow multiple tips to be open at a time
-        position: 'top',
-        animation: 'grow', 
-        theme: ['tooltipster-light'] //put your themes here
-    });*/
-
-	//reglas del form
-	$('#'+form).validate({ // initialize the plugin
-       /* errorPlacement: function (error, element) {
-            if (error[0].innerHTML != null && error[0].innerHTML !== "") {
-                $(element).tooltipster('content', $(error).text());
-                $(element).tooltipster('open'); //open only if the error message is not blank. By default jquery-validate will return a label with no actual text in it so we have to check the innerHTML.
-            }
-        },
-        success: function (label, element) {
-            var obj = $(element);
-            if (obj.hasClass('tooltipstered') && obj.hasClass('error')) {
-                $(element).tooltipster('close'); //hide no longer works in v4, must use close
-            }   
-        },*/
-        rules: {
-            email: {
-                required: true,
-                email: true
-            },
-            name: {
-                required: true,
-	            minlength: 5,
-	            maxlength: 15
-            },
-            lastName:{
-            	required: true,
-	            minlength: 5,
-	            maxlength: 15
-            },
-            phone: {
-            	required: true,
-            	phone: true,
-            	minlength:8,
-            	maxlength:8
-            	}
-
-        },
-       errorElement: "div",
-        wrapper: "div",  // a wrapper around the error message
-        errorPlacement: function(error, element) {
-            offset = element.offset();
-            error.insertBefore(element)
-            error.addClass('message');  // add a class to the wrapper
-            error.css('color', 'red');
-            error.css('left', offset.left + element.outerWidth());
-            error.css('top', offset.top);
-        },
-       
-    });
-
-
-
-}
-/*
-
-
-
-         errorPlacement: function(error, element) {
-				errors += error.toString()+"\n";
-			},
-			showErrors: function(errorMap, errorList){
-				this.defaultShowErrors();
-				alert(errors);
-			}
- */
-
-/*
-$('#pindaki_form').validate({
-          rules: {
-            email: {
-              minlength: 3,
-              required: true
-            },
-            name:{
-              minlength: 3,
-              required: true
-            }
-          },
-          showErrors: function(errorMap, errorList) {
-            $.each(this.successList, function(index, value) {
-              return $(value).popover("hide");
-            });
-            return $.each(errorList, function(index, value) {
-              var _popover;
-              console.log(value.message);
-              _popover = $(value.element).popover({
-                trigger: "manual",
-                placement: "top",
-                content: value.message,
-                template: "<div class=\"popover\"><div class=\"arrow\"></div><div class=\"popover-inner\"><div class=\"popover-content\"><p></p></div></div></div>"
-              });
-              _popover.data("popover").options.content = value.message;
-              return $(value.element).popover("show");
-            });
-          }});
- */
