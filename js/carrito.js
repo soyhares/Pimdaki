@@ -176,7 +176,7 @@ $(document).ready(function() {
 	//Function Listener
 	loadDataInCartShop();
 	console.log(storedIDS);
-	//localStorage.removeItem('cartIDS');
-	//localStorage.removeItem('cartCTS');
+	// localStorage.removeItem('cartIDS');
+	// localStorage.removeItem('cartCTS');
 	// console.log(category);
 });
