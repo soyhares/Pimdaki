@@ -93,36 +93,42 @@
                 </span>
               </div>
             </div>
+
+
+
+            <!-- Carrito -->
             <div class="dropdown cart-dropdown">
               <a href="cart-page.html" class="dropdown-toggle shop-cart" data-toggle="dropdown">
                 <i class="fa fa-shopping-cart"></i>
-                <span class="hidden-xs">
-                  <span class="cart-total">Carrito (0)</span><br>
-                  <span id="cart_price
-                  " class="cart-price">₡00.00</span>
+                <span id="cartOne" class="hidden-xs">
+                  <!-- <span class="cart-total">Carrito (0)</span><br>
+                  <span id="cart_price" class="cart-price">₡00.00</span> -->
                 </span>
               </a>
               <ul id="ul_shoppingList" class="dropdown-menu dropdown-menu-right">
                 <li>Artículo(s) en tu carrito</li>
-               
-                <li>
+
+                <!-- <li>
                   <a href="single-product.html">
                     <div class="media">
-                      <img class="media-left media-object" src="img/home/cart-items/cart-item-01.jpg" alt="cart-Image">
+                      <img class="media-left" src="img/home/cart-items/cart-item-01.jpg" alt="cart-Image">
                       <div class="media-body">
                         <h5 class="media-heading">INCIDIDUNT UT <br><span>2 X $199</span></h5>
                       </div>
                     </div>
                   </a>
-                </li>
+                </li> -->
+
                 <li>
                   <div class="btn-group" role="group" aria-label="...">
-                    <button type="button" class="btn btn-default" onclick="location.href='cart-page.html';">Shopping Cart</button>
-                    <button type="button" class="btn btn-default" onclick="location.href='checkout-step-1.html';">Checkout</button>
+                    <button type="button" class="btn btn-default" onclick="location.href='cart-page.html';">Mi Carrito</button>
+                    <button type="button" class="btn btn-default" onclick="location.href='checkout-step-1.html';">Revisión</button>
                   </div>
                 </li>
               </ul>
             </div>
+            <!-- Carrito -->
+
           </div>
         </div>
 
@@ -536,8 +542,8 @@
                     </div>
                   </div>
 
-                  <div class="category-bottom">
-                    <div class="imageBox">
+                  <div id="dinamic2" class="category-bottom">
+                    <!-- <div class="imageBox">
                       <div class="productImage clearfix">
                         <a href="single-product.html">
                           <img src="img/home/category/category-img9.jpg" alt="Image">
@@ -591,7 +597,7 @@
                         <h5><a href="single-product.html">Nike Sportswear</a></h5>
                         <h3>$199</h3>
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
@@ -628,8 +634,8 @@
                     </div>
                   </div>
 
-                  <div class="category-bottom">
-                    <div class="imageBox">
+                  <div id="dinamic3" class="category-bottom">
+                    <!-- <div class="imageBox">
                       <div class="productImage clearfix">
                         <a href="single-product.html">
                           <img src="img/home/category/category-img13.jpg" alt="Image">
@@ -683,7 +689,7 @@
                         <h5><a href="single-product.html">Nike Sportswear</a></h5>
                         <h3>$199</h3>
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
@@ -720,8 +726,8 @@
                     </div>
                   </div>
 
-                  <div class="category-bottom">
-                    <div class="imageBox">
+                  <div id="dinamic4" class="category-bottom">
+                    <!-- <div class="imageBox">
                       <div class="productImage clearfix">
                         <a href="single-product.html">
                           <img src="img/home/category/category-img16.jpg" alt="Image">
@@ -740,6 +746,8 @@
                         <h3>$199</h3>
                       </div>
                     </div>
+
+
                     <div class="imageBox">
                       <div class="productImage clearfix">
                         <a href="single-product.html">
@@ -775,7 +783,7 @@
                         <h5><a href="single-product.html">Nike Sportswear</a></h5>
                         <h3>$199</h3>
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
@@ -985,38 +993,17 @@
     </div>
 
     <!-- PORDUCT QUICK VIEW MODAL -->
-    <div class="modal fade quick-view" tabindex="-1" role="dialog">
+    <div id="quick-modal" class="modal fade quick-view" tabindex="-1" role="dialog">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-body">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             <div class="media">
-              <div class="media-left">
-                <img class="media-object" src="img/products/quick-view/quick-view-01.jpg" alt="Image">
+              <div id="img-modal" class="media-left">
+                <!-- DINAMICALLY LOAD DATA -->
               </div>
-              <div class="media-body">
-                <h2>Old Skool Navy</h2>
-                <h3>$149</h3>
-                <p>Classic sneaker from Vans. Cotton canvas and suede upper. Textile lining with heel stabilizer and ankle support. Contrasting laces. Sits on a classic waffle rubber sole.</p>
-                <span class="quick-drop">
-                  <select name="guiest_id3" id="guiest_id3" class="select-drop">
-                    <option value="0">Tallas</option>
-                    <option value="1">s</option>
-                    <option value="2">m</option>
-                    <option value="3">l</option>
-                  </select>
-                </span>
-                <span class="quick-drop resizeWidth">
-                  <select name="guiest_id4" id="guiest_id4" class="select-drop">
-                    <option value="0">Unidades</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                  </select>
-                </span>
-                <div class="btn-area">
-                  <a href="#" class="btn btn-primary btn-block">Agregar al carrito <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                </div>
+              <div id="modal-data" class="media-body">
+                <!-- DINAMICALLY SHOW THE DATA -->
               </div>
             </div>
           </div>

@@ -28,9 +28,9 @@ function parser_extractor($cadena,$tags=true){
      
     // Procesando el archivo
     if (!xml_parse($xml_parser, $cadena)) {
-                    die(sprintf("XML error: %s at line %d",
-                                                                    xml_error_string(xml_get_error_code($xml_parser)),
-                                                                    xml_get_current_line_number($xml_parser)));
+        die(sprintf("XML error: %s at line %d",
+        xml_error_string(xml_get_error_code($xml_parser)),
+        xml_get_current_line_number($xml_parser)));
     }
      
     // Liberando recursos

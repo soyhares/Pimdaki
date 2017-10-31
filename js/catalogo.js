@@ -10,11 +10,18 @@ var oldID;
 var materials = {};
 var colors = {};
 var catalog = {}; 
-var quantity = "1";
+// var quantity = "1";
 
 var subCategory,id,barCode,name,model,lot,price,oldPrice,tradeMark,size,description;
 
 var bag = [];
+
+var priceInt = 0;
+var storedPRICE = 0;
+var storedDISCOUNT = 0;
+var storedTOTALPRICE = 0;
+var quantity = "";
+var itemsInCart = 0;
 
 
 //===============================Init Firebase======================
@@ -44,7 +51,7 @@ function getDataOfProduct(){
                 var $divParent = $("<div>", {id: "", "class": "col-sm-4 col-xs-12"});
                 var $div0 = $("<div>", {id: "", "class": "productBox animated bounceIn"});
                 var $div1 = $("<div>", {id: "", "class": "productImage clearfix"});
-                var $img0 = $("<img>", {id: "img0", class:"fullImage", "src": snap.catalog[0]});
+                var $img0 = $("<img>", {id: "img0", class:"", "src": snap.catalog[0]});
                 var $div2 = $("<div>", {id: "", "class": "productMasking"});
                 var $ul = $("<ul>", {id: "", "class": "list-inline btn-group", "role": "group"});
                 var $li0 = $("<li>", {id: ""});
@@ -107,7 +114,7 @@ $("#grid_left_category li a").click(function(e) {
                         var $divParent = $("<div>", {id: "", "class": "col-sm-4 col-xs-12"});
                         var $div0 = $("<div>", {id: "", "class": "productBox animated bounceIn"});
                         var $div1 = $("<div>", {id: "", "class": "productImage clearfix"});
-                        var $img0 = $("<img>", {id: "img0", class:"fullImage", "src": snap.catalog[0]});
+                        var $img0 = $("<img>", {id: "img0", class:"", "src": snap.catalog[0]});
                         var $div2 = $("<div>", {id: "", "class": "productMasking"});
                         var $ul = $("<ul>", {id: "", "class": "list-inline btn-group", "role": "group"});
                         var $li0 = $("<li>", {id: ""});
@@ -413,8 +420,7 @@ function quickViewModal(id){
                 $($ul3).append($li9);
                 $($ul3).append($li10);
                 });
-        }
-        
+        }    
 }
 
 
@@ -452,37 +458,70 @@ function addToShoppingCart(id){
                         window.location.href = 'cart-page.html';
                 }
         }
-
 }
 
+function loadDataOfCartItems(){
+    console.log(storedIDS)
+    for (i in storedIDS) {
+        drawingCar(storedIDS[i].route,storedIDS[i].id, storedIDS[i].lot, storedIDS.length)
+    }   
+}
 
-const drawShoppingCar = (product={}) =>{
-    // firebase.database()
-    //     .ref(product.route+"/"+product.id)
-    //     .on("child_added", function(snapshot){
-    //         var data = snapshot.val();
-    //         var li ="<li>";
-    //         var a="<a href='single-product.html'>"
-    //         var div='<div class="media">'
-    //         var img ='<img class="media-left media-object" src="img/home/cart-items/cart-item-01.jpg" alt="cart-Image">'
-    //         var div2='<div class="media-body">'
-    //         var h5='<h5 class="media-heading">INCIDIDUNT UT <br><span>'product.lot' X ₡ 'data.price'</span></h5>'
+function drawingCar(category,id, quantity, itemsIn){
+    //Creamos la consulta
+    firebase.database()
+    .ref('storage/products/categories/' + category + "/" + id)
+    .on('value', function(data) {
+        //Cargamos el objeto y sus atributos 
+        var snap = data.val();
+        id = data.key;
+      
+        console.log(itemsIn)
+        priceInt = parseInt(snap.price) * parseInt(quantity);
+        storedPRICE += priceInt;
+        storedTOTALPRICE = storedPRICE + storedDISCOUNT;
+        
+        // Create Cart Elemets
+        if(id != ""){
+            // $("#cartOne").empty();
+
+            var $a0 = $("<a>", {id:"", href:"javascript:void(0)", class:"dropdown-toggle", "data-toggle":"dropdown"});
+            var $i0 = $("<i>", {id:"", class:"fa fa-shopping-cart", text:" "+ "₡ " + storedTOTALPRICE});
+            var $ul0 = $("<ul>", {id:"", class:"dropdown-menu dropdown-menu-right"});
+            var $li0 = $("<li>", {id:"", class:"", text: "Artículo(s) en tu carrito"});
+            var $li1 = $("<li>", {id:"", class:""});
+            var $a1 = $("<a>", {id:"", href:"single-product.html"});
+            var $div0 = $("<div>", {id:"", class:"media"});
+            var $img0 = $("<img>", {id:"", class:"media-left media-object", src: snap.catalog[0]});
+            var $div1 = $("<div>", {id:"", class:"media-body"});
+            var $h0 = $("<h5>", {id:"", class:"media-heading", text: snap.name});
+            var $br1 = $("<br>", {id:""});
+            var $span2 = $("<span>", {id:"", class:"", text: quantity + " x " + snap.price});
+
+
+            $("#cartOne").html($a0);
+            $($a0).append($i0);
+            $("#cartOne").append($ul0);
+            $($ul0).append($li0);
+            $($ul0).append($li1);
+            $($li1).append($a1);
+            $($a1).append($div0);
+            $($div0).append($img0);
+            $($div0).append($div1);
+            $($div1).append($h0);
+            $($h0).append($br1);
+            $($h0).append($span2);
             
-    //         div2.append(h5);
-    //         div.append(img);
-    //         div.append(div2);
-    //         a.append(div);
-    //         li.append(a);
-
-    //         $("#lu_shoppingList").append(li)  
-                 
-    //     });
-    
-    
+        }
+        
+    });
+        
 }
 
 jQuery(document).ready(function(){
 	//Function Listener
 	getDataOfProduct();
+
+    loadDataOfCartItems();
     //localStorage.removeItem('cartIDS');
 });
