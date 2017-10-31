@@ -75,6 +75,7 @@ const _orderManager = (id = _orderId()) => {
 		purchase: purchase.id
 
 	}
+	let bill = {details:order, buy:storedIDS};
 
 	addNode(currentCustomer,"orders/users/"+currentCustomer.userType+"/"+currentCustomer.id);//clientes
 	addNode(purchase,"orders/purchase/",id);//lista de compras
@@ -82,7 +83,7 @@ const _orderManager = (id = _orderId()) => {
 	addNode(shipping,"orders/shipping/",id);//envios
 	addNode(cashOrder,"orders/cashOrder/",id);//factura
 	addNode(Order,"orders/"+Order.status+"/",id);//factura
-	
+	addNode(bill,"orders/request/",id);//factura
 
 	let ordeId ={id:id};
 	$.extend(ordeId, order);
@@ -132,7 +133,7 @@ const dispatcher = (list) =>{
 
 		});
 	}
-	setTimeout(()=>{ location.reload();}, 1000);	
+	//setTimeout(()=>{ location.reload();}, 1000);	
 }
 
 //despacha los productos
