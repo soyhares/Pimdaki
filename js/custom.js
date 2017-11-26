@@ -48,23 +48,23 @@ jQuery(document).ready(function(){
 	});
 
 });
-//============================== ALL DROPDOWN ON HOVER =========================
-	if($('.navbar').width() > 1007)
-	  {
-	    $('.nav .dropdown').on('mouseover', function() {
-	          $(this).addClass('open');
-	      }),
-	    $('.nav .dropdown').on('mouseleave', function() {
-	          $(this).removeClass('open');
-	      });
-	  }
 
-	$('.nav-category .dropdown-submenu ').hover(function() {
-    	$(this).addClass('open');
-    },
-    function() {
-        $(this).removeClass('open');
-    });
+//============================== ALL DROPDOWN ON HOVER =========================
+if($('.navbar').width() > 1007){
+	$('.nav .dropdown').on('mouseover', function() {
+	    $(this).addClass('open');
+	}),
+	$('.nav .dropdown').on('mouseleave', function() {
+		$(this).removeClass('open');
+	});
+}
+
+$('.nav-category .dropdown-submenu').hover(function() {
+	$(this).addClass('open');
+}, function(){
+	$(this).removeClass('open');
+});
+
 //============================== SEARCH =========================
 jQuery(document).ready(function(){
 	$('.searchBox a').on("click",function() {
@@ -287,24 +287,24 @@ jQuery(document).ready(function() {
 	});
 });
 //============================== PRICE SLIDER RANGER =========================
-jQuery(document).ready(function() {
-	var minimum = 20;
-	var maximum = 300;
+// jQuery(document).ready(function() {
+// 	var minimum = 20;
+// 	var maximum = 300;
 
-	$( "#price-range" ).slider({
-		range: true,
-		min: minimum,
-		max: maximum,
-		values: [ minimum, maximum ],
-		slide: function( event, ui ) {
-			$( "#price-amount-1" ).val( "$" + ui.values[ 0 ] );
-			$( "#price-amount-2" ).val( "$" + ui.values[ 1 ] );
-		}
-	});
+// 	$( "#price-range" ).slider({
+// 		range: true,
+// 		min: minimum,
+// 		max: maximum,
+// 		values: [ minimum, maximum ],
+// 		slide: function( event, ui ) {
+// 			$( "#price-amount-1" ).val( "$" + ui.values[ 0 ] );
+// 			$( "#price-amount-2" ).val( "$" + ui.values[ 1 ] );
+// 		}
+// 	});
 
-	$( "#price-amount-1" ).val( "$" + $( "#price-range" ).slider( "values", 0 ));
-	$( "#price-amount-2" ).val( "$" + $( "#price-range" ).slider( "values", 1 ));
-});
+// 	$( "#price-amount-1" ).val( "$" + $( "#price-range" ).slider( "values", 0 ));
+// 	$( "#price-amount-2" ).val( "$" + $( "#price-range" ).slider( "values", 1 ));
+// });
 //============================== PRODUCT SINGLE SLIDER =========================
 jQuery(document).ready(function() {
 	(function($){

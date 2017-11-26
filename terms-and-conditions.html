@@ -33,6 +33,16 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109501227-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-109501227-1');
+    </script>
+
   </head>
 
   <body class="body-wrapper">
@@ -48,32 +58,20 @@
             <div class="row">
               <div class="col-md-6 col-sm-5 hidden-xs">
                 <ul class="list-inline">
-                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                  <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                  <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
-                  <li><a href="#"><i class="fa fa-tumblr"></i></a></li>
+                  <li><a href="https://www.facebook.com/pindaki/"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="https://www.youtube.com/channel/UCkSKoY7-1OGMY9MuKpnCGag"><i class="fa fa-youtube"></i></a></li> 
+                  <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                 </ul>
               </div>
               <div class="col-md-6 col-sm-7 col-xs-12">
                 <ul class="list-inline pull-right top-right">
-                  <li class="account-login"><span><a data-toggle="modal" href='.login-modal'>Log in</a><small>or</small><a data-toggle="modal" href='#signup'>Create an account</a></span></li>
-                  <li class="searchBox">
-                    <a href="#"><i class="fa fa-search"></i></a>
-                    <ul class="dropdown-menu dropdown-menu-right">
-                      <li>
-                        <span class="input-group">
-                          <input type="text" class="form-control" placeholder="Search…" aria-describedby="basic-addon2">
-                          <button type="submit" class="input-group-addon">Submit</button>
-                        </span>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="dropdown cart-dropdown">
-                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-shopping-cart"></i>$0</a>
-                    <ul class="dropdown-menu dropdown-menu-right">
-                      <li>Item(s) in your cart</li>
-                      <li>
+                  <li id="loggedInfo" class="account-login"><!-- <span><a data-toggle="modal" href='.login-modal'>Ingresar</a><small>ó</small><a data-toggle="modal" href='#signup'>Registrarte</a></span> --></li>
+                  <li  class="dropdown cart-dropdown">
+                    <a id="cartOne" href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><!-- <i class="fa fa-shopping-cart"></i>₡00 --></a>
+                    <ul id="ul_master"  style="width: 346px;" class="dropdown-menu dropdown-menu-right cartUlStyle">
+                      <li>Artículo(s) en tu carrito</li>
+
+                      <!--<li>
                         <a href="single-product.html">
                           <div class="media">
                             <img class="media-left media-object" src="img/home/cart-items/cart-item-01.jpg" alt="cart-Image">
@@ -83,6 +81,7 @@
                           </div>
                         </a>
                       </li>
+
                       <li>
                         <a href="single-product.html">
                           <div class="media">
@@ -92,14 +91,16 @@
                             </div>
                           </div>
                         </a>
-                      </li>
+                      </li> -->
+  
                       <li>
                         <div class="btn-group" role="group" aria-label="...">
-                          <button type="button" class="btn btn-default" onclick="location.href='cart-page.html';">Shopping Cart</button>
-                          <button type="button" class="btn btn-default" onclick="location.href='checkout-step-1.html';">Checkout</button>
+                          <button type="button" class="btn btn-default" onclick="location.href='cart-page.html';">Mi Carrito</button>
+                          <button type="button" class="btn btn-default" onclick="location.href='checkout-step-1.html';">Revisar</button>
                         </div>
-                      </li>
+                      </li> 
                     </ul>
+
                   </li>
                 </ul>
               </div>
@@ -123,106 +124,22 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
-              <ul class="nav navbar-nav navbar-right">
+              <ul class="nav navbar-nav">
                 <li class="dropdown">
-                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
-                  <ul class="dropdown-menu dropdown-menu-left">
-                    <li><a href="index.html">Home Default</a></li>
-                    <li><a href="index-v2.html">Home Classic</a></li>
-                    <li><a href="index-v3.html">Home Deals</a></li>
-                    <li><a href="index-v4.html">Home Mega</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown megaDropMenu">
-                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="300" data-close-others="true" aria-expanded="false">Shop</b></a>
-                  <ul class="dropdown-menu row">
-                    <li class="col-sm-3 col-xs-12">
-                      <ul class="list-unstyled">
-                        <li>Products Grid View</li>
-                        <li><a href="product-grid-left-sidebar.html">Products Sidebar Left</a></li>
-                        <li><a href="product-grid-right-sidebar.html">Products Sidebar Right</a></li>
-                        <li><a href="product-grid-3-col-filter.html">Products 3 Columns V1</a></li>
-                        <li><a href="product-grid-3-col.html">Products 3 Columns V2</a></li>
-                        <li><a href="product-grid-4-col.html">Products 4 Columns</a></li>
-                      </ul>
-                    </li>
-                    <li class="col-sm-3 col-xs-12">
-                      <ul class="list-unstyled">
-                        <li>Products List View</li>
-                        <li><a href="product-list-left-sidebar.html">Products Sidebar Left</a></li>
-                        <li><a href="product-list-right-sidebar.html">Products Sidebar Right</a></li>
-                        <li class="listHeading">Others</li>
-                        <li><a href="single-product.html">Single Product</a></li>
-                        <li><a href="cart-page.html">Cart Page</a></li>
-                      </ul>
-                    </li>
-                    <li class="col-sm-3 col-xs-12">
-                      <ul class="list-unstyled">
-                        <li>Checkout</li>
-                        <li><a href="checkout-step-1.html">Step 1 - Address</a></li>
-                        <li><a href="checkout-step-2.html">Step 2 - Shipping</a></li>
-                        <li><a href="checkout-step-3.html">Step 3 - Payment</a></li>
-                        <li><a href="checkout-step-4.html">Step 4 - Payment</a></li>
-                        <li><a href="checkout-complete.html">Order Complete</a></li>
-                      </ul>
-                    </li>
-                    <li class="col-sm-3 col-xs-12">
-                      <a href="#" class="menu-photo"><img src="img/menu-photo.jpg" alt="menu-img"></a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="dropdown">
-                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">pages</a>
-                  <ul class="dropdown-menu dropdown-menu-left">
-                    <li><a href="about-us.html">About Us</a></li>
-                    <li><a href="signup.html">Register</a></li>
-                    <li><a href="signup-login.html">Register or Login</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="lost-password.html">Password Recovery</a></li>
-                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                    <li><a href="terms-and-conditions.html">Terms &amp; Conditions</a></li>
-                    <li><a href="404.html">404 Not Found</a></li>
-
-                    <li><a href="coming-soon.html">Coming Soon</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown">
-                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">blog</a>
-                  <ul class="dropdown-menu dropdown-menu-right">
-                    <li><a href="blog-right-sidebar.html">Right Sidebar</a></li>
-                    <li><a href="blog-left-sidebar.html">Left Sidebar</a></li>
-                    <li><a href="blog-fullwidth.html">Full Width</a></li>
-                    <li><a href="blog-single-fullwidth.html">Single Post</a></li>
-                    <li><a href="blog-single-right-sidebar.html">Single Right Sidebar</a></li>
-                    <li><a href="blog-single-left-sidebar.html">Single Left Sidebar</a></li>
-                  </ul>
+                  <a href="index.html">Inicio</a>
                 </li>
                 <li class="dropdown active">
-                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account</a>
-                  <ul class="dropdown-menu dropdown-menu-right">
-                    <li class="active"><a href="account-dashboard.html">Dashboard</a></li>
-                    <li><a href="account-profile.html">Profile</a></li>
-                    <li><a href="account-all-orders.html">All Orders</a></li>
-                    <li><a href="account-single-order.html">Single Order</a></li>
-                    <li><a href="account-wishlist.html">Wishlist</a></li>
-                    <li><a href="account-address.html">Address</a></li>
-                  </ul>
+                  <a href="product-grid-left-sidebar.html">Catálogo</b></a>
                 </li>
-              <li class="dropdown">
-                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Components</a>
-                  <ul class="dropdown-menu dropdown-menu-right">
-                    <li><a href="accrodion-toggle.html">Accrodion-Toggle</a></li>
-                    <li><a href="tab-dropdown.html">Tab-Dropdown</a></li>
-                    <li><a href="alert-label-badges.html">Alert-Label-Badges</a></li>
-                    <li><a href="progress-bar.html">Progress Bar</a></li>
-                    <li><a href="buttons.html">Buttons</a></li>
-                    <li><a href="forms.html">Forms</a></li>
-                    <li><a href="list-panel.html">Listgroups Panel</a></li>
-                    <li><a href="tooltip-pagination.html">Tooltip Pagination</a></li>
-                    <li><a href="typography.html">Typography</a></li>
-                    <li><a href="responsive-embed.html">Responsive Embed</a></li>
-                  </ul>
+                <li class="dropdown">
+                  <a href="blog-fullwidth.html">Tienda Física</a>
                 </li>
+                <!-- <li class="dropdown">
+                  <a href="account-profile.html">Membresía</a>
+                </li> -->
+                <!-- <li class="dropdown">
+                  <a href="account-profile.html">Mi perfil</a>
+                </li> -->
               </ul>
             </div><!-- /.navbar-collapse -->
           </div>
@@ -235,15 +152,15 @@
           <div class="row">
             <div class="col-xs-6">
               <div class="page-title">
-                <h2>Terms and conditions</h2>
+                <h2>Términos y Condiciones</h2>
               </div>
             </div>
             <div class="col-xs-6">
               <ol class="breadcrumb pull-right">
                 <li>
-                  <a href="index.html">Home</a>
+                  <a href="index.html">Inicio</a>
                 </li>
-                <li class="active">Terms and conditions</li>
+                <li class="active">Términos y Condiciones</li>
               </ol>
             </div>
           </div>
@@ -255,16 +172,189 @@
         <div class="container">
           <div class="row">
             <div class="col-xs-12">
-              <h3>Introduction</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-              <h4>Some Title Goes Here</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-              <h4>Some Title Should be Here </h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-              <h4>Some Title Goes Here</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-              <h4>Some Title Should be Here </h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu.</p>
+            <h3> TÉRMINOS & CONDICIONES </h3>
+
+            <p> Agradecemos su visita a www.pindaki.com</p>
+
+            <p> Es para nosotros un enorme gusto servirle.
+
+            Pindaki (www.pindaki.com) es una tienda virtual localizada en Costa Rica, con domicilio de administración, bodegas y despacho en Los Lagos, Heredia, perteneciente a Portafolio AM Siete S.A.
+
+            El usuario que visite y/o utilice la página www.pindaki.com acepta expresamente los términos y condiciones que se detallan a continuación: </p>
+
+            <h3> 1.  Restricción de Uso </h3>
+
+            <p>Todo el contenido de este sitio es propiedad de www.pindaki.com. El mismo no puede ser copiado, reproducido, duplicado, transmitido, vendido, publicado, distribuido o explotado de ninguna manera para propósitos comerciales.
+
+            El uso indebido constituye violación de los derechos de registro y propiedad intelectual, tanto de imágenes como de contenido bajo la legislación vigente y válida de la República de Costa Rica y los convenios internacionales.</p>
+
+            <h3> 2.  Colores y Fotografías </h3>
+
+            <p> En www.pindaki.com hemos hecho nuestro mejor esfuerzo por compartir de la manera más exacta posible los colores de los productos que aparecen en nuestro sitio. Sin embargo, debido a que los colores que el usuario observe dependen de cada monitor, no podemos garantizar que los colores que se observen en pantalla sean exactos.
+
+            El propósito de toda imagen es representar de la mejor manera las características de cada artículo, por lo que los accesorios utilizados para ambientar los productos no están incluidos y no forman parte de este. Por favor leer cuidadosamente la descripción de cada producto. </p>
+
+
+            <h3> 3.  Precio (s) venta al público ivi y costo (s) de envío </h3>
+
+            <p> Los precios y promociones son exclusivamente para compras en www.pindaki.com y están sujetos a cambios sin previo aviso. Estos precios pueden variar a los precios que se pueden encontrar en nuestras sucursales. Los precios presentados en www.pindaki.com incluyen todos los impuestos de venta y prestaciones de servicios vigentes de Costa Rica. 
+
+            Los precios mostrados en www.pindaki.com no incluyen los gastos de envío; estos se incluirán al seleccionar la opción de entrega y pueden variar según la distancia y la cantidad de artículos en el pedido. Si la opción de envío es entrega en sucursales, estos no incurren en gastos de envío.
+
+            Todo pedido finalizado (orden completada) al que no se le haya aplicado un "Código de descuento" no se le podrá modificar y/o cambiar el valor del pedido, es decir cualquier descuento que no fue utilizado, no se podrá aplicar al pedido una vez el pedido haya sido realizado.</p>
+
+            <h3> 4.  Pedidos </h3>
+
+            <p> La persona que recibe el producto (destinatario) a través del servicio de envíos en la dirección de entrega indicada, recibirá la factura de compra junto con su pedido.  El cliente deberá firmar como recibido una copia de la factura ante el mensajero para respaldo de Pindaki.</p>
+
+            <h3> 5.  Estados de Pedidos </h3>
+
+            <p>La página www.pindaki.com cuenta con 5 estados de pedido:
+
+            Pendiente: Este estado lo obtiene el pedido cuando la transacción ha sido revisada y aprobada por el banco.
+            Procesando: Cuando el pedido ha sido enviado a la dirección indicada por el cliente.
+            Entregado: Cuando el pedido ha sido entregado al cliente.
+            Cancelado: Cuando el producto ha sido revocado.
+
+            Nota: Nos reservamos el derecho de rechazar/cancelar cualquier pedido o de restringir las cantidades de cualquier pedido sin explicar los motivos, lo cual se notificará por medio de correo electrónico basado en la dirección que se indicó en el pedido.</p>
+             
+
+            <h3> 6.  Envío de artículos y/o Entrega en nuestras sucursales </h3>
+
+            <p> Envío de productos: Nuestro compromiso es entregar los artículos adquiridos a través de www.pindaki.com en la dirección de entrega que el comprador defina durante el proceso de compra. El plazo de entrega variará según el servicio de mensajería elegido por el comprador, así como de la dirección de envío, el tiempo máximo de entrega será de 5 días hábiles. Los servicios de mensajería disponibles son: Correos de Costa Rica y/o TodoExpress CR.
+
+            Entrega en nuestras sucursales: Los artículos pueden ser retirados en cualquiera de nuestras “sucursales”, dentro del país. Todos los pedidos deben retirarse en el área de cajas & servicio al cliente de la sucursal seleccionada. El pedido estará listo para ser retirado a los 2 días hábiles posteriores a la compra.  Este servicio de entrega es sin costo alguno.
+
+            Durante el proceso de compra en “mi carrito” se verá reflejado el costo del envío al seleccionar el tipo de servicio de entrega.  El costo de envío variará según la dirección de entrega. Una persona con identificación debe recibir el pedido y firmar de recibido.
+
+            Pindaki confirmará con el cliente previamente a realizar la entrega en la dirección de envío indicada. Si se visita al cliente y no hay nadie para recibir el producto, se dejará una nota como evidencia de que se visitó a la persona. En este caso nos comunicaremos con el destinatario para coordinar la entrega en alguna de nuestras sucursales.  Si el cliente desea que se realice nuevamente la entrega con alguno de los servicios de mensajería indicados anteriormente, deberá cancelar a Pindaki previamente el monto correspondiente al servicio de entrega.
+
+            El servicio de envío se brindará solo a lugares en que se cuente con un camino seguro de acceso para vehículos comerciales, que esté dentro del radio de acción de entregas del servicio de mensajería y en zonas donde no se ponga en riesgo la seguridad o la integridad del personal.
+
+            Para asegurar una mayor variedad de productos, www.pindaki.com se suple de diferentes proveedores, por lo que una orden puede ser entregada en varios paquetes, según tamaños, formas y pesos de los artículos seleccionados. </p>
+
+
+            <h3> 7.  Métodos de pagos </h3>
+
+            <p style="margin-bottom: 0px;"> Las formas de pago autorizadas desde www.pindaki.com son las siguientes:</p>
+            <br>
+            <p style="margin-bottom: 0px;">1. Tarjetas de Crédito y Débito (Visa y/o Mastercard).</p> 
+            <br>
+            <p>2.Transferencias electrónicas a las cuentas Bancarias:</p> 
+            
+            <ul style="color: #797979;font-size: 14px;">
+              <li>Cuenta del Banco Nacional a nombre de Portafolio AM Siete S.A, cédula jurídica 3-101-732547</li>
+              <br>
+              <li> Colones: </li>
+              <li>Cuenta Cliente: 15100010012218306</li>
+              <li>Cuenta Corriente: 100-01-000-221830-8</li>
+              <li>IBAN: CR98015100010012218306</li>
+               <br>
+              <li>Dólares:</li>
+              <li>Cuenta Cliente: 15100010026227473</li>
+              <li>Cuenta Corriente: 100-02-000-622747-1</li>
+              <li>IBAN: CR15015100010026227473</li>
+              <br>
+              <li>Cuenta del Banco Promerica a nombre de Portafolio AM Siete S.A, cédula jurídica 3-101-732547</li>
+              <br>
+              <li> Colones: </li>
+              <li>Cuenta Cliente: 11610300020086422</li>
+              <li>Cuenta Corriente: 3-2008642</li>
+              <li>IBAN: CR48011610300020086422</li>
+              <br> 
+              <li> Dólares: </li>
+              <li>Cuenta Cliente: 11610400020086500</li>
+              <li>Cuenta Corriente: 4-2008650</li>
+              <li>IBAN: CR38011610400020086500</li>
+            </ul>
+           
+            <br>
+            <p>3. PayPal.</p> 
+
+            <p>www.pindaki.com garantiza que las transacciones realizadas por el USUARIO dentro del sitio web www.pindaki.com son seguras y avaladas por una certificación de seguridad internacional. Todas las formas de pago están sujetas a verificación y autorización de los bancos emisores y/o Pindaki.
+            
+            Pindaki se desliga del manejo y uso de tarjetas de crédito y/o débito robadas debido a que nuestro portal no puede negar la venta cuando el banco emisor ha autorizado la transacción y los datos registrados en nuestro sistema de venta coincidan con los del registro.  Pindaki se desliga de registrar, guardar, o manipular los datos de las tarjetas de crédito y/o débito utilizadas como medio de pago en la página www.pindaki.com. 
+
+            Pindaki se reserva el derecho de rechazar/cancelar cualquier pedido cuando no se logre confirmar algún dato del cliente. No se hace recargo de ninguna comisión o cobro extra por pagar a través de www.pindaki.com.
+
+            Nota: cuando el cliente utilice como método de pago la plataforma “Paypal” los precios serán convertidos a la moneda dólares americanos (USD), según términos y condiciones de la plataforma “Paypal” al momento de confirmar los cargos a su cuenta.  Pindaki, utilizará el tipo de cambio oficial de venta del Banco Central de Costa Rica para la conversión a moneda dólares americanos (USD), según la fecha en que el usuario realiza el pedido en www.pindaki.com.</p> 
+
+            <h3> 8.  Moneda </h3>
+
+            <P> Los precios en www.pindaki.com se muestran en Colones costarricenses (₡) e incluyen el impuesto de venta. </P>  
+
+
+            <h3> 9.  Promociones </h3>
+
+            <p> Las promociones presentadas en www.pindaki.com serán exclusivamente para compras efectuadas por este medio. </p>
+
+            <h3> 10. Disponibilidad de Productos </h3>
+
+            <p> Los productos contenidos en www.pindaki.com están sujetos a disponibilidad en las bodegas de Pindaki, y en algunos casos podrían no actualizarse las existencias en el momento de la compra.
+
+            En caso de que el producto elegido no se encontrara en existencia se le notificará al cliente por medio del correo electrónico asignado o por teléfono si esta proporcionado, para darles las siguientes opciones:
+
+            1)  El tiempo estimado de entrega del artículo.
+            2)  En caso de que el artículo haya sido descontinuado, se ofrecerán al cliente opciones de producto(s) sustitutos, similares y/o relacionados. Si este es de mayor valor, el cliente tiene la opción de pagar la diferencia de dinero por adquirir otro artículo.
+
+            Si las opciones anteriores no satisfacen las expectativas del cliente, o no se recibe una respuesta en un lapso de 5 días hábiles, se hará efectiva una devolución total a la forma de pago original de la compra.</p>
+
+
+            <h3> 11. Facturas y documentos de compras </h3>
+
+            <p> Pindaki enviará junto con el pedido la factura de compra como respaldo del cliente.  El cliente debe asegurarse el resguardo de la factura durante el plazo de garantía de los artículos, esto en caso de requerir presentar un reclamo por garantía. </p>
+
+            <h3> 12. Políticas de Cancelación de pedido </h3>
+
+            <p> Si el cliente así lo desea puede cancelar su pedido en un tiempo no mayor a una hora de haber realizado la compra. El cliente deberá informarnos de su decisión por medio del correo info@pindaki.com. El cliente debe indicar en que forma realizó el pago y el número de pedido. Si el cliente realizó el pago por depósito o por transferencia se le devolverá el dinero una vez que se observen los fondos en la cuenta. Si realizó el pago por tarjeta de crédito o débito se le devolverá el dinero en el lapso de las siguientes 48 horas. </p>
+
+
+            <h3> 13. Cambios y devoluciones </h3>
+
+            <p>  En su calidad de cliente de Pindaki, usted tiene el derecho de realizar una devolución de mercadería adquirida en nuestro sitio web www.pindaki.com, una vez que la haya recibido si la misma presentara un defecto de fábrica.  El plazo máximo de devolución es de 30 días hábiles a partir de la entrega de la orden de pedido.  Todo producto será previamente revisado para ver que este cumpla con la política de aplicación total de garantías para proceder con el cambio o devolución.
+
+            Cuando algún artículo presente un defecto de fábrica, el usuario debe presentarse a cualquiera de nuestras sucursales Pindaki para procesar la solicitud de garantía. Todo artículo debe ser entregado en su empaque original, con todas las etiquetas y sellos, cables y accesorios. El cliente deberá respaldar el reclamo por concepto de garantía con su factura física original. 
+
+            Pindaki se reconocerá la recolección del artículo en su dirección de entrega, cuando el mismo presente un defecto de fábrica y el cliente lo haya reportado antes de las 48 horas posteriores a su entrega.  Para este efecto, el cliente debe notificar a Pindaki por medio de: correo electrónico info@pindaki.com, el chat de la página www.pindaki.com, llamada o WhatsApp al número 8777-7797 para procesar la solicitud.  El cliente deberá respaldar el reclamo por concepto de garantía con su factura física original. 
+
+            Serán reemplazados por artículos nuevos, todos aquellos que posteriormente a la revisión de Pindaki, presenten defectos de fábrica. En los casos donde no exista inventario del mismo artículo, Pindaki realizará un vale por el monto del artículo a favor del cliente, para que pueda canjearlo en futuras compras por medio de www.pindaki.com o en cualquiera de nuestras sucursales.</p> 
+
+
+            <h3> 14. Servicio al Cliente / Contactos </h3>
+
+            <p> Para cualquier duda, comentario o consulta nos puede contactar en la dirección de correo electrónico info@pindaki.com, el chat de la página www.pindaki.com, llamada o WhatsApp al número 8777-7797.</p>
+
+            <h3> 15. Privacidad y seguridad del sitio </h3>
+
+            <p> Toda la información que provee el cliente al momento de registrarse o realizar una compra será tratada con absoluta confidencialidad y privacidad. Pindaki, se limita a resguardar la siguiente información del cliente:
+
+            Información Personal: su nombre, dirección física, número de teléfono y dirección de e-mail.
+
+            Información no personalizada identificable (cookies): dirección IP, tipo de navegador, nombre de dominio, y paginaciones específicas del website de www.pindaki.com se recopilan para ganar una comprensión mejor de las necesidades del desarrollo de sitio. </p>
+
+
+            <h3> 16. Información General </h3>
+
+            <p> Recomendaciones de seguridad a clientes:
+
+            Pindaki, no se hace responsable de errores del cliente, o usuario, o negligencia al usar los servicios que se ofrecen en este sitio y no cubre pérdidas ocasionadas por: errores de captura o el uso indebido del servicio, negligencia en el manejo o compartir su información que ocasione accesos no autorizados a cuentas, dejar la computadora sin atención durante una sesión en línea, etc.
+
+            Desconecte siempre la sesión del navegador después de haber accedido a una zona de seguridad o de haber ingresado al sistema el usuario y contraseña.
+
+            Nunca solicitaremos información personal mediante correo electrónico, por lo que se recomienda al cliente no proporcionar ningún tipo de información que le sea solicitada por este medio.
+
+            En caso de duda, el cliente podrá verificar la autenticidad del vínculo, dirección electrónica o correo electrónico en la que le soliciten información personal al correo electrónico info@pindaki.com,  el chat de la página www.pindaki.com. </p>
+
+
+
+            <h3> 17. Conformidad del usuario</h3>
+
+            <p> Se constituye un acuerdo legal entre cualquier usuario y www.pindaki.com dándose por entendido que el cliente, antes de solicitar algún servicio a través del sitio, ha revisado, entendido y acordado los términos expuestos en las políticas del portal.
+
+            En caso de inconformidad, el usuario deberá abstenerse de proporcionar información personal, así como de levantar algún requerimiento comercial.
+
+            Pindaki se reserva el derecho de modificar, agregar y/o eliminar las condiciones total o parcialmente en cualquier momento, a nuestra discreción, sin necesidad de previo aviso.</p>
+
             </div>
           </div>
         </div>
@@ -276,79 +366,72 @@
           <div class="row">
             <div class="col-sm-2 col-xs-12">
               <div class="footerLink">
-                <h5>Accessories</h5>
+                <h5>Términos de Uso</h5>
                 <ul class="list-unstyled">
-                  <li><a href="#">Body care </a></li>
-                  <li><a href="#">Chambray </a></li>
-                  <li><a href="#">Floral </a></li>
-                  <li><a href="#">Rejuvination </a></li>
-                  <li><a href="#">Shaving </a></li>
-                  <li><a href="#">Toilette </a></li>
+                  <li><a href="terms-and-conditions.html">Términos y Condiciones</a></li>
+                  <li><img class="ftcorreos" src="img/home/footer/ftcorreos.png"></li>
+                  <li><img class="fttodoexpress" src="img/home/footer/fttodoexpress.png"></li>
                 </ul>
               </div>
             </div>
             <div class="col-sm-2 col-xs-12">
               <div class="footerLink">
-                <h5>BRANDS</h5>
-                <ul class="list-unstyled">
-                  <li><a href="#">Barbour </a></li>
-                  <li><a href="#">Brioni </a></li>
-                  <li><a href="#">Oliver Spencer</a></li>
-                  <li><a href="#">Belstaff</a></li>
+                <h5>Redes Sociales</h5>
+                <ul class="list-inline">
+                  <li><a href="https://www.facebook.com/pindaki/"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="https://www.youtube.com/channel/UCkSKoY7-1OGMY9MuKpnCGag"><i class="fa fa-youtube"></i></a></li> 
+                  <li><a href="#"><i class="fa fa-instagram"></i></a></li>  
                 </ul>
               </div>
             </div>
             <div class="col-sm-2 col-xs-12">
-              <div class="footerLink">
-                <h5>Accessories</h5>
+              <!-- <div class="footerLink">
+                <h5>Tecnología</h5>
                 <ul class="list-unstyled">
-                  <li><a href="#">Body care </a></li>
-                  <li><a href="#">Chambray </a></li>
-                  <li><a href="#">Floral </a></li>
-                  <li><a href="#">Rejuvination </a></li>
-                  <li><a href="#">Shaving </a></li>
-                  <li><a href="#">Toilette </a></li>
+                  <li><a href="#">Móviles </a></li>
+                  <li><a href="#">Computadoras </a></li>
+                  <li><a href="#">Tablets </a></li>
                 </ul>
-              </div>
+              </div> -->
             </div>
             <div class="col-sm-2 col-xs-12">
               <div class="footerLink">
-                <h5>Get in Touch</h5>
+                <h5>Contacto</h5>
                 <ul class="list-unstyled">
-                  <li>Call us at (555)-555-5555</li>
-                  <li><a href="mailto:support@iamabdus.com">support@iamabdus.com</a></li>
+                  <li><i class="fa fa-phone" aria-hidden="true"> </i> (+506) 2262-5777</li>
+                  <li><i class="fa fa-whatsapp" aria-hidden="true"> </i> (+506) 8777-7797</li>
+                  <li><i class="fa fa-envelope-o" aria-hidden="true"> </i> <a href="mailto:info@pindaki.com"> info@pindaki.com</a></li>
+                  <li><i class="fa fa-inbox" aria-hidden="true"> </i> 67-40901</a></li>
+
                 </ul>
               </div>
             </div>
             <div class="col-sm-4 col-xs-12">
               <div class="newsletter clearfix">
-                <h4>Newsletter</h4>
-                <h3>Sign up now</h3>
-                <p>Enter your email address and get notified about new products. We hate spam!</p>
+                <h3>Suscribirse</h3>
+                <p>Ingresa tu correo para recibir promociones especiales.</p>
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="your email address" aria-describedby="basic-addon2">
-                  <a href="#" class="input-group-addon" id="basic-addon2">go <i class="glyphicon glyphicon-chevron-right"></i></a>
+                  <input type="text" class="form-control" placeholder="Correo Electrónico..." aria-describedby="basic-addon2">
+                  <a href="#" class="input-group-addon" id="basic-addon2">Ir <i class="glyphicon glyphicon-chevron-right"></i></a>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
       <!-- COPY RIGHT -->
       <div class="copyRight clearfix">
         <div class="container">
           <div class="row">
             <div class="col-sm-7 col-xs-12">
-              <p>&copy; 2016 Copyright Bigbag Store Bootstrap Template by <a target="_blank" href="http://www.iamabdus.com/">Abdus</a>.</p>
+              <p>&copy; 2017 Copyright Portafolio AM Siete S.A  <a target="_blank" href="https://www.portafolioam7.com/">Visitar</a>.</p>
             </div>
             <div class="col-sm-5 col-xs-12">
               <ul class="list-inline">
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
-                <li><a href="#"><i class="fa fa-tumblr"></i></a></li>
+                <li><img src="img/home/footer/card1.png"></li>
+                <li><img src="img/home/footer/card2.png"></li>
+                <li><img src="img/home/footer/card3.png"></li>
+                <!-- <li><img src="img/home/footer/card4.png"></li> -->
               </ul>
             </div>
           </div>
@@ -362,55 +445,127 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3 class="modal-title">log in</h3>
+            <h3 class="modal-title">Ingresar</h3>
           </div>
           <div class="modal-body">
-            <form action="" method="POST" role="form">
+              <div class="col-sm-12">
+                <div class="page-header text-center">
+                  <h3>Redes Sociales</h3>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="form-group col-sm-12 col-xs-12">
+                <button type="submit" onclick="loginWithFacebook()" class="btn-block btn-social btn-facebook-filled"><i class="fa fa-facebook" aria-hidden="true"></i><span>Ingresar con Facebook</span></button>
+              </div>
+              <div class="form-group col-sm-12 col-xs-12">
+                <button type="submit" onclick="loginWithGoogle()" class="btn-block btn-social btn-google-filled"><i class="fa fa-google-plus" aria-hidden="true"></i><span>Ingresar con Google+</span></button>
+              </div>
+              <div class="clearfix"></div>
+              <div class="col-sm-12">
+                <div class="page-header text-center">
+                  <h3>Cuenta PDK</h3>
+                </div>
+              </div>
+              <div class="clearfix"></div>
               <div class="form-group">
-                <label for="">Enter Email</label>
-                <input type="text" class="form-control" id="">
+                <label for="">Correo Electrónico</label>
+                <input type="email" class="form-control" id="logmail">
               </div>
               <div class="form-group">
-                <label for="">Password</label>
-                <input type="password" class="form-control" id="">
+                <label for="">Contraseña</label>
+                <input type="password" class="form-control" id="logpass">
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox"> Remember Me
+                  <input type="checkbox" checked="true"> Recordarme
                 </label>
               </div>
-              <button type="submit" class="btn btn-primary btn-block">log in</button>
-              <button type="button" class="btn btn-link btn-block">Forgot Password?</button>
-            </form>
+              <button onclick="loginWithEmailAndPassword()" class="btn btn-primary btn-block">Ingresar</button>
+              <button type="button" class="btn btn-link btn-block">¿Ovidaste la contraseña?</button>
           </div>
         </div>
       </div>
     </div>
 
     <!-- SIGN UP MODAL -->
-    <div class="modal fade" id="signup" tabindex="-1" role="dialog">
+    <div class="modal fade signup-modal" id="signup" tabindex="-1" role="dialog">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3 class="modal-title">Create an account</h3>
+            <h3 class="modal-title">Crear cuenta</h3>
           </div>
           <div class="modal-body">
-            <form action="" method="POST" role="form">
+              <div class="col-sm-12">
+                <div class="page-header text-center">
+                  <h3>Registro PinDaKi</h3>
+                </div>
+              </div>
+              <div class="clearfix"></div>
               <div class="form-group">
-                <label for="">Enter Email</label>
-                <input type="email" class="form-control" id="">
+                <label for="">Nombre</label>
+                <input type="text" class="form-control" id="name">
               </div>
               <div class="form-group">
-                <label for="">Password</label>
-                <input type="password" class="form-control" id="">
+                <label for="">Apellidos</label>
+                <input type="text" class="form-control" id="lastName">
               </div>
               <div class="form-group">
-                <label for="">Confirm Password</label>
-                <input type="password" class="form-control" id="">
+                <label for="">Correo Electrónico</label>
+                <input type="email" class="form-control" id="email">
               </div>
-              <button type="submit" class="btn btn-primary btn-block">Sign up</button>
-            </form>
+              <div class="form-group">
+                <label for="">Contraseña</label>
+                <input type="password" class="form-control" id="password">
+              </div>
+              <div class="form-group">
+                <label for="">Repetir Contraseña</label>
+                <input type="password" class="form-control" id="repassword">
+              </div>
+              <button onclick="createUserWithEmailAndPassword();" class="btn btn-primary btn-block">Registro</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOGOUT MODAL -->
+    <div class="modal fade logout-modal" id="logout" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3 class="modal-title">¡Bienvenido!</h3>
+          </div>
+          <div class="modal-body">
+              <div class="col-sm-12">
+                <div id="eleOfBody" class="text-center">
+                  <!-- <img class="img-circle" src="img/huevoP.jpg">
+                  <h3>Hanz Fernández</h3> -->
+                  <!-- <span>Te recomedamos continuar con tu sesión activa. Esto te ayudará a mantenerte al día con las mejores promociones, productos de alta calidad, y las mejores marcas.</span> -->
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <button onclick="logOutUser()" class="btn btn-primary btn-block">Cerrar Sesión</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PORDUCT QUICK VIEW MODAL -->
+    <div id="quick-modal" class="modal fade quick-view" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <div class="media">
+              <div id="img-modal" class="media-left">
+                <!-- DINAMICALLY LOAD DATA -->
+              </div>
+              <div id="modal-data" class="media-body">
+                <!-- DINAMICALLY SHOW THE DATA -->
+              </div>
+            </div>
           </div>
         </div>
       </div>

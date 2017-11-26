@@ -12,6 +12,7 @@ var phone;
 var subTotal; 
 var total;
 var zip;
+var buyValue;
 
 var priceInt = 0;
 var storedPRICE = 0;
@@ -34,7 +35,6 @@ var config = {
 firebase.initializeApp(config);
 
 function loadOrderInfo(){
-
 	// Create Cart Elemets
     var $h0 = $("<h5>", {id:"", class:"ordertxt", text: "Nombre: " + order.name});  
     var $h1 = $("<h5>", {id:"", class:"ordertxt", text: "Apellidos: " + order.lastName});
@@ -46,13 +46,13 @@ function loadOrderInfo(){
     $("#info_compra").append($h1);
     $("#info_compra").append($h2);
     $("#info_compra").append($h3);
-    $("#info_compra").append($h4);
+    // $("#info_compra").append($h4);
 
     // Create Cart Elemets
     var $h5 = $("<h5>", {id:"", class:"ordertxt", text: "País: " + order.country});  
     var $h6 = $("<h5>", {id:"", class:"ordertxt", text: "Provincia: " + order.city});
     var $h7 = $("<h5>", {id:"", class:"ordertxt", text: "Dirección Exacta: " + order.address});
-    var $h8 = $("<h5>", {id:"", class:"ordertxt", text: "Código Postal: " + order.zip});
+    var $h8 = $("<h5>", {id:"", class:"ordertxt", text: "Cantón: " + order.zip});
 
     $("#info_envío").append($h5);
     $("#info_envío").append($h6);
@@ -72,8 +72,8 @@ function loadOrderInfo(){
     $($span1).append($br1);
     $("#compañía_envío").append($span2);
 }
-function loadDataInCartShop(){
 
+function loadDataInCartShop(){
 	console.log(storedIDS)
 	for (i in storedIDS) {
 		//console.log(storedIDS[i].lot)
@@ -83,24 +83,21 @@ function loadDataInCartShop(){
 
 function drawingCar(category,id, quantity){
 	//Creamos la consulta
-
-	    firebase.database()
+	firebase.database()
 	    .ref('storage/products/categories/' + category + "/" + id)
 	    .on('value', function(data) {
 		    //Cargamos el objeto y sus atributos 
 		    var snap = data.val();
 		    id = data.key;
 		  
-		    //console.log(quantity);
+		    console.log(quantity);
 		  
 		    priceInt = parseInt(snap.price) * parseInt(quantity);
 		    storedPRICE += priceInt;
 		    storedTOTALPRICE = storedPRICE + storedDISCOUNT;
-		    // console.log(storedPRICE)
-		    // console.log(storedTOTALPRICE)
-		    // console.log(storedDISCOUNT)
+		    
 		    // Create Cart Elemets
-		   var $tr = $("<tr>", {id:"", class:""});
+		   	var $tr = $("<tr>", {id:"", class:""});
 	     	var $td0 = $("<td>", {id:"", class:"col-xs-2"});
 	     	var $btn0 = $("<button>", {id: id, "type":"button", class:"close", onclick:'advisorWarningDelete(this.id)', "aria-label":"Close"});     	
 	     	var $span0 = $("<span>", {id:"", "aria-hidden":"true", text: "x"});
@@ -110,8 +107,12 @@ function drawingCar(category,id, quantity){
 	     	var $td1 = $("<td>", {id:"", class:"col-xs-4", text: snap.name});
 	     	var $td2 = $("<td>", {id:"", class:"col-xs-2", text: id});
 	     	var $td3 = $("<td>", {id:"", class:"col-xs-2"});
-	     	var $input0 = $("<td>", {id:"", class:"col-xs-2",  text: quantity});
-	     	var $td4 = $("<td>", {id:"", class:"col-xs-2", text: "₡ " + snap.price});
+	     	var $btnMin = $("<button>", {id:id, class: "btn-plus", onclick:"minQuantity(this); return false;"});
+	     	var $spanMin = $("<span>", {id:"min", class: "glyphicon glyphicon-minus"});
+	     	var $input0 = $("<input>", {id: id, class: category, "type":"number", "min":"1", "max":"15", "placeholder": quantity, "readonly": ""});
+	     	var $btnPlus = $("<button>", {id:id, class: "btn-min", onclick:"plusQuantity(this); return false;"});
+	     	var $spanPlus = $("<span>", {id:"plus", class: "glyphicon glyphicon-plus"});
+	     	var $td4 = $("<td>", {id:"", class:"col-xs-2", text: "₡ " + snap.price.replace(/\B(?=(\d{3})+(?!\d))/g, ",")});
 
 	        $("#tbody_cart").append($tr);
 	        $($tr).append($td0);
@@ -122,27 +123,26 @@ function drawingCar(category,id, quantity){
 	        $($tr).append($td1);
 	        $($tr).append($td2);
 	        $($tr).append($td3);
+	        $($td3).append($btnMin);
+	        $($btnMin).append($spanMin);
 	        $($td3).append($input0);
+	        $($td3).append($btnPlus);
+	        $($btnPlus).append($spanPlus);
+
+
 	        $($tr).append($td4);
 
-	   
-			let buyValue =$("#coinChange").val();
+	        var $span2 = $("<span>", {id:"subTotal", class:"txtCartSize", text: "Subtotal:  " + " ₡ " + storedPRICE.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")});
+	        // var $span3 = $("<span>", {id:"discount", class:"txtCartSize", text: "Descuento:  " + storedDISCOUNT.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "%" });
+	        var $span4 = $("<span>", {id:"total", class:"grandTotal txtCartSize", text: "Total:  " + " ₡ " + storedTOTALPRICE.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")});
 
-
-	        var $span2 = $("<span>", {id:"subTotal", class:"txtCartSize", text: "Subtotal:  " + " ₡ " + storedPRICE});
-	        var $span3 = $("<span>", {id:"discount", class:"txtCartSize", text: "Descuento:  " + storedDISCOUNT + "%" });
-	        var $span5 = $("<span>", {id:"total", class:"grandTotal txtCartSize", text: "Total:  " + " ₡ " + storedTOTALPRICE /*+ " Total: $ "+ (storedTOTALPRICE/buyValue).toFixed(2)*/});
-			//var $span4 = $("<span>", {id:"cambio", class:"grandTotal txtCartSize", text: "Total:  " + " $ " + });
-			
 	        $("#Subtotal").html($span2);
-	        $("#Descuento").html($span3);
-	       // $("#Total").html($span4);
-	        $("#Total").html($span5);
-	        
-
-		});
+	        // $("#Descuento").html($span3);
+	        $("#Total").html($span4);
+		});		
 		
 }
+
 function advisorWarningDelete(id){
 	deleteID = id;
 	var index = storedIDS.findIndex(x => x.id == id);
@@ -181,7 +181,6 @@ function advisorWarningDelete(id){
 	        $("#delete-body").append($h1);
 		});
 	}
-
 }
 // storedIDS.splice(index, 1);
 // localStorage.setItem("cartIDS", JSON.stringify(storedIDS));
@@ -197,14 +196,147 @@ function deleteProductInCart(){
 	} 
 }
 
+function minQuantity(arg){
+	console.log(arg)
+	var idArg = arg.getAttribute('id');
+	var categoryArg = $('input[id=' + idArg + ']').attr("class");
+	console.log(idArg)
+ 	var valueArg = $('input[id=' + idArg + ']').attr("placeholder");
+ 	console.log(valueArg)
+ 	var argPrice;
+
+ 	firebase.database()
+    .ref('storage/products/categories/' + categoryArg + "/" + idArg)
+    .on('value', function(data) {
+	    //Cargamos el objeto y sus atributos 
+	    var snap = data.val();
+	    id = data.key;
+	    argPrice = snap.price;
+	});
+ 
+ 	if(valueArg > 1 && valueArg < 30){
+ 		console.log(categoryArg);
+ 		$('input[id=' + idArg + ']').attr("placeholder", "");
+ 		valueArg = parseInt(valueArg) - 1;
+
+ 		setTimeout(function(){
+ 			$('input[id=' + idArg + ']').attr("placeholder", valueArg);
+ 		}, 100);
+
+ 		// priceInt = parseInt(argPrice) * parseInt(valueArg);
+	    storedPRICE -= parseInt(argPrice);
+	    storedTOTALPRICE -= parseInt(argPrice);
+
+	    // console.log(priceInt);
+	    console.log(storedPRICE);
+	    console.log(storedTOTALPRICE);
+	    var $span2 = $("<span>", {id:"subTotal", class:"txtCartSize", text: "Subtotal:  " + " ₡ " + storedPRICE.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")});
+	    // var $span3 = $("<span>", {id:"discount", class:"txtCartSize", text: "Descuento:  " + storedDISCOUNT + "%" });
+	    var $span4 = $("<span>", {id:"total", class:"grandTotal txtCartSize", text: "Total:  " + " ₡ " + storedTOTALPRICE.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")});
+
+	    $("#Subtotal").html($span2);
+	    // $("#Descuento").html($span3);
+	    $("#Total").html($span4);	
+ 	}else if(valueArg == 30){
+ 		console.log(categoryArg);
+ 		$('input[id=' + idArg + ']').attr("placeholder", "");
+ 		valueArg = parseInt(valueArg) - 1;
+
+ 		setTimeout(function(){
+ 			$('input[id=' + idArg + ']').attr("placeholder", valueArg);
+ 		}, 100);
+
+ 		// priceInt = parseInt(argPrice) * parseInt(valueArg);
+	    storedPRICE -= parseInt(argPrice);
+	    storedTOTALPRICE -= parseInt(argPrice);
+
+	    // console.log(priceInt);
+	    console.log(storedPRICE);
+	    console.log(storedTOTALPRICE);
+	    var $span2 = $("<span>", {id:"subTotal", class:"txtCartSize", text: "Subtotal:  " + " ₡ " + storedPRICE.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")});
+	    // var $span3 = $("<span>", {id:"discount", class:"txtCartSize", text: "Descuento:  " + storedDISCOUNT + "%" });
+	    var $span4 = $("<span>", {id:"total", class:"grandTotal txtCartSize", text: "Total:  " + " ₡ " + storedTOTALPRICE.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")});
+
+	    $("#Subtotal").html($span2);
+	    // $("#Descuento").html($span3);
+	    $("#Total").html($span4);
+ 	}
+}	
+
+function plusQuantity(arg){
+	console.log(arg)
+	var idArg = arg.getAttribute('id');
+	console.log(idArg)
+	var categoryArg = $('input[id=' + idArg + ']').attr("class");
+	console.log(categoryArg)
+ 	var valueArg = $('input[id=' + idArg + ']').attr("placeholder");
+ 	console.log(valueArg)
+ 	var argPrice;
+
+ 	firebase.database()
+    .ref('storage/products/categories/' + categoryArg + "/" + idArg)
+    .on('value', function(data) {
+	    //Cargamos el objeto y sus atributos 
+	    var snap = data.val();
+	    id = data.key;
+	    argPrice = snap.price;
+	});
+
+ 	if(valueArg > 1 && valueArg < 30){
+ 		console.log(categoryArg);
+ 		$('input[id=' + idArg + ']').attr("placeholder", "");
+ 		valueArg = parseInt(valueArg) + 1;
+
+ 		setTimeout(function(){
+ 			$('input[id=' + idArg + ']').attr("placeholder", valueArg);
+ 		}, 100);
+
+ 		// priceInt = parseInt(argPrice) * parseInt(valueArg);
+	    storedPRICE += parseInt(argPrice);
+	    storedTOTALPRICE += parseInt(argPrice);
+
+	    // console.log(priceInt);
+	    console.log(storedPRICE);
+	    console.log(storedTOTALPRICE);
+	    var $span2 = $("<span>", {id:"subTotal", class:"txtCartSize", text: "Subtotal:  " + " ₡ " + storedPRICE.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")});
+	    // var $span3 = $("<span>", {id:"discount", class:"txtCartSize", text: "Descuento:  " + storedDISCOUNT + "%" });
+	    var $span4 = $("<span>", {id:"total", class:"grandTotal txtCartSize", text: "Total:  " + " ₡ " + storedTOTALPRICE.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")});
+
+	    $("#Subtotal").html($span2);
+	    // $("#Descuento").html($span3);
+	    $("#Total").html($span4);	
+ 	}else if(valueArg == 1){
+ 		console.log(categoryArg);
+ 		$('input[id=' + idArg + ']').attr("placeholder", "");
+ 		valueArg = parseInt(valueArg) + 1;
+
+ 		setTimeout(function(){
+ 			$('input[id=' + idArg + ']').attr("placeholder", valueArg);
+ 		}, 100);
+
+ 		// priceInt = parseInt(argPrice) * parseInt(valueArg);
+	    storedPRICE += parseInt(argPrice);
+	    storedTOTALPRICE += parseInt(argPrice);
+
+	    // console.log(priceInt);
+	    console.log(storedPRICE);
+	    console.log(storedTOTALPRICE);
+	    var $span2 = $("<span>", {id:"subTotal", class:"txtCartSize", text: "Subtotal:  " + " ₡ " + storedPRICE.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")});
+	    // var $span3 = $("<span>", {id:"discount", class:"txtCartSize", text: "Descuento:  " + storedDISCOUNT + "%" });
+	    var $span4 = $("<span>", {id:"total", class:"grandTotal txtCartSize", text: "Total:  " + " ₡ " + storedTOTALPRICE.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")});
+
+	    $("#Subtotal").html($span2);
+	    // $("#Descuento").html($span3);
+	    $("#Total").html($span4);	
+ 	}
+}
+
 jQuery(document).ready(function(){
 	//Function Listener
-	
-	
-	let buyValue = $("#coinChange").val();
-	result = (order.total / buyValue).toFixed(2);
-	console.log("Buy dolar value >>> "+buyValue);
-	console.log("totalOrder >>> "+result);
+	buyValue = $("#coinChange").val().replace("/", "");
+	result = (order.total / parseFloat(buyValue)).toFixed(2);
+	console.log("Buy dolar value >>> "+ buyValue);
+	console.log("totalOrder >>> "+ result);
 	let totalOrder ={totalOrder:result};
 	$.extend(totalOrder, order);
  	localStorage.setItem('order', JSON.stringify(totalOrder));

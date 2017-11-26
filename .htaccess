@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+RewriteCond %{HTTP_HOST} ^pindaki.com [NC]
+RewriteRule (.*) https://www.pindaki.com/$1 [R=301,L,QSA]
+</IfModule>
+
+<IfModule mod_rewrite.c>
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://www.pindaki.com/$1 [R=301,L,QSA]
+</IfModule> 

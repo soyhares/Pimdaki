@@ -7,6 +7,10 @@ var cartIDS = [];
 var cartCTS = [];
 var oldID;
 
+var filter = [];
+var rangeHigh = 80000;
+var rangelow = 2000;
+
 var materials = {}; 
 var colors = {}; 
 var catalog = {};
@@ -14,7 +18,14 @@ var quantity = "1";
 
 var category,subCategory,id,barCode,name,model,lot,price,oldPrice,tradeMark,size,description;
 
-var bag = []; 
+var bag = [];
+
+var priceInt = 0;
+var storedPRICE = 0;
+var storedDISCOUNT = 0;
+var storedTOTALPRICE = 0;
+// var quantity = "";
+var itemsInCart = 0; 
 
 //===============================Init Firebase======================
 // Initialize Firebase
@@ -28,19 +39,74 @@ var config = {
 };
 firebase.initializeApp(config);
 
+function filterByPrice(){
+    $("#catalog_parend_list").empty();
+    console.log(rangelow)
+    for (i in filter) {
+        if (filter[i].price > rangelow && filter[i].price < rangeHigh) {
+            // $("#catalog_parend").empty();
+            //Create ele dinamically
+		    var $divParent = $("<div>", {id: "", "class": "col-xs-12"});
+	        var $div0 = $("<div>", {id: "", "class": "media"});
+	        var $div1 = $("<div>", {id: "", "class": "media-left"});
+	        var $img0 = $("<img>", {id: "img0", "class": "media-object","src": filter[i].catalog[0]});
+	        var $span0 = $("<span>", {id: "", "class": "maskingImage"});
+	        var $a0 = $("<a>", {id: filter[i].id, class:"btn viewBtn", onclick:'quickViewModal(this.id)', text: "Vista Previa"});
+	        var $div2 = $("<div>", {id: "", class:"media-body"});
+	        var $h0 = $("<h4>", {id:"", class: "media-heading"});
+	        var $a1 = $("<a>", {id: filter[i].id, onclick:'singleProduct(this.id)', "href":"#", text: filter[i].name});
+	        var $p0 = $("<p>", {id:"", text: filter[i].description});
+	        var $h1 = $("<h3>", {id:"", text: "₡ " + filter[i].price.replace(/\B(?=(\d{3})+(?!\d))/g, ",")});
+	        var $div3 = $("<div>", {id:"", class:"btn-group", "role":"group"});
+	        var $btn0 = $("<button>", {id:"", "data-toggle":"tooltip", "data-placement":"top", "title":"Agregar a Favoritos", "type":"button", class:"btn btn-default", "data-toggle":"modal", "data-target":".login-modal"});
+	        var $i0 = $("<i>", {id:"", class:"fa fa-heart", "aria-hidden":"true"});
+	        var $btn1 = $("<button>", {id: filter[i].id, "data-toggle":"tooltip", "data-placement":"top", "title":"Agregar al Carrito", "type":"button", class:"btn btn-default", onclick:'addToShoppingCart(this.id)'});
+	        var $i1 = $("<i>", {id:"", class:"fa fa-shopping-cart", "aria-hidden":"true"});
+
+
+	        // Los cargamos en pantalla 
+	        $($divParent).append($div0);
+	        $($div0).append($div1);
+	        $($div1).append($img0);
+	        $($div1).append($span0);
+	        $($span0).append($a0);
+	        $($div0).append($div2);
+	        $($div2).append($h0);
+	        $($h0).append($a1);
+	        $($div2).append($p0);
+	        $($div2).append($h1);
+	        $($div2).append($div3);
+	        $($div3).append($btn0);
+	        $($btn0).append($i0);
+	        $($div3).append($btn1);
+	   		$($btn1).append($i1);
+
+	        $("#catalog_parend_list").append($divParent);   
+        }
+    }
+}
+
 function getDataOfProduct(){
-	console.log(storedIDS);
+	var $imgBlank = $("<img>", {id: "imgBlank", "class": "blankImage","src": "img/home/featured-product/muy-pronto.png"});
+	$("#catalog_parend_list").append($imgBlank);
 	//Creamos la consulta 
+	filter = [];
 	firebase.database().ref('storage/products/categories/' + category).on('child_added', function(data) {
 	    //Cargamos el objeto y sus atributos 
 	    var snap = data.val();
 	    id = data.key;
-	    // console.log(id);
-	    console.log(data.val());
+	    $("#imgBlank").addClass("ocultar");
+    	// console.log(id);
+	    var object1 = snap;
+        var object2 = {
+            id: id,
+        }
+        $.extend(object1, object2);
 
-	    //Create ele dinamically
+        filter.push(object1);
+        //Create ele dinamically
 	    var $divParent = $("<div>", {id: "", "class": "col-xs-12"});
-        var $div0 = $("<div>", {id: "", "class": "media animated bounceIn"});
+        var $div0 = $("<div>", {id: "", "class": "media"});
         var $div1 = $("<div>", {id: "", "class": "media-left"});
         var $img0 = $("<img>", {id: "img0", "class": "media-object","src": snap.catalog[0]});
         var $span0 = $("<span>", {id: "", "class": "maskingImage"});
@@ -49,7 +115,7 @@ function getDataOfProduct(){
         var $h0 = $("<h4>", {id:"", class: "media-heading"});
         var $a1 = $("<a>", {id: id, onclick:'singleProduct(this.id)', "href":"#", text: snap.name});
         var $p0 = $("<p>", {id:"", text: snap.description});
-        var $h1 = $("<h3>", {id:"", text: "₡ " + snap.price});
+        var $h1 = $("<h3>", {id:"", text: "₡ " + snap.price.replace(/\B(?=(\d{3})+(?!\d))/g, ",")});
         var $div3 = $("<div>", {id:"", class:"btn-group", "role":"group"});
         var $btn0 = $("<button>", {id:"", "data-toggle":"tooltip", "data-placement":"top", "title":"Agregar a Favoritos", "type":"button", class:"btn btn-default", "data-toggle":"modal", "data-target":".login-modal"});
         var $i0 = $("<i>", {id:"", class:"fa fa-heart", "aria-hidden":"true"});
@@ -74,8 +140,7 @@ function getDataOfProduct(){
         $($div3).append($btn1);
    		$($btn1).append($i1);
 
-        $("#catalog_parend_list").append($divParent); 
-
+        $("#catalog_parend_list").append($divParent);
 	});
 	setTimeout(function(){ $('#spinner').hide(); }, 600);
 }
@@ -85,20 +150,32 @@ $("#list_left_category li a").click(function(e) {
         e.preventDefault();
         if (this.id != ""){
                 $("#catalog_parend_list").empty();
+                filter = [];
+                var $imgBlank = $("<img>", {id: "imgBlank", "class": "blankImage","src": "img/home/featured-product/muy-pronto.png"});
+				$("#catalog_parend_list").append($imgBlank);
+
                 localStorage.setItem('category', this.id);
                 category = localStorage.getItem('category');
+
+                console.log(category);
                 //Creamos la consulta 
                 firebase.database().ref('storage/products/categories/' + category).on('child_added', function(data) {
 				    //Cargamos el objeto y sus atributos 
 				    var snap = data.val();
 				    id = data.key;
-				    // console.log(id);
-				    console.log(snap);
-				    console.log(id);
+
+				    $("#imgBlank").addClass("ocultar");
+				    var object1 = snap;
+			        var object2 = {
+			            id: id,
+			        }
+			        $.extend(object1, object2);
+
+			        filter.push(object1);
 				    //Create ele dinamically
 				    var $divParent = $("<div>", {id: "", "class": "col-xs-12"});
-			        var $div0 = $("<div>", {id: "", "class": "media animated bounceIn"});
-			        var $div1 = $("<div>", {id: "", "class": "media-left"});
+			        var $div0 = $("<div>", {id: "", "class": "media"});
+			        var $div1 = $("<div>", {id: "", "class": "media-left", "onclick":""});
 			        var $img0 = $("<img>", {id: "img0", "class": "media-object","src": snap.catalog[0]});
 			        var $span0 = $("<span>", {id: "", "class": "maskingImage"});
 			        var $a0 = $("<a>", {id: id, class:"btn viewBtn", onclick:'quickViewModal(this.id)', text: "Vista Previa"});
@@ -106,7 +183,7 @@ $("#list_left_category li a").click(function(e) {
 			        var $h0 = $("<h4>", {id:"", class: "media-heading"});
 			        var $a1 = $("<a>", {id: id, onclick:'singleProduct(this.id)', "href":"#", text: snap.name});
 			        var $p0 = $("<p>", {id:"", text: snap.description});
-			        var $h1 = $("<h3>", {id:"", text: "₡ " + snap.price});
+			        var $h1 = $("<h3>", {id:"", text: "₡ " + snap.price.replace(/\B(?=(\d{3})+(?!\d))/g, ",")});
 			        var $div3 = $("<div>", {id:"", class:"btn-group", "role":"group"});
 			        var $btn0 = $("<button>", {id:"", "data-toggle":"tooltip", "data-placement":"top", "title":"Agregar a Favoritos", "type":"button", class:"btn btn-default", "data-toggle":"modal", "data-target":".login-modal"});
 			        var $i0 = $("<i>", {id:"", class:"fa fa-heart", "aria-hidden":"true"});
@@ -166,9 +243,10 @@ function quickViewModal(id){
 	        var $img0 = $("<img>", {id: "img0", "alt":"Image", "class": "media-object","src": snap.catalog[0]});
 	     	var $h0 = $("<h2>", {id: "", class:"text-info", text: snap.tradeMark});
 	     	var $h00 = $("<h3>", {id: "", text: snap.name});
-	     	var $h1 = $("<h3>", {id: "", text: "₡ " + snap.price});
+	     	var $h1 = $("<h3>", {id: "", text: "₡ " + snap.price.replace(/\B(?=(\d{3})+(?!\d))/g, ",")});
 	     	var $p0 = $("<p>", {id:"", text: snap.description});
 
+	     	var $h03 = $("<h3>", {id: "qty", class:"qty", text: "Cantidad"});
 	     	var $spanQ = $("<span>", {id:"", class:"quick-drop resizeWidth"});
             var $selectQ = $("<select>", {id:"guiest_id4", name:"guiest_id4", class:"selectOptions"});
             var $optionQ = $("<option>", {value:"1", text:"Cantidad"});
@@ -187,6 +265,22 @@ function quickViewModal(id){
             var $option12 = $("<option>", {value:"13", text:"13"});
             var $option13 = $("<option>", {value:"14", text:"14"});
             var $option14 = $("<option>", {value:"15", text:"15"});
+
+            var $option15 = $("<option>", {value:"16", text:"16"});
+            var $option16 = $("<option>", {value:"17", text:"17"});
+            var $option17 = $("<option>", {value:"18", text:"18"});
+            var $option18 = $("<option>", {value:"19", text:"19"});
+            var $option19 = $("<option>", {value:"20", text:"20"});
+            var $option20 = $("<option>", {value:"21", text:"21"});
+            var $option21 = $("<option>", {value:"22", text:"22"});
+            var $option22 = $("<option>", {value:"23", text:"23"});
+            var $option23 = $("<option>", {value:"24", text:"24"});
+            var $option24 = $("<option>", {value:"25", text:"25"});
+            var $option25 = $("<option>", {value:"26", text:"26"});
+            var $option26 = $("<option>", {value:"27", text:"27"});
+            var $option27 = $("<option>", {value:"28", text:"28"});
+            var $option28 = $("<option>", {value:"29", text:"29"});
+            var $option29 = $("<option>", {value:"30", text:"30"});
 
 	     	var $div0 = $("<div>", {id:"btn-area", class:"btn-area"});
 	     	var $btn0 = $("<button>", {id:"", "type":"button", class:"btn btn-default"});
@@ -225,9 +319,9 @@ function quickViewModal(id){
 	        $("#modal-data").append($h00);
 	        $("#modal-data").append($h1);
 	        $("#modal-data").append($p0);
+	        $("#modal-data").append($h03);
 	        $("#modal-data").append($spanQ);
             $($spanQ).append($selectQ);
-            $($selectQ).append($optionQ);
             $($selectQ).append($option0);
             $($selectQ).append($option1);
             $($selectQ).append($option2);
@@ -243,6 +337,22 @@ function quickViewModal(id){
             $($selectQ).append($option12);
             $($selectQ).append($option13);
             $($selectQ).append($option14);
+
+            $($selectQ).append($option15);
+            $($selectQ).append($option16);
+            $($selectQ).append($option17);
+            $($selectQ).append($option18);
+            $($selectQ).append($option19);
+            $($selectQ).append($option20);
+            $($selectQ).append($option21);
+            $($selectQ).append($option22);
+            $($selectQ).append($option23);
+            $($selectQ).append($option24);
+            $($selectQ).append($option25);
+            $($selectQ).append($option26);
+            $($selectQ).append($option27);
+            $($selectQ).append($option28);
+            $($selectQ).append($option29);
 
 	        $("#modal-data").append($div0);
 	        $($div0).append($a0);
@@ -292,13 +402,13 @@ function quickViewModal(id){
 	        var $img0 = $("<img>", {id: "img0", "alt":"Image", "class": "media-object","src": snap.catalog[0]});
 	     	var $h0 = $("<h2>", {id: "", class:"text-info", text: snap.tradeMark});
 	     	var $h00 = $("<h3>", {id: "", text: snap.name});
-	     	var $h1 = $("<h3>", {id: "", text: "₡ " + snap.price});
+	     	var $h1 = $("<h3>", {id: "", text: "₡ " + snap.price.replace(/\B(?=(\d{3})+(?!\d))/g, ",")});
 	     	var $p0 = $("<p>", {id:"", text: snap.description});
 
-
+	     	var $h03 = $("<h3>", {id: "qty", class:"qty", text: "Cantidad"});
 	     	var $spanQ = $("<span>", {id:"", class:"quick-drop resizeWidth"});
             var $selectQ = $("<select>", {id:"guiest_id4", name:"guiest_id4", class:"selectOptions"});
-            var $optionQ = $("<option>", {value:"1", text:"Cantidad"});
+            // var $optionQ = $("<option>", {value:"1", text:"Cantidad"});
             var $option0 = $("<option>", {value:"1", text:"1"});
             var $option1 = $("<option>", {value:"2", text:"2"});
             var $option2 = $("<option>", {value:"3", text:"3"});
@@ -314,6 +424,22 @@ function quickViewModal(id){
             var $option12 = $("<option>", {value:"13", text:"13"});
             var $option13 = $("<option>", {value:"14", text:"14"});
             var $option14 = $("<option>", {value:"15", text:"15"});
+
+            var $option15 = $("<option>", {value:"16", text:"16"});
+            var $option16 = $("<option>", {value:"17", text:"17"});
+            var $option17 = $("<option>", {value:"18", text:"18"});
+            var $option18 = $("<option>", {value:"19", text:"19"});
+            var $option19 = $("<option>", {value:"20", text:"20"});
+            var $option20 = $("<option>", {value:"21", text:"21"});
+            var $option21 = $("<option>", {value:"22", text:"22"});
+            var $option22 = $("<option>", {value:"23", text:"23"});
+            var $option23 = $("<option>", {value:"24", text:"24"});
+            var $option24 = $("<option>", {value:"25", text:"25"});
+            var $option25 = $("<option>", {value:"26", text:"26"});
+            var $option26 = $("<option>", {value:"27", text:"27"});
+            var $option27 = $("<option>", {value:"28", text:"28"});
+            var $option28 = $("<option>", {value:"29", text:"29"});
+            var $option29 = $("<option>", {value:"30", text:"30"});
 
 	     	var $div0 = $("<div>", {id:"btn-area", class:"btn-area"});
 	     	var $btn0 = $("<button>", {id:"", "type":"button", class:"btn btn-default"});
@@ -352,9 +478,10 @@ function quickViewModal(id){
 	        $("#modal-data").append($h00);
 	        $("#modal-data").append($h1);
 	        $("#modal-data").append($p0);
+	        $("#modal-data").append($h03);
 	        $("#modal-data").append($spanQ);
             $($spanQ).append($selectQ);
-            $($selectQ).append($optionQ);
+            // $($selectQ).append($optionQ);
             $($selectQ).append($option0);
             $($selectQ).append($option1);
             $($selectQ).append($option2);
@@ -370,6 +497,22 @@ function quickViewModal(id){
             $($selectQ).append($option12);
             $($selectQ).append($option13);
             $($selectQ).append($option14);
+
+            $($selectQ).append($option15);
+            $($selectQ).append($option16);
+            $($selectQ).append($option17);
+            $($selectQ).append($option18);
+            $($selectQ).append($option19);
+            $($selectQ).append($option20);
+            $($selectQ).append($option21);
+            $($selectQ).append($option22);
+            $($selectQ).append($option23);
+            $($selectQ).append($option24);
+            $($selectQ).append($option25);
+            $($selectQ).append($option26);
+            $($selectQ).append($option27);
+            $($selectQ).append($option28);
+            $($selectQ).append($option29);
 
 	        $("#modal-data").append($div0);
 	        $($div0).append($a0);
@@ -433,15 +576,463 @@ function addToShoppingCart(id){
                         window.location.href = 'cart-page.html';
                 }else{
                         console.log("existe");
-                        var lot = storedIDS[index].lot;
-                        storedIDS[index].lot = parseInt(lot) + parseInt($('#guiest_id4 option:selected').val()); 
-                        localStorage.setItem("cartIDS", JSON.stringify(storedIDS));
-                        window.location.href = 'cart-page.html';
+                        if ($('#guiest_id4').length > 0){
+                            var lot = storedIDS[index].lot;
+                            storedIDS[index].lot = parseInt(lot) + parseInt($('#guiest_id4 option:selected').val()); 
+                            localStorage.setItem("cartIDS", JSON.stringify(storedIDS));
+                            console.log("sumar Cantidad " + storedIDS[index].lot)
+                            window.location.href = 'cart-page.html';
+                        }else{
+                            var lot = storedIDS[index].lot;
+                            storedIDS[index].lot = parseInt(lot) + 1; 
+                            localStorage.setItem("cartIDS", JSON.stringify(storedIDS));
+                            console.log("sumar 1 " + storedIDS[index].lot)
+                            window.location.href = 'cart-page.html'; 
+                        }
                 }
         }
 }
 
-jQuery(document).ready(function(){
-	//Function Listener
-	getDataOfProduct();
+function loadDataOfCartItems(){
+    console.log(storedIDS)
+    for (i in storedIDS) {
+        drawingCar(storedIDS[i].route,storedIDS[i].id, storedIDS[i].lot, storedIDS.length)
+    }   
+}
+
+function drawingCar(category,id, quantity, itemsIn){
+    //Creamos la consulta
+    firebase.database()
+    .ref('storage/products/categories/' + category + "/" + id)
+    .on('value', function(data) {
+        //Cargamos el objeto y sus atributos 
+        var snap = data.val();
+        id = data.key;
+      
+        console.log(itemsIn)
+        priceInt = parseInt(snap.price) * parseInt(quantity);
+        storedPRICE += priceInt;
+        storedTOTALPRICE = storedPRICE + storedDISCOUNT;
+        
+        // Create Cart Elemets
+        if(id != ""){
+            $("#cartOne").empty();
+
+            var $i0 = $("<i>", {id:"", class:"fa fa-shopping-cart", text:" "+ "₡ " + storedTOTALPRICE.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")});    
+            var $li1 = $("<li>", {id:"", class:""});
+            var $a1 = $("<a>", {id:"", href:"single-product.html"});
+            var $div0 = $("<div>", {id:"", class:"media media-especial"});
+            var $img0 = $("<img>", {id:"", class:"media-left media-object", src: snap.catalog[0]});
+            var $div1 = $("<div>", {id:"", class:"media-body"});
+            var $h0 = $("<h5>", {id:"", class:"media-heading", text: snap.name});
+            var $br1 = $("<br>", {id:""});
+            var $span2 = $("<span>", {id:"", class:"", text: "Cantidad: " + quantity + " x " + "₡ " + snap.price.replace(/\B(?=(\d{3})+(?!\d))/g, ",")});
+            
+
+            $("#cartOne").append($i0);
+
+            $("#ul_master").append($li1);
+            $($li1).append($a1);
+            $($a1).append($div0);
+            $($div0).append($img0);
+            $($div0).append($div1);
+            $($div1).append($h0);
+            $($h0).append($br1);
+            $($h0).append($span2); 
+
+            
+        }
+        
+    });
+        
+}
+
+
+function createUserWithEmailAndPassword(){
+	var nameReg = /^[A-Za-z]+$/;
+    var numberReg =  /^[0-9]+$/;
+    var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+
+   	name = $("#name").val();
+	lastName = $("#lastName").val();
+	totalName = name + " " + lastName;
+	email = $("#email").val();
+	password = $("#password").val();
+	repassword = $("#repassword").val();
+
+    var inputVal = new Array(name, lastName, email, password, repassword);
+    var inputMessage = new Array("Nombre", "Apellidos", "Correo", "Contraseña", "Contraseña");
+
+    $('.error').hide();
+    if(inputVal[0] == ""){
+        $('#name').after('<span class="error">Por favor ingresa tu ' + inputMessage[0] + '</span>');
+        return;
+    }else if(inputVal[0].length < 2){
+        $('#name').after('<span class="error">Debe contener almenos 2 letras</span>');
+        return;
+    }else if(numberReg.test(name)){
+        $('#name').after('<span class="error">Únicamente letras</span>');
+        return;
+    }
+
+    if(inputVal[1] == ""){
+        $('#lastName').after('<span class="error">Por favor ingresa tu ' + inputMessage[1] + '</span>');
+        return;
+    }else if(inputVal[1].length < 2){
+        $('#lastName').after('<span class="error">Debe contener almenos 2 letras</span>');
+        return;
+    }else if(numberReg.test(lastName)){
+        $('#lastName').after('<span class="error">Únicamente letras</span>');
+        return;
+    }
+
+    if(inputVal[2] == ""){
+        $('#email').after('<span class="error">Por favor ingresa tu ' + inputMessage[2] + '</span>');
+        return;
+    }else if(!emailReg.test(email)){
+        $('#email').after('<span class="error">Ingresa un email válido</span>');
+        return;
+    }
+
+    if(inputVal[3] == ""){
+        $('#password').after('<span class="error">Por favor ingresa una ' + inputMessage[3] + '</span>');
+        return;
+    }else if(inputVal[3].length < 6 ){
+        $('#password').after('<span class="error">Debe contener almenos 6 caracteres</span>');
+        return;
+    } 
+   
+    if(inputVal[4] == ""){
+        $('#repassword').after('<span class="error">Por favor repite la ' + inputMessage[4] + '</span>');
+        return;
+    }else if(inputVal[4] != inputVal[3]){
+        $('#repassword').after('<span class="error">Debe ser la misma contraseña</span>');
+        return;
+    } 
+
+	console.log(email + ", " + password);
+	firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
+	    window.location.href = "index.html";
+	}).catch(function(error) {
+	  // Handle Errors here.
+	  var errorCode = error.code;
+	  var errorMessage = error.message;
+	  // ...
+	  alert(errorCode);
+	  alert(errorMessage);
+	});
+}
+
+function loginWithEmailAndPassword(){
+	var nameReg = /^[A-Za-z]+$/;
+    var numberReg =  /^[0-9]+$/;
+    var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+
+   	email = $("#logmail").val();
+	password = $("#logpass").val();
+
+    var inputVal = new Array(email, password);
+    var inputMessage = new Array("Correo", "Contraseña");
+
+    $('.error').hide();
+    if(inputVal[0] == ""){
+        $('#logmail').after('<span class="error">Por favor ingresa tu ' + inputMessage[0] + '</span>');
+        return;
+    }else if(!emailReg.test(email)){
+        $('#logmail').after('<span class="error">Ingresa un correo válido</span>');
+        return;
+    }
+
+    if(inputVal[1] == ""){
+        $('#logpass').after('<span class="error">Por favor ingresa tu ' + inputMessage[1] + '</span>');
+        return;
+    }else if(inputVal[1].length < 6){
+        $('#logpass').after('<span class="error">Debe contener almenos 6 caracteres</span>');
+        return;
+    }
+
+	
+	firebase.auth().signInWithEmailAndPassword(email, password).then(function(){
+		window.location.href = "index.html";
+	}).catch(function(error) {
+	  // Handle Errors here.
+	  var errorCode = error.code;
+	  var errorMessage = error.message;
+	  alert(errorCode);
+	});
+}
+
+function logOutUser(){
+	firebase.auth().signOut().then(function() {
+		window.location.href = "index.html";
+	  	console.log('Signed Out');
+	}, function(error) {
+	  	console.error('Sign Out Error', error);
+	});
+}
+
+function loginWithFacebook(){
+	var provider = new firebase.auth.FacebookAuthProvider();
+    provider.addScope('email');
+    provider.addScope('public_profile');
+    provider.addScope('user_friends');
+	firebase.auth().signInWithPopup(provider).then(function(result) {
+	  var token = result.credential.accessToken;
+	  var user = result.user;
+	  console.log(user);
+	  window.location.href = "index.html";
+	  // document.getElementById("imgProfile").src = photoURL;
+	}).catch(function(error) {
+	  var errorCode = error.code;
+	  var errorMessage = error.message;
+	  var email = error.email;
+	  var credential = error.credential;
+	});
+}
+
+function loginWithGoogle(){
+	var provider = new firebase.auth.GoogleAuthProvider();
+	firebase.auth().signInWithPopup(provider).then(function(result) {
+	 	var token = result.credential.accessToken;
+	  	var user = result.user;
+	  	console.log(user);
+	  	window.location.href = "index.html";
+	}).catch(function(error) {
+	  	var errorCode = error.code;
+	  	var errorMessage = error.message;
+	  	var email = error.email;
+	  	var credential = error.credential;
+	});
+}
+
+function showProfile(){
+    $('#logout').modal('show');
+
+    if(displayName == ""){
+        var $img = $("<img>", {id:"", class:"img-circle", src: photoURL});
+        var $text = $("<h3>", {id:"", class:"", text: displayName});
+
+        $("#eleOfBody").append($img);
+        $("#eleOfBody").append($text);
+    }else{
+        $("#eleOfBody").empty();
+
+        var $img = $("<img>", {id:"", class:"img-circle", src: photoURL});
+        var $text = $("<h3>", {id:"", class:"", text: displayName});
+
+        $("#eleOfBody").append($img);
+        $("#eleOfBody").append($text);
+    }
+}
+
+// Custom Code
+$("#categoriesFilter").on('click touchstart', function (e) {
+    e.preventDefault();
+    if($("#categoriesFilterBody").hasClass("panel-hidden")){
+        $("#categoriesFilterBody").removeClass("panel-hidden");
+        $("#categoriesFilterBody").addClass("animated fadeIn");
+    }else{
+        $("#categoriesFilterBody").removeClass("animated fadeIn");
+        $("#categoriesFilterBody").addClass("panel-hidden");
+    }
+});
+
+// Custom Code
+$("#priceFilter").on('click touchstart', function (e) {
+    e.preventDefault();
+    if($("#priceFilterBody").hasClass("panel-hidden")){
+        $("#priceFilterBody").removeClass("panel-hidden");
+        $("#priceFilterBody").addClass("animated fadeIn");
+    }else{
+        $("#priceFilterBody").removeClass("animated fadeIn");
+        $("#priceFilterBody").addClass("panel-hidden");
+    }
+});
+
+$(window).load(function(){
+	 if (storedIDS == null || storedIDS.length < 1){
+        $("#cartbtn").addClass("btn-is-disabled");
+        $("#checkoutbtn").addClass("btn-is-disabled");
+    }
+    
+	if ($(window).width() > 768){
+        $("#categoriesFilterBody").removeClass("panel-hidden");
+        $("#priceFilterBody").removeClass("panel-hidden");
+    }else{
+        $("#categoriesFilterBody").addClass("panel-hidden");
+        $("#priceFilterBody").addClass("panel-hidden");
+
+        // Custom Code
+        $("#Electro li a").on('click touchstart', function (e) {
+            e.preventDefault();
+            if($("#categoriesFilterBody").hasClass("panel-hidden")){
+                $("#categoriesFilterBody").removeClass("panel-hidden");
+                $("#categoriesFilterBody").addClass("animated fadeIn");
+            }else{
+                $("#categoriesFilterBody").removeClass("animated fadeIn");
+                $("#categoriesFilterBody").addClass("panel-hidden");
+            }
+        });
+
+        // Custom Code
+        $("#Entretenimiento li a").on('click touchstart', function (e) {
+            e.preventDefault();
+            if($("#categoriesFilterBody").hasClass("panel-hidden")){
+                $("#categoriesFilterBody").removeClass("panel-hidden");
+                $("#categoriesFilterBody").addClass("animated fadeIn");
+            }else{
+                $("#categoriesFilterBody").removeClass("animated fadeIn");
+                $("#categoriesFilterBody").addClass("panel-hidden");
+            }
+        });
+
+        // Custom Code
+        $("#Hogar li a").on('click touchstart', function (e) {
+            e.preventDefault();
+            if($("#categoriesFilterBody").hasClass("panel-hidden")){
+                $("#categoriesFilterBody").removeClass("panel-hidden");
+                $("#categoriesFilterBody").addClass("animated fadeIn");
+            }else{
+                $("#categoriesFilterBody").removeClass("animated fadeIn");
+                $("#categoriesFilterBody").addClass("panel-hidden");
+            }
+        });
+
+        // Custom Code
+        $("#Cocina li a").on('click touchstart', function (e) {
+            e.preventDefault();
+            if($("#categoriesFilterBody").hasClass("panel-hidden")){
+                $("#categoriesFilterBody").removeClass("panel-hidden");
+                $("#categoriesFilterBody").addClass("animated fadeIn");
+            }else{
+                $("#categoriesFilterBody").removeClass("animated fadeIn");
+                $("#categoriesFilterBody").addClass("panel-hidden");
+            }
+        });
+
+        // Custom Code
+        $("#BBQ li a").on('click touchstart', function (e) {
+            e.preventDefault();
+            if($("#categoriesFilterBody").hasClass("panel-hidden")){
+                $("#categoriesFilterBody").removeClass("panel-hidden");
+                $("#categoriesFilterBody").addClass("animated fadeIn");
+            }else{
+                $("#categoriesFilterBody").removeClass("animated fadeIn");
+                $("#categoriesFilterBody").addClass("panel-hidden");
+            }
+        });
+
+        // Custom Code
+        $("#Deportes li a").on('click touchstart', function (e) {
+            e.preventDefault();
+            if($("#categoriesFilterBody").hasClass("panel-hidden")){
+                $("#categoriesFilterBody").removeClass("panel-hidden");
+                $("#categoriesFilterBody").addClass("animated fadeIn");
+            }else{
+                $("#categoriesFilterBody").removeClass("animated fadeIn");
+                $("#categoriesFilterBody").addClass("panel-hidden");
+            }
+        });
+
+        // Custom Code
+        $("#Salud li a").on('click touchstart', function (e) {
+            e.preventDefault();
+            if($("#categoriesFilterBody").hasClass("panel-hidden")){
+                $("#categoriesFilterBody").removeClass("panel-hidden");
+                $("#categoriesFilterBody").addClass("animated fadeIn");
+            }else{
+                $("#categoriesFilterBody").removeClass("animated fadeIn");
+                $("#categoriesFilterBody").addClass("panel-hidden");
+            }
+        });
+
+        // Custom Code
+        $("#Viajes li a").on('click touchstart', function (e) {
+            e.preventDefault();
+            if($("#categoriesFilterBody").hasClass("panel-hidden")){
+                $("#categoriesFilterBody").removeClass("panel-hidden");
+                $("#categoriesFilterBody").addClass("animated fadeIn");
+            }else{
+                $("#categoriesFilterBody").removeClass("animated fadeIn");
+                $("#categoriesFilterBody").addClass("panel-hidden");
+            }
+        });
+    }
+    //Function Listener
+    getDataOfProduct();
+
+    loadDataOfCartItems();
+    // localStorage.removeItem('cartIDS');
+    firebase.auth().onAuthStateChanged(function(user) {
+	  if (user) {
+	  	var user = firebase.auth().currentUser; 
+	  	user.providerData.forEach(function (profile) {
+	        providerId = profile.providerId;
+	        uid = profile.uid;
+	        displayName = profile.displayName;
+	        profileEmail = profile.email;
+	        photoURL = profile.photoURL;
+	    });
+  
+		$($span0).detach();
+	    $($a0).detach();
+	    $($small).detach();
+	    $($a1).detach();
+
+		var $a = $("<a>", {id:"displayName", class:"logText", "data-toggle":"modal", href:"#", onclick:"showProfile()", text: " " + user.displayName});
+		var $i0 = $("<i>", {id:"userLogo", class:"fa fa-user", "style":"color: white;"});
+	    $("#loggedInfo").append($i0);
+	    $("#loggedInfo").append($a);
+
+	    var $span = $("<span>", {id:"", class:"", text: user.displayName});
+	    $("#userName").append($span);
+
+	    var $li0 = $("<li>", {id:"", class:"dropdown"});
+	    var $a2 = $("<a>", {id:"", class:"", href:"account-profile.html", text:"Mi Perfil"});
+	    $("#ulIndex").append($li0);
+	    $($li0).append($a2);
+
+	  }else {
+
+	  	$($li0).detach();
+	  	$($a2).detach();
+	  	$($i0).detach();
+	  	$($a).detach(); 	
+
+	  	var $span0 = $("<span>", {id:"loginSingUp"});
+	  	var $a0 = $("<a>", {id:"", "data-toggle":"modal", href:"#login", text:"Ingresar"});
+	  	var $small = $("<small>", {id:"", text:"ó"});
+	  	var $a1 = $("<a>", {id:"", "data-toggle":"modal", href:"#signup", text:"Registrarse"});
+
+	  	setTimeout(function(){
+	  		$("#loggedInfo").append($span0);
+		    $($span0).append($a0);
+		    $($span0).append($small);
+		    $($span0).append($a1);
+	  	}, 500);
+	   
+	    console.log("Log out");
+	  }
+	});
+
+    
+    
+    var minimum = 2000;
+	var maximum = 80000;
+
+	$( "#price-range" ).slider({
+		range: true,
+		min: minimum,
+		max: maximum,
+		values: [ minimum, maximum ],
+		slide: function( event, ui ) {
+			$( "#price-amount-1" ).val( "₡" + ui.values[ 0 ] );
+			$( "#price-amount-2" ).val( "₡" + ui.values[ 1 ] );
+			rangelow = ui.values[0];
+            rangeHigh = ui.values[1];
+		}
+	});
+
+	$( "#price-amount-1" ).val( "₡" + $( "#price-range" ).slider( "values", 0 ));
+	$( "#price-amount-2" ).val( "₡" + $( "#price-range" ).slider( "values", 1 ));
 });

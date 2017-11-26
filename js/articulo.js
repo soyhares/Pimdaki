@@ -45,8 +45,6 @@ function loadSingleProduct(){
 	        var snap = data.val();
 	        id = data.key;
 	        validator = snap.barCode;
-	
-
         }); 
     } else{
         //Limpiamos el modal para que no agregue una img sobre otra
@@ -83,7 +81,6 @@ function loadSingleProduct(){
 	        	url2 = snap.catalog[2];
 	        	url3 = snap.catalog[3];
 	        }
-
 
 	        //Create ele dinamically
 	        var $div0 = $("<div>", {id:"", "class":"col-xs-12"});
@@ -125,31 +122,48 @@ function loadSingleProduct(){
 	        var $a2 = $("<a>", {id:"", "href":"product-grid-left-sidebar.html", text: "Continuar Comprando "});
 	        var $i0 = $("<i>", {id:"", "class":"fa fa-reply", "aria-hidden":"true"});
 	        var $li1 = $("<li>", {id:"", class:""});
-	        var $a3 = $("<a>", {id:"", "href":"#", text:"Compartir "});
+	        var $a3 = $("<a>", {id:"", "href":"whatsapp://send?text=TEXTO DEL MENSAJE AQUI https://pindaki.com", "data-action":"share/whatsapp/share", text:"Compartir "});
 	        var $i1 = $("<i>", {id:"", class:"fa fa-plus", "aria-hidden": "true"});
 	        var $h0 = $("<h2>", {id:"", class:"", class:"text-info", text: snap.name});
-	        var $h1 = $("<h3>", {id:"", class:"", text: "₡ " + snap.price});
+	        var $h1 = $("<h3>", {id:"", class:"", text: "₡ " + snap.price.replace(/\B(?=(\d{3})+(?!\d))/g, ",")});
 	        var $p0 = $("<p>", {id:"", class:"", text: snap.description});
 	        var $div17 = $("<div>", {id:"", class:"btn-area"});
 
-	        var $spanQ = $("<span>", {id:"", class:"quick-drop resizeWidth"});
-	        var $selectQ = $("<select>", {id:"guiest_id4", name:"guiest_id4", class:"selectOptions"});
-	        var $optionQ = $("<option>", {value:"1", text:"Cantidad"});
-	        var $option0 = $("<option>", {value:"1", text:"1"});
-	        var $option1 = $("<option>", {value:"2", text:"2"});
-	        var $option2 = $("<option>", {value:"3", text:"3"});
-	        var $option3 = $("<option>", {value:"4", text:"4"});
-	        var $option4 = $("<option>", {value:"5", text:"5"});
-	        var $option5 = $("<option>", {value:"6", text:"6"});
-	        var $option6 = $("<option>", {value:"7", text:"7"});
-	        var $option7 = $("<option>", {value:"8", text:"8"});
-	        var $option8 = $("<option>", {value:"9", text:"9"});
-	        var $option9 = $("<option>", {value:"10", text:"10"});
-	        var $option10 = $("<option>", {value:"11", text:"11"});
-	        var $option11 = $("<option>", {value:"12", text:"12"});
-	        var $option12 = $("<option>", {value:"13", text:"13"});
-	        var $option13 = $("<option>", {value:"14", text:"14"});
-	        var $option14 = $("<option>", {value:"15", text:"15"});
+	        var $h03 = $("<h3>", {id: "qty", class:"qty", text: "Cantidad"});
+            var $spanQ = $("<span>", {id:"", class:"quick-drop resizeWidth"});
+            var $selectQ = $("<select>", {id:"guiest_id4", name:"guiest_id4", class:"selectOptions"});
+            // var $optionQ = $("<option>", {value:"1", text:"Cantidad"});
+            var $option0 = $("<option>", {value:"1", text:"1"});
+            var $option1 = $("<option>", {value:"2", text:"2"});
+            var $option2 = $("<option>", {value:"3", text:"3"});
+            var $option3 = $("<option>", {value:"4", text:"4"});
+            var $option4 = $("<option>", {value:"5", text:"5"});
+            var $option5 = $("<option>", {value:"6", text:"6"});
+            var $option6 = $("<option>", {value:"7", text:"7"});
+            var $option7 = $("<option>", {value:"8", text:"8"});
+            var $option8 = $("<option>", {value:"9", text:"9"});
+            var $option9 = $("<option>", {value:"10", text:"10"});
+            var $option10 = $("<option>", {value:"11", text:"11"});
+            var $option11 = $("<option>", {value:"12", text:"12"});
+            var $option12 = $("<option>", {value:"13", text:"13"});
+            var $option13 = $("<option>", {value:"14", text:"14"});
+            var $option14 = $("<option>", {value:"15", text:"15"});
+
+            var $option15 = $("<option>", {value:"16", text:"16"});
+            var $option16 = $("<option>", {value:"17", text:"17"});
+            var $option17 = $("<option>", {value:"18", text:"18"});
+            var $option18 = $("<option>", {value:"19", text:"19"});
+            var $option19 = $("<option>", {value:"20", text:"20"});
+            var $option20 = $("<option>", {value:"21", text:"21"});
+            var $option21 = $("<option>", {value:"22", text:"22"});
+            var $option22 = $("<option>", {value:"23", text:"23"});
+            var $option23 = $("<option>", {value:"24", text:"24"});
+            var $option24 = $("<option>", {value:"25", text:"25"});
+            var $option25 = $("<option>", {value:"26", text:"26"});
+            var $option26 = $("<option>", {value:"27", text:"27"});
+            var $option27 = $("<option>", {value:"28", text:"28"});
+            var $option28 = $("<option>", {value:"29", text:"29"});
+            var $option29 = $("<option>", {value:"30", text:"30"});
 
 	        var $a4 = $("<a>", {id: id, class:"btn btn-primary btn-block", onclick:'addToShoppingCart(this.id)', text:"Agregar al Carrito"});
 	        var $i2 = $("<i>", {id:"", class:"fa fa-angle-right", "aria-hidden":"true"});
@@ -157,29 +171,29 @@ function loadSingleProduct(){
 	        var $div18 = $("<div>", {id:"", class:"tabArea"});
 	        var $ul1 = $("<ul>", {id:"", class:"nav nav-tabs"});
 	        var $li2 = $("<li>", {id:"", class:"active"});
-	        var $a5 = $("<a>", {id:"", "data-toggle":"tab", "href":"#details", text:"Detalles"});
+	        var $a5 = $("<a>", {id:"", "data-toggle":"tab", "href":"#details", text:"Descripción"});
 	        var $li3 = $("<li>", {id:"", class:""});
-	        var $a6 = $("<a>", {id:"", "data-toggle":"tab", "href":"#about-art", text:"Acerca de"});
+	        var $a6 = $("<a>", {id:"", "data-toggle":"tab", "href":"#about-art", text:"Detalles"});
 	        var $li4 = $("<li>", {id:"", class:""});
 	        var $a7 = $("<a>", {id:"", "data-toggle":"tab", "href": "#sizing", text:"Envío"});
 
 	        var $div19 = $("<div>", {id:"", class:"tab-content"});
 	        var $div20 = $("<div>", {id:"details", class:"tab-pane fade in active"});
 	        var $ul2 = $("<ul>", {id:"", class:"list-unstyled"});
-	        var $li5 = $("<li>", {id:"", class:"", text: "Código de Producto: " + id});
-	        var $li6 = $("<li>", {id:"", class:"", text: "GS1: " + snap.barCode});
-	        var $li7 = $("<li>", {id:"", class:"", text: "Marca: " + snap.tradeMark});
+	        var $li5 = $("<li>", {id:"", class:"", text: "Marca: " + snap.tradeMark});
+	        var $li6 = $("<li>", {id:"", class:"", text: "Código de Barras: " + snap.barCode});
+	        var $li7 = $("<li>", {id:"", class:"", text: "Código de Producto: " + id});
 
 	        var $div21 = $("<div>", {id:"about-art", class:"tab-pane fade"});
 	        var $ul3 = $("<ul>", {id:"", class:"list-unstyled"});
-	        var $li8 = $("<li>", {id:"", class:"", text: "Dimensiones: " + snap.size});
+	        var $li8 = $("<li>", {id:"", class:"", text: "Modelo: " + snap.model});
 	        var $li9 = $("<li>", {id:"", class:"", text: "Materiales: " + snap.materials});
-	        var $li10 = $("<li>", {id:"", class:"", text: "Modelo: " + snap.model});
+	        var $li10 = $("<li>", {id:"", class:"", text: "Dimensiones: " + snap.size});
 
 	        var $div22 = $("<div>", {id:"sizing", class:"tab-pane fade"});
 	        var $ul4 = $("<ul>", {id:"", class:"list-unstyled"});
-	        var $li11 = $("<li>", {id:"", class:"", text: "Correos de Costa Rica. " + " Tiempo Estimado: 48 horas."});
-	        var $li12 = $("<li>", {id:"", class:"", text: "GoPato. " + " Tiempo Estimado: 4 horas."});
+	        var $li11 = $("<li>", {id:"", class:"", text: "TodoExpress: " + "1-2 días hábiles"});
+	        var $li12 = $("<li>", {id:"", class:"", text: "Correos de Costa Rica: " + "3-4 días"});
 
 
 	        $("#singleDiv").append($div0);
@@ -226,25 +240,43 @@ function loadSingleProduct(){
 	        $($div16).append($h0);
 	        $($div16).append($h1);
 	        $($div16).append($p0);
+	        $($div16).append($h03);
 
 	        $($div16).append($spanQ);
-	        $($spanQ).append($selectQ);
-	        $($selectQ).append($optionQ);
-	        $($selectQ).append($option0);
-	        $($selectQ).append($option1);
-	        $($selectQ).append($option2);
-	        $($selectQ).append($option3);
-	        $($selectQ).append($option4);
-	        $($selectQ).append($option5);
-	        $($selectQ).append($option6);
-	        $($selectQ).append($option7);
-	        $($selectQ).append($option8);
-	        $($selectQ).append($option9);
-	        $($selectQ).append($option10);
-	        $($selectQ).append($option11);
-	        $($selectQ).append($option12);
-	        $($selectQ).append($option13);
-	        $($selectQ).append($option14);
+            $($spanQ).append($selectQ);
+            // $($selectQ).append($optionQ);
+            $($selectQ).append($option0);
+            $($selectQ).append($option1);
+            $($selectQ).append($option2);
+            $($selectQ).append($option3);
+            $($selectQ).append($option4);
+            $($selectQ).append($option5);
+            $($selectQ).append($option6);
+            $($selectQ).append($option7);
+            $($selectQ).append($option8);
+            $($selectQ).append($option9);
+            $($selectQ).append($option10);
+            $($selectQ).append($option11);
+            $($selectQ).append($option12);
+            $($selectQ).append($option13);
+            $($selectQ).append($option14);
+
+            $($selectQ).append($option15);
+            $($selectQ).append($option16);
+            $($selectQ).append($option17);
+            $($selectQ).append($option18);
+            $($selectQ).append($option19);
+            $($selectQ).append($option20);
+            $($selectQ).append($option21);
+            $($selectQ).append($option22);
+            $($selectQ).append($option23);
+            $($selectQ).append($option24);
+            $($selectQ).append($option25);
+            $($selectQ).append($option26);
+            $($selectQ).append($option27);
+            $($selectQ).append($option28);
+            $($selectQ).append($option29);
+
 
 	        $($div16).append($div17);
 
@@ -333,7 +365,7 @@ function loadSingleProduct(){
 
 				        var $div29 = $("<div>", {id:"", class:"productCaption clearfix"});
 				        var $h3 = $("<h5>", {id:"", class:"", text: array2[0].name});
-				        var $h4 = $("<h3>", {id:"", class:"", text: "₡ " + array2[0].price});
+				        var $h4 = $("<h3>", {id:"", class:"", text: "₡ " + array2[0].price.replace(/\B(?=(\d{3})+(?!\d))/g, ",")});
 
 				        //Porducto Relacionado 2
 				        var $div30 = $("<div>", {id:"", class:"col-md-3 col-sm-6 col-xs-12"});
@@ -354,7 +386,7 @@ function loadSingleProduct(){
 
 				        var $div34 = $("<div>", {id:"", class:"productCaption clearfix"});
 				        var $h5 = $("<h5>", {id:"", class:"", text: array2[1].name});
-				        var $h6 = $("<h3>", {id:"", class:"", text: "₡ " + array2[1].price});
+				        var $h6 = $("<h3>", {id:"", class:"", text: "₡ " + array2[1].price.replace(/\B(?=(\d{3})+(?!\d))/g, ",")});
 
 				        //Producto Relacionado 3
 				        var $div35 = $("<div>", {id:"", class:"col-md-3 col-sm-6 col-xs-12"});
@@ -375,7 +407,7 @@ function loadSingleProduct(){
 
 				        var $div39 = $("<div>", {id:"", class:"productCaption clearfix"});
 				        var $h7 = $("<h5>", {id:"", class:"", text: array2[2].name});
-				        var $h8 = $("<h3>", {id:"", class:"", text: "₡ " + array2[2].price});
+				        var $h8 = $("<h3>", {id:"", class:"", text: "₡ " + array2[2].price.replace(/\B(?=(\d{3})+(?!\d))/g, ",")});
 
 				        //Producto Relacionado 4
 				        var $div40 = $("<div>", {id:"", class:"col-md-3 col-sm-6 col-xs-12"});
@@ -396,7 +428,7 @@ function loadSingleProduct(){
 
 				        var $div44 = $("<div>", {id:"", class:"productCaption clearfix"});
 				        var $h9 = $("<h5>", {id:"", class:"", text: array2[3].name});
-				        var $h10 = $("<h3>", {id:"", class:"", text: "₡ " + array2[3].price});
+				        var $h10 = $("<h3>", {id:"", class:"", text: "₡ " + array2[3].price.replace(/\B(?=(\d{3})+(?!\d))/g, ",")});
 
 				        // Second Lot
 				        $("#divReleated").append($div23);
@@ -506,27 +538,44 @@ function quickViewModal(id){
                 var $img0 = $("<img>", {id: "img0", "alt":"Image", "class": "media-object","src": snap.catalog[0]});
                 var $h0 = $("<h2>", {id: "", class:"text-info", text: snap.tradeMark});
                 var $h00 = $("<h3>", {id: "", text: snap.name});
-                var $h1 = $("<h3>", {id: "", text: "₡ " + snap.price});
+                var $h1 = $("<h3>", {id: "", text: "₡ " + snap.price.replace(/\B(?=(\d{3})+(?!\d))/g, ",")});
                 var $p0 = $("<p>", {id:"", text: snap.description});
 
+                var $h03 = $("<h3>", {id: "qty", class:"qty", text: "Cantidad"});
                 var $spanQ = $("<span>", {id:"", class:"quick-drop resizeWidth"});
-		        var $selectQ = $("<select>", {id:"guiest_id4", name:"guiest_id4", class:"selectOptions"});
-		        var $optionQ = $("<option>", {value:"1", text:"Cantidad"});
-		        var $option0 = $("<option>", {value:"1", text:"1"});
-		        var $option1 = $("<option>", {value:"2", text:"2"});
-		        var $option2 = $("<option>", {value:"3", text:"3"});
-		        var $option3 = $("<option>", {value:"4", text:"4"});
-		        var $option4 = $("<option>", {value:"5", text:"5"});
-		        var $option5 = $("<option>", {value:"6", text:"6"});
-		        var $option6 = $("<option>", {value:"7", text:"7"});
-		        var $option7 = $("<option>", {value:"8", text:"8"});
-		        var $option8 = $("<option>", {value:"9", text:"9"});
-		        var $option9 = $("<option>", {value:"10", text:"10"});
-		        var $option10 = $("<option>", {value:"11", text:"11"});
-		        var $option11 = $("<option>", {value:"12", text:"12"});
-		        var $option12 = $("<option>", {value:"13", text:"13"});
-		        var $option13 = $("<option>", {value:"14", text:"14"});
-		        var $option14 = $("<option>", {value:"15", text:"15"});
+                var $selectQ = $("<select>", {id:"guiest_id4", name:"guiest_id4", class:"selectOptions"});
+                // var $optionQ = $("<option>", {value:"1", text:"Cantidad"});
+                var $option0 = $("<option>", {value:"1", text:"1"});
+                var $option1 = $("<option>", {value:"2", text:"2"});
+                var $option2 = $("<option>", {value:"3", text:"3"});
+                var $option3 = $("<option>", {value:"4", text:"4"});
+                var $option4 = $("<option>", {value:"5", text:"5"});
+                var $option5 = $("<option>", {value:"6", text:"6"});
+                var $option6 = $("<option>", {value:"7", text:"7"});
+                var $option7 = $("<option>", {value:"8", text:"8"});
+                var $option8 = $("<option>", {value:"9", text:"9"});
+                var $option9 = $("<option>", {value:"10", text:"10"});
+                var $option10 = $("<option>", {value:"11", text:"11"});
+                var $option11 = $("<option>", {value:"12", text:"12"});
+                var $option12 = $("<option>", {value:"13", text:"13"});
+                var $option13 = $("<option>", {value:"14", text:"14"});
+                var $option14 = $("<option>", {value:"15", text:"15"});
+
+                var $option15 = $("<option>", {value:"16", text:"16"});
+                var $option16 = $("<option>", {value:"17", text:"17"});
+                var $option17 = $("<option>", {value:"18", text:"18"});
+                var $option18 = $("<option>", {value:"19", text:"19"});
+                var $option19 = $("<option>", {value:"20", text:"20"});
+                var $option20 = $("<option>", {value:"21", text:"21"});
+                var $option21 = $("<option>", {value:"22", text:"22"});
+                var $option22 = $("<option>", {value:"23", text:"23"});
+                var $option23 = $("<option>", {value:"24", text:"24"});
+                var $option24 = $("<option>", {value:"25", text:"25"});
+                var $option25 = $("<option>", {value:"26", text:"26"});
+                var $option26 = $("<option>", {value:"27", text:"27"});
+                var $option27 = $("<option>", {value:"28", text:"28"});
+                var $option28 = $("<option>", {value:"29", text:"29"});
+                var $option29 = $("<option>", {value:"30", text:"30"});
 
                 var $div0 = $("<div>", {id:"btn-area", class:"btn-area"});
                 var $btn0 = $("<button>", {id:"", "type":"button", class:"btn btn-default"});
@@ -537,53 +586,70 @@ function quickViewModal(id){
                 var $div1 = $("<div>", {id:"tab-area", "class":"tabArea"});
                 var $ul0 = $("<ul>", {id:"", "class":"nav nav-tabs"});
                 var $li0 = $("<li>", {id:"", "class":"active"});
-                var $a1 = $("<a>", {id:"", "data-toggle":"tab", "href":"#detalles", text:"Detalles"});
+                var $a1 = $("<a>", {id:"", "data-toggle":"tab", "href":"#detalles", text:"Descripción"});
                 var $li1 = $("<li>", {id:"", "class":""});
-                var $a2 = $("<a>", {id:"", "data-toggle":"tab", "href":"#acercade", text:"Acerca de"});
+                var $a2 = $("<a>", {id:"", "data-toggle":"tab", "href":"#acercade", text:"Detalles"});
                 var $li2 = $("<li>", {id:"", "class":""});
                 var $a3 = $("<a>", {id:"", "data-toggle":"tab", "href":"#envio", text:"Envío"});
 
                 var $div2 = $("<div>", {id:"tab-container", class:"tab-content"});
                 var $div3 = $("<div>", {id:"detalles", class:"tab-pane fade in active"});
                 var $ul1 = $("<ul>", {id:"", class:"unorder-list lists space-bottom-25"});
-                var $li3 = $("<li>", {id:"", class:"", text: "Código de Producto: " + id});
-                var $li4 = $("<li>", {id:"", class:"", text: "GS1: " + snap.barCode});
-                var $li5 = $("<li>", {id:"", class:"", text: "Marca: " + snap.tradeMark});
+                var $li3 = $("<li>", {id:"", class:"", text: "Marca: " + snap.tradeMark});
+                var $li4 = $("<li>", {id:"", class:"", text: "Código de Barras: " + snap.barCode});
+                var $li5 = $("<li>", {id:"", class:"", text: "Código de Producto: " + id});
 
                 var $div4 = $("<div>", {id:"acercade", class:"tab-pane fade"});
                 var $ul2 = $("<ul>", {id:"", class:"unorder-list lists space-bottom-25"});
-                var $li6 = $("<li>", {id:"", class:"", text: "Dimensiones: " + snap.size});
+                var $li6 = $("<li>", {id:"", class:"", text: "Modelo: " + snap.model});
                 var $li7 = $("<li>", {id:"", class:"", text: "Materiales: " + snap.materials});
-                var $li8 = $("<li>", {id:"", class:"", text: "Modelo: " + snap.model});
+                var $li8 = $("<li>", {id:"", class:"", text: "Dimensiones: " + snap.size});
 
                 var $div5 = $("<div>", {id:"envio", class:"tab-pane fade"});
                 var $ul3 = $("<ul>", {id:"", class:"unorder-list lists space-bottom-25"});
-                var $li9 = $("<li>", {id:"", class:"", text: "Correos de Costa Rica. " + " Tiempo Estimado: 48 horas."});
-                var $li10 = $("<li>", {id:"", class:"", text: "GoPato. " + " Tiempo Estimado: 4 horas."});             
+                var $li9 = $("<li>", {id:"", class:"", text: "TodoExpress: " + "1-2 días hábiles"});
+                var $li10 = $("<li>", {id:"", class:"", text: "Correos de Costa Rica: " + "3-4 días hábiles"});             
 
                 $("#img-modal").append($img0);
                 $("#modal-data").append($h0);
                 $("#modal-data").append($h00);
                 $("#modal-data").append($h1);
                 $("#modal-data").append($p0);
+                $("#modal-data").append($h03);
                 $("#modal-data").append($spanQ);
-		        $($spanQ).append($selectQ);
-		        $($selectQ).append($optionQ);
-		        $($selectQ).append($option0);
-		        $($selectQ).append($option1);
-		        $($selectQ).append($option2);
-		        $($selectQ).append($option3);
-		        $($selectQ).append($option4);
-		        $($selectQ).append($option5);
-		        $($selectQ).append($option6);
-		        $($selectQ).append($option7);
-		        $($selectQ).append($option8);
-		        $($selectQ).append($option9);
-		        $($selectQ).append($option10);
-		        $($selectQ).append($option11);
-		        $($selectQ).append($option12);
-		        $($selectQ).append($option13);
-		        $($selectQ).append($option14);
+                $($spanQ).append($selectQ);
+                // $($selectQ).append($optionQ);
+                $($selectQ).append($option0);
+                $($selectQ).append($option1);
+                $($selectQ).append($option2);
+                $($selectQ).append($option3);
+                $($selectQ).append($option4);
+                $($selectQ).append($option5);
+                $($selectQ).append($option6);
+                $($selectQ).append($option7);
+                $($selectQ).append($option8);
+                $($selectQ).append($option9);
+                $($selectQ).append($option10);
+                $($selectQ).append($option11);
+                $($selectQ).append($option12);
+                $($selectQ).append($option13);
+                $($selectQ).append($option14);
+
+                $($selectQ).append($option15);
+                $($selectQ).append($option16);
+                $($selectQ).append($option17);
+                $($selectQ).append($option18);
+                $($selectQ).append($option19);
+                $($selectQ).append($option20);
+                $($selectQ).append($option21);
+                $($selectQ).append($option22);
+                $($selectQ).append($option23);
+                $($selectQ).append($option24);
+                $($selectQ).append($option25);
+                $($selectQ).append($option26);
+                $($selectQ).append($option27);
+                $($selectQ).append($option28);
+                $($selectQ).append($option29);
 
                 $("#modal-data").append($div0);
                 $($div0).append($a0);
@@ -632,27 +698,44 @@ function quickViewModal(id){
                 var $img0 = $("<img>", {id: "img0", "alt":"Image", "class": "media-object","src": snap.catalog[0]});
                 var $h0 = $("<h2>", {id: "", class:"text-info", text: snap.tradeMark});
                 var $h00 = $("<h3>", {id: "h"+id, text: snap.name});
-                var $h1 = $("<h3>", {id: "", text: "₡ " + snap.price});
+                var $h1 = $("<h3>", {id: "", text: "₡ " + snap.price.replace(/\B(?=(\d{3})+(?!\d))/g, ",")});
                 var $p0 = $("<p>", {id:"", text: snap.description});
 
+                var $h03 = $("<h3>", {id: "qty", class:"qty", text: "Cantidad"});
                 var $spanQ = $("<span>", {id:"", class:"quick-drop resizeWidth"});
-		        var $selectQ = $("<select>", {id:"guiest_id4", name:"guiest_id4", class:"selectOptions"});
-		        var $optionQ = $("<option>", {value:"1", text:"Cantidad"});
-		        var $option0 = $("<option>", {value:"1", text:"1"});
-		        var $option1 = $("<option>", {value:"2", text:"2"});
-		        var $option2 = $("<option>", {value:"3", text:"3"});
-		        var $option3 = $("<option>", {value:"4", text:"4"});
-		        var $option4 = $("<option>", {value:"5", text:"5"});
-		        var $option5 = $("<option>", {value:"6", text:"6"});
-		        var $option6 = $("<option>", {value:"7", text:"7"});
-		        var $option7 = $("<option>", {value:"8", text:"8"});
-		        var $option8 = $("<option>", {value:"9", text:"9"});
-		        var $option9 = $("<option>", {value:"10", text:"10"});
-		        var $option10 = $("<option>", {value:"11", text:"11"});
-		        var $option11 = $("<option>", {value:"12", text:"12"});
-		        var $option12 = $("<option>", {value:"13", text:"13"});
-		        var $option13 = $("<option>", {value:"14", text:"14"});
-		        var $option14 = $("<option>", {value:"15", text:"15"});
+                var $selectQ = $("<select>", {id:"guiest_id4", name:"guiest_id4", class:"selectOptions"});
+                // var $optionQ = $("<option>", {value:"1", text:"Cantidad"});
+                var $option0 = $("<option>", {value:"1", text:"1"});
+                var $option1 = $("<option>", {value:"2", text:"2"});
+                var $option2 = $("<option>", {value:"3", text:"3"});
+                var $option3 = $("<option>", {value:"4", text:"4"});
+                var $option4 = $("<option>", {value:"5", text:"5"});
+                var $option5 = $("<option>", {value:"6", text:"6"});
+                var $option6 = $("<option>", {value:"7", text:"7"});
+                var $option7 = $("<option>", {value:"8", text:"8"});
+                var $option8 = $("<option>", {value:"9", text:"9"});
+                var $option9 = $("<option>", {value:"10", text:"10"});
+                var $option10 = $("<option>", {value:"11", text:"11"});
+                var $option11 = $("<option>", {value:"12", text:"12"});
+                var $option12 = $("<option>", {value:"13", text:"13"});
+                var $option13 = $("<option>", {value:"14", text:"14"});
+                var $option14 = $("<option>", {value:"15", text:"15"});
+
+                var $option15 = $("<option>", {value:"16", text:"16"});
+                var $option16 = $("<option>", {value:"17", text:"17"});
+                var $option17 = $("<option>", {value:"18", text:"18"});
+                var $option18 = $("<option>", {value:"19", text:"19"});
+                var $option19 = $("<option>", {value:"20", text:"20"});
+                var $option20 = $("<option>", {value:"21", text:"21"});
+                var $option21 = $("<option>", {value:"22", text:"22"});
+                var $option22 = $("<option>", {value:"23", text:"23"});
+                var $option23 = $("<option>", {value:"24", text:"24"});
+                var $option24 = $("<option>", {value:"25", text:"25"});
+                var $option25 = $("<option>", {value:"26", text:"26"});
+                var $option26 = $("<option>", {value:"27", text:"27"});
+                var $option27 = $("<option>", {value:"28", text:"28"});
+                var $option28 = $("<option>", {value:"29", text:"29"});
+                var $option29 = $("<option>", {value:"30", text:"30"});
 
                 var $div0 = $("<div>", {id:"btn-area", class:"btn-area"});
                 var $btn0 = $("<button>", {id:"", "type":"button", class:"btn btn-default"});
@@ -662,53 +745,71 @@ function quickViewModal(id){
                 var $div1 = $("<div>", {id:"tab-area", "class":"tabArea"});
                 var $ul0 = $("<ul>", {id:"", "class":"nav nav-tabs"});
                 var $li0 = $("<li>", {id:"", "class":"active"});
-                var $a1 = $("<a>", {id:"", "data-toggle":"tab", "href":"#detalles", text:"Detalles"});
+                var $a1 = $("<a>", {id:"", "data-toggle":"tab", "href":"#detalles", text:"Descripción"});
                 var $li1 = $("<li>", {id:"", "class":""});
-                var $a2 = $("<a>", {id:"", "data-toggle":"tab", "href":"#acercade", text:"Acerca de"});
+                var $a2 = $("<a>", {id:"", "data-toggle":"tab", "href":"#acercade", text:"Detalles"});
                 var $li2 = $("<li>", {id:"", "class":""});
                 var $a3 = $("<a>", {id:"", "data-toggle":"tab", "href":"#envio", text:"Envío"});
 
                 var $div2 = $("<div>", {id:"tab-container", class:"tab-content"});
                 var $div3 = $("<div>", {id:"detalles", class:"tab-pane fade in active"});
                 var $ul1 = $("<ul>", {id:"", class:"unorder-list lists space-bottom-25"});
-                var $li3 = $("<li>", {id:"", class:"", text: "Código de Producto: " + id});
-                var $li4 = $("<li>", {id:"", class:"", text: "GS1: " + snap.barCode});
-                var $li5 = $("<li>", {id:"", class:"", text: "Marca: " + snap.tradeMark});
+                var $li3 = $("<li>", {id:"", class:"", text: "Marca: " + snap.tradeMark});
+                var $li4 = $("<li>", {id:"", class:"", text: "Código de Barras: " + snap.barCode});
+                var $li5 = $("<li>", {id:"", class:"", text: "Código de Producto: " + id});
 
                 var $div4 = $("<div>", {id:"acercade", class:"tab-pane fade"});
                 var $ul2 = $("<ul>", {id:"", class:"unorder-list lists space-bottom-25"});
-                var $li6 = $("<li>", {id:"", class:"", text: "Dimensiones: " + snap.size});
+                var $li6 = $("<li>", {id:"", class:"", text: "Modelo: " + snap.model});
                 var $li7 = $("<li>", {id:"", class:"", text: "Materiales: " + snap.materials});
-                var $li8 = $("<li>", {id:"", class:"", text: "Modelo: " + snap.model});
+                var $li8 = $("<li>", {id:"", class:"", text: "Dimensiones: " + snap.size});
 
                 var $div5 = $("<div>", {id:"envio", class:"tab-pane fade"});
                 var $ul3 = $("<ul>", {id:"", class:"unorder-list lists space-bottom-25"});
-                var $li9 = $("<li>", {id:"", class:"", text: "Correos de Costa Rica. " + " Tiempo Estimado: 48 horas."});
-                var $li10 = $("<li>", {id:"", class:"", text: "GoPato. " + " Tiempo Estimado: 4 horas."});             
+                var $li9 = $("<li>", {id:"", class:"", text: "TodoExpress: " + "1-2 días hábiles"});
+                var $li10 = $("<li>", {id:"", class:"", text: "Correos de Costa Rica: " + "3-4 días hábiles"});             
 
                 $("#img-modal").append($img0);
                 $("#modal-data").append($h0);
                 $("#modal-data").append($h00);
                 $("#modal-data").append($h1);
                 $("#modal-data").append($p0);
+                $("#modal-data").append($h03);
                 $("#modal-data").append($spanQ);
-		        $($spanQ).append($selectQ);
-		        $($selectQ).append($optionQ);
-		        $($selectQ).append($option0);
-		        $($selectQ).append($option1);
-		        $($selectQ).append($option2);
-		        $($selectQ).append($option3);
-		        $($selectQ).append($option4);
-		        $($selectQ).append($option5);
-		        $($selectQ).append($option6);
-		        $($selectQ).append($option7);
-		        $($selectQ).append($option8);
-		        $($selectQ).append($option9);
-		        $($selectQ).append($option10);
-		        $($selectQ).append($option11);
-		        $($selectQ).append($option12);
-		        $($selectQ).append($option13);
-		        $($selectQ).append($option14);
+                $($spanQ).append($selectQ);
+                // $($selectQ).append($optionQ);
+                $($selectQ).append($option0);
+                $($selectQ).append($option1);
+                $($selectQ).append($option2);
+                $($selectQ).append($option3);
+                $($selectQ).append($option4);
+                $($selectQ).append($option5);
+                $($selectQ).append($option6);
+                $($selectQ).append($option7);
+                $($selectQ).append($option8);
+                $($selectQ).append($option9);
+                $($selectQ).append($option10);
+                $($selectQ).append($option11);
+                $($selectQ).append($option12);
+                $($selectQ).append($option13);
+                $($selectQ).append($option14);
+
+                $($selectQ).append($option15);
+                $($selectQ).append($option16);
+                $($selectQ).append($option17);
+                $($selectQ).append($option18);
+                $($selectQ).append($option19);
+                $($selectQ).append($option20);
+                $($selectQ).append($option21);
+                $($selectQ).append($option22);
+                $($selectQ).append($option23);
+                $($selectQ).append($option24);
+                $($selectQ).append($option25);
+                $($selectQ).append($option26);
+                $($selectQ).append($option27);
+                $($selectQ).append($option28);
+                $($selectQ).append($option29);
+
 
                 $("#modal-data").append($div0);
                 $($div0).append($a0);
@@ -786,8 +887,231 @@ setTimeout(function(){
 }, 3000);
 
 
+function createUserWithEmailAndPassword(){
+	var nameReg = /^[A-Za-z]+$/;
+    var numberReg =  /^[0-9]+$/;
+    var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+
+   	name = $("#name").val();
+	lastName = $("#lastName").val();
+	totalName = name + " " + lastName;
+	email = $("#email").val();
+	password = $("#password").val();
+	repassword = $("#repassword").val();
+
+    var inputVal = new Array(name, lastName, email, password, repassword);
+    var inputMessage = new Array("Nombre", "Apellidos", "Correo", "Contraseña", "Contraseña");
+
+    $('.error').hide();
+    if(inputVal[0] == ""){
+        $('#name').after('<span class="error">Por favor ingresa tu ' + inputMessage[0] + '</span>');
+        return;
+    }else if(inputVal[0].length < 2){
+        $('#name').after('<span class="error">Debe contener almenos 2 letras</span>');
+        return;
+    }else if(numberReg.test(name)){
+        $('#name').after('<span class="error">Únicamente letras</span>');
+        return;
+    }
+
+    if(inputVal[1] == ""){
+        $('#lastName').after('<span class="error">Por favor ingresa tu ' + inputMessage[1] + '</span>');
+        return;
+    }else if(inputVal[1].length < 2){
+        $('#lastName').after('<span class="error">Debe contener almenos 2 letras</span>');
+        return;
+    }else if(numberReg.test(lastName)){
+        $('#lastName').after('<span class="error">Únicamente letras</span>');
+        return;
+    }
+
+    if(inputVal[2] == ""){
+        $('#email').after('<span class="error">Por favor ingresa tu ' + inputMessage[2] + '</span>');
+        return;
+    }else if(!emailReg.test(email)){
+        $('#email').after('<span class="error">Ingresa un email válido</span>');
+        return;
+    }
+
+    if(inputVal[3] == ""){
+        $('#password').after('<span class="error">Por favor ingresa una ' + inputMessage[3] + '</span>');
+        return;
+    }else if(inputVal[3].length < 6 ){
+        $('#password').after('<span class="error">Debe contener almenos 6 caracteres</span>');
+        return;
+    } 
+   
+    if(inputVal[4] == ""){
+        $('#repassword').after('<span class="error">Por favor repite la ' + inputMessage[4] + '</span>');
+        return;
+    }else if(inputVal[4] != inputVal[3]){
+        $('#repassword').after('<span class="error">Debe ser la misma contraseña</span>');
+        return;
+    } 
+
+	console.log(email + ", " + password);
+	firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
+	    window.location.href = "index.html";
+	}).catch(function(error) {
+	  // Handle Errors here.
+	  var errorCode = error.code;
+	  var errorMessage = error.message;
+	  // ...
+	  alert(errorCode);
+	  alert(errorMessage);
+	});
+}
+
+function loginWithEmailAndPassword(){
+	var nameReg = /^[A-Za-z]+$/;
+    var numberReg =  /^[0-9]+$/;
+    var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+
+   	email = $("#logmail").val();
+	password = $("#logpass").val();
+
+    var inputVal = new Array(email, password);
+    var inputMessage = new Array("Correo", "Contraseña");
+
+    $('.error').hide();
+    if(inputVal[0] == ""){
+        $('#logmail').after('<span class="error">Por favor ingresa tu ' + inputMessage[0] + '</span>');
+        return;
+    }else if(!emailReg.test(email)){
+        $('#logmail').after('<span class="error">Ingresa un correo válido</span>');
+        return;
+    }
+
+    if(inputVal[1] == ""){
+        $('#logpass').after('<span class="error">Por favor ingresa tu ' + inputMessage[1] + '</span>');
+        return;
+    }else if(inputVal[1].length < 6){
+        $('#logpass').after('<span class="error">Debe contener almenos 6 caracteres</span>');
+        return;
+    }
+
+	
+	firebase.auth().signInWithEmailAndPassword(email, password).then(function(){
+		window.location.href = "index.html";
+	}).catch(function(error) {
+	  // Handle Errors here.
+	  var errorCode = error.code;
+	  var errorMessage = error.message;
+	  alert(errorCode);
+	});
+}
+
+function logOutUser(){
+	firebase.auth().signOut().then(function() {
+		window.location.href = "index.html";
+	  	console.log('Signed Out');
+	}, function(error) {
+	  	console.error('Sign Out Error', error);
+	});
+}
+
+function loginWithFacebook(){
+	var provider = new firebase.auth.FacebookAuthProvider();
+    provider.addScope('email');
+    provider.addScope('public_profile');
+    provider.addScope('user_friends');
+	firebase.auth().signInWithPopup(provider).then(function(result) {
+	  var token = result.credential.accessToken;
+	  var user = result.user;
+	  console.log(user);
+	  window.location.href = "index.html";
+	  // document.getElementById("imgProfile").src = photoURL;
+	}).catch(function(error) {
+	  var errorCode = error.code;
+	  var errorMessage = error.message;
+	  var email = error.email;
+	  var credential = error.credential;
+	});
+}
+
+function loginWithGoogle(){
+	var provider = new firebase.auth.GoogleAuthProvider();
+	firebase.auth().signInWithPopup(provider).then(function(result) {
+	 	var token = result.credential.accessToken;
+	  	var user = result.user;
+	  	console.log(user);
+	  	window.location.href = "index.html";
+	}).catch(function(error) {
+	  	var errorCode = error.code;
+	  	var errorMessage = error.message;
+	  	var email = error.email;
+	  	var credential = error.credential;
+	});
+}
+
+function showProfile(){
+    $('#logout').modal('show');
+
+    var $img = $("<img>", {id:"", class:"img-circle", src: photoURL});
+    var $text = $("<h3>", {id:"", class:"", text: displayName});
+
+    $("#eleOfBody").append($img);
+    $("#eleOfBody").append($text);
+}
+
 
 jQuery(document).ready(function(){
+	 if (storedIDS == null || storedIDS.length < 1){
+        $("#cartbtn").addClass("btn-is-disabled");
+        $("#checkoutbtn").addClass("btn-is-disabled");
+    }
+	//Function Listener
+	firebase.auth().onAuthStateChanged(function(user) {
+	  if (user) {
+	  	var user = firebase.auth().currentUser; 
+	  	user.providerData.forEach(function (profile) {
+	        providerId = profile.providerId;
+	        uid = profile.uid;
+	        displayName = profile.displayName;
+	        profileEmail = profile.email;
+	        photoURL = profile.photoURL;
+	    });
+  
+		$($span0).detach();
+	    $($a0).detach();
+	    $($small).detach();
+	    $($a1).detach();
+
+		var $a = $("<a>", {id:"displayName", class:"logText", "data-toggle":"modal", href:"#", onclick:"showProfile()", text: " " + user.displayName});
+		var $i0 = $("<i>", {id:"userLogo", class:"fa fa-user", "style":"color: white;"});
+	    $("#loggedInfo").append($i0);
+	    $("#loggedInfo").append($a);
+
+	    var $span = $("<span>", {id:"", class:"", text: user.displayName});
+	    $("#userName").append($span);
+
+	    var $li0 = $("<li>", {id:"", class:"dropdown"});
+	    var $a2 = $("<a>", {id:"", class:"", href:"account-profile.html", text:"Mi Perfil"});
+	    $("#ulIndex").append($li0);
+	    $($li0).append($a2);
+
+	  }else {
+
+	  	$($li0).detach();
+	  	$($a2).detach();
+	  	$($i0).detach();
+	  	$($a).detach(); 	
+
+	  	var $span0 = $("<span>", {id:"loginSingUp"});
+	  	var $a0 = $("<a>", {id:"", "data-toggle":"modal", href:"#login", text:"Ingresar"});
+	  	var $small = $("<small>", {id:"", text:"ó"});
+	  	var $a1 = $("<a>", {id:"", "data-toggle":"modal", href:"#signup", text:"Registrarse"});
+
+	  	setTimeout(function(){
+	  		$("#loggedInfo").append($span0);
+		    $($span0).append($a0);
+		    $($span0).append($small);
+		    $($span0).append($a1);
+	  	}, 500);
+	   
+	    console.log("Log out");
+	  }
+	});
 	//Function Listener
 	loadSingleProduct();
 	// quantity = $("#guiest_id4").val();

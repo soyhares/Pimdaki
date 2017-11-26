@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PinDaKi | Carrito</title>
+    <title>Pindaki | Carrito</title>
 
     <!-- PLUGINS CSS STYLE -->
     <link href="plugins/jquery-ui/jquery-ui.css" rel="stylesheet">
@@ -46,7 +46,7 @@
 
                 </div>
                 <div id="warningModal" class="modal-body">
-                  <div  class="media">
+                  <div  class="media-2">
                     <a id="delete-img" class="pull-left pull-width">
                         <!-- <img src="http://placehold.it/180x200/456" class="media-object" alt="Sample Image"> -->
                     </a>
@@ -76,59 +76,14 @@
             <div class="row">
               <div class="col-md-6 col-sm-5 hidden-xs">
                 <ul class="list-inline">
-                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                  <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                  <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
-                  <li><a href="#"><i class="fa fa-tumblr"></i></a></li>
+                  <li><a href="https://www.facebook.com/pindaki/"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="https://www.youtube.com/channel/UCkSKoY7-1OGMY9MuKpnCGag"><i class="fa fa-youtube"></i></a></li> 
+                  <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                 </ul>
               </div>
               <div class="col-md-6 col-sm-7 col-xs-12">
                 <ul class="list-inline pull-right top-right">
-                  <li class="account-login"><span><a data-toggle="modal" href='.login-modal'>Ingresar</a><small>ó</small><a data-toggle="modal" href='#signup'>Registrarse</a></span></li>
-                  <li class="searchBox">
-                    <a href="#"><i class="fa fa-search"></i></a>
-                    <ul class="dropdown-menu dropdown-menu-right">
-                      <li>
-                        <span class="input-group">
-                          <input type="text" class="form-control" placeholder="Search…" aria-describedby="basic-addon2">
-                          <button type="submit" class="input-group-addon">Submit</button>
-                        </span>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="dropdown cart-dropdown">
-                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-shopping-cart"></i>₡00</a>
-                    <ul class="dropdown-menu dropdown-menu-right">
-                      <li>Carrito</li>
-                      <li>
-                        <a href="single-product.html">
-                          <div class="media">
-                            <img class="media-left media-object" src="img/home/cart-items/cart-item-01.jpg" alt="cart-Image">
-                            <div class="media-body">
-                              <h5 class="media-heading">INCIDIDUNT UT <br><span>2 X $199</span></h5>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="single-product.html">
-                          <div class="media">
-                            <img class="media-left media-object" src="img/home/cart-items/cart-item-01.jpg" alt="cart-Image">
-                            <div class="media-body">
-                              <h5 class="media-heading">INCIDIDUNT UT <br><span>2 X $199</span></h5>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <div class="btn-group" role="group" aria-label="...">
-                          <button type="button" class="btn btn-default" onclick="location.href='cart-page.html';">Mi Carrito</button>
-                          <button type="button" class="btn btn-default" onclick="location.href='checkout-step-1.html';">Revisión</button>
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
+                  <li id="loggedInfo" class="account-login"><!-- <span><a data-toggle="modal" href='.login-modal'>Ingresar</a><small>ó</small><a data-toggle="modal" href='#signup'>Registrarte</a></span> --></li>
                 </ul>
               </div>
             </div>
@@ -159,14 +114,14 @@
                   <a href="product-grid-left-sidebar.html">Catálogo</b></a>
                 </li>
                 <li class="dropdown">
-                  <a href="product-grid-left-sidebar.html">Ofertas</a>
+                  <a href="blog-fullwidth.html">Tienda Física</a>
                 </li>
-                <li class="dropdown">
+                <!-- <li class="dropdown">
                   <a href="account-profile.html">Membresía</a>
-                </li>
-                <li class="dropdown">
+                </li> -->
+                <!-- <li class="dropdown">
                   <a href="account-profile.html">Mi perfil</a>
-                </li>
+                </li> -->
               </ul>
             </div><!-- /.navbar-collapse -->
           </div>
@@ -180,13 +135,13 @@
             <div class="row tableInner">
               <div class="col-xs-12">
                 <div class="page-title">
-                  <h2>CARRITO</h2>
+                  <!-- <h2>CARRITO</h2>
                   <ol class="breadcrumb">
                     <li>
                       <a href="index.html">Inicio</a>
                     </li>
                     <li class="active">Carrito</li>
-                  </ol>
+                  </ol> -->
                 </div>
               </div>
             </div>
@@ -229,13 +184,13 @@
                     <div class="col-sm-4 col-sm-offset-8 col-xs-12">
                       <ul class="list-unstyled">
                         <li id="Subtotal">Subtotal</li>
-                        <li id="Descuento">Descuento</li>
+                        <!-- <li id="Descuento">Descuento</li> -->
                         <li id="Total">Total</li>
                       </ul>
                     </div>
                   </div>
                   <div class="checkBtnArea">
-                    <a href="#" onclick="getPricingData();" class="btn btn-primary btn-block">Revisión<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                    <a id="checkoutbtn" href="#" onclick="getPricingData();" class="btn btn-primary btn-block">Revisión<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
                   </div>
                 </form>
               </div>
@@ -250,58 +205,50 @@
           <div class="row">
             <div class="col-sm-2 col-xs-12">
               <div class="footerLink">
-                <h5>Accesorios</h5>
+                <h5>Términos de Uso</h5>
                 <ul class="list-unstyled">
-                  <li><a href="#">Cocina </a></li>
-                  <li><a href="#">Electrónica </a></li>
-                  <li><a href="#">Jardín y Exteriores </a></li>
-                  <li><a href="#">Tecnología </a></li>
-                  <li><a href="#">Salud y Belleza </a></li>
-                  <li><a href="#">Audio y Video </a></li>
+                  <li><a href="terms-and-conditions.html">Términos y Condiciones</a></li>
+                  <li><img class="ftcorreos" src="img/home/footer/ftcorreos.png"></li>
+                  <li><img class="fttodoexpress" src="img/home/footer/fttodoexpress.png"></li>
                 </ul>
               </div>
             </div>
             <div class="col-sm-2 col-xs-12">
               <div class="footerLink">
-                <h5>Entretenimiento</h5>
-                <ul class="list-unstyled">
-                  <li><a href="#">Juegos Indoor </a></li>
-                  <li><a href="#">Juegos de Mesa </a></li>
-                  <li><a href="#">Regalos</a></li>
-                  <li><a href="#">Hobby</a></li>
+                <h5>Redes Sociales</h5>
+                <ul class="list-inline">
+                  <li><a href="https://www.facebook.com/pindaki/"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="https://www.youtube.com/channel/UCkSKoY7-1OGMY9MuKpnCGag"><i class="fa fa-youtube"></i></a></li> 
+                  <li><a href="#"><i class="fa fa-instagram"></i></a></li> 
                 </ul>
               </div>
             </div>
             <div class="col-sm-2 col-xs-12">
-              <div class="footerLink">
+              <!-- <div class="footerLink">
                 <h5>Tecnología</h5>
                 <ul class="list-unstyled">
                   <li><a href="#">Móviles </a></li>
                   <li><a href="#">Computadoras </a></li>
                   <li><a href="#">Tablets </a></li>
                 </ul>
-              </div>
+              </div> -->
             </div>
             <div class="col-sm-2 col-xs-12">
               <div class="footerLink">
                 <h5>Contacto</h5>
                 <ul class="list-unstyled">
-                  <li>Teléfono (506)2262-5777</li>
-                  <li><a href="mailto:soporte@pimdaki.com">soporte@pimdaki.com</a></li>
-                </ul>
-                <ul class="list-inline">
-                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                  <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                  <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
-                  <li><a href="#"><i class="fa fa-tumblr"></i></a></li>
+                  <li><i class="fa fa-phone" aria-hidden="true"> </i> (+506) 2262-5777</li>
+                  <li><i class="fa fa-whatsapp" aria-hidden="true"> </i> (+506) 8777-7797</li>
+                  <li><i class="fa fa-envelope-o" aria-hidden="true"> </i> <a href="mailto:info@pindaki.com"> info@pindaki.com</a></li>
+                  <li><i class="fa fa-inbox" aria-hidden="true"> </i> 67-40901</a></li>
+
                 </ul>
               </div>
             </div>
             <div class="col-sm-4 col-xs-12">
               <div class="newsletter clearfix">
                 <h3>Suscribirse</h3>
-                <p>Ingresa tu correo para recibir promociones especiales. ¡Se parte del club!</p>
+                <p>Ingresa tu correo para recibir promociones especiales.</p>
                 <div class="input-group">
                   <input type="text" class="form-control" placeholder="Correo Electrónico..." aria-describedby="basic-addon2">
                   <a href="#" class="input-group-addon" id="basic-addon2">Ir <i class="glyphicon glyphicon-chevron-right"></i></a>
@@ -316,14 +263,14 @@
         <div class="container">
           <div class="row">
             <div class="col-sm-7 col-xs-12">
-              <p>&copy; 2017 Copyright Portafolio AM Siete S.A  <a target="_blank" href="https://www.portafolioam7.com/">Visitar</a>.</p>
+              <p>&copy; 2017 Copyright Portafolio AM Siete S.A  <a target="_blank" href="http://www.portafolioam7.com/">Visitar</a>.</p>
             </div>
             <div class="col-sm-5 col-xs-12">
               <ul class="list-inline">
                 <li><img src="img/home/footer/card1.png"></li>
                 <li><img src="img/home/footer/card2.png"></li>
                 <li><img src="img/home/footer/card3.png"></li>
-                <li><img src="img/home/footer/card4.png"></li>
+                <!-- <li><img src="img/home/footer/card4.png"></li> -->
               </ul>
             </div>
           </div>
@@ -340,30 +287,47 @@
             <h3 class="modal-title">Ingresar</h3>
           </div>
           <div class="modal-body">
-            <form action="" method="POST" role="form">
+              <div class="col-sm-12">
+                <div class="page-header text-center">
+                  <h3>Redes Sociales</h3>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="form-group col-sm-12 col-xs-12">
+                <button type="submit" onclick="loginWithFacebook()" class="btn-block btn-social btn-facebook-filled"><i class="fa fa-facebook" aria-hidden="true"></i><span>Ingresar con Facebook</span></button>
+              </div>
+              <div class="form-group col-sm-12 col-xs-12">
+                <button type="submit" onclick="loginWithGoogle()" class="btn-block btn-social btn-google-filled"><i class="fa fa-google-plus" aria-hidden="true"></i><span>Ingresar con Google+</span></button>
+              </div>
+              <div class="clearfix"></div>
+              <div class="col-sm-12">
+                <div class="page-header text-center">
+                  <h3>Cuenta PDK</h3>
+                </div>
+              </div>
+              <div class="clearfix"></div>
               <div class="form-group">
                 <label for="">Correo Electrónico</label>
-                <input type="email" class="form-control" id="">
+                <input type="email" class="form-control" id="logmail">
               </div>
               <div class="form-group">
                 <label for="">Contraseña</label>
-                <input type="password" class="form-control" id="">
+                <input type="password" class="form-control" id="logpass">
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox"> Recordarme
+                  <input type="checkbox" checked="true"> Recordarme
                 </label>
               </div>
-              <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+              <button onclick="loginWithEmailAndPassword()" class="btn btn-primary btn-block">Ingresar</button>
               <button type="button" class="btn btn-link btn-block">¿Ovidaste la contraseña?</button>
-            </form>
           </div>
         </div>
       </div>
     </div>
 
     <!-- SIGN UP MODAL -->
-    <div class="modal fade" id="signup" tabindex="-1" role="dialog">
+    <div class="modal fade signup-modal" id="signup" tabindex="-1" role="dialog">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -371,21 +335,57 @@
             <h3 class="modal-title">Crear cuenta</h3>
           </div>
           <div class="modal-body">
-            <form action="" method="POST" role="form">
+              <div class="col-sm-12">
+                <div class="page-header text-center">
+                  <h3>Registro PinDaKi</h3>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="form-group">
+                <label for="">Nombre</label>
+                <input type="text" class="form-control" id="name">
+              </div>
+              <div class="form-group">
+                <label for="">Apellidos</label>
+                <input type="text" class="form-control" id="lastName">
+              </div>
               <div class="form-group">
                 <label for="">Correo Electrónico</label>
-                <input type="email" class="form-control" id="">
+                <input type="email" class="form-control" id="email">
               </div>
               <div class="form-group">
                 <label for="">Contraseña</label>
-                <input type="password" class="form-control" id="">
+                <input type="password" class="form-control" id="password">
               </div>
               <div class="form-group">
                 <label for="">Repetir Contraseña</label>
-                <input type="password" class="form-control" id="">
+                <input type="password" class="form-control" id="repassword">
               </div>
-              <button type="submit" class="btn btn-primary btn-block">Registro</button>
-            </form>
+              <button onclick="createUserWithEmailAndPassword();" class="btn btn-primary btn-block">Registro</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOGOUT MODAL -->
+    <div class="modal fade logout-modal" id="logout" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3 class="modal-title">¡Bienvenido!</h3>
+          </div>
+          <div class="modal-body">
+              <div class="col-sm-12">
+                <div id="eleOfBody" class="text-center">
+                  <!-- <img class="img-circle" src="img/huevoP.jpg">
+                  <h3>Hanz Fernández</h3> -->
+                  <!-- <span>Te recomedamos continuar con tu sesión activa. Esto te ayudará a mantenerte al día con las mejores promociones, productos de alta calidad, y las mejores marcas.</span> -->
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <button onclick="logOutUser()" class="btn btn-primary btn-block">Cerrar Sesión</button>
           </div>
         </div>
       </div>

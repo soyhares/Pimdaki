@@ -67,6 +67,12 @@ MAIN SLIDER
 /*=== MIXINS ===*/
 /*=== VARIABLES ===*/
 /*=== MEDIA QUERY ===*/
+
+@font-face {
+    font-family: pindaki;
+    src: url(century-gothic.ttf);
+}
+
 * {
   outline: 0;
   margin: 0;
@@ -3578,7 +3584,8 @@ body.bodyColor.container {
 
 .category-Slider {
   width: 63%;
-  float: right;
+  /* float: right; */
+  margin-left: 15%;
 }
 
 @media (min-width: 768px) {
@@ -5203,6 +5210,7 @@ body.bodyColor.container {
     margin-right: 30px;
     display: inline-block;
     width: 226px;
+    height: 200px;
   }
   .productListSingle .media .media-left img {
     width: 100%;
@@ -7941,21 +7949,21 @@ body.bodyColor.container {
 
 /* Info Button */
 .btn-info, .btn-info:active, .btn-info:focus {
-  color: #4da5e2;
-  border: 2px solid #4da5e2;
+  color: #009c9d;
+  border: 2px solid #009c9d;
   background: transparent;
 }
 
 .btn-info:hover {
   color: white;
-  background: #4da5e2;
-  border: 2px solid #4da5e2;
+  background: #009c9d;
+  border: 2px solid #009c9d;
 }
 
 .btn-info-filled, .btn-info-filled:active, .btn-info-filled:focus {
   color: white;
-  background: #4da5e2;
-  border: 2px solid #4da5e2;
+  background: #009c9d;
+  border: 2px solid #009c9d;
 }
 
 .btn-info-filled:hover {
@@ -8290,7 +8298,7 @@ p.text-xs {
 }
 
 .text-info {
-  color: #4da5e2;
+  color: #009c9d;
 }
 
 .text-warning {
@@ -8321,7 +8329,7 @@ p.text-xs {
 
 .bg-info {
   color: white;
-  background: #4da5e2;
+  background: #009c9d;
   padding: 3px 4px;
 }
 
@@ -8407,15 +8415,15 @@ cite {
 }
 
 .label-info {
-  color: #4da5e2;
+  color: #009c9d;
   background-color: transparent;
-  border: 2px solid #4da5e2;
+  border: 2px solid #009c9d;
 }
 
 .label-info-filled {
   color: white;
-  background-color: #4da5e2;
-  border: 2px solid #4da5e2;
+  background-color: #009c9d;
+  border: 2px solid #009c9d;
 }
 
 .label-warning {
@@ -8847,7 +8855,7 @@ a.list-group-item .list-group-item-heading, button.list-group-item .list-group-i
 
 .panel-info > .panel-heading {
   color: white;
-  background-color: #4da5e2;
+  background-color: #009c9d;
   border-color: #428fc4;
 }
 

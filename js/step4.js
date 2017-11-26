@@ -1,5 +1,6 @@
 var order = JSON.parse(localStorage.getItem("order"));
 var storedIDS = JSON.parse(localStorage.getItem("cartIDS"));
+var isMember= false;
 
 //===============================Init Firebase======================//
 // Initialize Firebase
@@ -31,15 +32,17 @@ const _cleanObj = ( obj ) =>
 const _orderId = () =>new Date().getTime(); 
 
 //administra el registro de ordenes
-const _orderManager = (id = _orderId()) => {
-	let userType = ["guess","customer","merber"];
+const _orderManager = (id = _orderId(), isMember=false) => {
+
+	let userType = ["guess","customer"];
 	let currentCustomer = {
 		id:order.userId == "" ? id : order.userId,
-		userType:order.userId == ""?userType[0]:userType[1],
+		userType:order.userId == ""?"guess":"customer",
 		name:order.name,
 		lastName:order.lastName,
 		email:order.email,
 		phone:order.phone,
+		hasMembership:isMember,
 	};
 	let purchase = {
 		id,
@@ -70,19 +73,39 @@ const _orderManager = (id = _orderId()) => {
 		id,
 		status:"request",
 		createdAt: firebase.database.ServerValue.TIMESTAMP,
-		user:currentCustomer.id,
+		userData:{
+			id:currentCustomer.id,
+			type:currentCustomer.userType
+		},
 		cashOrder:cashOrder.id,
 		purchase: purchase.id
 
 	}
+	// let membership = {
+	// 	id,
+	// 	active:true,
+	// 	type:"Golden",
+	// 	dateInit:"",
+	// 	dateFinal:"",
+	// 	benefits:{
+	// 		discount:true,
 
-	addNode(currentCustomer,"orders/users/"+currentCustomer.userType+"/"+currentCustomer.id);//clientes
+	// 	},
+	// 	members:{
+	// 		1:"604210431",
+	// 		2:"123456789",
+	// 	}
+	// };
+
+	console.log(currentCustomer.id)
+
+	addNode(currentCustomer,"orders/users/",currentCustomer.id);//clientes
 	addNode(purchase,"orders/purchase/",id);//lista de compras
 	addNode(destination,"orders/destination/", id);//direcciones
 	addNode(shipping,"orders/shipping/",id);//envios
 	addNode(cashOrder,"orders/cashOrder/",id);//factura
 	addNode(Order,"orders/"+Order.status+"/",id);//factura
-	
+	//addNode(bill,"orders/request/",id);//factura
 
 	let ordeId ={id:id};
 	$.extend(ordeId, order);
@@ -92,8 +115,9 @@ const _orderManager = (id = _orderId()) => {
 	console.log("exito!")
 
 	setTimeout(()=>{
+	
 		window.location.href = 'checkout-complete.html'
-	},1000);
+	},2000);
 	
 }
 
@@ -132,7 +156,7 @@ const dispatcher = (list) =>{
 
 		});
 	}
-	setTimeout(()=>{ location.reload();}, 1000);	
+	//setTimeout(()=>{ location.reload();}, 1000);	
 }
 
 //despacha los productos
