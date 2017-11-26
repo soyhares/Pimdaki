@@ -81,6 +81,7 @@ const _orderManager = (id = _orderId(), isMember=false) => {
 		purchase: purchase.id
 
 	}
+<<<<<<< HEAD
 	// let membership = {
 	// 	id,
 	// 	active:true,
@@ -106,6 +107,7 @@ const _orderManager = (id = _orderId(), isMember=false) => {
 	addNode(cashOrder,"orders/cashOrder/",id);//factura
 	addNode(Order,"orders/"+Order.status+"/",id);//factura
 	//addNode(bill,"orders/request/",id);//factura
+
 
 	let ordeId ={id:id};
 	$.extend(ordeId, order);
