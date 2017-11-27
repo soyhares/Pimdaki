@@ -1,3 +1,4 @@
+
 <?php
 function etiqueta_final($parser, $name) {
     global $info,$datos,$contador;
@@ -161,7 +162,7 @@ $valor = tipo_cambio($fecha);
                   <li><a href="#"><i class="fa fa-tumblr"></i></a></li> -->
                 </ul>
               </div>
-              <div class="col-md-6 col-sm-7 col-xs-12">
+              <!-- <div class="col-md-6 col-sm-7 col-xs-12">
                 <ul class="list-inline pull-right top-right">
                   <li class="account-login"><span><a data-toggle="modal" href='.login-modal'>Ingresar</a><small>ó</small><a data-toggle="modal" href='#signup'>Registrarse</a></span></li>
                   <li class="searchBox">
@@ -208,7 +209,7 @@ $valor = tipo_cambio($fecha);
                     </ul>
                   </li>
                 </ul>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>

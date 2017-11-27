@@ -1,47 +1,32 @@
 // Variables
-var category = "BBQ y Jardín/Accesorios BBQ";
-//...
-var storedIDS = JSON.parse(localStorage.getItem("cartIDS"));
-var cartIDS = [];
-var oldID;
+    var category = "BBQ y Jardín/Accesorios BBQ";
+    //...
+    var storedIDS = JSON.parse(localStorage.getItem("cartIDS"));
+    var cartIDS = [];
+    var oldID;
 
-var bag = [];
+    var bag = [];
 
-var providerId;
-var uid;
-var displayName;
-var profileEmail;
-var photoURL;
+    var providerId;
+    var uid;
+    var displayName;
+    var profileEmail;
+    var photoURL;
 
-var priceInt = 0;
-var storedPRICE = 0;
-var storedDISCOUNT = 0;
-var storedTOTALPRICE = 0;
-var quantity = "1";
-var itemsInCart = 0;
+    var priceInt = 0;
+    var storedPRICE = 0;
+    var storedDISCOUNT = 0;
+    var storedTOTALPRICE = 0;
+    var quantity = "1";
+    var itemsInCart = 0;
 
-var beforeVal;
-var afterVal;
+    var beforeVal;
+    var afterVal;
 
-var routes = ['storage/products/categories/BBQ y Jardín/Accesorios BBQ', 
-              'storage/products/categories/BBQ y Jardín/Utensilios BBQ',
-              'storage/products/categories/Cocina/Accesorios',
-              'storage/products/categories/Cocina/Baterías, Ollas y Sartenes',
-              'storage/products/categories/Cocina/Electrodomésticos',
-              'storage/products/categories/Electrónica/Accesorios',
-              'storage/products/categories/Entretenimiento/Hobbies',
-              'storage/products/categories/Entretenimiento/Indoor',
-              'storage/products/categories/Entretenimiento/Outdoor',
-              'storage/products/categories/Hogar/Accesorios',
-              'storage/products/categories/Salud y Belleza/Cuidado Personal',
-              'storage/products/categories/Salud y Belleza/Masajeadores',
-              'storage/products/categories/Salud y Belleza/Básculas y Monitores',
-              'storage/products/categories/Viajes/Accesorios Varios',
-              'storage/products/categories/Viajes/Organizadores'
-             ]; 
-//===============================Init Firebase======================
-// Initialize Firebase
-var config = {
+    var routes = []; 
+    //===============================Init Firebase======================
+    // Initialize Firebase
+    var config = {
 	apiKey: "AIzaSyDzrlNuSRMeGYAqWvFS_3h53WeFsmMNxNg",
 	authDomain: "pimdaki-e16a0.firebaseapp.com",
 	databaseURL: "https://pimdaki-e16a0.firebaseio.com",
@@ -2194,33 +2179,79 @@ $('input#finder').keypress(function() {
     }, 0);
 });
 
-function search(){
-    var data = $("#finder").val();
-    console.log(data)
-    var ref = firebase.database()
-    .ref('storage/products/categories/');
-    // .orderByChild('name')
-    // .startAt(data);
-    //Creamos la consulta 
-    ref.on('child_added', function(data) {
-        var snap = data.val();
-        id = data.key;
-
-        console.log(snap);
-        // snapshot.forEach(function(data) {
-        //     console.log(data.key);
-        // });  
-    });
-    
-    ref.child('categories').orderByChild('name').startAt(data).on("value", function(snapshot) {
-        console.log(snapshot.val());
-        snapshot.forEach(function(data) {
-            console.log(data.key);
+//carga el producto buscado
+function search(product=$("#finder").val()){
+    if(product != ""){
+        routes.map(function(route,i){
+        firebase.database().ref(route).on("value",function(r){
+                if(r.val().name.trim() == product.trim()){
+                    var corte = route.split("/");
+                    category = corte[3]+"/"+corte[4];
+                    console.log("encontrado");
+                    localStorage.setItem('category', category);
+                    localStorage.setItem('productId', corte[5]);
+                    route = null;
+                    window.location.href = 'single-product.html';
+                }else{
+                    console.log("buscando "+product+ "...")
+                }
+            
+            });
         });
-    });
+    }else{
+        alert("modal no hay resultados para la busqueda")
+    }
+
 }
 
+//carga todos las categorias de la BD
+function loadDataToSearch(route="storage/products/categories/"){
+    firebase.database().ref(route).on("child_added",function(r){filterData(route+r.key+"/")});
+}
+
+// filtra las categorias en subCategorias
+function filterData(route){
+    firebase.database().ref(route).on("child_added",function(r){captureID(route+r.key+"/")});
+}
+
+// captura los identificadores de productos
+function captureID(route){
+    firebase.database()
+        .ref(route)
+        .on("child_added",function(r){drawingData(route+r.key+"/")});
+}
+
+// dibuja las opciones de busqueda (nombres de los productos)
+function drawingData(route){
+     routes.push(route);
+     firebase.database().ref(route).on("value",function(r){
+        $("#productListName").append("<option id='"+r.val().name+"'>"+r.val().name+"</option>");
+    });
+  
+}
+
+
+
 jQuery(document).ready(function(){
+  
+    loadDataToSearch();
+    
+    $("#btn_search").click(function(){
+        search();
+    });
+
+    // $("#selectorID").change(function(){ 
+    //     let selector = $("#selectorID").val(); 
+    //         if(selector != "Categorías"){
+    //              filterData("storage/products/categories/"+selector)
+    //         }else{
+            
+    //             loadDataToSearch();
+
+    //         }
+        
+    //   });
+
     if (storedIDS == null || storedIDS.length < 1){
         $("#cartbtn").addClass("btn-is-disabled");
         $("#checkoutbtn").addClass("btn-is-disabled");

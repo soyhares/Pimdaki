@@ -6754,7 +6754,7 @@ body.bodyColor.container {
 
 @media (min-width: 768px) {
   .setp5 .thanksContent .thanksInner .well {
-    width: 250px;
+    /*width: 250px;*/
   }
 }
 

@@ -81,7 +81,6 @@ const _orderManager = (id = _orderId(), isMember=false) => {
 		purchase: purchase.id
 
 	}
-<<<<<<< HEAD
 	// let membership = {
 	// 	id,
 	// 	active:true,

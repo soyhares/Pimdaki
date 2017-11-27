@@ -650,3 +650,19 @@
 .panel-hidden{
   display: none;
 }
+
+.nextFinal{
+  width: 170px;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  height: 45px;
+  line-height: 45px;
+  background-color: #009c9d;
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 15px;
+  transition: all 0.3s ease-in-out;
+}
