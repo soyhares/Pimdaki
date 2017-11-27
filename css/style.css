@@ -1343,14 +1343,14 @@ body.bodyColor.container {
 
 @media (min-width: 992px) {
   .navTop-middle .searchBox .input-group .form-control {
-    border-left-color: transparent;
+    border-left-color: #ccc;
   }
 }
 
 @media (min-width: 992px) {
   .navTop-middle .searchBox .input-group .form-control:focus {
     border-color: #ccc;
-    border-left-color: transparent;
+    border-left-color: #ccc;
   }
 }
 
