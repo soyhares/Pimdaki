@@ -1117,3 +1117,30 @@ jQuery(document).ready(function(){
 	// quantity = $("#guiest_id4").val();
 	// console.log(storedIDS);
 });
+
+
+
+/*
+	VALIDAR LOS QUANTITY
+	function loadLot(selectID){
+		firebase.database().ref("storage/products/categories/"+category+"/"+productId).on("value",function(response){
+			if(response.exists()){
+
+				let lot = parseInt(response.val().lot)+1;
+				console.log(">>>>>>>>>>>>>>>>>>"+lot)
+				for (var i = 1; i < lot ; i++) {
+					$("#"+selectID).append("<option value="+i+">"+i+"</option>");
+				}
+			
+			}else{
+				console.log(">>>>>>>>>>>>>>> no existe")
+			}
+			
+		});
+	}
+	COMO USAR
+	loadLot("select.id");
+	
+
+
+ */
