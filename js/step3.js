@@ -334,7 +334,7 @@ function plusQuantity(arg){
 jQuery(document).ready(function(){
 	//Function Listener
 	buyValue = $("#coinChange").val().replace("/", "");
-	result = (order.total / parseFloat(buyValue)).toFixed(2);
+	result = ((order.total + order.value) / parseFloat(buyValue)).toFixed(2);
 	console.log("Buy dolar value >>> "+ buyValue);
 	console.log("totalOrder >>> "+ result);
 	let totalOrder ={totalOrder:result};
